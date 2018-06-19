@@ -1,5 +1,10 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
+.vscode
+__pycache__
+*.docx
+*.xml
+
 # dependencies
 /node_modules
 
