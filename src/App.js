@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import logo from 'resources/logo.png';
 import 'resources/App.css';
-import { Link } from 'react-router-dom';
+import AppBody from 'components/AppBody'
+import {Link} from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
-var config= {
+var config = {
   apiKey: "AIzaSyDHwdhlccQ0dxYJabYhhvkVJW4NzDu8xiI",
   authDomain: "agdial-001.firebaseapp.com",
   databaseURL: "https://agdial-001.firebaseio.com",
@@ -15,40 +16,45 @@ var config= {
 }
 firebase.initializeApp(config)
 const db = firebase.firestore();
-db.settings({timestampsInSnapshots:true})
-
-db.collection("users").add({
-  first: "Alan",
-  middle: "Mathison",
-  last: "Turing",
-  born: 1912
-})
-.then(function(docRef) {
-  console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-  console.error("Error adding document: ", error);
-});
+db.settings({timestampsInSnapshots: true})
 
 class App extends Component {
-    render() {
-        const { location } = this.props;
-        db.collection("users").get().then((q)=>
-      {
-        q.forEach(item=>console.log(item))
+  constructor(props)
+  {
+    super(props);
+    this.state={width:0,height:0};
+  }
+  render() {
+    const {location} = this.props;
+    db.collection("users").get().then((q) => 
+    {
+        q.forEach(item => console.log(item))
       });
     return (
-      <div className="App">
-        <header className="App-header">
-        <Link to="/">
-          <img src={logo} className="App-logo" alt="logo" /> </Link>
-          <h1 className="App-title">Welcome to AgDial</h1>
-        </header>
-        <p className="App-intro">
-          <code>{location.pathname}</code>
-        </p>
-      </div>
+      <AppBody >
+        <code>{location.pathname}</code>
+      </AppBody>
     );
+  }
+  updateDimensions()
+  {
+    var w = window,
+      d = document,
+      documentElement = d.documentElement,
+      body = d.getElementsByTagName('body')[0],
+      width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
+      height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
+
+    this.setState({width, height});
+  }
+  componentWillMount() {
+    this.updateDimensions();
+  }
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions.bind(this));
+  }
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateDimensions);
   }
 }
 

@@ -5,13 +5,11 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-
 def print_collection(db, collection):
     print("Collection:", collection)
     ref = db.collection(collection)
     docs = ref.get()
     list(map(lambda d: print(d.id, '\n', d.to_dict()), docs))
-
 
 def init_db():
     cred = credentials.Certificate(
@@ -23,7 +21,6 @@ def init_db():
 
 from parse import xml_to_dict
 
-
 def add_categories():
     cat_dict = xml_to_dict('categories.xml')
     if cat_dict:
@@ -34,7 +31,6 @@ def add_categories():
         doc_ref = db.collection(coll_name).document(coll_name)
         print(doc_ref.set({coll_name: cat_dict}))
 
-
 def add_business(business=None, db=None):
     if not db:
         db = init_db()
@@ -42,7 +38,6 @@ def add_business(business=None, db=None):
         print(db.collection('businesses').document(business['name']).set(business))
     else:
         print("Invalid business object")
-
 
 def main():
     # add_categories()
