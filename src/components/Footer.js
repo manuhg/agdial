@@ -1,15 +1,15 @@
 import React, {Component} from 'react';
 import {Row, Col, Container, Footer} from 'mdbreact';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import brands from '@fortawesome/fontawesome-free-brands';
-import solids from '@fortawesome/fontawesome-free-solid';
+//import FontAwesomeIcon from '@fortawesome/react-fontawesome';
+// import brands from '@fortawesome/fontawesome-free-brands';
+// import solids from '@fortawesome/fontawesome-free-solid';
 
 class AppFooter extends Component
 {
   render()
   {
-    if(!solids||!brands)
-        console.log("FA icons not found");
+    // if(!solids||!brands)
+    //     console.log("FA icons not found");
      // navbar-fixed-bottom
 
     var height = Math.max(document.documentElement.clientHeight, window.innerHeight);

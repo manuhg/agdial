@@ -12,8 +12,7 @@ def print_collection(db, collection):
     list(map(lambda d: print(d.id, '\n', d.to_dict()), docs))
 
 def init_db():
-    cred = credentials.Certificate(
-        os.environ['HOME']+"/agdial-001-firebase-adminsdk.json")
+    cred = credentials.Certificate(os.environ['HOME']+"/agdial-001-firebase-adminsdk.json")
     firebase_admin.initialize_app(cred)
     db = firestore.client()
     return db

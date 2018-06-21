@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import brands from '@fortawesome/fontawesome-free-brands';
+// import brands from '@fortawesome/fontawesome-free-brands';
 import solids from '@fortawesome/fontawesome-free-solid';
 
 class Nav extends Component {
@@ -13,6 +13,8 @@ class Nav extends Component {
           isWideEnough: false
       };
   this.onClick = this.onClick.bind(this);
+  if(!solids)
+    console.log("FA icons not found");
 }
 
 onClick(){
@@ -22,7 +24,6 @@ onClick(){
 }
 
     render() {
-        const container = { height: 1300 }
         return (
             <div>
                 <Router>
