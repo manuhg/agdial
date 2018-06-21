@@ -10,14 +10,24 @@ class App extends Component {
     super(props);
     this.state={width:0,height:0,data:[]}
   }
-  async getDoc(docref,cb)
+  async getDoc(docref,cb)//cb should be truthy for documents, else it is querysnapshot
   {
-    console.log(docref)
     var data=await docref.get();
-    if(data.exists)
-      data=data.data();
-    else
-      data=null;
+    if (cb) {
+      if (data.exists)
+        data = data.data();
+      else
+        data = null;
+    }
+    else {
+      var dt = {}
+      if (!data.empty)
+        data.forEach((d) => {
+          if (d.exists)
+            dt[d.id] = d.data();
+        })
+      data=dt;
+    }
     var newData;
     if(!this.state.data[0])
       newData=[data[ccname]];
@@ -55,7 +65,6 @@ class App extends Component {
     if(!this.state.data[0])return;
     var {cpath,category,business}=this.splitPath(path,this.state.data[0]);
     cpath=(cpath)?cpath[cpath.length-1]:null;
-    console.log("dap",cpath,category,business)
     
     if(cpath && category)
     {
@@ -87,7 +96,7 @@ class App extends Component {
     return (
       <AppBody >
         {/* <code><ul>{this.state.data[1].map((l,i)=><li key={i}>{l}</li>)}</ul></code> */}
-        <code><ul>{Object.entries(this.state.data[1]).map((l,i)=><li key={i}>{l[0]}<ol>{l[1].map((ll,j)=><li key={j}>{ll}</li>)}</ol></li>)}</ul><br/><br/></code>
+        <code><ul>{Object.entries(this.state.data[1]).map((l,i)=><li key={i}>{l[0]}</li>)}</ul><br/><br/></code>
       </AppBody>
     );
   }
