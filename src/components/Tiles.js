@@ -14,7 +14,7 @@ class Tiles extends Component
             <Row>
                 {Object.entries(data).map((e)=>e[0]).map((d,i)=>
                 <Col md="6" key={i}>
-                    <a href={this.props.path+d} style={{textDecoration:'none',color:'black'}}>
+                    <a href={'/categories/'+d} style={{textDecoration:'none',color:'black'}}>
                         <Card className="tiles text-left">
                         <div class="text-center"><b class="ch">{d}</b><br/></div>
                         {/* <Container><Row> <Col md="3"><img src="" alt="to be loaded" style={{border:'1px solid black',height:'10vw'}}/></Col>                        <Col> */}
