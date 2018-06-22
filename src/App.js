@@ -103,17 +103,21 @@ class App extends Component {
     }
   }
   render() {
-    const cont=<code>Loading please wait..</code>;
+    var cont=<code>Loading please wait..</code>;
     if(this.state.data[1])
     {
       switch(this.type)
       {
         case types['tiles']:
+        cont=<Tiles path={this.props.location.pathname} data={this.state.data[1]}/>
         break;
         case types['listing']:
+        cont=<Listing path={this.props.location.pathname} data={this.state.data[1]}/>
         break;
         case types['page']:
+        cont=<Business path={this.props.location.pathname} data={this.state.data[1]}/>
         break;
+        default:break;
       }
     }
     return (<AppBody>{cont}</AppBody> );
