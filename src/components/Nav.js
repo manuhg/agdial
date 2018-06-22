@@ -25,7 +25,6 @@ onClick(){
 
     render() {
         return (
-            <div>
                 <Router>
                     <Navbar color="white" light expand="md" scrolling>
                         <NavbarBrand href="/">
@@ -61,7 +60,6 @@ onClick(){
                         </Collapse>
                     </Navbar>
                 </Router>
-            </div>
         );
     }
 }
