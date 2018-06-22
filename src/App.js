@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import 'resources/App.css';
 import AppBody from 'components/AppBody';
-import asyComponent from 'AsyncComponent'
-//import db from 'db';
+//import asyComponent from 'AsyncComponent'
+import db from 'db';
 // import asyComponent from 'AsyncComponent'
 // const Tiles = asyComponent(()=>import('components/Tiles'));
 // const Listing = asyComponent(()=>import('components/Listing'));
@@ -13,7 +13,7 @@ import Business from 'components/Business';
 const ccname='categories'; //categories collection name
 const bcname='businesses';
 const types={'tiles':0,'listing':1,'page':2}
-const db = asyComponent(()=>import('db'))
+//const db = asyComponent(()=>import('db'))
 
 class App extends Component {
   constructor(props)
