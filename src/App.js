@@ -2,13 +2,24 @@ import React, {Component} from 'react';
 import 'resources/App.css';
 import AppBody from 'components/AppBody';
 import db from 'db';
+
+// import asyComponent from 'AsyncComponent'
+// const Tiles = asyComponent(()=>import('components/Tiles'));
+// const Listing = asyComponent(()=>import('components/Listing'));
+// const Business = asyComponent(()=>import('components/Business'));
+
+import Tiles from 'components/Tiles';
+import Listing from 'components/Listing';
+import Business from 'components/Business';
 const ccname='categories'; //categories collection name
 const bcname='businesses';
+const types={'tiles':0,'listing':1,'page':2}
 class App extends Component {
   constructor(props)
   {
     super(props);
     this.state={width:0,height:0,data:[]}
+    this.type=0;//tiles
   }
   async getDoc(docref,cb)//cb should be truthy for documents, else it is querysnapshot
   {
@@ -49,8 +60,6 @@ class App extends Component {
     //  make '/categories/abc/xyz' => '/abc/xyz'
     var business=null;
     var cpath=path.split('/').filter(Boolean);
-    // if(!cpath || !cpath.length)
-    //   return {'cpath':null,'category':null,'business':null};
     cpath.splice(0,1);
     var category=this.valueAtPath(catObj,cpath,true);
     if(category)
@@ -69,36 +78,44 @@ class App extends Component {
     if(cpath && category)
     {
       if(business&&business.length>3)
+      {
         this.getDoc(db.collection(bcname).where("name","==",business).where("category","==",cpath));
-
+        this.type=types['page']
+      }
       else if(typeof(category)==="object" && !category.map) //if its a plain object
+      {
         this.setState({'data':[this.state.data[0], category]});//Object.entries(category).map(e=>e[0])]});
-      
+        this.type=types['tiles']
+      }
       else
+      {
         this.getDoc(db.collection(bcname).where("category","==",cpath));
-
+        this.type=types['listing']
+      }
       // if(category.map)//if it's an array
       //   this.setState({'data':[this.state.data[0],category]}); 
     }
     else if(category)
     {
       this.setState({'data':[this.state.data[0], category]});//Object.entries(category).map(e=>e[0])]});
+      this.type=types['tiles']
     }
   }
   render() {
-    console.log("r",this.state);
-    if(!this.state.data[1])
-      return (
-        <AppBody>
-         <code>Loading please wait..</code>
-        </AppBody>
-      );
-    return (
-      <AppBody >
-        {/* <code><ul>{this.state.data[1].map((l,i)=><li key={i}>{l}</li>)}</ul></code> */}
-        <code><ul>{Object.entries(this.state.data[1]).map((l,i)=><li key={i}>{l[0]}</li>)}</ul><br/><br/></code>
-      </AppBody>
-    );
+    const cont=<code>Loading please wait..</code>;
+    if(this.state.data[1])
+    {
+      switch(this.type)
+      {
+        case types['tiles']:
+        break;
+        case types['listing']:
+        break;
+        case types['page']:
+        break;
+      }
+    }
+    return (<AppBody>{cont} </AppBody> );
   }
   updateDimensions()
   {

@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand, NavbarNav, NavbarToggler, Collapse, NavItem, NavLink } from 'mdbreact';
 import { BrowserRouter as Router } from 'react-router-dom';
-import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-// import brands from '@fortawesome/fontawesome-free-brands';
-import solids from '@fortawesome/fontawesome-free-solid';
 
 class Nav extends Component {
   constructor(props) {
@@ -13,8 +10,6 @@ class Nav extends Component {
           isWideEnough: false
       };
   this.onClick = this.onClick.bind(this);
-  if(!solids)
-    console.log("FA icons not found");
 }
 
 onClick(){
@@ -54,7 +49,7 @@ onClick(){
                                     <NavLink to="#"><b>Images</b></NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink to="#"><FontAwesomeIcon icon="share-alt" /></NavLink>
+                                    <NavLink to="#"><i className="fa fa-share-alt fa-lg  fa-2x"></i></NavLink>
                                 </NavItem>
                             </NavbarNav>
                         </Collapse>
