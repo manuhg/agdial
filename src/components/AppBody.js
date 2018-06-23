@@ -7,23 +7,38 @@ class AppBody extends Component
     render()
     {
         const content = this.props.children ;
+        // var adStyle={minHeight:'86vh'};
+        // if(this.props.height>this.props.width)
+        //     adStyle={minWidth:'50vw',borderRadius:'0'};
         return (
                 <div>
-                    <header >
+                    <header>
                         <Nav/>
-                        <Container style={{minHeight:'89vh',position:'relative',top:'3vh'}} className="text-center">
+                    </header>
+                    <p>&nbsp;</p>
+                    <header>
+                        <Container className="text-center" style={{minHeight:'89vh'}} fluid>
                             <Row>
                                 <Col md="1">
-                                    <Card>&nbsp;</Card>
+                                    {/* <Card style={adStyle}>&nbsp;</Card> */}
                                 </Col>
                                 <Col md="10">
-                                    <Card style={{minHeight:'86vh'}}>{content}</Card>
+                                <Card style={{minHeight:'86vh'}}>
+                                <Container fluid>
+                                <Row><Col>Browse</Col></Row>
+                                <Row>
+                                <Col>
+                                {content}
+                                </Col>
+                                </Row>
+                                </Container>
+                                </Card>
                                 </Col>
                                 <Col md="1">
-                                    <Card>&nbsp;</Card>
+                                    {/* <Card style={adStyle}>&nbsp;</Card> */}
                                 </Col>
                             </Row>
-                        </Container>
+                            </Container>
                     </header>
                     <footer>
                         <Footer/>

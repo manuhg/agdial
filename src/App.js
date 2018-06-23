@@ -103,12 +103,12 @@ class App extends Component {
     }
   }
   render() {
+    const w=this.state.width;
+    const h=this.state.height;
     var cont=<code>Loading please wait..</code>;
     if(this.state.data[1])
     {
       const data=this.state.data[1];
-      const w=this.state.width;
-      const h=this.state.height;
       switch(this.type)
       {
         case types['tiles']:
@@ -123,7 +123,7 @@ class App extends Component {
         default:break;
       }
     }
-    return (<AppBody>{cont}</AppBody> );
+    return (<AppBody width={w} height={h}>{cont}</AppBody> );
   }
   updateDimensions()
   {

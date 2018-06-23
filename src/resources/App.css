@@ -2,15 +2,16 @@
 {
     min-height:15vh;
     margin-bottom: 10px;
-    padding: 10px 5px 5px 10px;
-    border: 2px solid white;
+    /* padding: 10px 5px 5px 10px; */
+    border: 1px solid greenyellow;
     border-radius: 0;
-    font-size: .6em;
+    font-size: .9em;
+    /* background-color: rgba(0, 255, 13,.3); */
 }
 .ch
 {
-    font-size: .7em !important;
-    /* color:black; */
+    color:black;
+    font-weight: bold;
 }
 .tiles:hover .ch
 {
@@ -18,5 +19,49 @@
 }
 .tiles:hover
 {
-    border: 2px solid green;
+    border: 1px solid green;
+}
+.card
+{
+    border-radius: 0 !important;
+}
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+.cbodytext
+{
+    font-size: 1em;
+
+}
+.zp
+{
+    padding: 0px;
+}
+.lp
+{
+    padding: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .lp
+{
+    padding: 3px;
+}
+    .tiles
+    {
+        min-height:15vh;
+        margin-bottom: 10px;
+        /* padding: 10px 5px 5px 10px; */
+        border: 1px solid greenyellow;
+        border-radius: 0;
+        font-size: .4em;
+        /* background-color: rgba(0, 255, 13,.3); */
+    }
+    div>h5
+    {
+        font-size: 1.3em;
+        font-weight: bold;
+        padding: 2px;
+    }
 }
