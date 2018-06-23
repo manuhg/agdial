@@ -106,16 +106,19 @@ class App extends Component {
     var cont=<code>Loading please wait..</code>;
     if(this.state.data[1])
     {
+      const data=this.state.data[1];
+      const w=this.state.width;
+      const h=this.state.height;
       switch(this.type)
       {
         case types['tiles']:
-        cont=<Tiles path={this.props.location.pathname} data={this.state.data[1]}/>
+        cont=<Tiles path={this.props.location.pathname} width={w} height={h} data={data}/>
         break;
         case types['listing']:
-        cont=<Listing path={this.props.location.pathname} data={this.state.data[1]}/>
+        cont=<Listing path={this.props.location.pathname} width={w} height={h} data={data}/>
         break;
         case types['page']:
-        cont=<Business path={this.props.location.pathname} data={this.state.data[1]}/>
+        cont=<Business path={this.props.location.pathname} width={w} height={h} data={data}/>
         break;
         default:break;
       }
