@@ -1,14 +1,14 @@
 .tiles
 {
-    /* min-height:40vh; */
-    /* height: 30vw;
-    width: 100%; */
     margin-bottom: 10px;
-    /* padding: 10px 5px 5px 10px; */
     border: 1px solid greenyellow;
     border-radius: 0;
-    font-size: 88%;
+    font-size: .95vw;
     /* background-color: rgba(0, 255, 13,.3); */
+}
+div>h5 {
+    font-size: 1.3vw;
+    padding: 5px;
 }
 body{
     word-wrap: break-word !important;
@@ -47,110 +47,36 @@ body{
 {
     padding: 4px;
 }
-@media only screen and (max-width: 1200px) {
-    .lp {
-        padding: 3px;
-    }
-    .tiles {
-        /* width: 100%;
-        overflow: hidden;
-        height: 40vw; */
-        margin-bottom: 10px;
-        /* padding: 10px 5px 5px 10px; */
-        border: 1px solid greenyellow;
-        border-radius: 0;
-        font-size: 60%;
-        word-wrap: break-word !important;
-        /* background-color: rgba(0, 255, 13,.3); */
-    }
-    div>h5 {
-        font-size: 150%;
-        padding: 5px;
-    }
-}
-@media only screen and (max-width: 900px) {
-    .lp {
-        padding: 3px;
-    }
-    .tiles {
-        /* width: 100%;
-        overflow: hidden;
-        height: 40vw; */
-        margin-bottom: 10px;
-        /* padding: 10px 5px 5px 10px; */
-        border: 1px solid greenyellow;
-        border-radius: 0;
-        font-size: 49%;
-        word-wrap: break-word !important;
-        /* background-color: rgba(0, 255, 13,.3); */
-    }
-    div>h5 {
-        font-size: 150%;
-        padding: 5px;
-    }
-}
-@media only screen and (max-width: 750px) {
-    .lp {
-        padding: 3px;
-    }
-    .tiles {
-        /* width: 100%;
-        overflow: hidden;
-        height: 40vw; */
-        margin-bottom: 10px;
-        /* padding: 10px 5px 5px 10px; */
-        border: 1px solid greenyellow;
-        border-radius: 0;
-        font-size: 90%;
-        word-wrap: break-word !important;
-        /* background-color: rgba(0, 255, 13,.3); */
-    }
-    div>h5 {
-        font-size: 130%;
-        padding: 5px;
-    }
-}
-@media only screen and (max-width: 600px) {
-    .lp {
-        padding: 3px;
-    }
-    .tiles {
-        /* width: 100%;
-        overflow: hidden;
-        height: 40vw; */
-        margin-bottom: 10px;
-        /* padding: 10px 5px 5px 10px; */
-        border: 1px solid greenyellow;
-        border-radius: 0;
-        font-size: 56%;
-        word-wrap: break-word !important;
-        /* background-color: rgba(0, 255, 13,.3); */
-    }
-    div>h5 {
-        font-size: 180%;
-        padding: 5px;
-    }
-}
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 764px) {
+    .lp {
+        padding: 5px;
+    }
+    .tiles {
+        margin-bottom: 10px;
+        border: 1px solid greenyellow;
+        border-radius: 0;
+        font-size: 2.5vw;
+        word-wrap: break-word !important;
+    }
+    div>h5 {
+        font-size: 3vw;
+        padding: 5px;
+    }
+}
+@media only screen and (max-width: 430px) {
     .lp {
         padding: 3px;
     }
     .tiles {
-        /* width: 100%;
-        height: 40vw; */
-        /* overflow: auto; */
         margin-bottom: 10px;
-        word-wrap: break-word !important;
-
-        /* padding: 10px 5px 5px 10px; */
         border: 1px solid greenyellow;
         border-radius: 0;
-        font-size: 45%;
-        /* background-color: rgba(0, 255, 13,.3); */
+        font-size: 2vw;
+        word-wrap: break-word !important;
     }
     div>h5 {
-        font-size: 120%;
-        padding: 8px;
+        font-size: 3vw;
+        padding: 5px;
     }
 }
