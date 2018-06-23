@@ -45,7 +45,7 @@ class Tiles extends Component
                     </div>
                     <div className="lp card-body col-7">
                         <h5 className="card-title lp ch">{d}</h5>
-                        <div className="lp text-left cbodytext"> {data[d].map((e,i)=><span key={i}>->&nbsp;{e}<br/></span>)}</div>
+                        <div className="lp text-left cbodytext"> {data[d].map((e,i)=><span key={i}>->&nbsp;{e.trim()}<br/></span>)}</div>
                     </div>
                 </div>
             </div>
