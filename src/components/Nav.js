@@ -20,7 +20,6 @@ onClick(){
 
     render() {
         return (
-                <Router>
                     <Navbar color="white" light expand="md" scrolling>
                         <NavbarBrand href="/">
                             <strong><font className="green-text"> AgDial</font></strong>
@@ -32,13 +31,13 @@ onClick(){
                                     <NavLink to="/">Home</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink to="/aboutus">About Us</NavLink>
+                                    <NavLink to="/about">About Us</NavLink>
                                 </NavItem>
                                 <NavItem>
                                     <NavLink to="/pricing">Pricing</NavLink>
                                 </NavItem>
                                 <NavItem>
-                                    <NavLink to="/contactus">Contact Us</NavLink>
+                                    <NavLink to="/contact">Contact Us</NavLink>
                                 </NavItem>
                             </NavbarNav>
                             <NavbarNav right>
@@ -54,7 +53,6 @@ onClick(){
                             </NavbarNav>
                         </Collapse>
                     </Navbar>
-                </Router>
         );
     }
 }

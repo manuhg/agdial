@@ -7,9 +7,7 @@ class AppBody extends Component
     render()
     {
         const content = this.props.children ;
-        // var adStyle={minHeight:'86vh'};
-        // if(this.props.height>this.props.width)
-        //     adStyle={minWidth:'50vw',borderRadius:'0'};
+
         return (
                 <div>
                     <header>
@@ -25,7 +23,7 @@ class AppBody extends Component
                                 <Col md="10">
                                 <Card style={{minHeight:'86vh'}}>
                                 <Container fluid>
-                                <Row><Col>Browse</Col></Row>
+                                {/* <Row><Col>Browse</Col></Row> */}
                                 <Row>
                                 <Col>
                                 {content}
