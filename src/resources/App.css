@@ -1,22 +1,5 @@
-.tiles
-{
-    margin-bottom: 10px;
-    border: 1px solid greenyellow;
-    border-radius: 0;
-    font-size: .95vw;
-    /* background-color: rgba(0, 255, 13,.3); */
-}
-div>h5 {
-    font-size: 1.3vw;
-    padding: 5px;
-}
 body{
     word-wrap: break-word !important;
-}
-.ch
-{
-    color:black;
-    font-weight: bold;
 }
 .tiles:hover .ch
 {
@@ -34,49 +17,92 @@ body{
     display: flex;
     flex: 1 1 auto;
 }
-.cbodytext
-{
-    font-size: 1em;
-
-}
 .zp
 {
     padding: 0px;
+    word-wrap: break-word !important;
+}
+.cbodytext
+{
+    word-wrap: break-word !important;
+}
+.ch
+{
+    color:black;
+    font-weight: bold;
+    padding: 6px 15px 0px 2px;
+    word-wrap: break-word !important;
+}
+.tiles
+{
+    margin-bottom: 0px;
+    border: 1px solid greenyellow;
+    border-radius: 0;
+    font-size: .7vw;
+    word-wrap: break-word !important;
+}
+div>h5 {
+    font-size: 1vw;
 }
 .lp
 {
-    padding: 4px;
+    padding: 1px 10px 1px 1px;
+    word-wrap: break-word !important;
 }
 
 @media only screen and (max-width: 764px) {
-    .lp {
-        padding: 5px;
-    }
     .tiles {
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         border: 1px solid greenyellow;
         border-radius: 0;
-        font-size: 2.5vw;
+        font-size: .85vw;
         word-wrap: break-word !important;
+        padding-right: 7px;
     }
     div>h5 {
-        font-size: 3vw;
-        padding: 5px;
+        font-size: 1vw;
+    }
+}
+@media only screen and (max-width: 694px) {
+    .tiles {
+        margin-bottom: 0px;
+        border: 1px solid greenyellow;
+        border-radius: 0;
+        font-size: .8vw;
+        word-wrap: break-word !important;
+        padding-right: 7px;
+    }
+    div>h5 {
+        font-size: 1.5vw;
+    }
+}
+@media only screen and (max-width: 572px) {
+    .tiles {
+        margin-bottom: 0px;
+        border: 1px solid greenyellow;
+        border-radius: 0;
+        font-size: 1vw;
+        word-wrap: break-word !important;
+        padding-right: 7px;
+    }
+    div>h5 {
+        font-size: 1.5vw;
     }
 }
 @media only screen and (max-width: 430px) {
-    .lp {
-        padding: 3px;
-    }
     .tiles {
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         border: 1px solid greenyellow;
         border-radius: 0;
-        font-size: 2vw;
+        font-size: 1vw;
+        word-wrap: break-word !important;
+    }
+    .lp
+    {
+        padding: 1px 5px 1px 1px;
         word-wrap: break-word !important;
     }
     div>h5 {
-        font-size: 3vw;
-        padding: 5px;
+        font-size: 1.5vw;
     }
 }

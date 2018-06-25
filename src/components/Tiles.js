@@ -10,14 +10,16 @@ class Tiles extends Component
         // const h=this.props.height;
         if(typeof(data)!=="object")
             return(<span>Please wait..</span>);
-        var cardImgStyle={paddingLeft:'15px',width:'100%'};
+        var cardImgStyle=
+        {paddingLeft:'15px',
+        maxHeight:'100%',maxWidth:'100%',objectFit:'contain'};
         return(
             
           <Container fluid>
             <Row>
                 {Object.entries(data).map((e)=>e[0]).map((d,i)=>
-                    <Col md="6" key={i}>
-                        {/* <a href={'/categories/'+d} style={{textDecoration:'none',color:'black'}}> */}
+                    <Col xs="6" sm="4" md="4" key={i}>
+                        <a href={'/categories/'+d} style={{textDecoration:'none',color:'black'}}>
 
                      {/* <Container fluid>
                                 <Row  style={{display:'flex', width: '100%'}}>
@@ -35,24 +37,24 @@ class Tiles extends Component
                                 </Row>
                             </Container> */}
 
-<div className="container-fluid">
+<div style={{padding:'10px 10px 10px 10px'}} className="container-fluid">
     <div className="zp row">
         <div className="zp col-12 mt-3">
             <div className="zp card tiles">
-                <div className="zp card-horizontal row">
-                    <div className="zp img-square-wrapper col-5">
+                <div style={{display:'flex'}} className="zp card-horizontal row">
+                    <div  style={{flex:'1'}} className="zp img-square-wrapper col-5">
                     <img style={cardImgStyle} src={amimg} alt={d}/>
                     </div>
-                    <div className="lp card-body col-7">
-                        <h5 className="card-title lp ch">{d}</h5>
-                        <div className="lp text-left cbodytext"> {data[d].map((e,i)=><span key={i}>->&nbsp;{e.trim()}<br/></span>)}</div>
+                    <div  style={{flex:'1'}} className="zp card-body col-7">
+                        <h5 className="ch">{d}</h5>
+                        <div className="lp cbodytext container text-left"> {data[d].map((e,i)=><span style={{wordWrap:'break-word !important'}} key={i}>->&nbsp;{e.trim()}<br/></span>)}</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-                        {/* </a> */}
+                        </a>
                     </Col>
                 )}
             </Row>
