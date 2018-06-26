@@ -12,15 +12,33 @@ import React, { Component } from 'react';
 class Nav extends Component {
   constructor(props) {
     super(props);
+    this.mounted = true;
     this.state = { collapse: false, isWideEnough: false };
     this.onClick = this.onClick.bind(this);
   }
-
+  componentWillUnmount() {
+    this.mounted = false;
+  }
   onClick() {
-    this.setState({ collapse: !this.state.collapse });
+    if (this.mounted) this.setState({ collapse: !this.state.collapse });
   }
 
   render() {
+    this.mounted = true;
+    var actives = [true, false, false, false];
+    if (
+      typeof this.props.active === 'number' &&
+      this.props.active < actives.length
+    ) {
+      actives[0] = false;
+      actives[this.props.active] = true;
+    }
+    const NLinks = [
+      ['/', 'Home'],
+      ['/about', 'About Us'],
+      ['/pricing', 'Pricing'],
+      ['/contact', 'Contact Us'],
+    ];
     return (
       <Navbar color="white" light expand="md" scrolling>
         <NavbarBrand href="/">
@@ -31,18 +49,29 @@ class Nav extends Component {
         {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
         <Collapse isOpen={this.state.collapse} navbar>
           <NavbarNav left>
-            <NavItem active>
-              <NavLink to="/">Home</NavLink>
-            </NavItem>
-            <NavItem>
+            {NLinks.map((e, i) => {
+              return actives[i] ? (
+                <NavItem active key={i}>
+                  <NavLink to={e[0]}>{e[1]}</NavLink>
+                </NavItem>
+              ) : (
+                <NavItem key={i}>
+                  <NavLink to={e[0]}>{e[1]}</NavLink>
+                </NavItem>
+              );
+            })}
+            {/*<NavItem>
+        <NavLink to="/">Home</NavLink>
+        </NavItem>
+        <NavItem >
               <NavLink to="/about">About Us</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/pricing">Pricing</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/contact">Contact Us</NavLink>
-            </NavItem>
+              </NavItem>
+              <NavItem >
+                    <NavLink to="/pricing">Pricing</NavLink>
+                    </NavItem>
+                    <NavItem>
+                          <NavLink to="/contact">Contact Us</NavLink>
+                    </NavItem>*/}
           </NavbarNav>
           <NavbarNav right>
             <NavItem>

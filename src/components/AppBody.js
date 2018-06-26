@@ -10,7 +10,7 @@ class AppBody extends Component {
     return (
       <div>
         <header>
-          <Nav />
+          <Nav active={this.props.active} />
         </header>
         <p>&nbsp;</p>
         <header>

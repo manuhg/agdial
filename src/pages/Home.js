@@ -1,5 +1,5 @@
 import 'resources/App.css';
-
+import AppBody from 'components/AppBody';
 import Business from 'components/Business';
 import Listing from 'components/Listing';
 import Tiles from 'components/Tiles';
@@ -17,6 +17,7 @@ const types = {
 class App extends Component {
   constructor(props) {
     super(props);
+    this.title = 'Home';
     this.state = { data: [] };
     this.type = 0; // tiles
   }
@@ -93,14 +94,19 @@ class App extends Component {
       this.type = types['tiles'];
     }
   }
+
+  componentWillUnmount() {
+    document.title = 'AgDial';
+  }
   componentDidMount() {
     this.getDoc(db.collection(ccname).doc(ccname), () =>
       this.docAtPath(this.props.location.pathname)
     );
   }
   render() {
-    console.log(this.props);
-    var cont = () => <span>{'Loading please wait.'}</span>;
+    //console.log(this.props);
+    document.title = 'AgDial:' + this.title;
+    var cont = <span>{'Loading please wait.'}</span>;
     if (this.state.data[1]) {
       const data = this.state.data[1];
       switch (this.type) {
@@ -117,7 +123,7 @@ class App extends Component {
           break;
       }
     }
-    return cont;
+    return <AppBody active={0}>{cont}</AppBody>;
   }
 }
 

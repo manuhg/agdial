@@ -1,4 +1,4 @@
-import AppBody from 'components/AppBody';
+//import AppBody from 'components/AppBody';
 import About from 'pages/About';
 import Contact from 'pages/Contact';
 import Home from 'pages/Home';
@@ -15,15 +15,15 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <AppBody>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/about" component={About} />
-            <Route path="/pricing" component={Pricing} />
-            <Route path="/contact" component={Contact} />
-            <Route component={Home} />
-          </Switch>
-        </AppBody>
+        {/* <AppBody>*/}
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+          <Route path="/pricing" component={Pricing} />
+          <Route path="/contact" component={Contact} />
+          <Route component={Home} />
+        </Switch>
+        {/*</AppBody>*/}
       </Router>
     );
   }

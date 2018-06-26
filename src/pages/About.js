@@ -1,3 +1,4 @@
+import AppBody from 'components/AppBody';
 import React, { Component } from 'react';
 import { Col, Container, Row } from 'mdbreact';
 import VSH from 'resources/img/Profile/VSH.png';
@@ -6,9 +7,18 @@ import Prashant from 'resources/img/Profile/Prashant.png';
 import Suresh from 'resources/img/Profile/Suresh.png';
 import Manu from 'resources/img/Profile/Manu.png';
 import { Fa } from 'mdbreact';
-
 class ImageCircle extends Component {
+  constructor(props) {
+    super(props);
+    this.title = 'About Us';
+  }
+
+  /*componentWillUnmount()
+    {
+        document.title='AgDial';
+    }*/
   render() {
+    document.title = 'AgDial:' + this.title;
     const { src, alt, colour1, colour2, units, bSize, ImgBcg } = this.props;
     return (
       <img
@@ -126,102 +136,112 @@ class About extends Component {
   render() {
     const p = { padding: '10px' };
     return (
-      <Container fluid>
-        <Row>
-          <Col
-            md="12"
-            style={{ display: 'flex', alignItems: 'center' }}
-            className="text-center"
-          >
-            <Container fluid style={p} className="text-center">
-              <h1 className="display-5">
-                <strong>About Us</strong>{' '}
-              </h1>
-              <Row>
-                <Col
-                  md="10"
-                  style={{ justifySelf: 'center' }}
-                  className="text-justify offset-md-1"
-                >
-                  <hr className="hr-dark" />
-                  {AboutData.about}
-                </Col>
-              </Row>
-            </Container>
-          </Col>
-          <hr className="hr-dark" />
-        </Row>
-        <Row>
-          {' '}
-          <Col md="12">&nbsp;</Col>
-        </Row>
-        <Row>
-          <Col md="12">
-            <Container fluid style={p} className="text-center">
-              <Row style={p}>
-                <Col
-                  md="10"
-                  style={{ justifySelf: 'center' }}
-                  className="offset-md-1"
-                >
-                  <h1 className="display-5">
-                    <strong>{AboutData.title}</strong>
-                  </h1>
-                  <hr className="hr-dark" />
-                </Col>
+      <AppBody active={1}>
+        <Container fluid>
+          <Row>
+            <Col
+              md="12"
+              style={{ display: 'flex', alignItems: 'center' }}
+              className="text-center"
+            >
+              <Container fluid style={p} className="text-center">
+                <h1 className="display-5">
+                  <strong>About Us</strong>{' '}
+                </h1>
+                <Row>
+                  <Col
+                    md="10"
+                    style={{ justifySelf: 'center' }}
+                    className="text-justify offset-md-1"
+                  >
+                    <hr className="hr-dark" />
+                    {AboutData.about}
+                  </Col>
+                </Row>
+              </Container>
+            </Col>
+            <hr className="hr-dark" />
+          </Row>
+          <Row>
+            {' '}
+            <Col md="12">&nbsp;</Col>
+          </Row>
+          <Row>
+            <Col md="12">
+              <Container fluid style={p} className="text-center">
+                <Row style={p}>
+                  <Col
+                    md="10"
+                    style={{ justifySelf: 'center' }}
+                    className="offset-md-1"
+                  >
+                    <h1 className="display-5">
+                      <strong>{AboutData.title}</strong>
+                    </h1>
+                    <hr className="hr-dark" />
+                  </Col>
+                </Row>
                 {AboutData.team.map((p, i) => {
                   return (
-                    <Container
-                      fluid
-                      key={i}
-                      md="10"
-                      style={{ justifySelf: 'center' }}
-                      className="text-justify offset-md-1"
-                    >
-                      <Row
-                        style={{ display: 'flex', alignItems: 'center' }}
-                        className="card-horizontal row"
+                    <Row key={i} style={p}>
+                      <Col
+                        md="10"
+                        style={{ justifySelf: 'center' }}
+                        className="text-justify offset-md-1"
                       >
-                        <Col style={{ padding: '20px' }} md="3">
-                          <ImageCircle
-                            colour1={p[0]}
-                            src={p[1]}
-                            alt={p[2]}
-                            colour2="white"
-                            units="150px"
-                            bSize="6px"
-                            ImgBcg={false}
-                          />
-                        </Col>
-                        <Col
-                          className="text-left"
-                          style={{ padding: '20px' }}
-                          md="8"
-                        >
-                          <h4 style={{ color: p[0] }}>
-                            <strong>{p[2]}</strong>
-                          </h4>
-                          <div>
-                            <h6 style={{ color: 'gray', display: 'inline' }}>
-                              <strong>{p[3]}</strong>
-                            </h6>
-                            <h5 style={{ display: 'inline' }}>
-                              <a href={p[4]}>
-                                &nbsp;<Fa icon="linkedin-square" />
-                              </a>
-                            </h5>
-                          </div>
-                          <div className="text-justify">{p[5]}</div>
-                        </Col>
-                      </Row>
-                    </Container>
+                        <Container fluid className="card">
+                          <Row
+                            style={{ display: 'flex', alignItems: 'center' }}
+                            className="card-horizontal row"
+                          >
+                            <Col
+                              className="text-center"
+                              style={{ padding: '15px' }}
+                              lg="4"
+                            >
+                              <ImageCircle
+                                colour1={p[0]}
+                                src={p[1]}
+                                alt={p[2]}
+                                colour2="white"
+                                units="150px"
+                                bSize="6px"
+                                ImgBcg={false}
+                              />
+                            </Col>
+                            <Col
+                              className="text-left"
+                              style={{ padding: '15px' }}
+                              lg="8"
+                            >
+                              <h4 style={{ color: p[0] }}>
+                                <strong>{p[2]}</strong>
+                              </h4>
+                              <div>
+                                <h6
+                                  style={{ color: 'gray', display: 'inline' }}
+                                >
+                                  <strong>{p[3]}</strong>
+                                </h6>
+                                <h4 style={{ display: 'inline' }}>
+                                  <a href={p[4]}>
+                                    &nbsp;<Fa icon="linkedin-square" />
+                                  </a>
+                                </h4>
+                              </div>
+                              <div className="text-justify">{p[5]}</div>
+                            </Col>
+                          </Row>
+                        </Container>
+                      </Col>
+                    </Row>
                   );
                 })}
-              </Row>
-            </Container>
-          </Col>
-        </Row>
-      </Container>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
+      </AppBody>
     );
   }
 }
