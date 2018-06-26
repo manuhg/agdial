@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import Autosuggest from "react-autosuggest";
+import React, { Component } from 'react';
+import Autosuggest from 'react-autosuggest';
 
-const languages = [{ name: "C", year: 1972 }, { name: "C#", year: 2000 }];
+const languages = [{ name: 'C', year: 1972 }, { name: 'C#', year: 2000 }];
 
 function getMatchingLanguages(value) {
-	const escapedValue = escapeRegexCharacters(value.trim());
+  const escapedValue = escapeRegexCharacters(value.trim());
 
-	if (escapedValue === "") {
-		return [];
-	}
+  if (escapedValue === '') {
+    return [];
+  }
 
-	const regex = new RegExp("^" + escapedValue, "i");
+  const regex = new RegExp('^' + escapedValue, 'i');
 
-	return languages.filter(language => regex.test(language.name));
+  return languages.filter(language => regex.test(language.name));
 }
 
 /* ----------- */
@@ -20,7 +20,7 @@ function getMatchingLanguages(value) {
 /* ----------- */
 
 function escapeRegexCharacters(str) {
-	return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 /* --------------- */
@@ -28,80 +28,80 @@ function escapeRegexCharacters(str) {
 /* --------------- */
 
 function getSuggestionValue(suggestion) {
-	return suggestion.name;
+  return suggestion.name;
 }
 
 function renderSuggestion(suggestion) {
-	return <span>{suggestion.name}</span>;
+  return <span>{suggestion.name}</span>;
 }
 
 class Search extends Component {
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.state = {
-			value: "",
-			suggestions: [],
-			isLoading: false
-		};
+    this.state = {
+      value: '',
+      suggestions: [],
+      isLoading: false,
+    };
 
-		this.lastRequestId = null;
-	}
+    this.lastRequestId = null;
+  }
 
-	loadSuggestions(value) {
-		// Cancel the previous request
-		if (this.lastRequestId !== null) {
-			clearTimeout(this.lastRequestId);
-		}
+  loadSuggestions(value) {
+    // Cancel the previous request
+    if (this.lastRequestId !== null) {
+      clearTimeout(this.lastRequestId);
+    }
 
-		this.setState({ isLoading: true });
+    this.setState({ isLoading: true });
 
-		// Fake request
-		this.lastRequestId = setTimeout(() => {
-			this.setState({
-				isLoading: false,
-				suggestions: getMatchingLanguages(value)
-			});
-		}, 1000);
-	}
+    // Fake request
+    this.lastRequestId = setTimeout(() => {
+      this.setState({
+        isLoading: false,
+        suggestions: getMatchingLanguages(value),
+      });
+    }, 1000);
+  }
 
-	onChange = (event, { newValue }) => {
-		this.setState({ value: newValue });
-	};
+  onChange = (event, { newValue }) => {
+    this.setState({ value: newValue });
+  };
 
-	onSuggestionsFetchRequested = ({ value }) => {
-		this.loadSuggestions(value);
-	};
+  onSuggestionsFetchRequested = ({ value }) => {
+    this.loadSuggestions(value);
+  };
 
-	onSuggestionsClearRequested = () => {
-		this.setState({ suggestions: [] });
-	};
+  onSuggestionsClearRequested = () => {
+    this.setState({ suggestions: [] });
+  };
 
-	render() {
-		const { value, suggestions, isLoading } = this.state;
-		const inputProps = {
-			placeholder: "Type 'c'",
-			value,
-			onChange: this.onChange
-		};
-		// const status = (isLoading ? 'Loading...' : 'Type to load suggestions');
+  render() {
+    const { value, suggestions, isLoading } = this.state;
+    const inputProps = {
+      placeholder: "Type 'c'",
+      value,
+      onChange: this.onChange,
+    };
+    // const status = (isLoading ? 'Loading...' : 'Type to load suggestions');
 
-		return (
-			<div>
-				{/* <div className="status">
+    return (
+      <div>
+        {/* <div className="status">
             <strong>Status:</strong> {status}
           </div> */}
-				<Autosuggest
-					suggestions={suggestions}
-					onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-					onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-					getSuggestionValue={getSuggestionValue}
-					renderSuggestion={renderSuggestion}
-					inputProps={inputProps}
-				/>
-			</div>
-		);
-	}
+        <Autosuggest
+          suggestions={suggestions}
+          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+          getSuggestionValue={getSuggestionValue}
+          renderSuggestion={renderSuggestion}
+          inputProps={inputProps}
+        />
+      </div>
+    );
+  }
 }
 
 export default Search;

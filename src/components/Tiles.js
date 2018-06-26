@@ -1,84 +1,90 @@
-import { Col, Container, Row } from "mdbreact";
-import React, { Component } from "react";
-import amimg from "resources/am.jpg";
+import { Col, Container, Row } from 'mdbreact';
+import React, { Component } from 'react';
+import amimg from 'resources/am.jpg';
 
 class Tiles extends Component {
-	render() {
-		const data = this.props.data;
-		const hrefbase = "/"; //'/categories/'
-		if (typeof data !== "object") return <span>Please wait..</span>;
-		var cardImgStyle = {
-			paddingLeft: "15px",
-			maxHeight: "100%",
-			maxWidth: "100%",
-			objectFit: "contain"
-		};
-		return (
-			<Container fluid>
-				<Row>
-					{Object.entries(data)
-						.map(e => e[0])
-						.map((d, i) => (
-							<Col xs="6" sm="4" md="4" key={i}>
-								<a
-									href={hrefbase + d}
-									style={{
-										textDecoration: "none",
-										color: "black"
-									}}>
-									<div
-										style={{
-											padding: "10px 10px 10px 10px"
-										}}
-										className="container-fluid">
-										<div className="zp row">
-											<div className="zp col-12 mt-3">
-												<div className="zp card tiles">
-													<div
-														style={{
-															display: "flex"
-														}}
-														className="zp card-horizontal row">
-														<div
-															style={{
-																flex: "1"
-															}}
-															className="zp img-square-wrapper col-5">
-															<img style={cardImgStyle} src={amimg} alt={d} />
-														</div>
-														<div
-															style={{
-																flex: "1"
-															}}
-															className="zp card-body col-7">
-															<h5 className="ch">{d}</h5>
-															<div className="lp cbodytext container text-left">
-																{" "}
-																{data[d].map((e, i) => (
-																	<span
-																		style={{
-																			wordWrap: "break-word !important"
-																		}}
-																		key={i}>
-																		- > & nbsp;
-																		{e.trim()}
-																		<br />
-																	</span>
-																))}
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</a>
-							</Col>
-						))}
-				</Row>
-			</Container>
-		);
-	}
+  render() {
+    const data = this.props.data;
+    const hrefbase = '/'; //'/categories/'
+    if (typeof data !== 'object') return <span>Please wait..</span>;
+    var cardImgStyle = {
+      paddingLeft: '15px',
+      maxHeight: '100%',
+      maxWidth: '100%',
+      objectFit: 'contain',
+    };
+    return (
+      <Container fluid>
+        <Row>
+          {Object.entries(data)
+            .map(e => e[0])
+            .map((d, i) => (
+              <Col xs="6" sm="4" md="4" key={i}>
+                <a
+                  href={hrefbase + d}
+                  style={{
+                    textDecoration: 'none',
+                    color: 'black',
+                  }}
+                >
+                  <div
+                    style={{
+                      padding: '10px 10px 10px 10px',
+                    }}
+                    className="container-fluid"
+                  >
+                    <div className="zp row">
+                      <div className="zp col-12 mt-3">
+                        <div className="zp card tiles">
+                          <div
+                            style={{
+                              display: 'flex',
+                            }}
+                            className="zp card-horizontal row"
+                          >
+                            <div
+                              style={{
+                                flex: '1',
+                              }}
+                              className="zp img-square-wrapper col-5"
+                            >
+                              <img style={cardImgStyle} src={amimg} alt={d} />
+                            </div>
+                            <div
+                              style={{
+                                flex: '1',
+                              }}
+                              className="zp card-body col-7"
+                            >
+                              <h5 className="ch">{d}</h5>
+                              <div className="lp cbodytext container text-left">
+                                {' '}
+                                {data[d].map((e, i) => (
+                                  <span
+                                    style={{
+                                      wordWrap: 'break-word !important',
+                                    }}
+                                    key={i}
+                                  >
+                                    - > & nbsp;
+                                    {e.trim()}
+                                    <br />
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </Col>
+            ))}
+        </Row>
+      </Container>
+    );
+  }
 }
 export default Tiles;
 /* <Container fluid>

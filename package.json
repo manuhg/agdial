@@ -1,29 +1,37 @@
 {
-	"name": "agdial",
-	"version": "0.1.0",
-	"private": true,
-	"sideEffects": false,
-	"dependencies": {
-		"bootstrap": "^4.1.1",
-		"firebase": "^5.1.0",
-		"flow-bin": "^0.75.0",
-		"husky": "^0.14.3",
-		"lint-staged": "^7.2.0",
-		"mdbreact": "^4.5.0",
-		"prettier": "^1.13.6",
-		"react": "^16.4.1",
-		"react-autosuggest": "^9.3.4",
-		"react-dom": "^16.4.1",
-		"react-router-dom": "^4.3.1",
-		"react-scripts": "^1.1.4"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "react-scripts build",
-		"test": "react-scripts test --env=jsdom",
-		"eject": "react-scripts eject"
-	},
-	"devDependencies": {
-		"babel-plugin-import": "^1.8.0"
-	}
+  "name": "agdial",
+  "version": "0.1.0",
+  "private": true,
+  "sideEffects": false,
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "firebase": "^5.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "mdbreact": "^4.5.0",
+    "prettier": "^1.13.6",
+    "react": "^16.4.1",
+    "react-autosuggest": "^9.3.4",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^1.1.4"
+  },
+  "Lint-staged": {
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "precommit": "lint-staged",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.1"
+  }
 }
