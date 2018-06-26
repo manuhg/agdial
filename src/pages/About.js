@@ -92,36 +92,33 @@ const AboutData = {
         produced number of AVs for government departments, research
         organisations and corporate companies. Now Shramajeevi documentaries are
         available for watching on its YouTube channels.
-      </p>{' '}
+      </p>
       <p>
         Shramajeevi launched many websites for different issues related to
         farming. Shramajeevi is becoming 24x7 satellite TV channel in Kannada
         exclusive for agriculture very soon, under the banner of Shramajeevi
         Television Pvt. Ltd. Bengaluru.
-      </p>{' '}
+      </p>
       <p>
-        {' '}
         Farmers from across the country and globe keep calling Shramajeevi for
-        various contacts of innovative farmers, institutes etc. So,{' '}
+        various contacts of innovative farmers, institutes etc. So,
         <a href="https://shramajeevicontacts.com">shramajeevicontacts.com</a>, a
         service website with good number of contacts was launched in the year
         2015. The feedback was very good and it helped thousands of farmers.
-        Then it was decided to bring out the business version of the same now as{' '}
+        Then it was decided to bring out the business version of the same now as
         <a href="https://agdial.in">agdial.in</a> in more systematic and
         extensive way. Call and SMS facility and many more features will be
         added at later stage.
-      </p>{' '}
+      </p>
       <p>
-        {' '}
         We know it is a huge, extensive and expensive task as the sector is
         highly unorganised and scattered domain. We will exercise our sincere
         efforts in the days to come to bring all stakeholders of farming on this
         website. We plan to get in to E commerce exclusive for agriculture in
         the brand name AgTrade <a href="https://agtrade.in">agtrade.in</a> in
         2nd phase.
-      </p>{' '}
+      </p>
       <p>
-        {' '}
         To begin with AgDial is focussing on Karnataka state and it will cover
         the whole country in later stage. AgDial will be absolutely free for
         users. We hope this communication platform will enhance connectivity

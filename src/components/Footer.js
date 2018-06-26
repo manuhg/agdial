@@ -1,18 +1,18 @@
-import { Col, Container, Footer, Row } from 'mdbreact';
+import { Col, Container, Footer, Row, Button } from 'mdbreact';
 import React, { Component } from 'react';
 
 class AppFooter extends Component {
   render() {
-    var height = Math.max(
+    /* var height = Math.max(
       document.documentElement.clientHeight,
       window.innerHeight
     );
     var width = Math.max(
       document.documentElement.clientWidth,
       window.innerWidth
-    );
+    );*/
 
-    var float = width > height ? 'left' : 'center';
+    //var float = width > height ? 'left' : 'center';
     return (
       <Footer color="green darken-2" className="footer">
         <br />
@@ -20,29 +20,58 @@ class AppFooter extends Component {
           <Row>
             <Col md="12">
               <div className="mb-12 flex-center">
-                <Row>
-                  <Col md="12">
-                    <span
-                      style={{
-                        padding: '10px',
-                        float: float,
-                      }}
-                    >
-                      <h5>
-                        <a href="https://www.youtube.com/user/ShramajeeviAgriFilms">
-                          Watch our Videos
-                        </a>
-                      </h5>
-                    </span>
-                    <span style={{ padding: '10px', float: float }}>
-                      <h5>
-                        <a href="http://shramajeeviimages.com/">
-                          Download our Images
-                        </a>
-                      </h5>
-                    </span>
-                  </Col>
-                </Row>
+                <Container>
+                  <Row>
+                    <Col md="6">
+                      <Button color="success">
+                        <h6>
+                          {' '}
+                          <a href="https://www.youtube.com/user/ShramajeeviAgriFilms">
+                            {' '}
+                            Watch Agri Videos
+                          </a>{' '}
+                        </h6>{' '}
+                      </Button>{' '}
+                    </Col>
+                    <Col md="6">
+                      <Button color="success">
+                        <h6>
+                          {' '}
+                          <a href="http://shramajeeviimages.com/">
+                            {' '}
+                            Download Agri Images{' '}
+                          </a>{' '}
+                        </h6>
+                      </Button>{' '}
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col md="12">
+                      <hr className="hr-dark" />
+                      <h4>
+                        <strong>DISCLAIMER!</strong>
+                      </h4>
+                      <div style={{ fontSize: '.85em' }}>
+                        <p>
+                          We compile addresses, business information, product
+                          details, price etc. purely on the basis of the details
+                          provided by the company or the individual listed on
+                          AgDial. We do make sincere efforts to collect truthful
+                          and correct information to the best of our knowledge
+                          and ability. However, we can’t crosscheck all minor
+                          details. So, we suggest the users of this website to
+                          take this information just for knowledge and check
+                          themselves before entering in to business with any of
+                          these firms or individuals. We clarify and declare
+                          here that AgDial or Shramajeevi is not responsible
+                          directly or indirectly for any loss or difficulties
+                          arising out of dealing with any of these listed
+                          businesses.{' '}
+                        </p>
+                      </div>
+                    </Col>
+                  </Row>
+                </Container>
               </div>
             </Col>
           </Row>
@@ -52,7 +81,7 @@ class AppFooter extends Component {
           {/*footer-copyright */}
           <Container fluid>
             <strong>
-              {' '}
+              <hr className="hr-dark" />
               &copy; {new Date().getFullYear()} Shramajeevi Agri Films | All
               Rights Reserved
             </strong>
