@@ -1,7 +1,6 @@
 // import asyComponent from 'AsyncComponent'
 // const Tiles = asyComponent(()=>import('components/Tiles'));
 import React, { Component } from 'react';
-
 export default function asyncComponent(importComponent) {
   class AsyncComponent extends Component {
     constructor(props) {

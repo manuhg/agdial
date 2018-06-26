@@ -20,10 +20,8 @@ class App extends Component {
     this.state = { data: [] };
     this.type = 0; // tiles
   }
-  async getDoc(
-    docref,
-    cb // cb should be truthy for documents, else it is querysnapshot
-  ) {
+  async getDoc(docref, cb) {
+    // cb should be truthy for documents, else it is querysnapshot
     var data = await docref.get();
     if (cb) {
       if (data.exists) data = data.data();
@@ -48,7 +46,6 @@ class App extends Component {
     if (!pa.length) return obj;
     return pa.reduce((e, y) => (e && e[y] ? e[y] : null), obj);
   }
-
   splitPath(path, catObj) {
     //  make '/categories/abc/xyz' => '/abc/xyz'
     var business = null;
@@ -103,7 +100,7 @@ class App extends Component {
   }
   render() {
     console.log(this.props);
-    var cont = <span>Loading please wait..</span>;
+    var cont = () => <span>{'Loading please wait.'}</span>;
     if (this.state.data[1]) {
       const data = this.state.data[1];
       switch (this.type) {
