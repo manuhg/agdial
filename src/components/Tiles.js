@@ -22,38 +22,27 @@ class Tiles extends Component {
               <Col xs="6" sm="4" md="4" key={i}>
                 <a
                   href={hrefbase + d}
-                  style={{
-                    textDecoration: 'none',
-                    color: 'black',
-                  }}
+                  style={{ textDecoration: 'none', color: 'black' }}
                 >
                   <div
-                    style={{
-                      padding: '10px 10px 10px 10px',
-                    }}
+                    style={{ padding: '10px 10px 10px 10px' }}
                     className="container-fluid"
                   >
                     <div className="zp row">
                       <div className="zp col-12 mt-3">
                         <div className="zp card tiles">
                           <div
-                            style={{
-                              display: 'flex',
-                            }}
+                            style={{ display: 'flex' }}
                             className="zp card-horizontal row"
                           >
                             <div
-                              style={{
-                                flex: '1',
-                              }}
+                              style={{ flex: '1' }}
                               className="zp img-square-wrapper col-5"
                             >
                               <img style={cardImgStyle} src={amimg} alt={d} />
                             </div>
                             <div
-                              style={{
-                                flex: '1',
-                              }}
+                              style={{ flex: '1' }}
                               className="zp card-body col-7"
                             >
                               <h5 className="ch">{d}</h5>
@@ -66,7 +55,7 @@ class Tiles extends Component {
                                     }}
                                     key={i}
                                   >
-                                    - > & nbsp;
+                                    - > &nbsp;
                                     {e.trim()}
                                     <br />
                                   </span>
