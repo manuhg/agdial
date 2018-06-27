@@ -15,7 +15,8 @@
     "react-autosuggest": "^9.3.4",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.4"
+    "react-scripts": "^1.1.4",
+    "source-map-explorer": "^1.5.0"
   },
   "Lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -24,6 +25,7 @@
     ]
   },
   "scripts": {
+    "analyze": "source-map-explorer build/static/js/main.*",
     "precommit": "lint-staged",
     "start": "react-scripts start",
     "build": "react-scripts build",
