@@ -5,6 +5,7 @@ import Home from 'pages/Home';
 import Pricing from 'pages/Pricing';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import ErrorBoundary from 'utils/ErrorBoundary';
 
 class App extends Component {
   constructor(props) {
@@ -15,15 +16,16 @@ class App extends Component {
   render() {
     return (
       <Router>
-        {/* <AppBody>*/}
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/pricing" component={Pricing} />
-          <Route path="/contact" component={Contact} />
-          <Route component={Home} />
-        </Switch>
-        {/*</AppBody>*/}
+        <ErrorBoundary>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/categories" component={Home} />
+            <Route path="/about" component={About} />
+            <Route path="/pricing" component={Pricing} />
+            <Route path="/contact" component={Contact} />
+            {/* <Route component={Home} _404={true} /> */}
+          </Switch>
+        </ErrorBoundary>
       </Router>
     );
   }
@@ -33,13 +35,9 @@ class App extends Component {
       documentElement = d.documentElement,
       body = d.getElementsByTagName('body')[0],
       width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
-      height =
-        w.innerHeight || documentElement.clientHeight || body.clientHeight;
+      height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
 
     this.setState({ width, height });
-  }
-  componentWillMount() {
-    this.updateDimensions();
   }
 
   componentWillUnmount() {

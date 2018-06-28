@@ -26,13 +26,15 @@ class Nav extends Component {
   render() {
     this.mounted = true;
     var actives = [true, false, false, false];
-    if (
-      typeof this.props.active === 'number' &&
-      this.props.active < actives.length
-    ) {
+    if (typeof this.props.active === 'number' && this.props.active < actives.length) {
       actives[0] = false;
       actives[this.props.active] = true;
     }
+    const externalLinks = [
+      ['https://shramajeewiki.com', 'Articles'],
+      ['https://shramajeeviimages.com', 'Images'],
+      ['https://www.youtube.com/user/ShramajeeviAgriFilms', 'Videos'],
+    ];
     const NLinks = [
       ['/', 'Home'],
       ['/about', 'About Us'],
@@ -74,7 +76,7 @@ class Nav extends Component {
                     </NavItem>*/}
           </NavbarNav>
           <NavbarNav right>
-            <NavItem>
+            {/* <NavItem>
               <NavLink to="#">
                 <b>Videos</b>
               </NavLink>
@@ -83,7 +85,14 @@ class Nav extends Component {
               <NavLink to="#">
                 <b>Images</b>
               </NavLink>
-            </NavItem>
+            </NavItem> */}
+            {externalLinks.map((l, i) => (
+              <NavItem key={i}>
+                <NavLink to={l[0]} target="_blank" rel="noopener">
+                  <strong>{l[1]}</strong>
+                </NavLink>
+              </NavItem>
+            ))}
             <NavItem>
               <NavLink to="#">
                 <i className="fa fa-share-alt fa-lg  fa-2x" />

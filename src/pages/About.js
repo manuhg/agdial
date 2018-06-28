@@ -1,5 +1,5 @@
-import AppBody from 'components/AppBody';
 import React, { Component } from 'react';
+import AppBody from 'components/AppBody';
 import { Col, Container, Row } from 'mdbreact';
 import VSH from 'resources/img/Profile/VSH.png';
 import SGubbi from 'resources/img/Profile/SGubbi.png';
@@ -85,45 +85,39 @@ const AboutData = {
   about: (
     <span>
       <p>
-        Shramajeevi Agri Films was established in 2004 as an exclusive visual
-        media production house for agriculture. It had produced number of
-        agricultural documentary films in Kannada, English and Hindi. These were
-        sold in the form of DVDs in India, Sri Lanka and Bangladesh. Shramajeevi
-        produced number of AVs for government departments, research
-        organisations and corporate companies. Now Shramajeevi documentaries are
-        available for watching on its YouTube channels.
+        Shramajeevi Agri Films was established in 2004 as an exclusive visual media production house
+        for agriculture. It had produced number of agricultural documentary films in Kannada,
+        English and Hindi. These were sold in the form of DVDs in India, Sri Lanka and Bangladesh.
+        Shramajeevi produced number of AVs for government departments, research organisations and
+        corporate companies. Now Shramajeevi documentaries are available for watching on its YouTube
+        channels.
       </p>
       <p>
-        Shramajeevi launched many websites for different issues related to
-        farming. Shramajeevi is becoming 24x7 satellite TV channel in Kannada
-        exclusive for agriculture very soon, under the banner of Shramajeevi
-        Television Pvt. Ltd. Bengaluru.
+        Shramajeevi launched many websites for different issues related to farming. Shramajeevi is
+        becoming 24x7 satellite TV channel in Kannada exclusive for agriculture very soon, under the
+        banner of Shramajeevi Television Pvt. Ltd. Bengaluru.
       </p>
       <p>
-        Farmers from across the country and globe keep calling Shramajeevi for
-        various contacts of innovative farmers, institutes etc. So,
-        <a href="https://shramajeevicontacts.com">shramajeevicontacts.com</a>, a
-        service website with good number of contacts was launched in the year
-        2015. The feedback was very good and it helped thousands of farmers.
-        Then it was decided to bring out the business version of the same now as
-        <a href="https://agdial.in">agdial.in</a> in more systematic and
-        extensive way. Call and SMS facility and many more features will be
-        added at later stage.
+        Farmers from across the country and globe keep calling Shramajeevi for various contacts of
+        innovative farmers, institutes etc. So,{' '}
+        <a href="https://shramajeevicontacts.com">shramajeevicontacts.com</a>, a service website
+        with good number of contacts was launched in the year 2015. The feedback was very good and
+        it helped thousands of farmers. Then it was decided to bring out the business version of the
+        same now as <a href="https://agdial.in">agdial.in</a> in more systematic and extensive way.
+        Call and SMS facility and many more features will be added at later stage.
       </p>
       <p>
-        We know it is a huge, extensive and expensive task as the sector is
-        highly unorganised and scattered domain. We will exercise our sincere
-        efforts in the days to come to bring all stakeholders of farming on this
-        website. We plan to get in to E commerce exclusive for agriculture in
-        the brand name AgTrade <a href="https://agtrade.in">agtrade.in</a> in
-        2nd phase.
+        We know it is a huge, extensive and expensive task as the sector is highly unorganised and
+        scattered domain. We will exercise our sincere efforts in the days to come to bring all
+        stakeholders of farming on this website. We plan to get in to E commerce exclusive for
+        agriculture in the brand name AgTrade <a href="https://agtrade.in">agtrade.in</a> in 2nd
+        phase.
       </p>
       <p>
-        To begin with AgDial is focussing on Karnataka state and it will cover
-        the whole country in later stage. AgDial will be absolutely free for
-        users. We hope this communication platform will enhance connectivity
-        between various stakeholders of farming bringing a positive change in
-        the farming sector of India.
+        To begin with AgDial is focussing on Karnataka state and it will cover the whole country in
+        later stage. AgDial will be absolutely free for users. We hope this communication platform
+        will enhance connectivity between various stakeholders of farming bringing a positive change
+        in the farming sector of India.
       </p>
     </span>
   ),
@@ -131,17 +125,13 @@ const AboutData = {
 
 class About extends Component {
   render() {
-    const p = { padding: '10px' };
+    const pds = { padding: '10px' };
     return (
       <AppBody active={1}>
         <Container fluid>
           <Row>
-            <Col
-              md="12"
-              style={{ display: 'flex', alignItems: 'center' }}
-              className="text-center"
-            >
-              <Container fluid style={p} className="text-center">
+            <Col md="12" style={{ display: 'flex', alignItems: 'center' }} className="text-center">
+              <Container fluid style={pds} className="text-center">
                 <h1 className="display-5">
                   <strong>About Us</strong>{' '}
                 </h1>
@@ -161,79 +151,64 @@ class About extends Component {
           </Row>
           <Row>
             {' '}
-            <Col md="12">&nbsp;</Col>
+            <Col md="12"> </Col>
           </Row>
           <Row>
             <Col md="12">
-              <Container fluid style={p} className="text-center">
-                <Row style={p}>
-                  <Col
-                    md="10"
-                    style={{ justifySelf: 'center' }}
-                    className="offset-md-1"
-                  >
+              <Container fluid style={pds} className="text-center">
+                <Row style={pds}>
+                  <Col md="10" style={{ justifySelf: 'center' }} className="offset-md-1">
                     <h1 className="display-5">
                       <strong>{AboutData.title}</strong>
                     </h1>
                     <hr className="hr-dark" />
                   </Col>
                 </Row>
-                {AboutData.team.map((p, i) => {
-                  return (
-                    <Row key={i} style={p}>
-                      <Col
-                        md="10"
-                        style={{ justifySelf: 'center' }}
-                        className="text-justify offset-md-1"
-                      >
-                        <Container fluid className="card">
-                          <Row
-                            style={{ display: 'flex', alignItems: 'center' }}
-                            className="card-horizontal row"
-                          >
-                            <Col
-                              className="text-center"
-                              style={{ padding: '15px' }}
-                              lg="4"
-                            >
-                              <ImageCircle
-                                colour1={p[0]}
-                                src={p[1]}
-                                alt={p[2]}
-                                colour2="white"
-                                units="150px"
-                                bSize="6px"
-                                ImgBcg={false}
-                              />
-                            </Col>
-                            <Col
-                              className="text-left"
-                              style={{ padding: '15px' }}
-                              lg="8"
-                            >
-                              <h4 style={{ color: p[0] }}>
-                                <strong>{p[2]}</strong>
+                {AboutData.team.map((p, i) => (
+                  <Row key={i} style={pds}>
+                    <Col
+                      md="10"
+                      style={{ justifySelf: 'center' }}
+                      className="text-justify offset-md-1"
+                    >
+                      <Container fluid className="card">
+                        <Row
+                          style={{ display: 'flex', alignItems: 'center' }}
+                          className="card-horizontal row"
+                        >
+                          <Col className="text-center" style={{ padding: '15px' }} lg="4">
+                            <ImageCircle
+                              colour1={p[0]}
+                              src={p[1]}
+                              alt={p[2]}
+                              colour2="white"
+                              units="150px"
+                              bSize="6px"
+                              ImgBcg={false}
+                            />
+                          </Col>
+                          <Col className="text-left" style={{ padding: '15px' }} lg="8">
+                            <h4 style={{ color: p[0] }}>
+                              <strong>{p[2]}</strong>
+                            </h4>
+                            <div>
+                              <h6 style={{ color: 'gray', display: 'inline' }}>
+                                <strong>{p[3]}</strong>
+                              </h6>
+                              <h4 style={{ display: 'inline' }}>
+                                <a href={p[4]}>
+                                  {' '}
+                                  <Fa icon="linkedin-square" />
+                                </a>
                               </h4>
-                              <div>
-                                <h6
-                                  style={{ color: 'gray', display: 'inline' }}
-                                >
-                                  <strong>{p[3]}</strong>
-                                </h6>
-                                <h4 style={{ display: 'inline' }}>
-                                  <a href={p[4]}>
-                                    &nbsp;<Fa icon="linkedin-square" />
-                                  </a>
-                                </h4>
-                              </div>
-                              <div className="text-justify">{p[5]}</div>
-                            </Col>
-                          </Row>
-                        </Container>
-                      </Col>
-                    </Row>
-                  );
-                })}
+                            </div>
+                            <div className="text-justify">{p[5]}</div>
+                          </Col>
+                        </Row>
+                      </Container>
+                    </Col>
+                  </Row>
+                ))}
               </Container>
             </Col>
           </Row>

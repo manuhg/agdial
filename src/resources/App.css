@@ -3,6 +3,15 @@ a {
 }
 body {
   word-wrap: break-word !important;
+  background-size: cover;
+  background-attachment: fixed;
+}
+.fp {
+  display: flex;
+  align-items: center;
+}
+.fc {
+  justify-self: center;
 }
 .tiles:hover .ch {
   color: green;
@@ -34,7 +43,7 @@ body {
   margin-bottom: 0px;
   border: 1px solid greenyellow;
   border-radius: 0;
-  font-size: 0.7vw;
+  font-size: 0.68vw;
   word-wrap: break-word !important;
 }
 div > h5 {
@@ -44,31 +53,58 @@ div > h5 {
   padding: 1px 10px 1px 1px;
   word-wrap: break-word !important;
 }
-
-@media only screen and (max-width: 764px) {
+@media only screen and (max-width: 991px) {
   .tiles {
     margin-bottom: 0px;
     border: 1px solid greenyellow;
     border-radius: 0;
-    font-size: 0.85vw;
+    font-size: 1vw;
     word-wrap: break-word !important;
     padding-right: 7px;
   }
   div > h5 {
-    font-size: 1vw;
+    font-size: 1.3vw;
   }
 }
+@media only screen and (max-width: 767px) {
+  .tiles {
+    margin-bottom: 0px;
+    border: 1px solid greenyellow;
+    border-radius: 0;
+    font-size: 2.3vw;
+    word-wrap: break-word !important;
+    padding-right: 7px;
+  }
+  div > h5 {
+    font-size: 3vw;
+  }
+}
+/*
+@media only screen and (max-width: 767px) {
+  .tiles {
+    margin-bottom: 0px;
+    border: 1px solid greenyellow;
+    border-radius: 0;
+    font-size: 1.3vw;
+    word-wrap: break-word !important;
+    padding-right: 7px;
+  }
+  div > h5 {
+    font-size: 1.6vw;
+  }
+}
+
 @media only screen and (max-width: 694px) {
   .tiles {
     margin-bottom: 0px;
     border: 1px solid greenyellow;
     border-radius: 0;
-    font-size: 0.8vw;
+    font-size: 1.3vw;
     word-wrap: break-word !important;
     padding-right: 7px;
   }
   div > h5 {
-    font-size: 1.5vw;
+    font-size: 1.6vw;
   }
 }
 @media only screen and (max-width: 572px) {
@@ -99,4 +135,4 @@ div > h5 {
   div > h5 {
     font-size: 1.5vw;
   }
-}
+} */

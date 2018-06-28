@@ -1,9 +1,9 @@
 import 'resources/App.css';
+import React, { Component } from 'react';
 import AppBody from 'components/AppBody';
 import Business from 'components/Business';
 import Listing from 'components/Listing';
 import Tiles from 'components/Tiles';
-import React, { Component } from 'react';
 import db from 'utils/db';
 
 const ccname = 'categories'; // categories collection name
@@ -19,6 +19,7 @@ class App extends Component {
     super(props);
     this.title = 'Home';
     this.state = { data: [] };
+    this.dataColl = {};
     this.type = 0; // tiles
   }
   async getDoc(docref, cb) {
@@ -60,10 +61,11 @@ class App extends Component {
   }
   docAtPath(path) {
     if (!this.state.data[0]) return;
-    var { cpath, category, business } = this.splitPath(
-      path,
-      this.state.data[0]
-    );
+    if (this.dataColl[path])
+      //kinda like memoize
+      return this.dataColl[path];
+
+    var { cpath, category, business } = this.splitPath(path, this.state.data[0]);
     cpath = cpath ? cpath[cpath.length - 1] : null;
 
     if (cpath && category) {
@@ -77,9 +79,8 @@ class App extends Component {
         this.type = types['page'];
       } else if (typeof category === 'object' && !category.map) {
         // if its a plain object
-        this.setState({
-          data: [this.state.data[0], category],
-        }); // Object.entries(category).map(e=>e[0])]});
+        this.setState({ data: [this.state.data[0], category] });
+        // Object.entries(category).map(e=>e[0])]});
         this.type = types['tiles'];
       } else {
         this.getDoc(db.collection(bcname).where('category', '==', cpath));
@@ -102,9 +103,10 @@ class App extends Component {
     this.getDoc(db.collection(ccname).doc(ccname), () =>
       this.docAtPath(this.props.location.pathname)
     );
+    console.log('cdm');
   }
   render() {
-    //console.log(this.props);
+    console.log(this.props.match);
     document.title = 'AgDial:' + this.title;
     var cont = <span>{'Loading please wait.'}</span>;
     if (this.state.data[1]) {

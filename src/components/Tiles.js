@@ -5,7 +5,8 @@ import amimg from 'resources/am.jpg';
 class Tiles extends Component {
   render() {
     const data = this.props.data;
-    const hrefbase = '/'; //'/categories/'
+    const bw = { wordWrap: 'break-word !important' };
+    const hrefbase = '/categories/';
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var cardImgStyle = {
       paddingLeft: '15px',
@@ -19,42 +20,21 @@ class Tiles extends Component {
           {Object.entries(data)
             .map(e => e[0])
             .map((d, i) => (
-              <Col xs="6" sm="4" md="4" key={i}>
-                <a
-                  href={hrefbase + d}
-                  style={{ textDecoration: 'none', color: 'black' }}
-                >
-                  <div
-                    style={{ padding: '10px 10px 10px 10px' }}
-                    className="container-fluid"
-                  >
+              <Col md="6" lg="4" key={i}>
+                <a href={hrefbase + d} style={{ textDecoration: 'none', color: 'black' }}>
+                  <div style={{ padding: '10px 10px 10px 10px' }} className="container-fluid">
                     <div className="zp row">
                       <div className="zp col-12 mt-3">
                         <div className="zp card tiles">
-                          <div
-                            style={{ display: 'flex' }}
-                            className="zp card-horizontal row"
-                          >
-                            <div
-                              style={{ flex: '1' }}
-                              className="zp img-square-wrapper col-5"
-                            >
+                          <div style={{ display: 'flex' }} className="zp card-horizontal row">
+                            <div style={{ flex: '1' }} className="zp img-square-wrapper col-5">
                               <img style={cardImgStyle} src={amimg} alt={d} />
                             </div>
-                            <div
-                              style={{ flex: '1' }}
-                              className="zp card-body col-7"
-                            >
+                            <div style={{ flex: '1' }} className="zp card-body col-7">
                               <h5 className="ch">{d}</h5>
                               <div className="lp cbodytext container text-left">
-                                {' '}
                                 {data[d].map((e, i) => (
-                                  <span
-                                    style={{
-                                      wordWrap: 'break-word !important',
-                                    }}
-                                    key={i}
-                                  >
+                                  <span style={bw} key={i}>
                                     - > &nbsp;
                                     {e.trim()}
                                     <br />

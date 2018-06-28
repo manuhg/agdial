@@ -1,27 +1,18 @@
 import React, { Component } from 'react';
 import AppBody from 'components/AppBody';
-import {
-  Container,
-  Row,
-  Col,
-  Button,
+import { Container, Row, Col } from 'mdbreact';
+/* Button,
   Card,
   CardBody,
   CardImage,
   CardTitle,
   CardText,
-} from 'mdbreact';
-
+  */
 ///rupeee :  &#x20B9;
 const pricing = [
   [
     'Basic',
-    [
-      [
-        'Half paragraph of text containing',
-        ['Full address', 'Telephone numbers', 'Email address'],
-      ],
-    ],
+    [['Half paragraph of text containing', ['Full address', 'Telephone numbers', 'Email address']]],
     ' Tariff for one year',
     '10,000',
   ],
@@ -48,7 +39,7 @@ const pricing = [
   [
     'Premium',
     [
-      ['One paragraph space on listing page', []],
+      ['Full paragraph as in Professional', []],
       [
         'Dedicated page with',
         [
@@ -82,13 +73,13 @@ class Pricing extends Component {
               <strong>Pricing</strong>
             </h1>
             <br />
-            <hr className="hr-dark" />
+            <hr style={{ width: '100%' }} className="hr-dark" />
           </Col>
         </Row>
         <Row style={{ display: 'flex' }}>
           {pricing.map((e, i) => {
             return (
-              <Col style={{ flex: '1' }} key={i} md="4" className="card">
+              <Col key={i} lg="4" className="card">
                 <div className="card-header display-4">
                   <h1>{e[0]}</h1>
                 </div>
@@ -108,7 +99,7 @@ class Pricing extends Component {
                             </ul>
                           ) : (
                             '&nbsp;'
-                          )}{' '}
+                          )}
                         </li>
                       ))}
                     </ul>
