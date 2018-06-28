@@ -8,7 +8,7 @@ class AppBody extends Component {
   render() {
     const content = this.props.children;
     document.body.style.backgroundImage =
-      'linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url(' + bcgImg + ')';
+      'linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)), url(' + bcgImg + ')';
     return (
       <div>
         <header>

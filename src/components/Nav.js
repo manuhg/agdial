@@ -8,7 +8,7 @@ import {
   NavLink,
 } from 'mdbreact';
 import React, { Component } from 'react';
-
+import logo from 'resources/img/agdial.png';
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -44,9 +44,7 @@ class Nav extends Component {
     return (
       <Navbar color="white" light expand="md" scrolling>
         <NavbarBrand href="/">
-          <strong>
-            <font className="green-text">AgDial</font>
-          </strong>
+          <img src={logo} alt="Agdial Logo" height="80" />
         </NavbarBrand>
         {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
         <Collapse isOpen={this.state.collapse} navbar>
@@ -62,30 +60,8 @@ class Nav extends Component {
                 </NavItem>
               );
             })}
-            {/*<NavItem>
-        <NavLink to="/">Home</NavLink>
-        </NavItem>
-        <NavItem >
-              <NavLink to="/about">About Us</NavLink>
-              </NavItem>
-              <NavItem >
-                    <NavLink to="/pricing">Pricing</NavLink>
-                    </NavItem>
-                    <NavItem>
-                          <NavLink to="/contact">Contact Us</NavLink>
-                    </NavItem>*/}
           </NavbarNav>
           <NavbarNav right>
-            {/* <NavItem>
-              <NavLink to="#">
-                <b>Videos</b>
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="#">
-                <b>Images</b>
-              </NavLink>
-            </NavItem> */}
             {externalLinks.map((l, i) => (
               <NavItem key={i}>
                 <NavLink to={l[0]} target="_blank" rel="noopener">

@@ -2,9 +2,6 @@ import { Card, Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
 
 class Business extends Component {
-  componentWillUnmount() {
-    console.log('umy');
-  }
   render() {
     const data = this.props.data;
     console.log(this.props);

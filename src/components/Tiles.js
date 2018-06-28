@@ -5,6 +5,7 @@ import amimg from 'resources/am.jpg';
 class Tiles extends Component {
   render() {
     const data = this.props.data;
+    console.log(data);
     const bw = { wordWrap: 'break-word !important' };
     const hrefbase = '/categories/';
     if (typeof data !== 'object') return <span>Please wait..</span>;
