@@ -133,7 +133,7 @@ class About extends Component {
             <Col md="12" style={{ display: 'flex', alignItems: 'center' }} className="text-center">
               <Container fluid style={pds} className="text-center">
                 <h1 className="display-5">
-                  <strong>About Us</strong>{' '}
+                  <strong>About Us</strong>
                 </h1>
                 <Row>
                   <Col
@@ -150,7 +150,6 @@ class About extends Component {
             <hr className="hr-dark" />
           </Row>
           <Row>
-            {' '}
             <Col md="12"> </Col>
           </Row>
           <Row>

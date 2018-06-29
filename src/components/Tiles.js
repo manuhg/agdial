@@ -5,12 +5,10 @@ import amimg from 'resources/am.jpg';
 class Tiles extends Component {
   render() {
     const data = this.props.data;
-    console.log(data);
     const bw = { wordWrap: 'break-word !important' };
     const hrefbase = '/categories/';
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var cardImgStyle = {
-      paddingLeft: '15px',
       maxHeight: '100%',
       maxWidth: '100%',
       objectFit: 'contain',
@@ -23,31 +21,31 @@ class Tiles extends Component {
             .map((d, i) => (
               <Col md="6" lg="4" key={i}>
                 <a href={hrefbase + d} style={{ textDecoration: 'none', color: 'black' }}>
-                  <div style={{ padding: '10px 10px 10px 10px' }} className="container-fluid">
-                    <div className="zp row">
-                      <div className="zp col-12 mt-3">
-                        <div className="zp card tiles">
-                          <div style={{ display: 'flex' }} className="zp card-horizontal row">
-                            <div style={{ flex: '1' }} className="zp img-square-wrapper col-5">
-                              <img style={cardImgStyle} src={amimg} alt={d} />
-                            </div>
-                            <div style={{ flex: '1' }} className="zp card-body col-7">
-                              <h5 className="ch">{d}</h5>
-                              <div className="lp cbodytext container text-left">
-                                {data[d].map((e, i) => (
-                                  <span style={bw} key={i}>
-                                    - > &nbsp;
-                                    {e.trim()}
-                                    <br />
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <Container>
+                    <Row style={{ padding: '10px' }}>
+                      <Col className="card tiles">
+                        <Row className="zp">
+                          <Col className="zp img-square-wrapper col-5">
+                            <img style={cardImgStyle} src={amimg} alt={d} />
+                          </Col>
+                          <Col className="zp col-7">
+                            <h5 className="ch">
+                              <strong>{d}</strong>
+                            </h5>
+                            <Container className="lp text-left">
+                              {data[d].map((e, i) => (
+                                <span style={bw} key={i}>
+                                  - > &nbsp;
+                                  {e.trim()}
+                                  <br />
+                                </span>
+                              ))}
+                            </Container>
+                          </Col>
+                        </Row>
+                      </Col>
+                    </Row>
+                  </Container>
                 </a>
               </Col>
             ))}
@@ -73,3 +71,35 @@ export default Tiles;
                 </Col>
             </Row>
         </Container> */
+/*
+
+                        <div style={{ display: 'flex' }} className="zp card-horizontal row">
+                          <div
+                            style={{ flex: '1', border: '2px solid blue' }}
+                            className="zp img-square-wrapper col-5"
+                          >
+                            <img style={cardImgStyle} src={amimg} alt={d} />
+                          </div>
+                          <div
+                            style={{ flex: '1', border: '2px solid black' }}
+                            className="zp card-body col-7"
+                          >
+                            <h5 style={{ border: '2px solid green' }} className="ch">
+                              {d}
+                            </h5>
+                            <div
+                              style={{ border: '2px solid red' }}
+                              className="lp cbodytext container text-left"
+                            >
+                              {data[d].map((e, i) => (
+                                <span style={bw} key={i}>
+                                  - > &nbsp;
+                                  {e.trim()}
+                                  <br />
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+
+                        */

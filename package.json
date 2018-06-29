@@ -1,22 +1,16 @@
 {
   "name": "agdial",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "sideEffects": false,
   "dependencies": {
     "bootstrap": "^4.1.1",
-    "eslint": "^5.0.1",
-    "firebase": "^5.1.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
     "mdbreact": "^4.5.0",
-    "prettier": "^1.13.6",
+    "firebase": "^5.1.0",
     "react": "^16.4.1",
-    "react-autosuggest": "^9.3.4",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^1.1.4",
-    "source-map-explorer": "^1.5.0"
+    "react-mfb": "^0.6.0"
   },
   "Lint-staged": {
     "src/**/*.{js,jsx,json,css}": [
@@ -34,11 +28,17 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.5",
+    "eslint": "^5.0.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-flowtype": "^2.49.3",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-prettier": "^2.6.1",
-    "eslint-plugin-react": "^7.10.0"
+    "eslint-plugin-react": "^7.10.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.6",
+    "react-scripts": "^1.1.4",
+    "source-map-explorer": "^1.5.0"
   }
 }
