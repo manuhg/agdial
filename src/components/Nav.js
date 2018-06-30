@@ -69,11 +69,11 @@ class Nav extends Component {
                 </NavLink>
               </NavItem>
             ))}
-            <NavItem>
+            {/* <NavItem>
               <NavLink to="http://twitter.com/share?text=Agdial - Agriculture Contacts Directory&url=http://agdial.in/&hashtags=agriculture,farming,directory">
                 <i className="fa fa-share-alt fa-lg  fa-2x" />
               </NavLink>
-            </NavItem>
+            </NavItem> */}
           </NavbarNav>
         </Collapse>
       </Navbar>

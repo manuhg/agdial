@@ -6,7 +6,7 @@ var config = {
   authDomain: 'agdial-001.firebaseapp.com',
   databaseURL: 'https://agdial-001.firebaseio.com',
   projectId: 'agdial-001',
-  storageBucket: '',
+  storageBucket: 'agdial-001.appspot.com',
   messagingSenderId: '992136334351',
 };
 firebase.initializeApp(config);
