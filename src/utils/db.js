@@ -1,4 +1,5 @@
 import 'firebase/firestore';
+import 'firebase/storage';
 import firebase from 'firebase/app';
 
 var config = {
@@ -10,7 +11,7 @@ var config = {
   messagingSenderId: '992136334351',
 };
 firebase.initializeApp(config);
-var db = firebase.firestore();
+export var db = firebase.firestore();
 db.settings({ timestampsInSnapshots: true });
-
+export const storage = firebase.storage();
 export default db;

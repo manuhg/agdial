@@ -44,14 +44,14 @@ body {
   margin-bottom: 0px;
   border: 1px solid greenyellow;
   border-radius: 0;
-  font-size: 0.68vw;
+  font-size: 0.9vw;
   word-wrap: break-word !important;
 }
 div > h5 {
   font-size: 1vw;
 }
 .lp {
-  padding: 1px 5px 1px 1px;
+  padding: 1px 3px 5px 5px;
   word-wrap: break-word !important;
 }
 @media only screen and (max-width: 1265px) {
@@ -59,7 +59,7 @@ div > h5 {
     margin-bottom: 0px;
     border: 1px solid greenyellow;
     border-radius: 0;
-    font-size: 0.6vw;
+    font-size: 0.85vw;
     word-wrap: break-word !important;
     padding-right: 7px;
   }
@@ -72,7 +72,7 @@ div > h5 {
     margin-bottom: 0px;
     border: 1px solid greenyellow;
     border-radius: 0;
-    font-size: 1vw;
+    font-size: 1.3vw;
     word-wrap: break-word !important;
     padding-right: 7px;
   }
@@ -85,7 +85,7 @@ div > h5 {
     margin-bottom: 0px;
     border: 1px solid greenyellow;
     border-radius: 0;
-    font-size: 2.3vw;
+    font-size: 2.7vw;
     word-wrap: break-word !important;
     padding-right: 7px;
   }
@@ -98,7 +98,7 @@ div > h5 {
     margin-bottom: 0px;
     border: 1px solid greenyellow;
     border-radius: 0;
-    font-size: 2vw;
+    font-size: 2.8vw;
     word-wrap: break-word !important;
     padding-right: 7px;
   }

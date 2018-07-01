@@ -4,10 +4,13 @@ import AppBody from 'components/AppBody';
 import Business from 'components/Business';
 import Listing from 'components/Listing';
 import Tiles from 'components/Tiles';
-import db from 'utils/db';
+import { db, storage } from 'utils/db';
 
 const ccname = 'categories'; // categories collection name
 const bcname = 'businesses';
+const imgDirName = 'images';
+const coll_nom = 'nomenclature';
+const imageUrls = 'imageUrls';
 const types = {
   tiles: 0,
   listing: 1,
@@ -26,10 +29,23 @@ class App extends Component {
     this.dataColl = {};
     this.type = 0; // tiles
     this.fetchCatObj(db);
+    this.getHomeImageUrls(db, storage);
   }
-  setData(index, value) {
+  getHomeImageUrls(db, storage) {
+    this.fetchDoc(db.collection(coll_nom).doc(coll_nom), coll_nom, e =>
+      this.getImages(storage, Object.values(e).map(e => e + '.jpg'), imageUrls)
+    );
+  }
+  async getImages(storage, imagesList, path) {
+    var stref = storage.ref();
+    var imgDir = stref.child(imgDirName);
+    if (!imagesList || !imagesList.map) return;
+    var imgPromises = await imagesList.map(img => imgDir.child(img).getDownloadURL());
+    Promise.all(imgPromises).then(vals => this.setData(path, vals));
+  }
+  setData(index, value, nosS) {
     this.dataColl[index] = value;
-    this.setState({ changed: !this.state.changed });
+    if (!nosS) this.setState({ changed: !this.state.changed });
     //console.log('sd', index, value);
   }
   memoize(path) {
@@ -37,16 +53,16 @@ class App extends Component {
     //console.log('memoize');
   }
   fetchCatObj(db) {
-    this.fetchDoc(db.collection(ccname).doc(ccname), root, this.setCatObj.bind(this));
+    this.fetchDoc(db.collection(ccname).doc(ccname), root, this.setCatObj.bind(this), true);
   }
   setCatObj(data) {
     //if (data) this.setData(root, data[ccname]);
     //console.log(this.dataColl);
-    this.setData(root, data[ccname]);
+    this.setData(root, data[ccname], true);
     this.docAtPath(this.props.location.pathname);
   }
 
-  async fetchDoc(docref, path, cb) {
+  async fetchDoc(docref, path, cb, noSD) {
     if (this.memoize(path)) this.setData('fcIndex3.1415', '0');
     var data = await docref.get();
     if (!data) return;
@@ -59,7 +75,7 @@ class App extends Component {
       });
 
     if (cb) cb(dt);
-    else this.setData(path, dt);
+    if (!noSD) this.setData(path, dt);
   }
 
   valueAtPath(obj, path, isArr) {
@@ -97,8 +113,8 @@ class App extends Component {
   docAtPath(path) {
     const catObj = this.dataColl[root];
     if (!catObj) return;
-    if (this.memoize(path)) this.setData('fcIndex3.1415', '0');
-
+    //if (this.memoize(path)) this.setData('fcIndex3.1415', '0');
+    //IDs of DOCS as img file names
     var { cpath, category, business } = this.evalPath(path, catObj);
     var type = this.urlTargetType(path, { cpath, category, business });
     cpath = cpath ? cpath[cpath.length - 1] : null;
@@ -126,6 +142,10 @@ class App extends Component {
   componentWillUnmount() {
     document.title = 'AgDial';
   }
+  componentDidMount() {
+    // this.getImageUrls();
+    //this.getImages(storage, );
+  }
   // componentDidMount() {
   //   this.fetchDoc(db.collection(ccname).doc(ccname), () =>
   //     this.docAtPath(this.props.location.pathname)
@@ -134,19 +154,20 @@ class App extends Component {
   // }
   render() {
     const path = this.props.location.pathname;
+    //console.log(this.dataColl);
     document.title = 'AgDial:' + this.title;
     var cont = <span>{'Loading please wait.'}</span>;
     if (this.dataColl[path]) {
       const data = this.dataColl[path];
       switch (this.urlTargetType(path)) {
         case types['tiles']:
-          cont = <Tiles path={path} data={data} />;
+          cont = <Tiles path={path} data={data} imageUrls={this.dataColl[imageUrls]} />;
           break;
         case types['listing']:
-          cont = <Listing path={path} data={data} />;
+          cont = <Listing path={path} data={data} imageUrls={this.dataColl[imageUrls]} />;
           break;
         case types['page']:
-          cont = <Business path={path} data={data} />;
+          cont = <Business path={path} data={data} imageUrls={this.dataColl[imageUrls]} />;
           break;
         default:
           break;

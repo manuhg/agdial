@@ -1,11 +1,10 @@
 import { Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
-import amimg from 'resources/am.jpg';
 
 class Tiles extends Component {
   render() {
-    const data = this.props.data;
-    const bw = { wordWrap: 'break-word !important' };
+    const { data, imageUrls } = this.props;
+    const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
     const hrefbase = '/categories/';
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var cardImgStyle = {
@@ -13,22 +12,34 @@ class Tiles extends Component {
       maxWidth: '100%',
       objectFit: 'contain',
     };
+    if (data && imageUrls && Object.entries(data).length !== imageUrls.length)
+      console.log('Err10: data and image mismatch');
     return (
       <Container fluid>
-        <Row>
+        <Row style={{ display: 'flex' }}>
           {Object.entries(data)
             .map(e => e[0])
             .map((d, i) => (
-              <Col md="6" lg="4" key={i}>
+              <Col style={{ padding: '5px' }} md="6" lg="4" key={i}>
                 <a href={hrefbase + d} style={{ textDecoration: 'none', color: 'black' }}>
                   <Container>
-                    <Row style={{ padding: '10px' }}>
-                      <Col className="card tiles">
-                        <Row className="zp">
-                          <Col className="zp img-square-wrapper col-5">
-                            <img style={cardImgStyle} src={amimg} alt={d} />
-                          </Col>
-                          <Col className="zp col-7">
+                    <Row style={{ padding: '5px' }}>
+                      <Col style={{ flex: '1' }} className="card tiles">
+                        <Row style={{ display: 'flex' }} className="zp">
+                          {imageUrls ? (
+                            <Col
+                              style={{
+                                ...cardImgStyle,
+                                background: 'url(' + imageUrls[i] + ')',
+                                backgroundSize: 'cover',
+                              }}
+                              className="zp img-square-wrapper col-5"
+                            />
+                          ) : (
+                            <Col className="zp img-square-wrapper col-5">&nbsp;</Col>
+                          )}
+
+                          <Col style={{ flex: '1' }} className="zp col-7">
                             <h5 className="ch">
                               <strong>{d}</strong>
                             </h5>
