@@ -154,7 +154,7 @@ class App extends Component {
   // }
   render() {
     const path = this.props.location.pathname;
-    //console.log(this.dataColl);
+    console.log(this.dataColl[path]);
     document.title = 'AgDial:' + this.title;
     var cont = <span>{'Loading please wait.'}</span>;
     if (this.dataColl[path]) {

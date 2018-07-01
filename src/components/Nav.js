@@ -52,11 +52,15 @@ class Nav extends Component {
             {NLinks.map((e, i) => {
               return actives[i] ? (
                 <NavItem active key={i}>
-                  <NavLink to={e[0]}>{e[1]}</NavLink>
+                  <NavLink to={e[0]}>
+                    <strong>{e[1]}</strong>
+                  </NavLink>
                 </NavItem>
               ) : (
                 <NavItem key={i}>
-                  <NavLink to={e[0]}>{e[1]}</NavLink>
+                  <NavLink to={e[0]}>
+                    <strong>{e[1]}</strong>
+                  </NavLink>
                 </NavItem>
               );
             })}

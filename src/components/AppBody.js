@@ -41,7 +41,7 @@ class AppBody extends Component {
             </Row>
             <Row>
               <Col>
-                {/* <div
+                <div
                   style={{
                     position: 'fixed',
                     height: '50px',
@@ -57,7 +57,7 @@ class AppBody extends Component {
                   <a style={{ textDecoration: 'none', color: 'white' }} href="#header">
                     <i className="fa fa-arrow-up fa-2x rounded-0" />
                   </a>
-                </div> */}
+                </div>
               </Col>
             </Row>
           </Container>
