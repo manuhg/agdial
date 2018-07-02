@@ -1,4 +1,4 @@
-const nomenclature = {
+export const nomenclature = {
   '/': 'cat',
   'Animal Husbandry': 'AH',
   'Agri Inputs': 'AI',
@@ -15,5 +15,23 @@ const nomenclature = {
   'National Institutes': 'OZ-NI',
   'Karnataka State Organisations & Departments': 'OZ-KST',
   'Non-Governmental Organisations': 'OZ-NGO',
+};
+export const rnom = {
+  cat: '',
+  AH: 'Animal Husbandry',
+  AI: 'Agri Inputs',
+  AM: 'Agricultural Machineries',
+  AS: 'Other Agri Services',
+  CS: 'Consultancy Services',
+  IF: 'Innovative Farmers',
+  IS: 'Irrigation Systems',
+  OS: 'Organic Inputs & Services',
+  OZ: 'Organizations',
+  PN: 'Plant Nurseries',
+  'AH-GS': 'Gou Shala for Indian Cow Breeds',
+  'OZ-UAS': 'State Agricultural Universities',
+  'OZ-NI': 'National Institutes',
+  'OZ-KST': 'Karnataka State Organisations & Departments',
+  'OZ-NGO': 'Non-Governmental Organisations',
 };
 export default nomenclature;

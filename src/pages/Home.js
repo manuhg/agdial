@@ -1,20 +1,18 @@
 import 'resources/App.css';
 import React, { Component } from 'react';
+import { Row } from 'mdbreact';
 import AppBody from 'components/AppBody';
 import Business from 'components/Business';
 import Listing from 'components/Listing';
 import Tiles from 'components/Tiles';
-import { db, storage } from 'utils/db';
-import nomenclature from 'resources/nomenclature';
-const cname = 'data'; // categories collection name
-const coll_nom = 'nomenclature';
+import { db } from 'utils/db';
+import { nomenclature, rnom } from 'resources/nomenclature';
+const coll_name = 'data'; // categories collection name
 const types = {
-  tiles: 0,
-  listing: 1,
-  page: 2,
-  0: 'tiles',
-  1: 'listing',
-  2: 'page',
+  list: 0,
+  page: 1,
+  0: 'list',
+  1: 'page',
 };
 const root = '/';
 
@@ -25,8 +23,7 @@ class App extends Component {
     this.state = { changed: false };
     this.dataColl = {};
     this.type = 0; // tiles
-    this.fetchCatObj(db);
-    this.getHomeImageUrls(db, storage);
+    this.docAtPath(this.props.location.pathname);
   }
 
   setData(index, value, nosS) {
@@ -40,8 +37,10 @@ class App extends Component {
   }
 
   async fetchDoc(docref, path, cb, noSD) {
-    if (this.memoize(path)) this.setData('fcIndex3.1415', '0');
+    if (this.memoize(path)) return; //this.setData('fcIndex3.1415', '0');
+    this.setData(path, 'Fetching..', true);
     var data = await docref.get();
+    console.log('Fetching data at ' + path);
     if (!data) return;
     var dt = {};
     if (data.exists) /*document*/ dt = data.data();
@@ -65,14 +64,15 @@ class App extends Component {
     var business = null;
     var cpath = path.split('/').filter(Boolean);
     cpath.splice(0, 1);
-    var category = this.valueAtPath(nomObj, cpath, true);
-    if (!category) {
+    var catnom = this.valueAtPath(nomObj, cpath, true);
+    if (!catnom) {
       business = cpath.pop();
-      category = this.valueAtPath(nomObj, cpath, true);
+      catnom = this.valueAtPath(nomObj, cpath, true);
     }
-    if (category) {
-      if (category === nomObj) return { cpath, category: category[root], business };
-      return { cpath, category, business };
+
+    if (catnom) {
+      if (catnom === nomObj) return { cpath, catnom: catnom[root], business };
+      return { cpath, catnom, business };
     }
   }
   urlTargetType(path, pathVals) {
@@ -82,41 +82,35 @@ class App extends Component {
     if (!nomObj) return;
     var type = 0;
     var ep = pathVals;
-    if (!ep || !ep.cpath || !ep.category || !ep.business) ep = this.evalPath(path, nomObj);
-    var { cpath, category, business } = ep;
-    cpath = cpath ? cpath[cpath.length - 1] : null;
-    //if (typeof category === 'object') type += 1;
-    if (category) type += 1;
-    if (cpath) {
-      if (category.map) type += 1;
-      if (business && business.length > 3) type += 1;
-    }
+    if (!ep || !ep.cpath || !ep.catnom || !ep.business) ep = this.evalPath(path, nomObj);
+    var { cpath, catnom, business } = ep;
+
+    if (catnom) type += 1;
+    if (cpath && business && business.length > 3) type += 1;
+
     return type - 1;
   }
   docAtPath(path) {
-    //const nomObj = this.dataColl[root];
     const nomObj = nomenclature;
-    if (!nomObj) return;
-    //if (this.memoize(path)) this.setData('fcIndex3.1415', '0');
+    if (!nomObj || this.memoize(path)) return;
     //IDs of DOCS as img file names
-    var { cpath, category, business } = this.evalPath(path, nomObj);
-    var type = this.urlTargetType(path, { cpath, category, business });
-    cpath = cpath ? cpath[cpath.length - 1] : null;
+    var { cpath, catnom, business } = this.evalPath(path, nomObj);
+    var type = this.urlTargetType(path, { cpath, catnom, business });
     switch (type) {
-      case types['tiles']:
-      case types['listing']:
-        this.fetchDoc(db.collection(cname).where('path', '==', category), path);
+      case types['list']:
+        this.fetchDoc(db.collection(coll_name).where('path', '==', catnom), path);
         break;
       case types['page']:
         this.fetchDoc(
           db
-            .collection(cname)
+            .collection(coll_name)
             .where('name', '==', business)
-            .where('path', '==', cpath),
+            .where('path', '==', catnom),
           path
         );
         break;
       default:
+        this.setData(path, 'Not found!');
         break;
     }
   }
@@ -124,40 +118,63 @@ class App extends Component {
   componentWillUnmount() {
     document.title = 'AgDial';
   }
-  componentDidMount() {
-    // this.getImageUrls();
-    //this.getImages(storage, );
+  previous() {
+    var p = this.props.location.pathname.split('/');
+    p.pop();
+    window.location.pathname = p.join('/');
   }
-  // componentDidMount() {
-  //   this.fetchDoc(db.collection(ccname).doc(ccname), () =>
-  //     this.docAtPath(this.props.location.pathname)
-  //   );
-  //   console.log('cdm');
-  // }
   render() {
-    const path = this.props.location.pathname;
-    //console.log(this.dataColl[path]);
+    console.log('H');
     document.title = 'AgDial:' + this.title;
-    var cont = <span>{'Loading please wait.'}</span>;
-    const ut = this.urlTargetType(path);
-    console.log(ut);
-    if (this.dataColl[path]) {
-      const data = this.dataColl[path];
-      switch (ut) {
-        case types['tiles']:
-          cont = <Tiles path={path} data={data} imageUrls={this.dataColl[imageUrls]} />;
-          break;
-        case types['listing']:
-          cont = <Listing path={path} data={data} imageUrls={this.dataColl[imageUrls]} />;
+    var Cont = <span>{'Loading please wait.'}</span>;
+    const path = this.props.location.pathname;
+    const tType = this.urlTargetType(path);
+    //console.log(tType, this.dataColl);
+    if (!this.memoize(path)) this.docAtPath(path);
+
+    if (typeof this.dataColl[path] === 'object') {
+      const data = Object.entries(this.dataColl[path]);
+      //console.log('sfadf', data);
+      switch (tType) {
+        case types['list']:
+          try {
+            Cont = (
+              <Row>
+                {data.map(
+                  (e, i) =>
+                    e && e[1].catcode ? (
+                      <Tiles data={e[1]} key={i} id={e[0]} />
+                    ) : (
+                      <Listing data={e[1]} parent={rnom[e[1].path]} key={i} id={e[0]} />
+                    )
+                )}
+              </Row>
+            );
+          } catch (err) {
+            console.log(err);
+            this.previous();
+          }
           break;
         case types['page']:
-          cont = <Business path={path} data={data} imageUrls={this.dataColl[imageUrls]} />;
+          try {
+            const d = data[0][1];
+            // if (d.class && d.class === 'premium')
+            Cont = (
+              <Row>
+                <Business path={path} data={d} id={data[0][0]} />
+              </Row>
+            );
+            // else this.previous();
+          } catch (err) {
+            console.log(err);
+            this.previous();
+          }
           break;
         default:
           break;
       }
     }
-    return <AppBody active={0}>{cont}</AppBody>;
+    return <AppBody active={0}>{Cont}</AppBody>;
   }
 }
 

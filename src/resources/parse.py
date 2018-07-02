@@ -30,7 +30,11 @@ def parse_entry(entry):
             if len(pc) > 1:
                 path = pc[0]
 
-        data_list = ed[1:]
+        id = id.strip()
+        name = name.strip()
+        catcode = catcode.strip()
+        path = path.strip()
+        data_list = list(map(lambda x: x.strip(), ed[1:]))
         if catcode:
             return {id: {"name": name, "catcode": catcode, "path": path, "image": imgurl_base+id+'.jpg', "content": data_list}}
         return {id: {"name": name,  "path": path, "image": imgurl_base+id+'.jpg', "content": data_list}}

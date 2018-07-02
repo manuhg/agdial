@@ -1,41 +1,56 @@
-import { Card, Col, Container, Row } from 'mdbreact';
+import { Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
 
 class Listing extends Component {
   render() {
-    const data = this.props.data;
-    console.log(data);
+    const { data, parent } = this.props;
+    const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
+    //const hrefbase = '/categories/';
+    var cardImgStyle = {
+      maxHeight: '100%',
+      maxWidth: '100%',
+      objectFit: 'contain',
+    };
     if (typeof data !== 'object') return <span>Please wait..</span>;
+    console.log('L');
+    const d = data;
+    const ehref = d.class && d.class === 'premium' ? parent + '/' + d.name : '';
+
     return (
-      <Container>
-        <Row>
-          {Object.entries(data)
-            .map(e => e[0])
-            .map((d, i) => (
-              <Col md="6" key={i}>
-                <a
-                  href={this.props.path + '/' + d}
-                  style={{
-                    textDecoration: 'none',
-                    color: 'black',
-                  }}
-                >
-                  <Card className="tiles text-left">
-                    <div className="text-center">
-                      <b className="ch">{d}</b>
-                      <br />
-                    </div>
-                    <ul>
-                      {Object.entries(data[d]).map((v, i) => (
-                        <li key={i}> {v[0] + ':' + v[1]} </li>
+      <Col className="col-12" style={{ padding: '5px' }}>
+        <a href={ehref} style={{ textDecoration: 'none', color: 'black' }}>
+          <Container>
+            <Row style={{ padding: '5px' }}>
+              <Col id={this.props.id} style={{ flex: '1' }} className="card listing col-12">
+                <Row style={{ display: 'flex' }} className="zp">
+                  <Col
+                    style={{
+                      ...cardImgStyle,
+                      background: 'url(' + d.image + ')',
+                      backgroundSize: 'cover',
+                    }}
+                    className="zp img-square-wrapper col-5"
+                  />
+
+                  <Col style={{ flex: '1' }} className="zp col-7">
+                    <h5 className="ch">
+                      <strong>{d.name}</strong>
+                    </h5>
+                    <Container className="lp text-left">
+                      {d.content.map((e, j) => (
+                        <span style={bw} key={j}>
+                          {e}
+                          <br />
+                        </span>
                       ))}
-                    </ul>
-                  </Card>
-                </a>
+                    </Container>
+                  </Col>
+                </Row>
               </Col>
-            ))}
-        </Row>
-      </Container>
+            </Row>
+          </Container>
+        </a>
+      </Col>
     );
   }
 }

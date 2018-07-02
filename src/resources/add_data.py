@@ -80,15 +80,16 @@ def add_nomenclature(db=None):
     # print('Original nomenclature\n', nomenclature)
     print('Filtered nomenclature')
     list(map(lambda x: print(x[0], ':', x[1]), filtered.items()))
-    db.collection(col_nom).document(col_nom).set(filtered)
+    print(db.collection(col_nom).document(col_nom).set(filtered))
 
 
 def main():
     # add_categories()
     # add_business({'name': 'Ratnagiri', 'addr': '1414', 'category': 'held'})
-    # add_nomenclature()
     #file = 'content/alldata.txt'
-    add_all_data(init_db(), 'content/alldata.txt')
+    db = init_db()
+    add_all_data(db, 'content/alldata.txt')
+    add_nomenclature(db)
 
 
 main()

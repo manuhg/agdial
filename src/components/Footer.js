@@ -6,7 +6,7 @@ class AppFooter extends Component {
     const buttons = [
       ['https://www.youtube.com/user/ShramajeeviAgriFilms', 'Watch Agri Videos'],
       ['https://video.shramajeevi.com', 'Buy Agri Videos'],
-      ['https://shramajeeviimages.com', 'Download Agri Images'],
+      ['https://shramajeeviimages.com', 'Download Images'],
       ['https://shramajeewiki.com', 'Read Agri Articles'],
     ];
     return (
@@ -30,20 +30,22 @@ class AppFooter extends Component {
                     <Col md="12">
                       <hr className="hr-dark" />
                       <h4>
-                        <strong>DISCLAIMER!</strong>
+                        <strong>DISCLAIMER</strong>
                       </h4>
-                      <div style={{ fontSize: '.85em' }}>
+                      <div className="text-justify" style={{ fontSize: '.85em' }}>
                         <p>
-                          We compile addresses, business information, product details, price etc.
-                          purely on the basis of the details provided by the company or the
-                          individual listed on AgDial. We do make sincere efforts to collect
-                          truthful and correct information to the best of our knowledge and ability.
-                          However, we can’t crosscheck all minor details. So, we suggest the users
-                          of this website to take this information just for knowledge and check
-                          themselves before entering in to business with any of these firms or
-                          individuals. We clarify and declare here that AgDial or Shramajeevi is not
-                          responsible directly or indirectly for any loss or difficulties arising
-                          out of dealing with any of these listed businesses.
+                          <strong>
+                            We compile addresses, business information, product details, price etc.
+                            purely on the basis of the details provided by the company or the
+                            individual listed on AgDial. We do make sincere efforts to collect
+                            truthful and correct information to the best of our knowledge and
+                            ability. However, we can’t crosscheck all minor details. So, we suggest
+                            the users of this website to take this information just for knowledge
+                            and check themselves before entering in to business with any of these
+                            firms or individuals. We clarify and declare here that AgDial or
+                            Shramajeevi is not responsible directly or indirectly for any loss or
+                            difficulties arising out of dealing with any of these listed businesses.
+                          </strong>
                         </p>
                       </div>
                     </Col>

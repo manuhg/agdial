@@ -1,116 +1,63 @@
 import { Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
 
-class Tiles extends Component {
+class Tile extends Component {
   render() {
-    const { data, imageUrls } = this.props;
+    const { data } = this.props;
     const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
     const hrefbase = '/categories/';
-    if (typeof data !== 'object') return <span>Please wait..</span>;
     var cardImgStyle = {
       maxHeight: '100%',
       maxWidth: '100%',
       objectFit: 'contain',
     };
-    if (data && imageUrls && Object.entries(data).length !== imageUrls.length)
-      console.log('Err10: data and image mismatch');
-    return (
-      <Container fluid>
+    if (typeof data !== 'object') return <span>Please wait..</span>;
+    //console.log(data);
+    const d = data;
+    /* <Container fluid>
         <Row style={{ display: 'flex' }}>
-          {Object.entries(data)
-            .map(e => e[0])
-            .map((d, i) => (
-              <Col style={{ padding: '5px' }} md="6" lg="4" key={i}>
-                <a href={hrefbase + d} style={{ textDecoration: 'none', color: 'black' }}>
-                  <Container>
-                    <Row style={{ padding: '5px' }}>
-                      <Col style={{ flex: '1' }} className="card tiles">
-                        <Row style={{ display: 'flex' }} className="zp">
-                          {imageUrls ? (
-                            <Col
-                              style={{
-                                ...cardImgStyle,
-                                background: 'url(' + imageUrls[i] + ')',
-                                backgroundSize: 'cover',
-                              }}
-                              className="zp img-square-wrapper col-5"
-                            />
-                          ) : (
-                            <Col className="zp img-square-wrapper col-5">&nbsp;</Col>
-                          )}
+          {Object.values(data).map((d, i) => ( */
+    return (
+      <Col style={{ padding: '5px' }} md="6" lg="4">
+        <a href={hrefbase + d.name} style={{ textDecoration: 'none', color: 'black' }}>
+          <Container>
+            <Row style={{ padding: '5px' }}>
+              <Col id={this.props.id} style={{ flex: '1' }} className="card tiles">
+                <Row style={{ display: 'flex' }} className="zp">
+                  <Col
+                    style={{
+                      ...cardImgStyle,
+                      background: 'url(' + d.image + ')',
+                      backgroundSize: 'cover',
+                    }}
+                    className="zp img-square-wrapper col-5"
+                  />
 
-                          <Col style={{ flex: '1' }} className="zp col-7">
-                            <h5 className="ch">
-                              <strong>{d}</strong>
-                            </h5>
-                            <Container className="lp text-left">
-                              {data[d].map((e, i) => (
-                                <span style={bw} key={i}>
-                                  - > &nbsp;
-                                  {e.trim()}
-                                  <br />
-                                </span>
-                              ))}
-                            </Container>
-                          </Col>
-                        </Row>
-                      </Col>
-                    </Row>
-                  </Container>
-                </a>
+                  <Col style={{ flex: '1' }} className="zp col-7">
+                    <h5 className="ch">
+                      <strong>{d.name}</strong>
+                    </h5>
+                    <Container className="lp text-left">
+                      {d.content.map((e, j) => (
+                        <span style={bw} key={j}>
+                          - > &nbsp;
+                          {e}
+                          <br />
+                        </span>
+                      ))}
+                    </Container>
+                  </Col>
+                </Row>
               </Col>
-            ))}
-        </Row>
-      </Container>
+            </Row>
+          </Container>
+        </a>
+      </Col>
     );
   }
 }
-export default Tiles;
-/* <Container fluid>
-            <Row  style={{display:'flex', width: '100%'}}>
-                <Col style={{flex:'1',padding:'1em'}} xs="6" sm="6" md="6">
-                <img style={cardImgStyle} src={amimg} alt={d}/>
-                <CardImage style={cardImgStyle} src={amimg}
-   overlay="white-slight" hover waves alt={d}></CardIm
-                </Col>
-                <Col style={{flex:'1',padding:'1em'}} xs="6" sm="6" md="6" >
-                    <CardBody className="tiles text-left">
-                        <CardTitle className="text-center"><b
-   className="ch">{d}</b></CardTitle><hr className="hr-dark" />
-                            {data[d].map((e,i)=><p key={i}>->&nbsp;{e}</p>)}
-                    </CardBody>
-                </Col>
-            </Row>
-        </Container> */
-/*
+export default Tile;
 
-                        <div style={{ display: 'flex' }} className="zp card-horizontal row">
-                          <div
-                            style={{ flex: '1', border: '2px solid blue' }}
-                            className="zp img-square-wrapper col-5"
-                          >
-                            <img style={cardImgStyle} src={amimg} alt={d} />
-                          </div>
-                          <div
-                            style={{ flex: '1', border: '2px solid black' }}
-                            className="zp card-body col-7"
-                          >
-                            <h5 style={{ border: '2px solid green' }} className="ch">
-                              {d}
-                            </h5>
-                            <div
-                              style={{ border: '2px solid red' }}
-                              className="lp cbodytext container text-left"
-                            >
-                              {data[d].map((e, i) => (
-                                <span style={bw} key={i}>
-                                  - > &nbsp;
-                                  {e.trim()}
-                                  <br />
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        </div>
-
-                        */
+/* ))} 
+        </Row>
+      </Container>*/
