@@ -31,28 +31,38 @@ def init_db():
     return db
 
 
-from parse import xml_to_dict
+from parse import parse
 
 
-def add_categories():
-    cat_dict = xml_to_dict('categories.xml')
-    if cat_dict:
-        print('Categories:\n', cat_dict)
-        db = init_db()
-        coll_name = 'categories'
-        # print(db.collection(coll_name).document(coll_name).set({'c1':list(map(lambda x:list(x.keys())[0],cats_obj)),'vals':cats_obj}))
-        doc_ref = db.collection(coll_name).document(coll_name)
-        print(doc_ref.set({coll_name: cat_dict}))
+def add_all_data(db, file):
+    data = parse(file)
+    if(type(data) is dict):
+        print(data.items(), "\n\nWill add the above data to firestore")
+        batch = db.batch()
+        cref = db.collection('data')
+        list(map(lambda d: batch.set(cref.document(d[0]), d[1]), data.items()))
+        print(batch.commit())
 
 
-def add_business(business=None, db=None):
-    if not db:
-        db = init_db()
-    if (type(business) is dict) and ('name' in business.keys()):
-        print(db.collection('businesses').document(
-            business['name']).set(business))
-    else:
-        print("Invalid business object")
+# def add_categories():
+#     cat_dict = xml_to_dict('categories.xml')
+#     if cat_dict:
+#         print('Categories:\n', cat_dict)
+#         db = init_db()
+#         coll_name = 'categories'
+#         # print(db.collection(coll_name).document(coll_name).set({'c1':list(map(lambda x:list(x.keys())[0],cats_obj)),'vals':cats_obj}))
+#         doc_ref = db.collection(coll_name).document(coll_name)
+#         print(doc_ref.set({coll_name: cat_dict}))
+
+
+# def add_business(business=None, db=None):
+#     if not db:
+#         db = init_db()
+#     if (type(business) is dict) and ('name' in business.keys()):
+#         print(db.collection('businesses').document(
+#             business['name']).set(business))
+#     else:
+#         print("Invalid business object")
 
 
 from nomenclature import nomenclature
@@ -76,7 +86,9 @@ def add_nomenclature(db=None):
 def main():
     # add_categories()
     # add_business({'name': 'Ratnagiri', 'addr': '1414', 'category': 'held'})
-    add_nomenclature()
+    # add_nomenclature()
+    #file = 'content/alldata.txt'
+    add_all_data(init_db(), 'content/alldata.txt')
 
 
 main()

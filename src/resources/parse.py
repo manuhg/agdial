@@ -2,6 +2,8 @@
 import re
 # from functools import reduce
 
+imgurl_base = 'https://img.agdial.in/images/'
+
 
 def parse_file(fname):
     with open(fname) as f:
@@ -30,8 +32,8 @@ def parse_entry(entry):
 
         data_list = ed[1:]
         if catcode:
-            return {id: {"name": name, "catcode": catcode, "path": path, "content": data_list}}
-        return {id: {"name": name,  "path": path, "content": data_list}}
+            return {id: {"name": name, "catcode": catcode, "path": path, "image": imgurl_base+id+'.jpg', "content": data_list}}
+        return {id: {"name": name,  "path": path, "image": imgurl_base+id+'.jpg', "content": data_list}}
     except Exception as e:
         print(e, '\n at entry \n', entry)
 
@@ -45,13 +47,13 @@ def handle_entries(entries):
     return final_dict
 
 
-def getImgUrl():
-    pass
+def parse(filename):
+    if(filename):
+        return handle_entries(parse_file(filename))
 
 
 def main():
-    entries = handle_entries(parse_file('content/Catdata.txt'))
-    # print(entries)
+    entries = parse('content/alldata.txt')
     print(list(map(lambda x: print(x), entries.items())))
 
 

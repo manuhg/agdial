@@ -1,4 +1,49 @@
-﻿$$/AM/01/Ratnagiri Impex Pvt. Ltd. 
+$$/cat/01/Agricultural Machineries:AM
+##Brush Cutters & Rotary Tillers, ##Handheld Power Tools & Sprayers, ##Garden Machineries, ##Handheld Tools & Implements, ##Tractor Drawn Implements, ##Harvesting & Post-harvest Machines
+
+$$/cat/02/Organic Inputs & Services:OS
+##Organic Certification, ##Biofertilizers & Composters, ##Biofertilizers & Composters, ##Plant Growth Regulators, ##Plant Growth Regulators, ##Organic Certification
+
+$$/cat/03/Organizations:OZ
+##Universities Of Agri, Horti & AH, ##Krushi Vignana Kendras, ##Central Research Organisations, ##NGOs Working On Agriculture & RD, ##State Depts. Of Agri, Horti, Seri, AH, ##Training Institutes – State & Central
+
+$$/cat/04/Innovative Farmers:IF
+##Expert Farmers Of Horticulture Crop, ##Expert Farmers Of Plantation Crops, ##Experts Of Minimal Processing, ##Experts Of Integrated Farming, ##Organic Farming Expert Farmers, ##Dairy, Goat, Sheep & Poultry Farms
+
+$$/cat/05/Plant Nurseries:PN
+##Fruit & Forest Plants, ##Plantation Crop Plants, ##Flowering & Ornamental Plants, ##Bonsai & Indoor Plants, ##Vegetable Nursery, ##Terrace Gardening & Landscaping
+
+$$/cat/06/Irrigation Systems:IS 
+##Drip Irrigation Systems & Fittings, ##Sprinklers, Foggers, Misters, ##PVC Pipes & Fittings, ##Monoblock & Submersible Pump, ##Auto Switchers & Control Valves, ##Solar Pumps & Lighting
+
+$$/cat/07/Consultancy Services:CS
+##Landscape & Gardening, ##Pomegranate & Grape Cultivation, ##Floriculture & Terrace Gardening, ##Project Reports & Finance, ##Food Processing & Exports, ##Rainwater Harvesting & Recharge
+
+$$/cat/08/Other Agri Services:AS
+##Poly House & Shade House, ##ASTRA Dryer & Poly Tunnel Dryer, ##Electric Fence & Regular Fencing, ##Birds & Wild Animal Chasing Device, ##Aluminium Ladders, Climbers, ##Mulch Sheets & Tarpaulins
+
+$$/cat/09/Animal Husbandry:AH
+##Country Chicken & Rural Birds, ##Goat, Sheep & Pigs, ##Dairy Animals – Cows & Buffalos, ##Indian Breed Cows & Gov Shalas, ##Animal Feeds & Veterinary Services, ##Feed Supplements & Medicines
+
+$$/cat/10/Agri Inputs:AI
+##Seeds, Fertilizers & Micronutrients, ##Chemical Pesticides & Herbicides, ##Growth Regulators & Hormones, ##Soluble Fertilizers & Foliar Sprays, ##Soil Amendments & Reclaimers, ##Seed Treatment & Storage Chemical
+
+$$/cat/11/Gou Shala for Indian Cow Breeds:AH-GS
+##Indian Cow Breeeds
+
+$$/cat/12/State Agricultural Universities:OZ-UAS
+##Universities
+
+$$/cat/13/National Institutes:OZ-NI
+##Institutes
+
+$$/cat/14/Karnataka State Organisations & Departments:OZ-KST
+##Departments
+
+$$/cat/15/Non-Governmental Organisations (NGOs):OZ-NGO
+##NGO
+
+$$/AM/01/Ratnagiri Impex Pvt. Ltd. 
 ##Annapurna House, 1-1G, 7th Cross, New Guddadahalli, Mysore Road, Bengaluru, Karnataka 560026 India. Phone: +91 80 26985100, 101, 102 Fax: +91 80 26751658 All India customer care number 1800 425 7475 Email: customercare@ratnagiriimpex.com Website: www.ratnagiriimpex.com  ##Business type: Importers and Distributors of agricultural and other machineries and handheld power tools ##Major Items: Brush cutter, Chain saw, Sprayers, Rotary tillers, High pressure washers, Lawnmowers etc. ##Outlet Brand: AgriMart, AgriMart Care ##Major Brands: Oleo-Mac, Agrimate, Unigreen, Bartolini, Comet, Gulliver
 
 $$/IS/01/Himadri Irrigation
