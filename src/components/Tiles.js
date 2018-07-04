@@ -25,7 +25,11 @@ class Tile extends Component {
         <a href={hrefbase + d.name} style={{ textDecoration: 'none', color: 'black' }}>
           <Container>
             <Row style={{ padding: '5px' }}>
-              <Col id={this.props.id} style={{ flex: '1' }} className="card tiles">
+              <Col
+                id={this.props.id}
+                style={{ display: 'flex', flexDirection: 'col' }}
+                className="card tiles"
+              >
                 <Row style={{ display: 'flex' }} className="zp">
                   <Col
                     style={{

@@ -5,7 +5,6 @@ import 'resources/css/tiles.css';
 class SubCatTile extends Component {
   render() {
     const { data } = this.props;
-    const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
     const hrefbase = '/categories/';
     var cardImgStyle = {
       //maxHeight: '100%',
@@ -13,18 +12,10 @@ class SubCatTile extends Component {
       objectFit: 'contain',
     };
     if (typeof data !== 'object') return <span>Please wait..</span>;
-    //console.log(data);
     const d = data;
-    /* <Container fluid>
-        <Row style={{ display: 'flex' }}>
-          {Object.values(data).map((d, i) => ( */
+
     return (
-      <Col
-        style={{ padding: '5px', display: 'flex', flexDirection: 'column' }}
-        xs="6"
-        sm="4"
-        md="3"
-      >
+      <Col style={{ padding: '2px', flex: '1' }} xs="6" sm="6" md="6" lg="3">
         <a href={hrefbase + d.name} style={{ textDecoration: 'none', color: 'black' }}>
           <Container>
             <Row>
@@ -57,7 +48,3 @@ class SubCatTile extends Component {
   }
 }
 export default SubCatTile;
-
-/* ))} 
-        </Row>
-      </Container>*/

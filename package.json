@@ -5,12 +5,12 @@
   "sideEffects": false,
   "dependencies": {
     "bootstrap": "^4.1.1",
-    "mdbreact": "^4.5.0",
     "firebase": "^5.1.0",
+    "mdbreact": "^4.5.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-router-dom": "^4.3.1",
-    "react-mfb": "^0.6.0"
+    "react-mfb": "^0.6.0",
+    "react-router-dom": "^4.3.1"
   },
   "Lint-staged": {
     "src/**/*.{js,jsx,json,css}": [

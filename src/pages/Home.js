@@ -22,6 +22,7 @@ class App extends Component {
     super(props);
     this.title = 'Home';
     this.state = { changed: false };
+    this.ut = {};
     this.dataColl = {};
     this.type = 0; // tiles
     this.docAtPath(this.props.location.pathname);
@@ -32,8 +33,9 @@ class App extends Component {
     if (!nosS) this.setState({ changed: !this.state.changed });
     //console.log('sd', index, value);
   }
-  memoize(path) {
-    if (this.dataColl && this.dataColl[path]) return true; //this.dataColl[path];
+  memoize(path, obj) {
+    obj = obj || this.dataColl;
+    if (obj && obj[path]) return true; //this.dataColl[path];
     //console.log('memoize');
   }
 
@@ -81,6 +83,7 @@ class App extends Component {
   urlTargetType(path, pathVals) {
     //what kind of page is the path pointint to
     //const nomObj = this.dataColl[root];
+    if (this.memoize(path, this.ut)) return this.ut[path];
     const nomObj = nomenclature;
     if (!nomObj) return;
     var type = 0;
@@ -90,6 +93,7 @@ class App extends Component {
 
     if (catnom) type += 1;
     if (cpath && business && business.length > 3) type += 1;
+    this.ut[path] = type - 1;
     console.log('type', type);
     return type - 1;
   }
@@ -142,7 +146,7 @@ class App extends Component {
         case types['list']:
           try {
             Cont = (
-              <Row style={{ display: 'flex', flexWrap: 'wrap' }}>
+              <Row>
                 {data.map(
                   (e, i) =>
                     e && e[1].catcode ? (
