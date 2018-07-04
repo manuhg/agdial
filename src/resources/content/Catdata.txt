@@ -25,20 +25,26 @@ $$/cat/08/Other Agri Services:AS
 $$/cat/09/Animal Husbandry:AH
 ##Country Chicken & Rural Birds, ##Goat, Sheep & Pigs, ##Dairy Animals – Cows & Buffalos, ##Indian Breed Cows & Gov Shalas, ##Animal Feeds & Veterinary Services, ##Feed Supplements & Medicines
 
-$$/cat/10/Agri Inputs:AI
-##Seeds, Fertilizers & Micronutrients, ##Chemical Pesticides & Herbicides, ##Growth Regulators & Hormones, ##Soluble Fertilizers & Foliar Sprays, ##Soil Amendments & Reclaimers, ##Seed Treatment & Storage Chemical
+$$/cat/10/Fertilizers:FZ
+## Water Soluble NPK Fertilizers ## Citrate Soluble NPK Fertilizers ## Macro & Micronutrients ## Soluble Fertilizers & Foliar Sprays ## Soil Amendments & Reclaimers ## Natural Nutrient Materials 
 
-$$/cat/11/Gou Shala for Indian Cow Breeds:AH-GS
+$$/cat/11/Seeds:SD
+## OP & Hybrid Seeds of Field Crops ## OP & Hybrid Seeds of Vegetables ## Seeds of Flowers & Ornamentals ## Cuttings, Tubers & Rooted slips ## Seeds of Commercial Crops ## Seeds of Oilseed Crops 
+
+$$/cat/12/Pesticides:PD
+## Chemical Insecticides ## Chemical Fungicides & Bactericides ## Herbicides & Growth Inhibitors  ## Growth Regulators & Hormones ## Chemicals for Seed Treatment ## Storage Pest Control Chemicals 
+
+$$/cat/13/Gou Shala for Indian Cow Breeds:AH-GS
 ##Indian Cow Breeeds
 
-$$/cat/12/State Agricultural Universities:OZ-UAS
+$$/cat/14/State Agricultural Universities:OZ-UAS
 ##Universities
 
-$$/cat/13/National Institutes:OZ-NI
+$$/cat/15/National Institutes:OZ-NI
 ##Institutes
 
-$$/cat/14/Karnataka State Organisations & Departments:OZ-KST
+$$/cat/16/Karnataka State Organisations & Departments:OZ-KST
 ##Departments
 
-$$/cat/15/Non-Governmental Organisations (NGOs):OZ-NGO
+$$/cat/17/Non-Governmental Organisations (NGOs):OZ-NGO
 ##NGO

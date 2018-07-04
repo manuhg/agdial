@@ -1,10 +1,11 @@
-import 'resources/App.css';
+import 'resources/css/App.css';
 import React, { Component } from 'react';
 import { Row } from 'mdbreact';
 import AppBody from 'components/AppBody';
 import Business from 'components/Business';
 import Listing from 'components/Listing';
 import Tiles from 'components/Tiles';
+import SubCatTile from 'components/SubCatTile';
 import { db } from 'utils/db';
 import { nomenclature, rnom } from 'resources/nomenclature';
 const coll_name = 'data'; // categories collection name
@@ -59,11 +60,13 @@ class App extends Component {
     if (!pa.length) return obj;
     return pa.reduce((e, y) => (e && e[y] ? e[y] : null), obj);
   }
+
   evalPath(path, nomObj) {
     //  make '/categories/abc/xyz' => '/abc/xyz'
     var business = null;
     var cpath = path.split('/').filter(Boolean);
     cpath.splice(0, 1);
+
     var catnom = this.valueAtPath(nomObj, cpath, true);
     if (!catnom) {
       business = cpath.pop();
@@ -87,7 +90,7 @@ class App extends Component {
 
     if (catnom) type += 1;
     if (cpath && business && business.length > 3) type += 1;
-
+    console.log('type', type);
     return type - 1;
   }
   docAtPath(path) {
@@ -139,11 +142,15 @@ class App extends Component {
         case types['list']:
           try {
             Cont = (
-              <Row>
+              <Row style={{ display: 'flex', flexWrap: 'wrap' }}>
                 {data.map(
                   (e, i) =>
                     e && e[1].catcode ? (
-                      <Tiles data={e[1]} key={i} id={e[0]} />
+                      e[1].path !== 'cat' ? (
+                        <SubCatTile data={e[1]} key={i} id={e[0]} />
+                      ) : (
+                        <Tiles data={e[1]} key={i} id={e[0]} />
+                      )
                     ) : (
                       <Listing data={e[1]} parent={rnom[e[1].path]} key={i} id={e[0]} />
                     )
@@ -167,7 +174,7 @@ class App extends Component {
             // else this.previous();
           } catch (err) {
             console.log(err);
-            this.previous();
+            // this.previous();
           }
           break;
         default:

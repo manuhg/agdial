@@ -1,6 +1,6 @@
 import { Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
-
+import 'resources/css/business.css';
 class Listing extends Component {
   render() {
     const { data, parent } = this.props;

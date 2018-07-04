@@ -1,7 +1,6 @@
 export const nomenclature = {
   '/': 'cat',
   'Animal Husbandry': 'AH',
-  'Agri Inputs': 'AI',
   'Agricultural Machineries': 'AM',
   'Other Agri Services': 'AS',
   'Consultancy Services': 'CS',
@@ -10,16 +9,18 @@ export const nomenclature = {
   'Organic Inputs & Services': 'OS',
   Organizations: 'OZ',
   'Plant Nurseries': 'PN',
+  Fertilizers: 'FZ',
+  Seeds: 'SD',
+  Pesticides: 'PD',
   'Gou Shala for Indian Cow Breeds': 'AH-GS',
   'State Agricultural Universities': 'OZ-UAS',
   'National Institutes': 'OZ-NI',
   'Karnataka State Organisations & Departments': 'OZ-KST',
-  'Non-Governmental Organisations': 'OZ-NGO',
+  'Non-Governmental Organisations (NGOs)': 'OZ-NGO',
 };
 export const rnom = {
   cat: '',
   AH: 'Animal Husbandry',
-  AI: 'Agri Inputs',
   AM: 'Agricultural Machineries',
   AS: 'Other Agri Services',
   CS: 'Consultancy Services',
@@ -28,10 +29,13 @@ export const rnom = {
   OS: 'Organic Inputs & Services',
   OZ: 'Organizations',
   PN: 'Plant Nurseries',
+  FZ: 'Fertilizers',
+  SD: 'Seeds',
+  PD: 'Pesticides',
   'AH-GS': 'Gou Shala for Indian Cow Breeds',
   'OZ-UAS': 'State Agricultural Universities',
   'OZ-NI': 'National Institutes',
   'OZ-KST': 'Karnataka State Organisations & Departments',
-  'OZ-NGO': 'Non-Governmental Organisations',
+  'OZ-NGO': 'Non-Governmental Organisations (NGOs)',
 };
 export default nomenclature;

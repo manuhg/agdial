@@ -34,10 +34,17 @@ def parse_entry(entry):
         name = name.strip()
         catcode = catcode.strip()
         path = path.strip()
+        imgurl = imgurl_base+id+'.jpg'
+        # imgurl = imgurl_base
+        # if path == 'cat':
+        #     imgurl += id
+        # else:
+        #     imgurl += path
+        # imgurl += '.jpg'
         data_list = list(map(lambda x: x.strip(), ed[1:]))
         if catcode:
-            return {id: {"name": name, "catcode": catcode, "path": path, "image": imgurl_base+id+'.jpg', "content": data_list}}
-        return {id: {"name": name,  "path": path, "image": imgurl_base+id+'.jpg', "content": data_list}}
+            return {id: {"name": name, "catcode": catcode, "path": path, "image": imgurl, "content": data_list}}
+        return {id: {"name": name,  "path": path, "image": imgurl, "content": data_list}}
     except Exception as e:
         print(e, '\n at entry \n', entry)
 

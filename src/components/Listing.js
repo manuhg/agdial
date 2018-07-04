@@ -1,5 +1,6 @@
 import { Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
+import 'resources/css/listing.css';
 
 class Listing extends Component {
   render() {
@@ -7,7 +8,7 @@ class Listing extends Component {
     const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
     //const hrefbase = '/categories/';
     var cardImgStyle = {
-      maxHeight: '100%',
+      // maxHeight: '100%',
       maxWidth: '100%',
       objectFit: 'contain',
     };
@@ -24,25 +25,29 @@ class Listing extends Component {
               <Col id={this.props.id} style={{ flex: '1' }} className="card listing col-12">
                 <Row style={{ display: 'flex' }} className="zp">
                   <Col
+                    className="zp img-square-wrapper col-2"
                     style={{
                       ...cardImgStyle,
-                      background: 'url(' + d.image + ')',
-                      backgroundSize: 'cover',
+                      background: 'url(' + d.image + ') no-repeat',
+                      backgroundSize: 'contain',
+                      paddingTop: '1%',
                     }}
-                    className="zp img-square-wrapper col-5"
                   />
 
-                  <Col style={{ flex: '1' }} className="zp col-7">
-                    <h5 className="ch">
+                  <Col style={{ flex: '1' }} className="lp col-10 text-left">
+                    <font className="chl">
                       <strong>{d.name}</strong>
-                    </h5>
+                    </font>
                     <Container className="lp text-left">
-                      {d.content.map((e, j) => (
-                        <span style={bw} key={j}>
-                          {e}
-                          <br />
-                        </span>
-                      ))}
+                      <ul>
+                        {d.content.map((e, j) => (
+                          <li>
+                            <div style={bw} key={j}>
+                              {e}
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
                     </Container>
                   </Col>
                 </Row>

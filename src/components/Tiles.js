@@ -1,5 +1,6 @@
 import { Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
+import 'resources/css/tiles.css';
 
 class Tile extends Component {
   render() {
@@ -17,6 +18,8 @@ class Tile extends Component {
     /* <Container fluid>
         <Row style={{ display: 'flex' }}>
           {Object.values(data).map((d, i) => ( */
+    // const sc = d.path !== 'cat';
+    // console.log(d.name, 'is', sc ? '' : 'not', 'subcategory');
     return (
       <Col style={{ padding: '5px' }} md="6" lg="4">
         <a href={hrefbase + d.name} style={{ textDecoration: 'none', color: 'black' }}>
@@ -34,9 +37,7 @@ class Tile extends Component {
                   />
 
                   <Col style={{ flex: '1' }} className="zp col-7">
-                    <h5 className="ch">
-                      <strong>{d.name}</strong>
-                    </h5>
+                    <font className="ch">{d.name}</font>
                     <Container className="lp text-left">
                       {d.content.map((e, j) => (
                         <span style={bw} key={j}>

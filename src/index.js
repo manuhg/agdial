@@ -1,7 +1,7 @@
 import 'font-awesome/css/font-awesome.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.min.css';
-import 'resources/index.css';
+import 'resources/css/index.css';
 
 import App from 'App';
 import React from 'react';
