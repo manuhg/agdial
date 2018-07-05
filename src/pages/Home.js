@@ -126,9 +126,7 @@ class App extends Component {
     document.title = 'AgDial';
   }
   previous() {
-    var p = this.props.location.pathname.split('/');
-    p.pop();
-    window.location.pathname = p.join('/');
+    this.props.history.go(-1);
   }
   render() {
     console.log('H');
@@ -169,16 +167,16 @@ class App extends Component {
         case types['page']:
           try {
             const d = data[0][1];
-            // if (d.class && d.class === 'premium')
-            Cont = (
-              <Row>
-                <Business path={path} data={d} id={data[0][0]} />
-              </Row>
-            );
-            // else this.previous();
+            if (d.class && d.class === 'premium')
+              Cont = (
+                <Row>
+                  <Business path={path} data={d} id={data[0][0]} />
+                </Row>
+              );
+            else this.previous();
           } catch (err) {
             console.log(err);
-            // this.previous();
+            this.previous();
           }
           break;
         default:
