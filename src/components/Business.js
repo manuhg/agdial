@@ -7,13 +7,20 @@ class Listing extends Component {
     const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
     //const hrefbase = '/categories/';
     var cardImgStyle = {
-      maxHeight: '100%',
-      maxWidth: '100%',
+      width: '100%',
+      paddingTop: '1%',
       objectFit: 'contain',
     };
     if (typeof data !== 'object') return <span>Please wait..</span>;
     console.log('B', data);
     const d = data;
+    var wimg = d.image;
+    if (wimg) {
+      wimg = wimg.split('.');
+      wimg.pop();
+      wimg = wimg.join('.');
+      wimg += '-w.jpg';
+    }
 
     return (
       <Col style={{ padding: '5px' }} className="col-12">
@@ -23,24 +30,26 @@ class Listing extends Component {
               <Col id={this.props.id} style={{ flex: '1' }} className="card business">
                 <Row style={{ display: 'flex' }} className="zp">
                   <Col
+                    className="zp img-square-wrapper col-12"
                     style={{
                       ...cardImgStyle,
-                      background: 'url(' + d.image + ')',
-                      backgroundSize: 'cover',
+                      background: 'url(' + wimg + ') no-repeat',
+                      backgroundSize: 'contain',
                     }}
-                    className="zp img-square-wrapper col-5"
-                  />
-
-                  <Col style={{ flex: '1' }} className="zp col-7">
-                    <h5 className="ch">
-                      <strong>{d.name}</strong>
-                    </h5>
-                    <Container className="lp text-left">
+                  >
+                    {/*<img src={wimg} alt={d.name} style={{...cardImgStyle,postion:'relative',zIndex:'3'}}/>
+                    */}
+                    <h4 className="chb">{d.name}</h4>
+                  </Col>
+                  <Col style={{ flex: '1' }} className="zp col-12">
+                    <Container className="lpb text-left">
                       {d.content.map((e, j) => (
-                        <span style={bw} key={j}>
-                          {e}
-                          <br />
-                        </span>
+                        <div style={bw} key={j}>
+                          ->{' '}
+                          {
+                            e /* e.split(':').map((t,l)=><span className={btClasses[l]}>{t}</span>)*/
+                          }
+                        </div>
                       ))}
                     </Container>
                   </Col>

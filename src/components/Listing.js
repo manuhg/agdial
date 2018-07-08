@@ -15,7 +15,8 @@ class Listing extends Component {
     if (typeof data !== 'object') return <span>Please wait..</span>;
     console.log('L');
     const d = data;
-    const ehref = d.class && d.class === 'premium' ? parent + '/' + d.name : '';
+    // const ehref = d.class && d.class === 'premium' ? parent + '/' + d.name : '';
+    const ehref = parent + '/' + d.name;
 
     return (
       <Col className="col-12" style={{ padding: '5px' }}>
