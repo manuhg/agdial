@@ -43,6 +43,7 @@ class AppBody extends Component {
               <Col>
                 <div
                   style={{
+                    zIndex: '10',
                     position: 'fixed',
                     height: '50px',
                     width: '50px',

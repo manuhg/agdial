@@ -1,7 +1,7 @@
 .business:hover .ch {
   color: green;
 }
-.business:hover .chst {
+.business:hover .chb {
   color: green;
 }
 .business:hover {
@@ -9,26 +9,20 @@
 }
 
 .chb {
-  font-weight: bold;
   color: black;
-  font-weight: 4vw;
-  /* font-size: 0.9vw; */
+  font-size: 4vw;
   padding: 6px 15px 0px 5px;
   word-wrap: break-word !important;
 }
-.chbst {
-  font-weight: bold;
-  color: black;
-  /* font-size: 0.9vw; */
-  padding: 5px 5px 0px 5px;
-  word-wrap: break-word !important;
+.chbd {
+  background: rgba(255, 255, 255, 0.7);
 }
-
 .business {
   margin-bottom: 0px;
+  padding: 2px;
   border: 1px solid greenyellow;
   border-radius: 0;
-  font-size: 2vw;
+  font-size: 1.3vw;
   text-align: left;
   word-wrap: break-word !important;
 }
@@ -37,8 +31,12 @@
 }
 .bpb {
 }
+.bpc {
+  margin: 5px;
+  padding: 5px;
+}
 .lpb {
-  padding: 1px 3px 5px 5px;
+  padding: 0px;
   word-wrap: break-word !important;
 }
 @media only screen and (max-width: 1265px) {

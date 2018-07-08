@@ -7,11 +7,17 @@ class Listing extends Component {
     const { data, parent } = this.props;
     const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
     //const hrefbase = '/categories/';
+    // var cardImgStyle = {
+    //   maxWidth: '100%',
+    //   objectFit: 'contain',
+    // };
+    var w = 6;
     var cardImgStyle = {
-      // maxHeight: '100%',
-      maxWidth: '100%',
-      objectFit: 'contain',
+      width: w + 'vw',
+      height: 2 * w + 'vw',
+      // objectFit: 'contain',
     };
+
     if (typeof data !== 'object') return <span>Please wait..</span>;
     console.log('L');
     const d = data;
@@ -22,36 +28,41 @@ class Listing extends Component {
       <Col className="col-12" style={{ padding: '5px' }}>
         <a href={ehref} style={{ textDecoration: 'none', color: 'black' }}>
           <Container>
-            <Row style={{ padding: '5px' }}>
-              <Col id={this.props.id} style={{ flex: '1' }} className="card listing col-12">
-                <Row style={{ display: 'flex' }} className="zp">
-                  <Col
-                    className="zp img-square-wrapper col-2"
-                    style={{
-                      ...cardImgStyle,
-                      background: 'url(' + d.image + ') no-repeat',
-                      backgroundSize: 'contain',
-                      paddingTop: '1%',
-                    }}
-                  />
+            <Row>
+              <Col id={this.props.id} style={{ flex: '1' }} className="zp card listing">
+                <Container>
+                  <Row style={{ display: 'flex' }} className="zp">
+                    <Col
+                      style={{
+                        flex: '1',
+                        background: 'url(' + d.image + ') no-repeat',
+                        backgroundSize: 'contain',
+                      }}
+                      className="zp col-xs-12 col-sm-12 img-square-wrapper"
+                      // style={{
+                      //   ...cardImgStyle,
+                      //   background: 'url(' + d.image + ') no-repeat',
+                      //   backgroundSize: 'contain',
+                      //   paddingTop: '1%',
+                      //}}
+                    />
 
-                  <Col style={{ flex: '1' }} className="lp col-10 text-left">
-                    <font className="chl">
-                      <strong>{d.name}</strong>
-                    </font>
-                    <Container className="lp text-left">
-                      <ul>
-                        {d.content.map((e, j) => (
-                          <li>
-                            <div style={bw} key={j}>
-                              {e}
-                            </div>
-                          </li>
-                        ))}
-                      </ul>
-                    </Container>
-                  </Col>
-                </Row>
+                    <Col style={{ flex: '1' }} className="zp text-left">
+                      <font className="chl">
+                        <strong>{d.name}</strong>
+                      </font>
+                      <Container className="zp text-left">
+                        <ul>
+                          {d.content.map((e, j) => (
+                            <li key={j}>
+                              <div style={bw}>{e}</div>
+                            </li>
+                          ))}
+                        </ul>
+                      </Container>
+                    </Col>
+                  </Row>
+                </Container>
               </Col>
             </Row>
           </Container>

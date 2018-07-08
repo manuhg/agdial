@@ -1,4 +1,4 @@
-import { Col, Container, Row } from 'mdbreact';
+import { Col, Container, Row, Card } from 'mdbreact';
 import React, { Component } from 'react';
 import 'resources/css/business.css';
 class Listing extends Component {
@@ -6,9 +6,10 @@ class Listing extends Component {
     const { data, parent } = this.props;
     const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
     //const hrefbase = '/categories/';
+    var w = 81;
     var cardImgStyle = {
-      width: '100%',
-      paddingTop: '1%',
+      width: w + 'vw',
+      height: w / 3 + 'vw',
       objectFit: 'contain',
     };
     if (typeof data !== 'object') return <span>Please wait..</span>;
@@ -28,32 +29,31 @@ class Listing extends Component {
           <Container>
             <Row style={{ padding: '5px' }}>
               <Col id={this.props.id} style={{ flex: '1' }} className="card business">
-                <Row style={{ display: 'flex' }} className="zp">
-                  <Col
-                    className="zp img-square-wrapper col-12"
-                    style={{
-                      ...cardImgStyle,
-                      background: 'url(' + wimg + ') no-repeat',
-                      backgroundSize: 'contain',
-                    }}
-                  >
-                    {/*<img src={wimg} alt={d.name} style={{...cardImgStyle,postion:'relative',zIndex:'3'}}/>
-                    */}
-                    <h4 className="chb">{d.name}</h4>
-                  </Col>
-                  <Col style={{ flex: '1' }} className="zp col-12">
-                    <Container className="lpb text-left">
-                      {d.content.map((e, j) => (
-                        <div style={bw} key={j}>
-                          ->{' '}
-                          {
-                            e /* e.split(':').map((t,l)=><span className={btClasses[l]}>{t}</span>)*/
-                          }
-                        </div>
-                      ))}
-                    </Container>
-                  </Col>
-                </Row>
+                <Container>
+                  <Row style={{ display: 'flex' }} className="zp">
+                    <Col
+                      className="zp img-square-wrapper col-12"
+                      style={{
+                        ...cardImgStyle,
+                        background: 'url(' + wimg + ') no-repeat',
+                        backgroundSize: 'cover',
+                      }}
+                    >
+                      <div className="chbd">
+                        <font className="chb">{d.name}</font>
+                      </div>
+                    </Col>
+                    <Col style={{ flex: '1' }} className="zp col-12">
+                      <Container className="lpb text-left">
+                        {d.content.map((e, j) => (
+                          <Card className="bpc" key={j}>
+                            {e}
+                          </Card>
+                        ))}
+                      </Container>
+                    </Col>
+                  </Row>
+                </Container>
               </Col>
             </Row>
           </Container>

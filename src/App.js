@@ -8,10 +8,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ErrorBoundary from 'utils/ErrorBoundary';
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { width: 0, height: 0 };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = { width: 0, height: 0 };
+  }
 
   render() {
     return (
@@ -29,23 +29,23 @@ class App extends Component {
       </Router>
     );
   }
-  // updateDimensions() {
-  //   var w = window,
-  //     d = document,
-  //     documentElement = d.documentElement,
-  //     body = d.getElementsByTagName('body')[0],
-  //     width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
-  //     height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
+  updateDimensions() {
+    var w = window,
+      d = document,
+      documentElement = d.documentElement,
+      body = d.getElementsByTagName('body')[0],
+      width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
+      height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
 
-  //   this.setState({ width, height });
-  // }
+    this.setState({ width, height });
+  }
 
-  // componentWillUnmount() {
-  //   window.removeEventListener('resize', this.updateDimensions);
-  // }
-  // componentDidMount() {
-  //   window.addEventListener('resize', this.updateDimensions.bind(this));
-  // }
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateDimensions);
+  }
+  componentDidMount() {
+    window.addEventListener('resize', this.updateDimensions.bind(this));
+  }
 }
 
 export default App;

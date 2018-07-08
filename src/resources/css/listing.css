@@ -29,25 +29,25 @@
 }
 @media only screen and (max-width: 1265px) {
   .listing {
-    font-size: 0.85vw;
+    font-size: 0.75vw;
     padding-right: 7px;
   }
 }
 @media only screen and (max-width: 991px) {
   .listing {
-    font-size: 1.3vw;
+    font-size: 1vw;
     padding-right: 7px;
   }
 }
 @media only screen and (max-width: 767px) {
   .listing {
-    font-size: 2.7vw;
+    font-size: 2vw;
     padding-right: 7px;
   }
 }
 @media only screen and (max-width: 400px) {
   .listing {
-    font-size: 2.8vw;
+    font-size: 2.5vw;
     padding-right: 7px;
   }
 }
