@@ -144,7 +144,13 @@ class App extends Component {
         case types['list']:
           try {
             Cont = (
-              <Row>
+              <Row
+              // style={{
+              //   display: 'flex',
+              //   alignItems: 'center',
+              //   justifyContent: 'center',
+              // }}
+              >
                 {data.map(
                   (e, i) =>
                     e && e[1].catcode ? (

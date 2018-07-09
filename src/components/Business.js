@@ -4,7 +4,7 @@ import 'resources/css/business.css';
 class Listing extends Component {
   render() {
     const { data, parent } = this.props;
-    const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
+    // const bw = { wordWrap: 'break-word !important', fontSize: '70%' };
     //const hrefbase = '/categories/';
     var w = 81;
     var cardImgStyle = {

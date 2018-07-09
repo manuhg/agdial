@@ -1,4 +1,4 @@
-import { Col, Container, Row } from 'mdbreact';
+// import { Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
 import 'resources/css/tiles.css';
 
@@ -15,35 +15,32 @@ class SubCatTile extends Component {
     const d = data;
 
     return (
-      <Col style={{ padding: '2px', flex: '1' }} xs="6" sm="6" md="6" lg="3">
+      <div
+        style={{ padding: '2px', flex: '1 1 auto' }}
+        className="card tiles col-6 col-sm-4 col-md-3"
+      >
         <a href={hrefbase + d.name} style={{ textDecoration: 'none', color: 'black' }}>
-          <Container>
-            <Row>
-              <Col id={this.props.id} className="card tiles">
-                <Container>
-                  <Row style={{ display: 'flex' }} className="zp">
-                    <Col className="zp img-square-wrapper col-12">
-                      <img
-                        alt={d.name}
-                        style={{
-                          ...cardImgStyle,
-                          padding: '1%',
-                        }}
-                        src={d.image}
-                      />
-                    </Col>
-                  </Row>
-                  <Row>
-                    <Col className="zp col-12 text-center">
-                      <h6 className="chst">{d.name}</h6>
-                    </Col>
-                  </Row>
-                </Container>
-              </Col>
-            </Row>
-          </Container>
+          <div className="container" id={this.props.id}>
+            <div className="row zp" style={{ display: 'flex' }}>
+              <div className="zp img-square-wrapper">
+                <img
+                  alt={d.name}
+                  style={{
+                    ...cardImgStyle,
+                    padding: '1%',
+                  }}
+                  src={d.image}
+                />
+              </div>
+            </div>
+            <div className="row zp">
+              <div className="zp text-center">
+                <h6 className="chst">{d.name}</h6>
+              </div>
+            </div>
+          </div>
         </a>
-      </Col>
+      </div>
     );
   }
 }
