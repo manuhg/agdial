@@ -31,12 +31,10 @@ class App extends Component {
   setData(index, value, nosS) {
     this.dataColl[index] = value;
     if (!nosS) this.setState({ changed: !this.state.changed });
-    //console.log('sd', index, value);
   }
   memoize(path, obj) {
     obj = obj || this.dataColl;
     if (obj && obj[path]) return true; //this.dataColl[path];
-    //console.log('memoize');
   }
 
   async fetchDoc(docref, path, cb, noSD) {
@@ -94,7 +92,6 @@ class App extends Component {
     if (catnom) type += 1;
     if (cpath && business && business.length > 3) type += 1;
     this.ut[path] = type - 1;
-    console.log('type', type);
     return type - 1;
   }
   docAtPath(path) {
@@ -129,17 +126,15 @@ class App extends Component {
     this.props.history.go(-1);
   }
   render() {
-    console.log('H');
+    console.log(this.props);
     document.title = 'AgDial:' + this.title;
     var Cont = <span>{'Loading please wait.'}</span>;
     const path = this.props.location.pathname;
     const tType = this.urlTargetType(path);
-    //console.log(tType, this.dataColl);
     if (!this.memoize(path)) this.docAtPath(path);
 
     if (typeof this.dataColl[path] === 'object') {
       const data = Object.entries(this.dataColl[path]);
-      //console.log('sfadf', data);
       switch (tType) {
         case types['list']:
           try {
@@ -160,7 +155,13 @@ class App extends Component {
                         <Tiles data={e[1]} key={i} id={e[0]} />
                       )
                     ) : (
-                      <Listing data={e[1]} parent={rnom[e[1].path]} key={i} id={e[0]} />
+                      <Listing
+                        search={this.props.location.search}
+                        data={e[1]}
+                        parent={rnom[e[1].path]}
+                        key={i}
+                        id={e[0]}
+                      />
                     )
                 )}
               </Row>

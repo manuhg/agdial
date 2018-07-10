@@ -64,7 +64,7 @@ def parse(filename):
 
 
 def main():
-    entries = parse('content/alldata.txt')
+    entries = parse('../content/alldata.txt')
     print(list(map(lambda x: print(x), entries.items())))
 
 

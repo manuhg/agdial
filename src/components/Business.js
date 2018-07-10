@@ -13,7 +13,6 @@ class Listing extends Component {
       objectFit: 'contain',
     };
     if (typeof data !== 'object') return <span>Please wait..</span>;
-    console.log('B', data);
     const d = data;
     var wimg = d.image;
     if (wimg) {

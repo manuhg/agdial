@@ -40,7 +40,10 @@ def add_all_data(db, file):
         print(data.items(), "\n\nWill add the above data to firestore")
         batch = db.batch()
         cref = db.collection('data')
+        sdcref = db.collection('search_data')
         list(map(lambda d: batch.set(cref.document(d[0]), d[1]), data.items()))
+        list(map(lambda d: batch.set(sdcref.document(
+            d[0]), d[1]['name']+' '+d[1]['path'])), data.items())
         print(batch.commit())
 
 
@@ -86,9 +89,9 @@ def add_nomenclature(db=None):
 def main():
     # add_categories()
     # add_business({'name': 'Ratnagiri', 'addr': '1414', 'category': 'held'})
-    #file = 'content/alldata.txt'
+    # file = 'content/alldata.txt'
     db = init_db()
-    add_all_data(db, 'content/alldata.txt')
+    add_all_data(db, '../content/alldata.txt')
     add_nomenclature(db)
 
 
