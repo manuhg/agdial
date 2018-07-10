@@ -6,10 +6,10 @@ import 'resources/css/index.css';
 import App from 'App';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import registerServiceWorker from 'utils/registerServiceWorker';
+//import registerServiceWorker from 'utils/registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();
 document.addEventListener('contextmenu', event => event.preventDefault());
 document.addEventListener('copy', event => event.preventDefault());
 document.addEventListener('select', event => event.preventDefault());
