@@ -6,6 +6,7 @@ import SGubbi from 'resources/img/Profile/SGubbi.png';
 import Prashant from 'resources/img/Profile/Prashant.png';
 import Suresh from 'resources/img/Profile/Suresh.png';
 import Manu from 'resources/img/Profile/Manu.png';
+import Chandru from 'resources/img/Profile/Chandru.png';
 import { Fa } from 'mdbreact';
 class ImageCircle extends Component {
   constructor(props) {
@@ -58,12 +59,20 @@ const AboutData = {
       'Dr. Sheshagiri Gubbi, Ph. D (Plant Genetics) and Post-Doctoral Fellow (Plant Biotechnology) has varied experience in agricultural R&D in Agricultural Universities, ICAR, CSIR and Corporate laboratories. His interests in Minimising and Systematic reduction of Agrochemicals has lead him to specialise in alternative microbial technologies for Soil health, Plant nutrition and Stress management which he has optimised in Rice, Vegetables, Sugarcane and Grapes. He works closely with farmers from sharing know-how, Supply of quality inputs, Production of pesticides free crops and establishing the Market linkages.',
     ],
     [
-      '#8432ff',
-      Prashant,
-      'Mr. Prashant Hegde',
-      'Director (Sales)',
-      'https://www.linkedin.com/in',
-      'Prashant is an agriculture graduate with post-graduation in management. He brings in 20 years of experience in agri input sales and financial services industry. He has vast experience in agricultural investment and project management. Earlier he worked for HDFC Bank, RBL Bank, Janalakshmi Small Finance Bank.',
+      '#960181',
+      Chandru,
+      'Mr. Chandra Shriyan',
+      'Director (Finance) ',
+      '',
+      'He is a Commerce Graduate from Bangalore University. Now Mr. Chandru is a Finance Professional with more than 2 decades of vast experience in Finance and Strategic Planning, Taxation, Investor Relationships, Statutory Compliance, Legal advisory etc. He is the part of Chartered Accountants firm Renuka Chandra Shriyan & Company, Bengaluru.',
+    ],
+    [
+      '#6765ff',
+      Manu,
+      'Mr. Manu Hegde',
+      'Director (Technical) ',
+      'https://www.linkedin.com/in/manu-hegde/',
+      'Pursuing Bachelor of Engineering (Computer Science) 7th semester at Dr. AIT, Bengaluru. He is the main driving force of technical team of Shramajeevi. All websites and internet activities of Shramajeevi are built and managed under his directions. ',
     ],
     [
       '#5dddd3',
@@ -74,12 +83,12 @@ const AboutData = {
       'Suresh has 23 years of Agriculture and Food industry experiences in executive and management roles with Cargill, Monsanto, and Avesta Good Earth Foods. Suresh has his Masters in Agriculture from University of Agriculture Sciences Dharwad and Executive Management Programme from Indian Institute of Management (IIM) Bangalore. Suresh is a recipient of University Gold Medal from UAS Dharwad at postgraduate studies.',
     ],
     [
-      '#6765ff',
-      Manu,
-      'Mr. Manu Hegde',
-      'Director (Technical) ',
-      'https://www.linkedin.com/in/manu-hegde/',
-      'Pursuing Bachelor of Engineering (Computer Science) 7th semester at Dr. AIT, Bengaluru. He is the main driving force of technical team of Shramajeevi. All websites and internet activities of Shramajeevi are built and managed under his directions. ',
+      '#8432ff',
+      Prashant,
+      'Mr. Prashant Hegde',
+      'Director (Sales)',
+      'https://www.linkedin.com/in',
+      'Prashant is an agriculture graduate with post-graduation in management. He brings in 20 years of experience in agri input sales and financial services industry. He has vast experience in agricultural investment and project management. Earlier he worked for HDFC Bank, RBL Bank, Janalakshmi Small Finance Bank.',
     ],
   ],
   about: (

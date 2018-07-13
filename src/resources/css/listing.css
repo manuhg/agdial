@@ -4,15 +4,25 @@
 .listing:hover {
   border: 1px solid green;
 }
-.square-100 {
+/* .square-100 {
   position: relative;
   width: 100%;
-  padding-bottom: 100%; /* = width for a 1:1 aspect ratio */
+  padding-bottom: 100%; 
   margin: 1.66%;
   background-position: center center;
   background-repeat: no-repeat;
-  background-size: cover; /* you change this to "contain" if you don't want the images to be cropped */
+  background-size: cover;
   overflow: hidden;
+} */
+.squareImg {
+  float: left;
+  position: relative;
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .chl {
   font-weight: bold;
@@ -21,12 +31,14 @@
   word-wrap: break-word !important;
 }
 
+.lb {
+  min-height: 160px;
+}
 .listing {
-  min-height: 100px;
   margin-bottom: 0px;
   border: 1px solid greenyellow;
   border-radius: 0;
-  font-size: 1.5vw;
+  font-size: 1vw;
   text-align: left;
   word-wrap: break-word !important;
 }
@@ -37,12 +49,12 @@
 }
 @media only screen and (max-width: 1265px) {
   .listing {
-    font-size: 1.5vw;
+    font-size: 1vw;
   }
 }
 @media only screen and (max-width: 991px) {
   .listing {
-    font-size: 1.8vw;
+    font-size: 1.4vw;
   }
 }
 @media only screen and (max-width: 767px) {

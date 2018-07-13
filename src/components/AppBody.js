@@ -4,6 +4,7 @@ import Footer from 'components/Footer';
 import Nav from 'components/Nav';
 import { Card, Col, Container, Row } from 'mdbreact';
 import bcgImg from 'resources/img/body_bcg.JPEG';
+const algkey = '87419dd78ee5b05c8567bb03f9c910bc';
 class AppBody extends Component {
   render() {
     const content = this.props.children;

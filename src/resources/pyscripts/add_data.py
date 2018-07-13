@@ -1,10 +1,20 @@
 #!/usr/bin/python
 # pip install --upgrade firebase-admin
+# pip install --upgrade algoliasearch
+
 import os
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 from firebase_admin import storage
+from algoliasearch import algoliasearch
+
+
+def init_algolia():
+    client = algoliasearch.Client(
+        "76YGED1NMJ", 'f3ffe17101dd077a640df5ebcc7ee19c')
+    index = client.init_index('s_data')
+    return index
 
 
 def print_collection(db, collection):
@@ -34,17 +44,31 @@ def init_db():
 from parse import parse
 
 
+def add_to_algolia(data):
+    nd = []
+    for x in data.items():
+        d = x[1]
+        d.update({'name': x[0]})
+        nd.append(d)
+    return nd
+
+
 def add_all_data(db, file):
     data = parse(file)
     if(type(data) is dict):
         print(data.items(), "\n\nWill add the above data to firestore")
         batch = db.batch()
         cref = db.collection('data')
-        sdcref = db.collection('search_data')
         list(map(lambda d: batch.set(cref.document(d[0]), d[1]), data.items()))
-        list(map(lambda d: batch.set(sdcref.document(
-            d[0]), d[1]['name']+' '+d[1]['path'])), data.items())
-        print(batch.commit())
+        try:
+            print(batch.commit())
+            s_data = init_algolia()
+            print(s_data)
+            s_data.add_objects(add_to_algolia(data))
+            s_data.set_settings(
+                {"searchableAttributes": ["content", "name", "path"]})
+        except Exception as e:
+            print(e)
 
 
 # def add_categories():
@@ -95,4 +119,4 @@ def main():
     add_nomenclature(db)
 
 
-main()
+# main()
