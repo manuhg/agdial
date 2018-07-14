@@ -1,4 +1,4 @@
-import { Col, Container, Row } from 'mdbreact';
+import { Col, Container, Row, Button } from 'mdbreact';
 import React, { Component } from 'react';
 import 'resources/css/listing.css';
 
@@ -12,62 +12,59 @@ class Listing extends Component {
       textJustify: 'inter-word',
       padding: '0px',
     };
-    //const hrefbase = '/categories/';
-    // var cardImgStyle = {
-    //   maxWidth: '100%',
-    //   maxWidth: '150px',
-    //   objectFit: 'contain',
-    // };
+    const imgStyle = {
+      background: 'url(' + data.image + ') no-repeat',
+      backgroundSize: 'cover',
+      paddingTop: '0px',
+      borderLeft: '1px solid gray',
+    };
 
     if (typeof data !== 'object') return <span>Please wait..</span>;
-    const d = data;
-    // const ehref = d.class && d.class === 'premium' ? parent + '/' + d.name : '';
-    const ehref = parent + '/' + d.name;
+    const ehref = data.class && data.class === 'premium' ? parent + '/' + data.name : undefined;
+    // const ehref = parent + '/' + data.name;
 
     return (
       <Col className="zp col-12" style={{ padding: '5px' }}>
-        <a href={ehref} className="zp" style={{ textDecoration: 'none', color: 'black' }}>
-          <Container fluid>
-            <Row className="zp">
-              <Col id={this.props.id} style={{ flex: '1' }} className="zp">
-                <Container>
-                  <div className="zp card listing">
-                    <div className="card-header chl">
-                      <strong>{d.name}</strong>
-                    </div>
-                    <div className="zp card-body">
-                      <Container>
-                        <Row style={{ display: 'flex' }} className="zp">
-                          <Col
-                            style={{
-                              background: 'url(' + d.image + ') no-repeat',
-                              backgroundSize: 'cover',
-                              paddingTop: '0px',
-                              borderLeft: '1px solid gray',
-                            }}
-                          />
-                          <Col className="lb" xs="8" lg="10">
-                            <main>
-                              <Container className="zp text-left">
-                                <ul className="list-group list-group-flush">
-                                  {d.content.map((e, j) => (
-                                    <li className="lp list-group-item" key={j}>
-                                      <div style={bw}>{e}</div>
-                                    </li>
-                                  ))}
-                                </ul>
-                              </Container>
-                            </main>
-                          </Col>
-                        </Row>
-                      </Container>
-                    </div>
+        <Container fluid>
+          <Row className="zp">
+            <Col id={this.props.id} style={{ flex: '1' }} className="zp">
+              <Container>
+                <div className="zp card listing">
+                  <div className="card-header chl">
+                    <strong>{data.name}</strong>
                   </div>
-                </Container>
-              </Col>
-            </Row>
-          </Container>
-        </a>
+                  <div className="zp card-body">
+                    <Container>
+                      <Row style={{ display: 'flex' }} className="zp">
+                        <Col style={imgStyle} />
+                        <Col className="lb" xs="8" lg="10">
+                          <main>
+                            <Container className="zp text-left">
+                              <ul className="list-group list-group-flush">
+                                {data.content.map((e, j) => (
+                                  <li className="lp list-group-item" key={j}>
+                                    <div style={bw}>{e}</div>
+                                  </li>
+                                ))}
+                              </ul>
+                              {ehref ? (
+                                <Button size="sm">
+                                  <a href={ehref}>Go to Page</a>
+                                </Button>
+                              ) : (
+                                <span />
+                              )}
+                            </Container>
+                          </main>
+                        </Col>
+                      </Row>
+                    </Container>
+                  </div>
+                </div>
+              </Container>
+            </Col>
+          </Row>
+        </Container>
       </Col>
     );
   }
