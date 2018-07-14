@@ -13,6 +13,16 @@ def parse_file(fname):
         return entries
 
 
+special_data = {'Website': '((https?://)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]+\/?)?/?)',
+                'Whatsapp': '(+?[0-9 ]+{10,})', 'Youtube': '(https:\/\/www\.youtu.*)'}
+
+
+def extract_special_data(str):
+    map(lambda x: , special_data.items())
+    re.search('Website', str)
+    re.findall(, 'Website:dfgdfg.com,lll.com')
+
+
 def parse_entry(entry):
     try:
         ed = entry.split('##')

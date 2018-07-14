@@ -14,7 +14,7 @@ class Listing extends Component {
     };
     const imgStyle = {
       background: 'url(' + data.image + ') no-repeat',
-      backgroundSize: 'cover',
+      backgroundSize: 'contain',
       paddingTop: '0px',
       borderLeft: '1px solid gray',
     };
@@ -28,36 +28,34 @@ class Listing extends Component {
         <Container fluid>
           <Row className="zp">
             <Col id={this.props.id} style={{ flex: '1' }} className="zp">
-              <Container>
-                <div className="zp card listing">
+              <Container fluid>
+                <div className="card zp listing">
                   <div className="card-header chl">
                     <strong>{data.name}</strong>
                   </div>
-                  <div className="zp card-body">
-                    <Container>
+                  <div style={{ width: '100%' }} className="card-body zp">
+                    <Container fluid style={{ width: '100%' }}>
                       <Row style={{ display: 'flex' }} className="zp">
                         <Col style={imgStyle} />
-                        <Col className="lb" xs="8" lg="10">
-                          <main>
-                            <Container className="zp text-left">
-                              <ul className="list-group list-group-flush">
-                                {data.content.map((e, j) => (
-                                  <li className="lp list-group-item" key={j}>
-                                    <div style={bw}>{e}&nbsp;</div>
-                                  </li>
-                                ))}
-                              </ul>
-                              {ehref ? (
-                                <Button size="sm" color="red">
-                                  <a style={{ color: 'white' }} href={ehref}>
-                                    Go to Page
-                                  </a>
-                                </Button>
-                              ) : (
-                                <span />
-                              )}
-                            </Container>
-                          </main>
+                        <Col className="lb" xs="8" sm="9" md="10" lg="11">
+                          <Container fluid style={{ width: '100%' }} className="zp text-left">
+                            <ul className="list-group list-group-flush">
+                              {data.content.map((e, j) => (
+                                <li className="lp list-group-item" key={j}>
+                                  <div style={bw}>{e}&nbsp;</div>
+                                </li>
+                              ))}
+                            </ul>
+                            {ehref ? (
+                              <Button size="sm" color="red">
+                                <a style={{ color: 'white' }} href={ehref}>
+                                  Go to Page
+                                </a>
+                              </Button>
+                            ) : (
+                              <span />
+                            )}
+                          </Container>
                         </Col>
                       </Row>
                     </Container>
