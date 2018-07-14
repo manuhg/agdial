@@ -19,6 +19,10 @@ body {
 .fc {
   justify-self: center;
 }
+.mzpz {
+  margin: 0px;
+  padding: 0px;
+}
 .zp {
   padding: 0px;
   word-wrap: break-word !important;

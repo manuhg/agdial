@@ -126,7 +126,7 @@ class App extends Component {
     this.props.history.go(-1);
   }
   render() {
-    console.log(this.props);
+    console.log('r');
     document.title = 'AgDial:' + this.title;
     var Cont = <span>{'Loading please wait.'}</span>;
     const path = this.props.location.pathname;

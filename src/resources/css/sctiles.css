@@ -1,0 +1,44 @@
+.sctiles:hover .scchst {
+  color: green;
+}
+.sctiles:hover {
+  border: 1px solid green;
+}
+.scdiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.scchst {
+  color: black;
+  padding: 2px;
+  font-size: 1vw;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+.sctiles {
+  border: 1px solid greenyellow;
+}
+
+@media only screen and (max-width: 1265px) {
+  .scchst {
+    font-size: 1vw;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .scchst {
+    font-size: 1.5vw;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .scchst {
+    font-size: 2.2vw;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .scchst {
+    font-size: 2.5vw;
+  }
+}
