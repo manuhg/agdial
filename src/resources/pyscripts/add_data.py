@@ -24,6 +24,20 @@ def print_collection(db, collection):
     list(map(lambda d: print(d.id, '\n', d.to_dict()), docs))
 
 
+def delete_collection(coll_ref, batch_size=100):
+    docs = coll_ref.limit(100).get()
+    deleted = 0
+    print('Deleting collection ', coll_ref)
+
+    for doc in docs:
+        print(u'Deleting doc {} => {}'.format(doc.id, doc.to_dict()))
+        doc.reference.delete()
+        deleted = deleted + 1
+
+    if deleted >= batch_size:
+        return delete_collection(coll_ref, batch_size)
+
+
 def init_storage():
     cred = credentials.Certificate(
         os.environ['HOME']+"/agdial-001-firebase-adminsdk.json")
@@ -44,13 +58,19 @@ def init_db():
 from parse import parse
 
 
-def add_to_algolia(data):
+def add_to_algolia(data, index=None):
     nd = []
     for x in data.items():
         d = x[1]
-        d.update({'name': x[0]})
+        d.update({'id': x[0]})
         nd.append(d)
-    return nd
+    # return nd
+    if not index:
+        index = init_algolia()
+    index.clear_index()
+    print('Adding data to algolia', nd)
+    index.add_objects(nd)
+    index.set_settings({"searchableAttributes": ["name", 'id', "path"]})
 
 
 def add_all_data(db, file):
@@ -59,14 +79,11 @@ def add_all_data(db, file):
         print(data.items(), "\n\nWill add the above data to firestore")
         batch = db.batch()
         cref = db.collection('data')
+        delete_collection(cref)
         list(map(lambda d: batch.set(cref.document(d[0]), d[1]), data.items()))
         try:
             print(batch.commit())
-            s_data = init_algolia()
-            print(s_data)
-            s_data.add_objects(add_to_algolia(data))
-            s_data.set_settings(
-                {"searchableAttributes": ["content", "name", "path"]})
+            add_to_algolia(data)
         except Exception as e:
             print(e)
 
@@ -107,7 +124,9 @@ def add_nomenclature(db=None):
     # print('Original nomenclature\n', nomenclature)
     print('Filtered nomenclature')
     list(map(lambda x: print(x[0], ':', x[1]), filtered.items()))
-    print(db.collection(col_nom).document(col_nom).set(filtered))
+    nomref = db.collection('nomenclature')
+    delete_collection(nomref)
+    print(nomref.document(col_nom).set(filtered))
 
 
 def main():
@@ -119,4 +138,4 @@ def main():
     add_nomenclature(db)
 
 
-# main()
+main()
