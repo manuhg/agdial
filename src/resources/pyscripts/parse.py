@@ -18,9 +18,9 @@ special_data = {'Website': '((https?://)?(www.)?[a-z0-9]+\.[a-z]+(\/[a-zA-Z0-9#]
 
 
 def extract_special_data(str):
-    map(lambda x: , special_data.items())
+    # map(lambda x: , special_data.items())
     re.search('Website', str)
-    re.findall(, 'Website:dfgdfg.com,lll.com')
+    # re.findall(, 'Website:dfgdfg.com,lll.com')
 
 
 def parse_entry(entry):

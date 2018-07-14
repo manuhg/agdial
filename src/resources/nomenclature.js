@@ -17,6 +17,7 @@ export const nomenclature = {
   'National Institutes': 'OZ-NI',
   'Karnataka State Organisations & Departments': 'OZ-KST',
   'Non-Governmental Organisations (NGOs)': 'OZ-NGO',
+  'Media Organisations': 'OZ-MED',
 };
 export const rnom = {
   cat: '',
@@ -37,5 +38,6 @@ export const rnom = {
   'OZ-NI': 'National Institutes',
   'OZ-KST': 'Karnataka State Organisations & Departments',
   'OZ-NGO': 'Non-Governmental Organisations (NGOs)',
+  'OZ-MED': 'Media Organisations',
 };
 export default nomenclature;

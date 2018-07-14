@@ -17,4 +17,5 @@ nomenclature = {
     'National Institutes': 'OZ-NI',
     'Karnataka State Organisations & Departments': 'OZ-KST',
     'Non-Governmental Organisations': 'OZ-NGO',
+    'Media Organisations': 'OZ-MED',
 }
