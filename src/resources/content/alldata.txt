@@ -48,7 +48,7 @@ $$/cat/16/Karnataka State Organisations & Departments:OZ-KST
 
 $$/cat/17/Non-Governmental Organisations (NGOs):OZ-NGO
 ##NGO﻿
-$$/AM/001/Ratnagiri Impex Pvt. Ltd. 
+$$/AM/001/Ratnagiri Impex Pvt. Ltd. [premium]
 ##Annapurna House, 1-1G, 7th Cross, New Guddadahalli, Mysore Road, Bengaluru, Karnataka 560026 India. Phone: +91 80 26985100, 101, 102 Fax: +91 80 26751658 All India customer care number 1800 425 7475 Email: customercare@ratnagiriimpex.com Website: www.ratnagiriimpex.com  ##Business type: Importers and Distributors of agricultural and other machineries and handheld power tools ##Major Items: Brush cutter, Chain saw, Sprayers, Rotary tillers, High pressure washers, Lawnmowers etc. ##Outlet Brand: AgriMart, AgriMart Care ##Major Brands: Oleo-Mac, Agrimate, Unigreen, Bartolini, Comet, Gulliver
 
 
@@ -76,7 +76,7 @@ $$/AS/002/Joshi and Company - ASTRA Dryer
 
 
 $$/AH/GS/001/Indian Cow Breed Movement
-##Administrative Office: ‘Shree Ramashrama’, #2A, J.P. Road, Girinagar 1st Phase, Bengaluru 560085, Karnataka, India. Phone: +91 80 26721510, Telefax: +91 80 26724979 Email: kpfiles@gmail.com Website: http://hareraama.in ## ##Veterinary Expert in Charge: DR. Y V Krishnamoorty +91 9449595206. Email: gou@hareraama.in ##Kaamadhuga, Indian Cow Breed Movement, Shree Ramachandrapura Matha, Po: Haniya, Ta: Hosanagara, Dist: Shivamogga 577418, Karnataka, India. Telefax: +91 8185 256050 Email: pradhanamatha@gmail.com 
+##Administrative Office: ‘Shree Ramashrama’, #2A, J.P. Road, Girinagar 1st Phase, Bengaluru 560085, Karnataka, India. Phone: +91 80 26721510, Telefax: +91 80 26724979 Email: kpfiles@gmail.com Website: http://hareraama.in ##Veterinary Expert in Charge: DR. Y V Krishnamoorty +91 9449595206. Email: gou@hareraama.in ## ##Kaamadhuga, Indian Cow Breed Movement, Shree Ramachandrapura Matha, Po: Haniya, Ta: Hosanagara, Dist: Shivamogga 577418, Karnataka, India. Telefax: +91 8185 256050 Email: pradhanamatha@gmail.com 
 $$/AH/GS/002/Shri Raghavendra Gou Ashrama Trust
 ## Gangapura village, Bengaluru road, Po: Yashavantapura, Ta: Maluru, Dist: Kolar 563130 Karnataka, India. Phone: +91 8197958466, Contact Person: Ramachandra +91 9449595245, Muralikrishna – 9741366882. Email: malurgoushala@gmail.com ## ##Amrutadaara Gouloka, Pratima Farms, Dinnepalya, Kanakapura Road, Bengaluru 560062 Karnataka, India. Phone: +91 9663104475 Contact person: B J Sharma +91 9845027731 Email: sharma.amishj@gmail.com 
 $$/AH/GS/003/Amrutadhaara Goushaala

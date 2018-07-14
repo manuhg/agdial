@@ -174,13 +174,13 @@ class App extends Component {
         case types['page']:
           try {
             const d = data[0][1];
-            // if (d.class && d.class === 'premium')
-            Cont = (
-              <Row>
-                <Business path={path} data={d} id={data[0][0]} />
-              </Row>
-            );
-            // else this.previous();
+            if (d.type_ && d.type_ === 'premium')
+              Cont = (
+                <Row>
+                  <Business path={path} data={d} id={data[0][0]} />
+                </Row>
+              );
+            else this.previous();
           } catch (err) {
             console.log(err);
             this.previous();

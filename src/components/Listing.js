@@ -20,7 +20,7 @@ class Listing extends Component {
     };
 
     if (typeof data !== 'object') return <span>Please wait..</span>;
-    const ehref = data.class && data.class === 'premium' ? parent + '/' + data.name : undefined;
+    const ehref = data.type_ && data.type_ === 'premium' ? parent + '/' + data.name : undefined;
     // const ehref = parent + '/' + data.name;
 
     return (
@@ -43,13 +43,15 @@ class Listing extends Component {
                               <ul className="list-group list-group-flush">
                                 {data.content.map((e, j) => (
                                   <li className="lp list-group-item" key={j}>
-                                    <div style={bw}>{e}</div>
+                                    <div style={bw}>{e}&nbsp;</div>
                                   </li>
                                 ))}
                               </ul>
                               {ehref ? (
-                                <Button size="sm">
-                                  <a href={ehref}>Go to Page</a>
+                                <Button size="sm" color="red">
+                                  <a style={{ color: 'white' }} href={ehref}>
+                                    Go to Page
+                                  </a>
                                 </Button>
                               ) : (
                                 <span />

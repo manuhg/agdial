@@ -19,7 +19,7 @@ def parse_entry(entry):
         ns = list(filter(None, ed[0].split('/')))
         name = ns[-1]
         catcode = ''
-
+        type_ = ''
         id = '-'.join(ns[0:-1])
         path = '-'.join(ns[0:-2])
         nsp = ns[-1].split(':')
@@ -29,22 +29,23 @@ def parse_entry(entry):
             pc = catcode.split('-')
             if len(pc) > 1:
                 path = pc[0]
-
         id = id.strip()
-        name = name.strip()
-        catcode = catcode.strip()
-        path = path.strip()
+        n_c = re.match('(.*)\[([^\]]+)\]', name)
+        if n_c:
+            n_c = n_c.groups()
+            name = n_c[0]
+            type_ = n_c[1]
         imgurl = imgurl_base+id+'.jpg'
-        # imgurl = imgurl_base
-        # if path == 'cat':
-        #     imgurl += id
-        # else:
-        #     imgurl += path
-        # imgurl += '.jpg'
         data_list = list(map(lambda x: x.strip(), ed[1:]))
-        if catcode:
-            return {id: {"name": name, "catcode": catcode, "path": path, "image": imgurl, "content": data_list}}
-        return {id: {"name": name,  "path": path, "image": imgurl, "content": data_list}}
+        entry_dict = {"name": name, "path": path,
+                      "image": imgurl, "content": data_list}
+        for v in locals().items():
+            if v[0] in ['catcode', 'type_'] and v[1]:
+                entry_dict.update({v[0]: v[1]})
+        entry_dict = dict(
+            map(lambda x: (x[0], x[1].strip()) if type(x[1]) is str else x, entry_dict.items()))
+        entry_dict = {id: dict(entry_dict.items())}
+        return entry_dict
     except Exception as e:
         print(e, '\n at entry \n', entry)
 
