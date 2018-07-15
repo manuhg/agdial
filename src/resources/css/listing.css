@@ -32,10 +32,11 @@
 }
 
 .lb {
-  min-height: 100px;
+  min-height: 200px;
 }
 .listing {
   margin-bottom: 0px;
+  max-width: 1522px;
   border: 1px solid greenyellow;
   border-radius: 0;
   font-size: 1vw;
@@ -49,7 +50,7 @@
 }
 @media only screen and (max-width: 1265px) {
   .listing {
-    font-size: 1.3vw;
+    font-size: 1.2vw;
   }
 }
 @media only screen and (max-width: 991px) {

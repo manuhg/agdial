@@ -42,7 +42,7 @@ class Listing extends Component {
                     <Container fluid style={{ width: '100%' }}>
                       <Row style={{ display: 'flex' }} className="zp">
                         {width > 767 ? <Col style={imgStyle} /> : <Col />}
-                        <Col className="lb" xs="12" sm="12" md="8" lg="10" xl="11">
+                        <Col className="lb" xs="12" sm="12" md="7" lg="8" xl="9">
                           <Container fluid style={{ width: '100%' }} className="zp text-left">
                             <ul className="list-group list-group-flush">
                               {data.content.map((e, j) => (

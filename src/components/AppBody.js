@@ -4,10 +4,23 @@ import Footer from 'components/Footer';
 import Nav from 'components/Nav';
 import { Card, Col, Container, Row } from 'mdbreact';
 import bcgImg from 'resources/img/body_bcg.JPEG';
-
+// fullWidth;
 class AppBody extends Component {
   render() {
-    const content = this.props.children;
+    const Content = this.props.children;
+    const CCard = () => (
+      <Card
+        className="fp"
+        style={{
+          minHeight: '86vh',
+          background: 'rgba(255,255,255,0.85)',
+        }}
+      >
+        <Container className="fc" fluid>
+          <ErrorBoundary>{Content}</ErrorBoundary>
+        </Container>
+      </Card>
+    );
     document.body.style.backgroundImage =
       'linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(' + bcgImg + ')';
     return (
@@ -18,23 +31,34 @@ class AppBody extends Component {
         <p>&nbsp;</p>
         <header>
           <Container className="text-center" style={{ minHeight: '89vh' }} fluid>
-            <Row>
-              <Col md="1">{/* <Card style={adStyle}>&nbsp;</Card> */}</Col>
-              <Col md="10">
-                <Card
-                  className="fp"
-                  style={{
-                    minHeight: '86vh',
-                    background: 'rgba(255,255,255,0.85)',
-                  }}
-                >
-                  <Container className="fc" fluid>
-                    <ErrorBoundary>{content}</ErrorBoundary>
-                  </Container>
-                </Card>
+            {this.props.fullWidth ? (
+              <Row>
+                <Col md="12">
+                  <CCard />
+                </Col>
+              </Row>
+            ) : (
+              <Row>
+                <Col />
+                <Col md="10">
+                  <CCard />
+                </Col>
+                <Col />
+              </Row>
+            )}
+
+            {/* <Row>
+              <Col>
+                <Card style={adStyle}>&nbsp;</Card>
               </Col>
-              <Col md="1">{/* <Card style={adStyle}>&nbsp;</Card> */}</Col>
-            </Row>
+              <Col md="10">
+                <CCard />
+              </Col>
+              <Col>
+                <Card style={adStyle}>&nbsp;</Card>
+              </Col>
+            </Row> */}
+
             <Row>
               <Col>
                 <div

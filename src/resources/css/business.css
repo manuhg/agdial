@@ -1,11 +1,10 @@
-.business:hover .ch {
+.bimg:hover .ch {
   color: green;
 }
-.business:hover .chb {
+.bimg:hover .chb {
   color: green;
 }
-.business:hover {
-  border: 1px solid green;
+.bimg {
 }
 
 .chb {

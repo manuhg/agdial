@@ -128,7 +128,11 @@ class App extends Component {
   render() {
     console.log('r');
     document.title = 'AgDial:' + this.title;
-    var Cont = <span>{'Loading please wait.'}</span>;
+    var Content = () => (
+      <AppBody active={0}>
+        <span>{'Loading please wait.'}</span>
+      </AppBody>
+    );
     const path = this.props.location.pathname;
     const tType = this.urlTargetType(path);
     if (!this.memoize(path)) this.docAtPath(path);
@@ -138,33 +142,35 @@ class App extends Component {
       switch (tType) {
         case types['list']:
           try {
-            Cont = (
-              <Row
-              // style={{
-              //   display: 'flex',
-              //   alignItems: 'center',
-              //   justifyContent: 'center',
-              // }}
-              >
-                {data.map(
-                  (e, i) =>
-                    e && e[1].catcode ? (
-                      e[1].path !== 'cat' ? (
-                        <SubCatTile data={e[1]} key={i} id={e[0]} />
+            Content = () => (
+              <AppBody active={0}>
+                <Row
+                // style={{
+                //   display: 'flex',
+                //   alignItems: 'center',
+                //   justifyContent: 'center',
+                // }}
+                >
+                  {data.map(
+                    (e, i) =>
+                      e && e[1].catcode ? (
+                        e[1].path !== 'cat' ? (
+                          <SubCatTile data={e[1]} key={i} id={e[0]} />
+                        ) : (
+                          <Tiles data={e[1]} key={i} id={e[0]} />
+                        )
                       ) : (
-                        <Tiles data={e[1]} key={i} id={e[0]} />
+                        <Listing
+                          search={this.props.location.search}
+                          data={e[1]}
+                          parent={rnom[e[1].path]}
+                          key={i}
+                          id={e[0]}
+                        />
                       )
-                    ) : (
-                      <Listing
-                        search={this.props.location.search}
-                        data={e[1]}
-                        parent={rnom[e[1].path]}
-                        key={i}
-                        id={e[0]}
-                      />
-                    )
-                )}
-              </Row>
+                  )}
+                </Row>
+              </AppBody>
             );
           } catch (err) {
             console.log(err);
@@ -175,10 +181,12 @@ class App extends Component {
           try {
             const d = data[0][1];
             if (d.type_ && d.type_ === 'premium')
-              Cont = (
-                <Row>
-                  <Business path={path} data={d} id={data[0][0]} />
-                </Row>
+              Content = () => (
+                <AppBody fullWidth={true} active={0}>
+                  <Row>
+                    <Business path={path} data={d} id={data[0][0]} />
+                  </Row>
+                </AppBody>
               );
             else this.previous();
           } catch (err) {
@@ -190,7 +198,7 @@ class App extends Component {
           break;
       }
     }
-    return <AppBody active={0}>{Cont}</AppBody>;
+    return <Content />;
   }
 }
 
