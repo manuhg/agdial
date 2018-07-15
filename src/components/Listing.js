@@ -22,7 +22,12 @@ class Listing extends Component {
     if (typeof data !== 'object') return <span>Please wait..</span>;
     const ehref = data.type_ && data.type_ === 'premium' ? parent + '/' + data.name : undefined;
     // const ehref = parent + '/' + data.name;
-
+    var w = window,
+      d = document,
+      documentElement = d.documentElement,
+      body = d.getElementsByTagName('body')[0],
+      width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
+    // height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
     return (
       <Col className="zp col-12" style={{ padding: '5px' }}>
         <Container fluid>
@@ -36,7 +41,7 @@ class Listing extends Component {
                   <div style={{ width: '100%' }} className="card-body zp">
                     <Container fluid style={{ width: '100%' }}>
                       <Row style={{ display: 'flex' }} className="zp">
-                        <Col style={imgStyle} />
+                        {width > 767 ? <Col style={imgStyle} /> : <Col />}
                         <Col className="lb" xs="12" sm="12" md="8" lg="10" xl="11">
                           <Container fluid style={{ width: '100%' }} className="zp text-left">
                             <ul className="list-group list-group-flush">
