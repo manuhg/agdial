@@ -27,7 +27,8 @@ def extract_special_data(data_list):
                     l = list(
                         filter(None, map(lambda x: x[0].strip() if x and x[0] else None, re.findall(s[1], data))))
                     if l:
-                        specials_dict[s[0]] = l
+                        specials_dict[s[0]] = list(
+                            map(lambda x: x.strip('.'), l))
                         data_list.remove(data)
             except Exception as e:
                 print(e, 'at line ', sys.exc_info()[2].tb_lineno)

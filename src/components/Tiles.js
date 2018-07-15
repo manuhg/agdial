@@ -21,7 +21,7 @@ class Tile extends Component {
     // const sc = d.path !== 'cat';
     // console.log(d.name, 'is', sc ? '' : 'not', 'subcategory');
     return (
-      <Col style={{ padding: '5px' }} md="6" lg="4">
+      <Col style={{ padding: '5px' }} md="6" lg="6" xl="4">
         <a href={hrefbase + d.name} style={{ textDecoration: 'none', color: 'black' }}>
           <Container>
             <Row style={{ padding: '5px' }}>

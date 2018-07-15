@@ -6,7 +6,7 @@ nomenclature = {
     'Consultancy Services': 'CS',
     'Innovative Farmers': 'IF',
     'Irrigation Systems': 'IS',
-    'Organic Inputs & Services': 'OS',
+    'Organic Inputs-Services': 'OS',
     'Organizations': 'OZ',
     'Plant Nurseries': 'PN',
     'Fertilizers': 'FZ',

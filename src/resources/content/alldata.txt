@@ -1,7 +1,7 @@
 $$/cat/01/Agricultural Machineries:AM
 ##Brush Cutters & Rotary Tillers, ##Handheld Power Tools & Sprayers, ##Garden Machineries, ##Handheld Tools & Implements, ##Tractor Drawn Implements, ##Harvesting & Post-harvest Machines
 
-$$/cat/02/Organic Inputs & Services:OS
+$$/cat/02/Organic Inputs-Services:OS
 ##Organic Certification, ##Biofertilizers & Composters, ##Biofertilizers & Composters, ##Plant Growth Regulators, ##Plant Growth Regulators, ##Organic Certification
 
 $$/cat/03/Organizations:OZ

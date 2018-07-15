@@ -45,12 +45,18 @@ class Listing extends Component {
                                   <div style={bw}>{e}&nbsp;</div>
                                 </li>
                               ))}
+
                               {data.Website ? (
-                                data.Website.map((e, i) => (
-                                  <li key={i} className="lp list-group-item">
-                                    <a href={e}>{e}</a>
-                                  </li>
-                                ))
+                                <li className="lp list-group-item">
+                                  {data.Website.map((e, i) => (
+                                    <span key={i}>
+                                      {i > 0 ? ', ' : ''}
+                                      <a href={'http://' + e} target="_blank" rel="noopener">
+                                        {e}
+                                      </a>
+                                    </span>
+                                  ))}
+                                </li>
                               ) : (
                                 <span />
                               )}
