@@ -29,12 +29,7 @@ class AppBody extends Component {
                   }}
                 >
                   <Container className="fc" fluid>
-                    {/* <Row><Col>Browse</Col></Row> */}
-                    <Row>
-                      <Col>
-                        <ErrorBoundary>{content}</ErrorBoundary>
-                      </Col>
-                    </Row>
+                    <ErrorBoundary>{content}</ErrorBoundary>
                   </Container>
                 </Card>
               </Col>

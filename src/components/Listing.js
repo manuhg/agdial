@@ -67,11 +67,11 @@ class Listing extends Component {
                               )}
                             </ul>
                             {ehref ? (
-                              <Button size="sm" color="red">
-                                <a style={{ color: 'white' }} href={ehref}>
+                              <a style={{ color: 'white' }} href={ehref}>
+                                <Button size="sm" color="red">
                                   Go to Page
-                                </a>
-                              </Button>
+                                </Button>
+                              </a>
                             ) : (
                               <span />
                             )}
