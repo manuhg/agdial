@@ -8,7 +8,7 @@ class Listing extends Component {
     const bw = {
       wordWrap: 'break-word !important',
       fontSize: '90%',
-      textAlign: 'justify',
+      textAlign: 'left',
       textJustify: 'inter-word',
       padding: '0px',
     };
@@ -37,7 +37,7 @@ class Listing extends Component {
                     <Container fluid style={{ width: '100%' }}>
                       <Row style={{ display: 'flex' }} className="zp">
                         <Col style={imgStyle} />
-                        <Col className="lb" xs="8" sm="9" md="10" lg="11">
+                        <Col className="lb" xs="12" sm="12" md="8" lg="10" xl="11">
                           <Container fluid style={{ width: '100%' }} className="zp text-left">
                             <ul className="list-group list-group-flush">
                               {data.content.map((e, j) => (
@@ -45,6 +45,15 @@ class Listing extends Component {
                                   <div style={bw}>{e}&nbsp;</div>
                                 </li>
                               ))}
+                              {data.Website ? (
+                                data.Website.map((e, i) => (
+                                  <li key={i} className="lp list-group-item">
+                                    <a href={e}>{e}</a>
+                                  </li>
+                                ))
+                              ) : (
+                                <span />
+                              )}
                             </ul>
                             {ehref ? (
                               <Button size="sm" color="red">

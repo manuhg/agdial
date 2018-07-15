@@ -35,16 +35,13 @@ $$/cat/12/Pesticides:PD
 ## Chemical Insecticides ## Chemical Fungicides & Bactericides ## Herbicides & Growth Inhibitors  ## Growth Regulators & Hormones ## Chemicals for Seed Treatment ## Storage Pest Control Chemicals 
 
 $$/cat/13/Gou Shala for Indian Cow Breeds:AH-GS
-##Indian Cow Breeeds
 
 $$/cat/14/State Agricultural Universities:OZ-UAS
-##Universities
 
 $$/cat/15/National Institutes:OZ-NI
-##Institutes
 
 $$/cat/16/Karnataka State Organisations & Departments:OZ-KST
-##Departments
 
 $$/cat/17/Non-Governmental Organisations (NGOs):OZ-NGO
-##NGO
+
+$$/cat/18/Media Organisations: OZ-MED

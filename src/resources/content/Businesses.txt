@@ -1,5 +1,4 @@
-﻿
-$$/AM/001/Ratnagiri Impex Pvt. Ltd. [premium] 
+﻿$$/AM/001/Ratnagiri Impex Pvt. Ltd. [premium] 
 ##Annapurna House, 1-1G, 7th Cross, New Guddadahalli, Mysore Road, Bengaluru, Karnataka 560026 India. ##Phone: +91 80 26985100, 101, 102 Fax: +91 80 26751658 All India customer care number 1800 425 7475 Email: customercare@ratnagiriimpex.com  ##Business type: Importers and Distributors of agricultural and other machineries and handheld power tools ##Major Items: Brush cutter, Chain saw, Sprayers, Rotary tillers, High pressure washers, Lawnmowers etc. ##Outlet Brand: AgriMart, AgriMart Care ##Major Brands: Oleo-Mac, Agrimate, Unigreen, Bartolini, Comet, Gulliver ## Website: www.ratnagiriimpex.com 
 
 
@@ -160,7 +159,6 @@ $$/OZ/KST/012/Karnataka State Watershed Development Department
 
 
 $$/OZ/KST/013/Karnataka Biodiversity Board
-
 ##Karnataka Biodiversity Board, Department of Forest​​, Ecology and Environment
 ##Ground Floor, Vanavikas, 18th Cross, Malleshwaram, Bengaluru 5600​​​03, Karnataka, India. Phone: +91 80 23448783, Fax: 080-23440535, Email: kbb-ka@nic.in ##Work: conservation of biodiversity, sustainable use of its components and equitable sharing of benefits arising out of the utilization of biological resources ##Website: www.karnataka.gov.in/kbb/english
 
@@ -204,7 +202,6 @@ $$/OZ/NGO/010/Ashoka Trust for Research in Ecology and The Environment
 ##Phone: +91 80 23635555, Fax: +91 80 23530070, Email: info@atree.org ## Work: Forest, Water, Climate and Energy, Biodiversity, Ecosystem services, Landscapes and Livelihood, Community conservation etc. ##Website: www.atree.org
 
 $$/OZ/NGO/011/Green Foundation
-
 ##Green Foundation ##No.25, AECS Layout, 1st Main, Ashwath Nagar, RMV 2nd stage, Bengaluru 560094, Karnataka, India. Email: contact@greenfoundation.in ##Work: Empowering small and marginal farmers by way of sustainable agriculture, conservation of indigenous crops and varieties, Community seed bank network etc. ## Website: http://www.greenfoundation.in 
 
 $$/OZ/MED/001/Centre for Alternative Agricultural Media
@@ -217,7 +214,6 @@ $$/OZ/MED/002/Adike Patrike
 
 
 $$/OZ/MED/003/Sujata Sanchike
-
 ##Sujata Sanchike, No. 107-108, Suprabhata, Bejai Kapikad, Mangalore 575004, Karnataka, India ##Phone: +91 824 2221413, +91 9448255026, Email: sujathasanchike@gmail.com  ##Work: Agriculture monthly magazine in Kannada language
 
 
@@ -232,5 +228,4 @@ $$/OZ/MED/006/Nirantara Pragati
 Dist: Dakshina Kannada 574216, Karnataka, India ##Phone: +91 8256 277215, Email: skdrdp@skdrdpindia.org ##Work: Monthly magazine in Kannada on agriculture, rural development etc. published by SKDRDP, Dharmasthala ##Website: www.skdrdpindia.org 
 
 $$/OZ/MED/007/Hasiruvasi
-##Hasiruvasi, Editor: Radhakrishna S Bhadti, 67-1, 5th Cross, Gurudatta Layout, Dattatreyanagar, Hosakerehalli, Banashankari 3rd Stage, Bengaluru 560085, Karnataka, India ##Phone: +91 9632107161, Email: hasiruvasi@gmail.com ##Work: Kannada and English fortnightly magazine on agriculture, environment, rural development, science etc. owned by Bhoomigeeta Media Pvt. Ltd., Bengaluru ##Website: www.hasiruvasi.com 
-
+##Hasiruvasi, Editor: Radhakrishna S Bhadti, 67-1, 5th Cross, Gurudatta Layout, Dattatreyanagar, Hosakerehalli, Banashankari 3rd Stage, Bengaluru 560085, Karnataka, India ##Phone: +91 9632107161, Email: hasiruvasi@gmail.com ##Work: Kannada and English fortnightly magazine on agriculture, environment, rural development, science etc. owned by Bhoomigeeta Media Pvt. Ltd., Bengaluru ##Website: www.hasiruvasi.com

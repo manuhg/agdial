@@ -30,7 +30,7 @@ def delete_collection(coll_ref, batch_size=100):
     print('Deleting collection ', coll_ref)
 
     for doc in docs:
-        print(u'Deleting doc {} => {}'.format(doc.id, doc.to_dict()))
+        print(u'Deleting doc', doc.id)
         doc.reference.delete()
         deleted = deleted + 1
 
@@ -68,15 +68,15 @@ def add_to_algolia(data, index=None):
     if not index:
         index = init_algolia()
     index.clear_index()
-    print('Adding data to algolia', nd)
+    print('Adding data to algolia')  # , nd)
     index.add_objects(nd)
     index.set_settings({"searchableAttributes": ["name", 'id', "path"]})
 
 
 def add_all_data(db, file):
     data = parse(file)
-    if(type(data) is dict):
-        print(data.items(), "\n\nWill add the above data to firestore")
+    if data and (type(data) is dict):
+        print("\n\nWill add the above data to firestore")  # data.items(),
         batch = db.batch()
         cref = db.collection('data')
         delete_collection(cref)
@@ -135,7 +135,7 @@ def main():
     # file = 'content/alldata.txt'
     db = init_db()
     add_all_data(db, '../content/alldata.txt')
-    add_nomenclature(db)
+    # add_nomenclature(db)
 
 
 main()
