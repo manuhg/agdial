@@ -4,16 +4,15 @@ import Footer from 'components/Footer';
 import Nav from 'components/Nav';
 import { Card, Col, Container, Row } from 'mdbreact';
 import bcgImg from 'resources/img/body_bcg.JPEG';
-// fullWidth;
 class AppBody extends Component {
   render() {
     const Content = this.props.children;
-    const CCard = () => (
+    const CCard = props => (
       <Card
         className="fp"
         style={{
           minHeight: '86vh',
-          background: 'rgba(255,255,255,0.85)',
+          // background: 'rgba(255,255,255,0.85)',
         }}
       >
         <Container className="fc" fluid>
@@ -22,9 +21,9 @@ class AppBody extends Component {
       </Card>
     );
     document.body.style.backgroundImage =
-      'linear-gradient(rgba(255,255,255,0.2), rgba(255,255,255,0.2)), url(' + bcgImg + ')';
+      'linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(' + bcgImg + ')';
     return (
-      <div>
+      <div style={{ background: 'rgba(255,255,255,0.7)' }}>
         <header id="header">
           <Nav active={this.props.active} />
         </header>
@@ -32,10 +31,12 @@ class AppBody extends Component {
         <header>
           <Container className="text-center" style={{ minHeight: '89vh' }} fluid>
             {this.props.fullWidth ? (
-              <Row>
-                <Col md="12">
+              <Row className="mzpz">
+                <Col />
+                <Col className="mzpz" md="11">
                   <CCard />
                 </Col>
+                <Col />
               </Row>
             ) : (
               <Row>

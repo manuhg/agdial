@@ -128,13 +128,22 @@ class App extends Component {
   render() {
     console.log('r');
     document.title = 'AgDial:' + this.title;
+
     var Content = () => (
       <AppBody active={0}>
         <span>{'Loading please wait.'}</span>
       </AppBody>
     );
+
+    var w = window,
+      d = document,
+      documentElement = d.documentElement,
+      body = d.getElementsByTagName('body')[0],
+      width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
+      height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
     const path = this.props.location.pathname;
     const tType = this.urlTargetType(path);
+
     if (!this.memoize(path)) this.docAtPath(path);
 
     if (typeof this.dataColl[path] === 'object') {
@@ -161,6 +170,8 @@ class App extends Component {
                         )
                       ) : (
                         <Listing
+                          width={width}
+                          height={height}
                           search={this.props.location.search}
                           data={e[1]}
                           parent={rnom[e[1].path]}
@@ -184,7 +195,7 @@ class App extends Component {
               Content = () => (
                 <AppBody fullWidth={true} active={0}>
                   <Row>
-                    <Business path={path} data={d} id={data[0][0]} />
+                    <Business width={width} height={height} path={path} data={d} id={data[0][0]} />
                   </Row>
                 </AppBody>
               );

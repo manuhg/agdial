@@ -30,6 +30,11 @@
 }
 .bpb {
 }
+.bpch {
+  color: green;
+  word-wrap: 'break-word !important';
+  font-size: '70% !important';
+}
 .bpc {
   margin: 5px;
   padding: 5px;

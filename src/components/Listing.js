@@ -4,7 +4,7 @@ import 'resources/css/listing.css';
 
 class Listing extends Component {
   render() {
-    const { data, parent } = this.props;
+    const { data, parent, width } = this.props;
     const bw = {
       wordWrap: 'break-word !important',
       fontSize: '90%',
@@ -21,13 +21,6 @@ class Listing extends Component {
 
     if (typeof data !== 'object') return <span>Please wait..</span>;
     const ehref = data.type_ && data.type_ === 'premium' ? parent + '/' + data.name : undefined;
-    // const ehref = parent + '/' + data.name;
-    var w = window,
-      d = document,
-      documentElement = d.documentElement,
-      body = d.getElementsByTagName('body')[0],
-      width = w.innerWidth || documentElement.clientWidth || body.clientWidth;
-    // height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
     return (
       <Col className="zp col-12" style={{ padding: '5px' }}>
         <Container fluid>
@@ -67,7 +60,7 @@ class Listing extends Component {
                               )}
                             </ul>
                             {ehref ? (
-                              <a style={{ color: 'white' }} href={ehref}>
+                              <a style={{ color: 'white' }} href={ehref + '#cont'}>
                                 <Button size="sm" color="red">
                                   Go to Page
                                 </Button>
