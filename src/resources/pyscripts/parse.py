@@ -14,25 +14,34 @@ def parse_file(fname):
         return entries
 
 
+phone_regex = r'(([0-9\+ \-]+,?)+)'
 special_data = {'Website': r'((https?:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/\-a-zA-Z0-9#\.\?\&\=]+\/?)?)',
-                'Whatsapp': r'(+?[0-9 ]+{10,})', 'Youtube': r'(https:\/\/www\.youtu.+)'}
+                'Whatsapp': r'((+?[0-9 ]+{10,})+)', 'Youtube': r'((https:\/\/www\.youtu.+)+)',
+                'Phone': phone_regex, 'customer care': phone_regex, 'Fax': phone_regex,
+                'Email': r"(([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)\s*,?)+"}
+excl_page_specials = ['Phone', 'customer care', 'Email',  'Fax']
 
 
-def extract_special_data(data_list):
+def extract_special_data(data_list, type_=None):
     specials_dict = {}
-    for data in data_list:
+    to_remove = []
+    for i in range(len(data_list)):
         for s in special_data.items():
             try:
-                if re.search(s[0], data):
-                    l = list(
-                        filter(None, map(lambda x: x[0].strip() if x and x[0] else None, re.findall(s[1], data))))
-                    if l:
+                if re.search(s[0], data_list[i], flags=re.IGNORECASE):
+                    testval = 0
+                    testval += -2 if s[0] in excl_page_specials else 0
+                    testval += 2 if type_ == 'premium' else 0
+                    if testval >= 0:
+                        l = list(
+                            filter(None, map(lambda x: x[0].strip() if x and x[0] else None, re.findall(s[1], data_list[i], flags=re.IGNORECASE))))
                         specials_dict[s[0]] = list(
                             map(lambda x: x.strip('.'), l))
-                        data_list.remove(data)
+                        to_remove.append(i)
             except Exception as e:
                 print(e, 'at line ', sys.exc_info()[2].tb_lineno)
-
+    for i in sorted(to_remove, reverse=True):
+        del data_list[i]
     return specials_dict
 
 
@@ -55,18 +64,17 @@ def parse_entry(entry):
     n_c = re.match('(.*)\[([^\]]+)\]', name)
     if n_c:
         n_c = n_c.groups()
-        print(n_c)
+        print('\n\n=>:', n_c)
         name = n_c[0]
         type_ = n_c[1]
     imgurl = imgurl_base+id+'.jpg'
     data_list = list(map(lambda x: x.strip(), ed[1:]))
     entry_dict = {"name": name, "path": path,
                   "image": imgurl, "content": data_list}
-    specials = extract_special_data(data_list)
+    specials = extract_special_data(data_list, type_)
     if specials:
-        print('\n\n\n', specials, '\n', data_list)
+        print('\n', specials)
         entry_dict.update(specials)
-
     for v in locals().items():
         if v[0] in ['catcode', 'type_'] and v[1]:
             entry_dict.update({v[0]: v[1]})
@@ -98,8 +106,8 @@ def parse(filename):
 
 
 def main():
-    entries = parse('../content/alldata.txt')
-    #print(list(map(lambda x: print(x), entries.items())))
+    entries = parse('../content/Businesses.txt')
+    print(list(map(lambda x: print(x, '\n\n'), entries.items())))
 
 
 # main()

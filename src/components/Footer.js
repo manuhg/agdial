@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 class AppFooter extends Component {
   render() {
     const buttons = [
+      ['https://shramajeevi.com', 'Shramajeevi'],
       ['https://www.youtube.com/user/ShramajeeviAgriFilms', 'Watch Agri Videos'],
       ['https://video.shramajeevi.com', 'Buy Agri Videos'],
       ['https://shramajeeviimages.com', 'Download Images'],
@@ -16,18 +17,18 @@ class AppFooter extends Component {
           <Row>
             <Col md="12">
               <div className="mb-12 flex-center">
-                <Container>
-                  <Row>
+                <div className="container">
+                  <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
                     {buttons.map((b, i) => (
-                      <Col lg="3" key={i}>
+                      <div style={{ flexDirection: 'column' }} key={i}>
                         <a href={b[0]} rel="noopener" target="_blank">
                           <Button color="dark-green">{b[1]}</Button>
                         </a>
-                      </Col>
+                      </div>
                     ))}
-                  </Row>
-                  <Row>
-                    <Col md="12">
+                  </div>
+                  <div className="row">
+                    <div className="col-md-12">
                       <hr className="hr-dark" />
                       <h4>
                         <strong>DISCLAIMER</strong>
@@ -48,9 +49,9 @@ class AppFooter extends Component {
                           </strong>
                         </p>
                       </div>
-                    </Col>
-                  </Row>
-                </Container>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Col>
           </Row>

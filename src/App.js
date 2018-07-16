@@ -2,7 +2,7 @@
 import About from 'pages/About';
 import Contact from 'pages/Contact';
 import Home from 'pages/Home';
-import Pricing from 'pages/Pricing';
+// import Pricing from 'pages/Pricing';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ErrorBoundary from 'utils/ErrorBoundary';
@@ -21,7 +21,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route path="/categories" component={Home} />
             <Route path="/about" component={About} />
-            <Route path="/pricing" component={Pricing} />
+            {/* <Route path="/pricing" component={Pricing} /> */}
             <Route path="/contact" component={Contact} />
             {/* <Route component={Home} _404={true} /> */}
           </Switch>

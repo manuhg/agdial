@@ -16,7 +16,7 @@ class SubCatTile extends Component {
 
     return (
       <div
-        style={{ flex: '1 1 auto' }}
+        style={{ flex: '1 1 auto', marginTop: '5px' }}
         className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 card sctiles mr-auto"
       >
         <a href={hrefbase + d.name} className="mzpz">

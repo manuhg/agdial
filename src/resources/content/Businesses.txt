@@ -1,9 +1,8 @@
-﻿$$/AM/001/Ratnagiri Impex Pvt. Ltd. [premium] 
-##Annapurna House, 1-1G, 7th Cross, New Guddadahalli, Mysore Road, Bengaluru, Karnataka 560026 India. ##Phone: +91 80 26985100, 101, 102 Fax: +91 80 26751658 All India customer care number 1800 425 7475 Email: customercare@ratnagiriimpex.com  ##Business type: Importers and Distributors of agricultural and other machineries and handheld power tools ##Major Items: Brush cutter, Chain saw, Sprayers, Rotary tillers, High pressure washers, Lawnmowers etc. ##Outlet Brand: AgriMart, AgriMart Care ##Major Brands: Oleo-Mac, Agrimate, Unigreen, Bartolini, Comet, Gulliver ## Website: www.ratnagiriimpex.com 
+﻿$$/AM/001/Ratnagiri Impex Pvt. Ltd. [premium] ##Annapurna House, 1-1G, 7th Cross, New Guddadahalli, Mysore Road, Bengaluru, Karnataka 560026 India. ##Phone: +91 80 26985100, 101, 102 ##Fax: +91 80 26751658 ##All India customer care number 1800 425 7475 ##Email: customercare@ratnagiriimpex.com  ##Business type: Importers and Distributors of agricultural and other machineries and handheld power tools ##Major Items: Brush cutter, Chain saw, Sprayers, Rotary tillers, High pressure washers, Lawnmowers etc. ##Outlet Brand: AgriMart, AgriMart Care ##Major Brands: Oleo-Mac, Agrimate, Unigreen, Bartolini, Comet, Gulliver ## Website: www.ratnagiriimpex.com 
 
 
 $$/IS/001/Himadri Irrigation [premium]
-##No.81, Karihobanahalli, 4th Cross, Thigalarapalya Main Road, Near Maruti Industrial Estate, Peenya 2nd stage, Bengaluru 560058, India. ##Phone: +91 80 28364641, +91 9448139522, +91 8050499401, Email: himadri_nira@yahoo.com ##Business type: Manufacturers of drip irrigation system ##Products: Drip irrigation lateral pipes, Inline and flat lateral pipes, micro tubes, drippers and filters ##Contact Person: Niranjan Hegde, CMD ##Website: www.himadriirrigation.com 
+##No.81, Karihobanahalli, 4th Cross, Thigalarapalya Main Road, Near Maruti Industrial Estate, Peenya 2nd stage, Bengaluru 560058, India. ##Phone: +91 80 28364641, +91 9448139522, +91 8050499401, ##Email: himadri_nira@yahoo.com ##Business type: Manufacturers of drip irrigation system ##Products: Drip irrigation lateral pipes, Inline and flat lateral pipes, micro tubes, drippers and filters ##Contact Person: Niranjan Hegde, CMD ##Website: www.himadriirrigation.com 
 
 
 $$/CS/001/Suma Agro Technologies
@@ -12,8 +11,9 @@ $$/CS/001/Suma Agro Technologies
 
 $$/PN/001/Nadakatti Farms [premium]
 ##Narendra cross, Poona-Bengaluru Highway, Dharwad 580005, Karnataka, India. ##Phone: +91 6361696364, +91 9449188429, +91 9448639034 ##Business Type: Horticultural nursery ##Specialty: Mango, Sapota, Guava, Sweet orange, Citrus, Coconut (dwarf green) ##Contact person: Prof. Basavaraj G Nadakatti ##Website: www.nadakattifarms.com
+
 $$/PN/002/Sasya Horticulture Nursery [premium]
-##Office: Giridath, Behind Nityananda Matha, Marathikoppa Road, Sirsi, Uttara Kannada 581402, Karnataka, India. ##Nursery: Islur, Hubballi Road, Sirsi. Phone: +91 8384 237424, +91 9449999791, +91 9448408620 Email: gardennagaraj@gmail.com ##Business type: Horticultural nursery ##Specialty: All types of ornamental plants, Plantation crop plants like Arecanut, coconut, Fruits like mango, sapota, spices and medicinal plants ##Contact person: DR. Nagaraja D Bhat ##Website: www.sasyanursery.com
+##Office: Giridath, Behind Nityananda Matha, Marathikoppa Road, Sirsi, Uttara Kannada 581402, Karnataka, India. ##Nursery: Islur, Hubballi Road, Sirsi.## Phone: +91 8384 237424, +91 9449999791, +91 9448408620 ##Email: gardennagaraj@gmail.com ##Business type: Horticultural nursery ##Specialty: All types of ornamental plants, Plantation crop plants like Arecanut, coconut, Fruits like mango, sapota, spices and medicinal plants ##Contact person: DR. Nagaraja D Bhat ##Website: www.sasyanursery.com
 
 
 $$/AS/001/R&V Technologies - Poly House & Shade House 

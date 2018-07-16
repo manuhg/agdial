@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'resources/css/business.css';
 class Listing extends Component {
   render() {
-    const { data, width, height } = this.props;
+    const { data } = this.props;
     if (typeof data !== 'object') return <span>Please wait..</span>;
     const d = data;
     var wimg = d.image;
@@ -73,21 +73,53 @@ class Listing extends Component {
                           </div>
                           <div style={{ margin: '0px' }} className="card-body">
                             <ul className="list-group list-group-flush">
-                              <li className="lp list-group-item">
-                                <i className="fa fa-globe fa-lg" />&nbsp;{data.Website
-                                  ? data.Website.map((w, k) => (
-                                      <span key={k}>
-                                        {k > 0 ? ',' : ''}
-                                        <a href={w} target="_blank" rel="noopener">
-                                          {w}
-                                        </a>
-                                      </span>
-                                    ))
-                                  : ' '}
-                              </li>
-                              <li className="lp list-group-item">
-                                <i className="fa fa-phone fa-lg" />&nbsp;{data.phone}&nbsp;1234567890
-                              </li>
+                              {data.Website ? (
+                                <li className="lp list-group-item">
+                                  <i className="fa fa-globe fa-lg" />&nbsp;{data.Website
+                                    ? data.Website.map((w, k) => (
+                                        <span key={k}>
+                                          {k > 0 ? ',' : ''}
+                                          <a href={'http://' + w} target="_blank" rel="noopener">
+                                            {w}
+                                          </a>
+                                        </span>
+                                      ))
+                                    : ' '}
+                                </li>
+                              ) : (
+                                ''
+                              )}
+                              {data.Phone ? (
+                                <li className="lp list-group-item">
+                                  <i className="fa fa-phone fa-lg" />&nbsp;{data.Phone[0]}&nbsp;
+                                </li>
+                              ) : (
+                                ''
+                              )}
+                              {data['customer care'] ? (
+                                <li className="lp list-group-item">
+                                  <i className="fa fa-phone fa-lg" />&nbsp;{
+                                    data['customer care'][0]
+                                  }&nbsp;
+                                </li>
+                              ) : (
+                                ''
+                              )}
+                              {data.Fax ? (
+                                <li className="lp list-group-item">
+                                  <i className="fa fa-fax fa-lg" />&nbsp;{data.Fax[0]}&nbsp;
+                                </li>
+                              ) : (
+                                ''
+                              )}
+                              {data.Email ? (
+                                <li className="lp list-group-item">
+                                  <i className="fa fa-envelope fa-lg" />&nbsp;
+                                  <a href={'mailto:' + data.Email[0]}>{data.Email[0]}</a>&nbsp;
+                                </li>
+                              ) : (
+                                ''
+                              )}
                             </ul>
                           </div>
                         </div>
@@ -97,7 +129,7 @@ class Listing extends Component {
                         className="col-12 col-sm-12 col-md-9 col-lg-9 lpb text-left"
                       >
                         <div className="card">
-                          <div className="card-header bpch">
+                          <div className="card-header text-center bpch">
                             <font className="display-5">Details</font>
                           </div>
                           <div className="card-body">

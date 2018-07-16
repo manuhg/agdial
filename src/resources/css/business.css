@@ -33,7 +33,7 @@
 .bpch {
   color: green;
   word-wrap: 'break-word !important';
-  font-size: '70% !important';
+  font-weight: bold;
 }
 .bpc {
   margin: 5px;

@@ -38,7 +38,7 @@ class Nav extends Component {
     const NLinks = [
       ['/', 'Home'],
       ['/about', 'About Us'],
-      ['/pricing', 'Pricing'],
+      // ['/pricing', 'Pricing'],
       ['/contact', 'Contact Us'],
     ];
     return (

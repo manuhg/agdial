@@ -1,4 +1,5 @@
 import 'resources/css/App.css';
+import 'resources/css/loader.css';
 import React, { Component } from 'react';
 import { Row } from 'mdbreact';
 import AppBody from 'components/AppBody';
@@ -128,10 +129,27 @@ class App extends Component {
   render() {
     console.log('r');
     document.title = 'AgDial:' + this.title;
+    var pathname = this.props.location.pathname;
 
     var Content = () => (
-      <AppBody active={0}>
-        <span>{'Loading please wait.'}</span>
+      <AppBody path={pathname} active={0}>
+        <div
+          style={{
+            height: '60vh',
+            display: 'flex',
+            justifyContent: 'center',
+            alignContent: 'center',
+            alignItems: 'center',
+          }}
+          className="text-center"
+        >
+          <div className="lds-ring" style={{ alignSelf: 'center' }}>
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+        </div>
       </AppBody>
     );
 
@@ -151,38 +169,50 @@ class App extends Component {
       switch (tType) {
         case types['list']:
           try {
-            Content = () => (
-              <AppBody active={0}>
-                <Row
-                // style={{
-                //   display: 'flex',
-                //   alignItems: 'center',
-                //   justifyContent: 'center',
-                // }}
-                >
-                  {data.map(
-                    (e, i) =>
-                      e && e[1].catcode ? (
-                        e[1].path !== 'cat' ? (
-                          <SubCatTile data={e[1]} key={i} id={e[0]} />
+            if (data.length > 0)
+              Content = () => (
+                <AppBody path={pathname} active={0}>
+                  <Row
+                  // style={{
+                  //   display: 'flex',
+                  //   justifyContent: 'center',
+                  //   flexWrap: 'wrap',
+                  // }}
+                  >
+                    {data.map(
+                      (e, i) =>
+                        e && e[1].catcode ? (
+                          e[1].path !== 'cat' ? (
+                            <SubCatTile data={e[1]} key={i} id={e[0]} />
+                          ) : (
+                            <Tiles data={e[1]} key={i} id={e[0]} />
+                          )
                         ) : (
-                          <Tiles data={e[1]} key={i} id={e[0]} />
+                          <Listing
+                            width={width}
+                            height={height}
+                            search={this.props.location.search}
+                            data={e[1]}
+                            parent={rnom[e[1].path]}
+                            key={i}
+                            id={e[0]}
+                          />
                         )
-                      ) : (
-                        <Listing
-                          width={width}
-                          height={height}
-                          search={this.props.location.search}
-                          data={e[1]}
-                          parent={rnom[e[1].path]}
-                          key={i}
-                          id={e[0]}
-                        />
-                      )
-                  )}
-                </Row>
-              </AppBody>
-            );
+                    )}
+                  </Row>
+                </AppBody>
+              );
+            else
+              Content = () => (
+                <AppBody path={pathname} active={0}>
+                  <div>
+                    <br />
+                    <h3>This section is under construction</h3>
+                    <br />
+                    <h4>We are sorry for the inconveniece</h4>
+                  </div>
+                </AppBody>
+              );
           } catch (err) {
             console.log(err);
             this.previous();
@@ -193,7 +223,7 @@ class App extends Component {
             const d = data[0][1];
             if (d.type_ && d.type_ === 'premium')
               Content = () => (
-                <AppBody fullWidth={true} active={0}>
+                <AppBody path={pathname} fullWidth={true} active={0}>
                   <Row>
                     <Business width={width} height={height} path={path} data={d} id={data[0][0]} />
                   </Row>
