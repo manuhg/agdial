@@ -15,7 +15,8 @@ class Listing extends Component {
     const w = 90;
     // const imW = { width: w + 'vw' };
     const imW = { width: '100%' };
-    const imH = width > height ? { height: w / 3 + 'vw' } : { height: w / 2 + 'vw' };
+    // const imH = width > height ? { height: w / 3 + 'vw' } : { height: w / 3 + 'vw' };
+    const imH = { height: w / 3 + 'vw' };
 
     return (
       <div id="cont" className="container-fluid mzpz">
@@ -62,7 +63,10 @@ class Listing extends Component {
 
                   <div style={{ borderTop: '5px solid green' }} className="container-fluid">
                     <div className="row mzpz">
-                      <div className="col-6 col-sm-4 col-md-3 col-lg-3" style={{ padding: '0px' }}>
+                      <div
+                        className="col-12 col-sm-12 col-md-3 col-lg-3"
+                        style={{ padding: '0px' }}
+                      >
                         <div className="card mzpz">
                           <div className="card-header bpch">
                             <font className="display-5">Contact</font>
@@ -90,7 +94,7 @@ class Listing extends Component {
                       </div>
                       <div
                         style={{ borderLeft: '5px solid green' }}
-                        className="col-6 col-sm-8 col-md-9 col-lg-9 lpb text-left"
+                        className="col-12 col-sm-12 col-md-9 col-lg-9 lpb text-left"
                       >
                         <div className="card">
                           <div className="card-header bpch">
