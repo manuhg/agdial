@@ -30,11 +30,11 @@ class Nav extends Component {
       actives[0] = false;
       actives[this.props.active] = true;
     }
-    const externalLinks = [
-      ['https://shramajeewiki.com', 'Articles'],
-      ['https://shramajeeviimages.com', 'Images'],
-      ['https://www.youtube.com/user/ShramajeeviAgriFilms', 'Videos'],
-    ];
+    // const externalLinks = [
+    //   ['https://shramajeewiki.com', 'Articles'],
+    //   ['https://shramajeeviimages.com', 'Images'],
+    //   ['https://www.youtube.com/user/ShramajeeviAgriFilms', 'Videos'],
+    // ];
     const NLinks = [
       ['/', 'Home'],
       ['/about', 'About Us'],
@@ -65,7 +65,7 @@ class Nav extends Component {
               );
             })}
           </NavbarNav>
-          <NavbarNav right>
+          {/* <NavbarNav right>
             {externalLinks.map((l, i) => (
               <NavItem key={i}>
                 <NavLink to={l[0]} target="_blank" rel="noopener">
@@ -73,12 +73,7 @@ class Nav extends Component {
                 </NavLink>
               </NavItem>
             ))}
-            {/* <NavItem>
-              <NavLink to="http://twitter.com/share?text=Agdial - Agriculture Contacts Directory&url=http://agdial.in/&hashtags=agriculture,farming,directory">
-                <i className="fa fa-share-alt fa-lg  fa-2x" />
-              </NavLink>
-            </NavItem> */}
-          </NavbarNav>
+          </NavbarNav> */}
         </Collapse>
       </Navbar>
     );

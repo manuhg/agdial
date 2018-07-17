@@ -26,7 +26,7 @@ class Contact extends Component {
                   >
                     <hr className="hr-dark" />
                     <div>
-                      <p style={{ width: '400px' }}>
+                      <p style={{ width: '100%' }}>
                         Address: Shramajeevi, # 009, Shrinilayam 3, Near Bandematha, Kommaghatta
                         Main Road, Kengeri Satellite Town, Bengaluru 560060. Karnataka.India
                       </p>
