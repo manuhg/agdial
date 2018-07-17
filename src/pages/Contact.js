@@ -40,7 +40,10 @@ class Contact extends Component {
                         </a>
                         <br />
                         Website:&nbsp;
-                        <a style={{ textDecoration: 'underline' }} href="www.shramajeevi.com">
+                        <a
+                          style={{ textDecoration: 'underline' }}
+                          href="https://www.shramajeevi.com"
+                        >
                           www.shramajeevi.com
                         </a>
                       </p>
