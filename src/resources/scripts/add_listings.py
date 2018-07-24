@@ -11,10 +11,13 @@ from firebase_admin import storage
 from algoliasearch import algoliasearch
 from parse import parse
 
+firebase_key = os.environ['HOME']+"/keys/agdial-001-firebase-adminsdk.json"
+
 
 def init_algolia():
-    client = algoliasearch.Client(
-        "76YGED1NMJ", 'f3ffe17101dd077a640df5ebcc7ee19c')
+    file = open(os.environ['HOME']+'/keys/algolia.txt')
+    key = list(map(lambda x: x.strip(), file))[0].split(',')
+    client = algoliasearch.Client(key[0], key[1])
     index = client.init_index('listings')
     return index
 
@@ -50,8 +53,7 @@ def delete_collection(coll_ref, batch_size=100):
 
 
 def init_storage():
-    cred = credentials.Certificate(
-        os.environ['HOME']+"/agdial-001-firebase-adminsdk.json")
+    cred = credentials.Certificate(firebase_key)
     firebase_admin.initialize_app(
         cred, {'storageBucket': 'gs://agdial-001.appspot.com'})
     bucket = storage.bucket()
@@ -59,8 +61,7 @@ def init_storage():
 
 
 def init_db():
-    cred = credentials.Certificate(
-        os.environ['HOME']+"/agdial-001-firebase-adminsdk.json")
+    cred = credentials.Certificate(firebase_key)
     firebase_admin.initialize_app(cred)
     db = firestore.client()
     return db

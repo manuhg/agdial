@@ -39,8 +39,7 @@ class Tile extends Component {
                     <Container className="lp text-left">
                       {data.content.map((e, j) => (
                         <span style={bw} key={j}>
-                          - > &nbsp;
-                          {e}
+                          > &nbsp;{e}
                           <br />
                         </span>
                       ))}
