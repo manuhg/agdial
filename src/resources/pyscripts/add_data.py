@@ -79,7 +79,7 @@ def add_all_data(db, file):
         print("\n\nWill add the above data to firestore")  # data.items(),
         batch = db.batch()
         cref = db.collection('data')
-        delete_collection(cref)
+        # delete_collection(cref)
         list(map(lambda d: batch.set(cref.document(d[0]), d[1]), data.items()))
         try:
             print(batch.commit())

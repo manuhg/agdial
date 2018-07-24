@@ -127,7 +127,6 @@ class App extends Component {
     this.props.history.go(-1);
   }
   render() {
-    console.log('r');
     document.title = 'AgDial:' + this.title;
     var pathname = this.props.location.pathname;
 
