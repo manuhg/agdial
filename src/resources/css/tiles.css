@@ -10,7 +10,7 @@
 
 .ch {
   font-weight: bold;
-  font-size: 0.96vw;
+  font-size: 0.9vw;
   color: black;
   /* font-size: 0.9vw; */
   padding: 6px 15px 0px 5px;
@@ -38,9 +38,27 @@
   padding: 1px 3px 5px 5px;
   word-wrap: break-word !important;
 }
+@media only screen and (max-width: 1268px) {
+  .ch {
+    font-size: 0.89vw;
+  }
+  .tiles {
+    font-size: 0.97vw;
+    padding-right: 7px;
+  }
+}
 @media only screen and (max-width: 1199px) {
   .ch {
     font-size: 1.4vw;
+  }
+  .tiles {
+    font-size: 1.4vw;
+    padding-right: 7px;
+  }
+}
+@media only screen and (max-width: 962px) {
+  .ch {
+    font-size: 1.3vw;
   }
   .tiles {
     font-size: 1.4vw;
@@ -58,16 +76,16 @@
 }
 @media only screen and (max-width: 700px) {
   .ch {
-    font-size: 3.2vw;
+    font-size: 2.8vw;
   }
   .tiles {
-    font-size: 3.3vw;
+    font-size: 3.4vw;
     padding-right: 7px;
   }
 }
 @media only screen and (max-width: 400px) {
   .ch {
-    font-size: 3.2vw;
+    font-size: 3vw;
   }
   .tiles {
     font-size: 3.3vw;

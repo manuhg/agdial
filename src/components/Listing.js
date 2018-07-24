@@ -20,12 +20,12 @@ class Listing extends Component {
     };
 
     if (typeof data !== 'object') return <span>Please wait..</span>;
-    const ehref = data.type_ && data.type_ === 'premium' ? parent + '/' + data.name : undefined;
+    const ehref = data.type && data.type === 'premium' ? parent + '/' + data.name : undefined;
     return (
       <Col className="zp col-12" style={{ padding: '5px' }}>
         <Container fluid>
           <Row className="zp">
-            <Col id={this.props.id} style={{ flex: '1' }} className="zp">
+            <Col id={data.id} style={{ flex: '1' }} className="zp">
               <Container fluid>
                 <div className="card zp listing">
                   <div className="card-header chl">

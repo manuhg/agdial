@@ -12,17 +12,16 @@ class SubCatTile extends Component {
       display: 'block',
     };
     if (typeof data !== 'object') return <span>Please wait..</span>;
-    const d = data;
 
     return (
       <div
         style={{ flex: '1 1 auto', marginTop: '5px' }}
         className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 card sctiles mr-auto"
       >
-        <a href={hrefbase + d.name} className="mzpz">
-          <div className="container scdiv mzpz" id={this.props.id}>
-            <img alt={d.name} style={cardImgStyle} src={d.image} />
-            <h6 className="scchst">{d.name}</h6>
+        <a href={hrefbase + data.name} className="mzpz">
+          <div className="container scdiv mzpz" id={data.id}>
+            <img alt={data.name} style={cardImgStyle} src={data.image} />
+            <h6 className="scchst">{data.name}</h6>
           </div>
         </a>
       </div>

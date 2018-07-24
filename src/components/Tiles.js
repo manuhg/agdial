@@ -13,20 +13,14 @@ class Tile extends Component {
       objectFit: 'contain',
     };
     if (typeof data !== 'object') return <span>Please wait..</span>;
-    //console.log(data);
-    const d = data;
-    /* <Container fluid>
-        <Row style={{ display: 'flex' }}>
-          {Object.values(data).map((d, i) => ( */
-    // const sc = d.path !== 'cat';
-    // console.log(d.name, 'is', sc ? '' : 'not', 'subcategory');
+
     return (
       <Col style={{ padding: '5px' }} md="6" lg="6" xl="4">
-        <a href={hrefbase + d.name} style={{ textDecoration: 'none', color: 'black' }}>
+        <a href={hrefbase + data.name} style={{ textDecoration: 'none', color: 'black' }}>
           <Container>
             <Row style={{ padding: '5px' }}>
               <Col
-                id={this.props.id}
+                id={data.id}
                 style={{ display: 'flex', flexDirection: 'col' }}
                 className="card tiles"
               >
@@ -34,16 +28,16 @@ class Tile extends Component {
                   <Col
                     style={{
                       ...cardImgStyle,
-                      background: 'url(' + d.image + ')',
+                      background: 'url(' + data.image + ')',
                       backgroundSize: 'cover',
                     }}
                     className="zp img-square-wrapper col-5"
                   />
 
                   <Col style={{ flex: '1' }} className="zp col-7">
-                    <font className="ch">{d.name}</font>
+                    <font className="ch">{data.name}</font>
                     <Container className="lp text-left">
-                      {d.content.map((e, j) => (
+                      {data.content.map((e, j) => (
                         <span style={bw} key={j}>
                           - > &nbsp;
                           {e}
@@ -62,7 +56,3 @@ class Tile extends Component {
   }
 }
 export default Tile;
-
-/* ))} 
-        </Row>
-      </Container>*/

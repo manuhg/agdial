@@ -9,7 +9,7 @@ import Tiles from 'components/Tiles';
 import SubCatTile from 'components/SubCatTile';
 import { db } from 'utils/db';
 import { nomenclature, rnom } from 'resources/nomenclature';
-const coll_name = 'data'; // categories collection name
+const coll_name = 'listings'; // categories collection name
 const types = {
   list: 0,
   page: 1,
@@ -124,14 +124,14 @@ class App extends Component {
     document.title = 'AgDial';
   }
   previous() {
-    this.props.history.go(-1);
+    //this.props.history.go(-1);
   }
   render() {
     document.title = 'AgDial:' + this.title;
-    var pathname = this.props.location.pathname;
+    const path = this.props.location.pathname;
 
     var Content = () => (
-      <AppBody path={pathname} active={0}>
+      <AppBody path={path} active={0}>
         <div
           style={{
             height: '60vh',
@@ -158,19 +158,18 @@ class App extends Component {
       body = d.getElementsByTagName('body')[0],
       width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
       height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
-    const path = this.props.location.pathname;
     const tType = this.urlTargetType(path);
-
     if (!this.memoize(path)) this.docAtPath(path);
 
     if (typeof this.dataColl[path] === 'object') {
-      const data = Object.entries(this.dataColl[path]);
+      // const data = Object.entries(this.dataColl[path]);
+      const data = Object.values(this.dataColl[path]);
       switch (tType) {
         case types['list']:
           try {
             if (data.length > 0)
               Content = () => (
-                <AppBody path={pathname} active={0}>
+                <AppBody path={path} active={0}>
                   <Row
                   // style={{
                   //   display: 'flex',
@@ -180,21 +179,20 @@ class App extends Component {
                   >
                     {data.map(
                       (e, i) =>
-                        e && e[1].catcode ? (
-                          e[1].path !== 'cat' ? (
-                            <SubCatTile data={e[1]} key={i} id={e[0]} />
+                        e && e.catcode ? (
+                          e.path !== 'CAT' ? (
+                            <SubCatTile data={e} key={i} />
                           ) : (
-                            <Tiles data={e[1]} key={i} id={e[0]} />
+                            <Tiles data={e} key={i} />
                           )
                         ) : (
                           <Listing
                             width={width}
                             height={height}
                             search={this.props.location.search}
-                            data={e[1]}
-                            parent={rnom[e[1].path]}
+                            data={e}
+                            parent={rnom[e.path]}
                             key={i}
-                            id={e[0]}
                           />
                         )
                     )}
@@ -203,7 +201,7 @@ class App extends Component {
               );
             else
               Content = () => (
-                <AppBody path={pathname} active={0}>
+                <AppBody path={path} active={0}>
                   <div>
                     <br />
                     <h3>This section is under construction</h3>
@@ -219,10 +217,11 @@ class App extends Component {
           break;
         case types['page']:
           try {
-            const d = data[0][1];
-            if (d.type_ && d.type_ === 'premium')
+            const d = data[0];
+            console.log(data);
+            if (d.type && d.type === 'premium')
               Content = () => (
-                <AppBody path={pathname} fullWidth={true} active={0}>
+                <AppBody path={path} fullWidth={true} active={0}>
                   <Row>
                     <Business width={width} height={height} path={path} data={d} id={data[0][0]} />
                   </Row>
