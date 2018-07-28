@@ -19,34 +19,37 @@ class Contact extends Component {
                   <strong>Contact Us</strong>
                 </h1>
                 <Row>
-                  <Col
-                    md="10"
-                    style={{ justifySelf: 'center' }}
-                    className="text-justify offset-md-1"
-                  >
+                  <Col md="10" style={{ justifySelf: 'center' }} className="text-left offset-md-1">
                     <hr className="hr-dark" />
-                    <div>
-                      <p style={{ width: '100%' }}>
-                        Address: Shramajeevi, # 009, Shrinilayam 3, Near Bandematha, Kommaghatta
-                        Main Road, Kengeri Satellite Town, Bengaluru 560060. Karnataka.India
-                      </p>
-                      <p>
-                        Mob: +91 9980534320.<br /> Email:&nbsp;
-                        <a
-                          style={{ textDecoration: 'underline' }}
-                          href="mailto:team@shramajeevi.com"
-                        >
-                          team@shramajeevi.com
-                        </a>
-                        <br />
-                        Website:&nbsp;
-                        <a
-                          style={{ textDecoration: 'underline' }}
-                          href="https://www.shramajeevi.com"
-                        >
-                          www.shramajeevi.com
-                        </a>
-                      </p>
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5">
+                          <address>
+                            Address: <br />Shramajeevi, # 009, Shrinilayam 3, Near Bandematha,
+                            Kommaghatta Main Road, Kengeri Satellite Town, Bengaluru 560060.
+                            Karnataka. India
+                          </address>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5">
+                          Mob: +91 9980534320.<br /> Email:&nbsp;
+                          <a
+                            style={{ textDecoration: 'underline' }}
+                            href="mailto:team@shramajeevi.com"
+                          >
+                            team@shramajeevi.com
+                          </a>
+                          <br />
+                          Website:&nbsp;
+                          <a
+                            style={{ textDecoration: 'underline' }}
+                            href="https://www.shramajeevi.com"
+                          >
+                            www.shramajeevi.com
+                          </a>
+                        </div>
+                      </div>
                     </div>
                   </Col>
                 </Row>

@@ -90,7 +90,11 @@ $$/AM/009/Hegde Dynamics Pvt. Ltd.
 ##Hegde Dynamics, Hegde Farm, 2nd Kilometre, Hosanagara Road, Sagar 577401, Dist: Shivamogga, Karnataka, India ##Phone: +91 8183 221234, +91 9632226404, Email: hegdedynamics@gmail.com ##Products: MotoCart on-farm transporter, Micro-sprinkler, Earth auger etc. ##Contact person: Mr. Lakshminarayana Hegde ##Website: http://hegdedynamics.com 
 
 $$/AM/010/Mathana Home Industries
-##Mathana Home Industries, Bandagadde, Po: Keladi, Ta: Sagara 577401, Dist: Shivamogga, Karnataka, India ##Phone: +91 8183 260063, 228971, +91 9663408163 +91 9448238663, +91 9741636163 Email: umesh@mathanaind.com, jnanendra_m@yahoo.com ##Products: Dry Arecanut de-husking machine, Arecanut cutter, Arecanut polisher, Pepper separator, Curd churning machine etc. ##Website: http://mathanaind.com  
+##Mathana Home Industries, Bandagadde, Po: Keladi, Ta: Sagara 577401, Dist: Shivamogga, Karnataka, India ##Phone: +91 8183 260063, 228971, +91 9663408163 +91 9448238663, +91 9741636163 Email: umesh@mathanaind.com, jnanendra_m@yahoo.com ##Products: Dry Arecanut de-husking machine, Arecanut cutter, Arecanut polisher, Pepper separator, Curd churning machine etc. ##Website: http://mathanaind.com 
+
+$$/AM/011/Varsha Associates
+##Varsha Associates, Mruthyunjaya Compound, V.P. Extension, Chitradurga 577501, Karnataka, India ##Phone: +91 8194 651721, +91 9448396261, Fax: +91 8194 226648, Email: info@varshaagro.com ## ##Bengaluru Office: New Tech Distributors, No. 35, 1st Main Road, Opposite Mahalakshmi Temple, Lower Palace Orchards, Sadashivanagar, Bengaluru 560003, Karnataka, India ##Phone: +91 80 41236389, +91 94483 96283, Email: info@varshaagro.com ##Products: Equipment for land preparation, Planting, Inter-cultivation, Plant protection, Harvesting, Threshing and many more ##Website: http://www.varshaagro.com  
+ 
 
 $$/CAT/AS/Other Agri Services
 ##Poly House & Shade House ##ASTRA Dryer & Poly Tunnel Dryer ##Electric Fence & Regular Fencing ##Birds & Wild Animal Chasing Device ##Aluminium Ladders & Climbers ##Mulch Sheets & Tarpaulins
@@ -352,6 +356,10 @@ $$/OZ/NGO/011/Green Foundation
 ##Green Foundation ##No.25, AECS Layout, 1st Main, Ashwath Nagar, RMV 2nd stage, Bengaluru 560094, Karnataka, India. Email: contact@greenfoundation.in ##Work: Empowering small and marginal farmers by way of sustainable agriculture, conservation of indigenous crops and varieties, Community seed bank network etc. ## Website: http://www.greenfoundation.in 
 
 
+$$/OZ/NGO/012/International Competence Centre for Organic Agriculture
+##ICCOA, No. 294/22, 7th Cross Road, 1st Block, Jayanagar, Bengaluru 560011, Karnataka, India ##Phone: +91 80 26561151, 26561152, Fax: +91 80 26561154, Email: admin@iccoa.org ##Work: Organic conversion, Sustainable and Organic agriculture, Developing market, Capacity building, Policy and Advocacy, Consultancy and Collaboration etc. ##Website: http://www.iccoa.org    
+
+
 
 $$/CAT/OZ/MED/Media Organisations
 
@@ -385,8 +393,6 @@ $$/OZ/MED/007/Hasiruvasi
 $$/CAT/OZ/PROS/Agriculture Product Processing Industry
 $$/OZ/PROS/001/Pineapple Processing Unit 
 ##DR. Abdul Rauf Sab Pineapple Processors, Tigani Village, Banavasi 581318, Karnataka, India ##Phone: +91 9448009805 Email: drarpp@rediffmail.co ##Work: Processing of Pineapple, Papaya, Mango etc. ##Contact Person: Abdul Kareem Sab +91 9448009805   
-
-
 
 
 
