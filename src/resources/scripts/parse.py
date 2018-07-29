@@ -13,6 +13,10 @@ special_data = {'Website': r'((https?:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/
 excl_page_specials = ['Phone', 'customer care', 'Email',  'Fax']
 
 
+def parse_premiums():
+    pass
+
+
 def extract_special_data(data_list, type_=None):
     specials_dict = {}
     to_remove = []

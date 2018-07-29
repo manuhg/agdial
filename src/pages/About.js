@@ -130,6 +130,23 @@ const AboutData = {
       </p>
     </span>
   ),
+  contactus: (
+    <span>
+      <p>
+        <address>
+          You can reach us at: Shramajeevi, # 009, Shrinilayam 3, Near Bandematha, Kommaghatta Main
+          Road, Kengeri Satellite Town, Bengaluru 560060, Karnataka, India. &nbsp;Mob: +91
+          9980534320. Email:&nbsp;
+          <a style={{ textDecoration: 'underline' }} href="mailto:team@shramajeevi.com">
+            team@shramajeevi.com
+          </a>&nbsp; Website:&nbsp;
+          <a style={{ textDecoration: 'underline' }} href="https://www.shramajeevi.com">
+            www.shramajeevi.com
+          </a>
+        </address>
+      </p>
+    </span>
+  ),
 };
 
 class About extends Component {
@@ -152,6 +169,7 @@ class About extends Component {
                   >
                     <hr className="hr-dark" />
                     {AboutData.about}
+                    {AboutData.contactus}
                   </Col>
                 </Row>
               </Container>

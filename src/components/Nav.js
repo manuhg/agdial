@@ -39,7 +39,7 @@ class Nav extends Component {
       ['/', 'Home'],
       ['/about', 'About Us'],
       // ['/pricing', 'Pricing'],
-      ['/contact', 'Contact Us'],
+      // ['/contact', 'Contact Us'],
     ];
     return (
       <Navbar color="white" light expand="md" scrolling>
