@@ -2,9 +2,11 @@
 import re
 import sys
 from order import order
-# from functools import reduce
+from functools import reduce
 
 imgurl_base = 'https://img.agdial.in/images/'
+premium_img_base = '<img class="pr_img" src="'+imgurl_base
+id_prefix = r'(id|prefix)\s*:\s*(.*)'
 phone_regex = r'(([0-9\+ \-]+,?)+)'
 special_data = {'Website': r'((https?:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/\-a-zA-Z0-9#\.\?\&\=]+\/?)?)',
                 'Whatsapp': r'((+?[0-9 ]+{10,})+)', 'Youtube': r'((https:\/\/www\.youtu.+)+)',
@@ -13,8 +15,60 @@ special_data = {'Website': r'((https?:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/
 excl_page_specials = ['Phone', 'customer care', 'Email',  'Fax']
 
 
-def parse_premiums():
-    pass
+def parse_premium_patts(patts, pval):
+    for patt in patts:
+        if re.search(patt[0], pval, flags=re.IGNORECASE):
+            return reduce(lambda s, p: re.sub(p[0], p[1], s), patt[1], pval)
+            # return re.sub(patt[1][0], patt[1][1], pval)
+    return pval
+
+
+def get_idprefix(pvals_tpl, pval):
+    patt = id_prefix
+    tpl = re.findall(patt, pval)[0] if re.search(patt, pval) else None
+
+    if type(tpl) is tuple:
+        if type(pvals_tpl) is tuple:
+            return pvals_tpl, tpl
+        return tpl
+    return pvals_tpl
+
+
+def parse_premium_entry(pr_entry):
+    if len(pr_entry) <= 1:
+        return
+    entry_vals = list(
+        filter(None, map(lambda x: x.strip(), pr_entry.split('##'))))
+
+    id_and_prefix = dict(reduce(get_idprefix, entry_vals, None))
+    img_pr = id_and_prefix['prefix']
+    premium_vals = {
+        r'\[pic\s*:': [[r'\s*([0-9]+),?\s*', premium_img_base + img_pr + r'-\1.jpg" alt="'+img_pr+r'-\1"  />'],
+                       [r'\[pic\s*:|\]', '']],
+        id_prefix: [[id_prefix, '']]
+    }
+
+    if not id_and_prefix['id'] or not id_and_prefix['prefix']:
+        return print("Invalid id or prefix: ", id_and_prefix)
+    pr_entry = id_and_prefix
+    pr_entry['image'] = imgurl_base+id_and_prefix['id']+'-w.jpg'
+    pr_entry['content'] = list(filter(None, map(lambda entry_val: parse_premium_patts(
+        premium_vals.items(), entry_val), entry_vals)))
+    pr_entry = {id_and_prefix['id']: dict(pr_entry.items())}
+    return pr_entry
+
+
+def process_premium_data(file='../content/premium_data.txt'):
+    with open(file) as f:
+        pr_data = filter(None, map(lambda x: x.strip(), f.read().split('$$')))
+        final_entries = list(filter(None, map(parse_premium_entry, pr_data)))
+        final_dict = {}
+        for e in final_entries:
+            try:
+                final_dict.update(e)
+            except Exception as ea:
+                print(ea, 'at line ', sys.exc_info()[2].tb_lineno)
+        return final_dict
 
 
 def extract_special_data(data_list, type_=None):
@@ -110,9 +164,8 @@ def parse(filename):
         return handle_entries(parse_file(filename))
 
 
-def main():
-    entries = parse('../content/all_listings.txt')
-    #print(list(map(lambda x: print(x, '\n\n'), entries.items())))
-
+# def main():
+    # entries=parse('../content/all_listings.txt')
+    # print(list(map(lambda x: print(x, '\n\n'), entries.items())))
 
 # main()

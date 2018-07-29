@@ -108,7 +108,7 @@ const AboutData = {
       </p>
       <p>
         Farmers from across the country and globe keep calling Shramajeevi for various contacts of
-        innovative farmers, institutes etc. So,{' '}
+        innovative farmers, institutes etc. So,&nbsp;
         <a href="https://shramajeevicontacts.com">shramajeevicontacts.com</a>, a service website
         with good number of contacts was launched in the year 2015. The feedback was very good and
         it helped thousands of farmers. Then it was decided to bring out the business version of the
@@ -223,7 +223,7 @@ class About extends Component {
                               </h6>
                               <h4 style={{ display: 'inline' }}>
                                 <a href={p[4]}>
-                                  {' '}
+                                  &nbsp;
                                   <Fa icon="linkedin-square" />
                                 </a>
                               </h4>

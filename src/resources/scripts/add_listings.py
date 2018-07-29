@@ -9,7 +9,7 @@ from firebase_admin import credentials
 from firebase_admin import firestore
 from firebase_admin import storage
 from algoliasearch import algoliasearch
-from parse import parse
+from parse import parse, process_premium_data
 
 firebase_key = os.environ['HOME']+"/keys/agdial-001-firebase-adminsdk.json"
 
@@ -22,7 +22,11 @@ def init_algolia():
     return index
 
 
-def do_work(func, init_stmt=''):
+# def do_work(func, init_stmt=''):
+# def do_work(*args):
+def do_work(w_tup):
+    func = w_tup[0]
+    init_stmt = w_tup[1]
     if init_stmt:
         print(init_stmt)
     t1 = time.time()
@@ -81,9 +85,10 @@ def init_db():
 #     print(nomref.document(ncname).set(nomenclature))
 
 
-def add_to_algolia(listings, index=None):
+def add_to_algolia(listings, index=None, clear_index=True):
     index = init_algolia() if not index else index
-    index.clear_index()
+    if clear_index:
+        index.clear_index()
     index.add_objects(list(listings.values()))
     index.set_settings(
         {"searchableAttributes": ["name", 'id', "path", "content"]})
@@ -103,11 +108,21 @@ def add_to_firestore(listings, cname='listings', db=None):
             print(e)
 
 
-def push_all_listings(file, db=None):
+def push_all_listings(file='../content/all_listings.txt', db=None):
     listings = parse(file)
-    do_work(lambda: add_to_firestore(listings, 'listings'),
-            'Adding listings to firestore')
-    do_work(lambda: add_to_algolia(listings), 'Adding listings to algolia')
+    pr_data = process_premium_data()
+    db = init_db()
+    index = init_algolia()
+    work = [
+        (lambda: add_to_firestore(listings, 'listings', db),
+         'Adding listings to firestore'),
+        (lambda: add_to_firestore(pr_data, 'premium_data', db),
+         'Adding premium data to firestore'),
+        (lambda: add_to_algolia(listings, index),
+         'Adding listings to algolia'),
+        (lambda: add_to_algolia(pr_data, index, False),
+         'Adding premium data to algolia')]
+    list(map(do_work, work))
 
 
 def main():
