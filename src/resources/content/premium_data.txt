@@ -3,10 +3,10 @@
 ##prefix:RIPL
 ##Ratnagiri Impex, the flagship company of Annapurna group aims to develop the rural economy of India through mechanisation. Since its inception in the year 2000 by the visionary leader Mr. S A Vasudevmurthy, RIPL is engaged in importing the latest machinery, outdoor power tools and equipment from the best companies across the world. It established its very own brands called AgriMart and Agrimate. RIPL is an ISO 9001:2008 certified company. 
 
-##[pic: 1] ‘AGRIMART’ is the ultimate Green Care & Farm Equipment shopping destination. It houses various models of single person operated equipment for different segments such as agriculture, horticulture, sericulture, plantation, garden, health and more. It is the first of its kind in the rural retail market that provides sales, service and spares under one roof. 
+##[image: 1] ‘AGRIMART’ is the ultimate Green Care & Farm Equipment shopping destination. It houses various models of single person operated equipment for different segments such as agriculture, horticulture, sericulture, plantation, garden, health and more. It is the first of its kind in the rural retail market that provides sales, service and spares under one roof. 
 
-##[pic: 2] 'AGRIMATE' is the very own private label of RIPL for range of pest control equipment available through the network of dealers and AgriMart outlets spread across India.
+##[image: 2] 'AGRIMATE' is the very own private label of RIPL for range of pest control equipment available through the network of dealers and AgriMart outlets spread across India.
 ##Products and Brands of Ratnagiri Impex Pvt. Ltd.
-[pic:3, 4, 5, 6, 7, 8]
+[image-list:3, 4, 5, 6, 7, 8]
 ##Major Products Offered by RIPL
-[pic: 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]
+[image-list: 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21]

@@ -10,6 +10,7 @@ import SubCatTile from 'components/SubCatTile';
 import { db } from 'utils/db';
 import { nomenclature, rnom } from 'resources/nomenclature';
 const coll_name = 'listings'; // categories collection name
+const pr_coll_name = 'premium_data'; // categories collection name
 const types = {
   list: 0,
   page: 1,
@@ -218,12 +219,19 @@ class App extends Component {
         case types['page']:
           try {
             const d = data[0];
-            console.log(data);
+            const pr_path = path + ' : Premium section';
+            if (pr_coll_name && d.id) this.fetchDoc(db.collection(pr_coll_name).doc(d.id), pr_path);
             if (d.type && d.type === 'premium')
               Content = () => (
                 <AppBody path={path} fullWidth={true} active={0}>
                   <Row>
-                    <Business width={width} height={height} path={path} data={d} id={data[0][0]} />
+                    <Business
+                      width={width}
+                      height={height}
+                      path={path}
+                      data={d}
+                      pr_data={this.dataColl[pr_path]}
+                    />
                   </Row>
                 </AppBody>
               );

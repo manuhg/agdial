@@ -5,7 +5,6 @@ from order import order
 from functools import reduce
 
 imgurl_base = 'https://img.agdial.in/images/'
-premium_img_base = '<img class="pr_img" src="'+imgurl_base
 id_prefix = r'(id|prefix)\s*:\s*(.*)'
 phone_regex = r'(([0-9\+ \-]+,?)+)'
 special_data = {'Website': r'((https?:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/\-a-zA-Z0-9#\.\?\&\=]+\/?)?)',
@@ -43,8 +42,11 @@ def parse_premium_entry(pr_entry):
     id_and_prefix = dict(reduce(get_idprefix, entry_vals, None))
     img_pr = id_and_prefix['prefix']
     premium_vals = {
-        r'\[pic\s*:': [[r'\s*([0-9]+),?\s*', premium_img_base + img_pr + r'-\1.jpg" alt="'+img_pr+r'-\1"  />'],
-                       [r'\[pic\s*:|\]', '']],
+        r'\[image\s*:': [[r'\s*([0-9]+),?\s*', '<img class="pr_img" src="'+imgurl_base + img_pr + r'-\1.jpg" alt="'+img_pr+r'-\1"  />'],
+                         [r'\[image\s*:|\]', '']],
+        r'\[image-list\s*:': [[r'\s*([0-9]+),?\s*', '<img class="pr_lst_img" src="'+imgurl_base + img_pr + r'-\1.jpg" alt="'+img_pr+r'-\1"  />'],
+                              [r'\[image-list\s*:', '<div class="pr_lst">'],
+                              [r'\]', '</div>']],
         id_prefix: [[id_prefix, '']]
     }
 

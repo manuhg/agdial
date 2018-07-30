@@ -25,6 +25,19 @@
   text-align: left;
   word-wrap: break-word !important;
 }
+.pr_img {
+  width: 50%;
+  padding: 5px;
+}
+.pr_lst {
+  width: 100%;
+  padding: 5px;
+}
+.pr_lst_img {
+  margin: 5px;
+  width: 30%;
+}
+
 .bph {
   font-weight: bold;
 }

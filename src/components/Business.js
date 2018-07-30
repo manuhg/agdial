@@ -2,16 +2,16 @@ import React, { Component } from 'react';
 import 'resources/css/business.css';
 class Listing extends Component {
   render() {
-    const { data } = this.props;
+    const { data, pr_data } = this.props;
     if (typeof data !== 'object') return <span>Please wait..</span>;
-    const d = data;
-    var wimg = d.image;
+    var wimg = data.image;
     if (wimg) {
       wimg = wimg.split('.');
       wimg.pop();
       wimg = wimg.join('.');
       wimg += '-w.jpg';
     }
+    if (pr_data && pr_data.image) wimg = pr_data.image;
     const w = 90;
     // const imW = { width: w + 'vw' };
     const imW = { width: '100%' };
@@ -47,7 +47,7 @@ class Listing extends Component {
                       ...imW,
                       ...imH,
                     }}
-                    alt={d.name}
+                    alt={data.name}
                   />
                   <div
                     style={{
@@ -58,7 +58,7 @@ class Listing extends Component {
                     }}
                     className="chbd"
                   >
-                    <font className="chb">{d.name}</font>
+                    <font className="chb">{data.name}</font>
                   </div>
 
                   <div style={{ borderTop: '5px solid green' }} className="container-fluid">
@@ -133,11 +133,20 @@ class Listing extends Component {
                             <font className="display-5">Details</font>
                           </div>
                           <div className="card-body">
-                            {d.content.map((e, j) => (
+                            {data.content.map((e, j) => (
                               <div className="card bpc" key={j}>
                                 {e}
                               </div>
                             ))}
+                            {pr_data && pr_data.content
+                              ? pr_data.content.map((p, i) => (
+                                  <div
+                                    className="card bpc"
+                                    key={i}
+                                    dangerouslySetInnerHTML={{ __html: p }}
+                                  />
+                                ))
+                              : ''}
                           </div>
                         </div>
                       </div>
