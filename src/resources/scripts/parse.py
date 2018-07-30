@@ -175,9 +175,9 @@ def parse(filename):
 
 
 # def main():
-    process_premium_data()
-    # entries=parse('../content/all_listings.txt')
-    # print(list(map(lambda x: print(x, '\n\n'), entries.items())))
+#     process_premium_data()
+#     entries=parse('../content/all_listings.txt')
+#     print(list(map(lambda x: print(x, '\n\n'), entries.items())))
 
 
 # main()

@@ -1,5 +1,4 @@
 import 'resources/css/business.css';
-
 import React, { Component } from 'react';
 
 class Listing extends Component {

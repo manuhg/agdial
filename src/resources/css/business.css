@@ -26,9 +26,6 @@
   padding: 7px;
 }
 
-.imgcol {
-  margin-top: 2.5%;
-}
 .chb {
   color: black;
   font-size: 4vw;
@@ -84,7 +81,9 @@
   word-wrap: break-word !important;
   font-size: 0.95vw;
 }
-
+.imgcol {
+  margin-top: 2.6%;
+}
 @media only screen and (max-width: 1265px) {
   .business {
     font-size: 0.85vw;
@@ -92,6 +91,9 @@
   }
   .bw {
     font-size: 0.9vw;
+  }
+  .imgcol {
+    margin-top: 5%;
   }
 }
 @media only screen and (max-width: 991px) {
@@ -101,6 +103,9 @@
   }
   .bw {
     font-size: 1.1vw;
+  }
+  .imgcol {
+    margin-top: 5%;
   }
 }
 @media only screen and (max-width: 767px) {

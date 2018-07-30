@@ -1,0 +1,61 @@
+﻿Animal Husbandry
+$$/CAT/AH/Animal Husbandry
+##Country Chicken & Rural Birds ##Goat, Sheep, Pigs, Poultry ##Dairy Animals-Cows & Buffalos ##Indian Breed Cows & Gov Shalas ##Animal Feeds, Supplements, Medicines ##Departments and Training Institutes
+
+$$/CAT/AH/OZ/Organizations
+$$/AH/OZ/001/ICAR – Indian Veterinary Research Institute, Bengaluru
+##Joint Director, ICAR-IVRI, Hebbal, Bengaluru 560024, Karnataka, India. ##Phone: +91 80 23411218, Fax: +91 80 23412509, Email: jd.ivribengaluru@icar.gov.in, aniket.sanyal@gmail.com.  ##Website: http://www.ivri.nic.in/campuses/bang/default.aspx. 
+
+$$/AH/OZ/002/ICAR – National Institute of Veterinary Epidemiology and Disease Informatics, Bengaluru
+##Director, ICAR-NIVEDI, Ramagondanahalli, P.B. No. 6450, Yelahanka, Bengaluru 560064, Karnataka, India. ##Phone: +91 80 23093100, 23093110. Fax: +91 2309 3222. Email: director.nivedi@icar.gov.in ##Website: www.nivedi.res.in
+
+$$/AH/OZ/003/ICAR – National Institute of Animal Nutrition and Physiology
+##Director, NIANP, Hosur Main Road, Adugodi, Chennakeshava Nagar, Bengaluru 560030, Karnataka, India. ##Phone: +91 80 25711303, 25711304, 25711164, 25702539, 25702546, Fax: +91 25711420 ##Website: www.nianp.res.in 
+
+$$/AH/OZ/004/National Dairy Research Institute, Bengaluru
+##NDRI, Southern Campus, Hosur Main Road, Ayappa Garden, Opposite to Mico, Adugodi, Bengaluru 560030, Karnataka, India. ##Phone: +91 80 25710661, 25710662, 25710663, 25710664, 25711119 ##Website: http://www.ndri.res.in/ndri/Design/southernregionalstationbangalor.html
+
+$$/AH/OZ/005/ICAR - Indian Grassland and Fodder Research Institute, Dharwad
+##ICAR-IGFRI, Southern Regional Research Station ##Opposite Agricultural University Dairy Division, Pune-Bengaluru National Highway No. 4, Dharwad 580005, Karnataka, India. ##Phone: +91 836 2447150 ##Website: www.igfri.res.in/rss-dharwad.aspx.  
+
+$$/AH/OZ/006/Central Fodder Seed Production Farm, Bengaluru (Department of Animal Husbandry, Dairying & Fisheries, New Delhi) 
+##CFSPF, Hessaraghatta, Bengaluru 560088, Karnataka, India. Phone: +91 80 28466281 ##Contact Person: A. Balasubramanian +91 8867268919, Email: balu.cfspf@gmail.com ##Website: http://dahd.nic.in/related-links/central-fodder-seed-production-farm-hesserghatta-bangalore 
+
+$$/AH/OZ/007/Central frozen Semen Production and Training Institute, Bengaluru (Department of Animal Husbandry, Dairying & Fisheries, New Delhi) 
+##Director, CFSP & TI, Hessaraghatta, Bengaluru 560088, Karnataka, India. ##Phone: +91 80 28466106, 28466107, Email: directorcfspti@gmail.com ##Website: http://dahd.nic.in/related-links/central-frozen-semen-production-training-institute 
+
+$$/AH/OZ/008/State Livestock Breeding & Training Centre, Bengaluru
+##The Deputy Director (Training), State Livestock Breeding & Training Centre, Hessaraghatta, Bengaluru 560088, Karnataka, India ##Phone: +91 80 28466397, Email: ddslbtc-ka@nic.in ##For training on Cattle, Pig, Sheep, Goat, Rabbit +91 80 28466456 ## ##State Poultry Production and Training Centre, C/o State Poultry Farm, Hessaraghatta Lake Post, Bengaluru 560089 ##For poultry training +91 80 28466093 ## Website: http://slbtc.kar.nic.in
+
+$$/AH/OZ/009/Central Poultry Development Organisation & Training Institute, Bengaluru
+##CPDO&TI, Hessaraghatta, Bengaluru 560088, Karnataka, India. ##Phone: +91 28466239, 28466226, 28466236, 28466240 ##Poultry Unit: +91 80 28466262, Duck Unit: +91 80 28466238, Fax: +91 80 28466444 ##Farmers Facilitation Centre: +91 80 28466262, Email: cpdoti@gmail.com, ##Website: www.cpdoti.org
+
+$$/AH/OZ/010/Department of Animal Husbandry & Veterinary Services, Government of Karnataka
+##The Director, Department of Animal Husbandry & Veterinary Services
+##5th Floor, Vishveshwaraiah Mini Tower, Dr. B.R. Ambedkar Veedhi, Bengaluru 560001, Karnataka, India. ##Phone: +91 80 22866431, Fax: +91 80 22861292 ##Helpline: 1800 425 0012, +91 80 234 17 100, Email: dir-ah@nic.in ##Website: http://www.ahvs.kar.nic.in
+
+$$/AH/OZ/011/Karnataka State Department of Fisheries
+##Directorate of Fisheries, 3rd Floor, Podium Block, V.V. Centre, Dr. Ambedkar Road, Bengaluru 560001, Karnataka, India. ##Director: Phone: +91 80 22864681, Fax: +91 80 2286 4619, Email: dof-blr-ka@nic.in ##Fish Seed Production & Rearing Centre, Hessaraghatta, Bengaluru 560088 Phone: +91 9886932801 ##Website: www.karnataka.gov.in/fisheries/english 
+
+$$/CAT/AH/GS/Gou Shala for Indian Cow Breeds
+$$/AH/GS/001/Indian Cow Breed Movement
+##Indian Cow Breed Movement, Administrative Office: ‘Shree Ramashrama’, No. 2A, J.P. Road, Girinagar 1st Phase, Bengaluru 560085, Karnataka, India. ##Phone: +91 80 26721510, Telefax: +91 80 26724979 Email: kpfiles@gmail.com ##Veterinary Expert in Charge: DR. Y V Krishnamoorty +91 9449595206. Email: gou@hareraama.in ##Website: http://hareraama.in
+
+$$/AH/GS/002/Kaamadhuga 
+##Kaamadhuga, Indian Cow Breed Movement, Shree Ramachandrapura Matha ##Po: Haniya, Ta: Hosanagara, Dist: Shivamogga 577418, Karnataka, India. ##Telefax: +91 8185 256050 Email: pradhanamatha@gmail.com ##Website: http://hareraama.in 
+
+$$/AH/GS/003/Shri Raghavendra Gou Ashrama Trust 
+## Shri Raghavendra Gou Ashrama Trust, Gangapura village, Bengaluru road, Po: Yashavantapura, Ta: Maluru, Dist: Kolar 563130 Karnataka, India. ##Phone: +91 8197958466, Email: malurgoushala@gmail.com  ##Contact Person: Ramachandra +91 9449595245 ##Muralikrishna +91 9741366882. 
+
+$$/AH/GS/004/Amrutadhaara Goukula
+##Amrutadhaara Gouloka, Pratima Farms, Dinnepalya, Kanakapura Road, Bengaluru 560062 Karnataka, India. ##Phone: +91 9663104475, Email: sharma.amishj@gmail.com  ##Contact Person: B J Sharma +91 9845027731  
+
+$$/AH/GS/005/Amrutadhaara Goushaala 
+## Amrutadhaara Goushaala, Po: Gangapura, Ta: Ranebennuru 581115, Dist: Haveri, Karnataka, India. ##Contact person: Rakesh +91 9591000202, Email: rakesh_talkal@yahoo.co.in  ##Ramachandra Hebbar +91 9945869705 
+
+$$/AH/GS/006/Gou Swarga
+##Gou Swarga, Shri Ramadeva Bhankuli Matha, Kumata Road, Po: Bedkani, Ta: Siddapura, Dist: Uttara Kannada, Karnataka, India. ##Phone: +91 9901331688 Email: gouswargabhankuli@gmail.com ##R S Hegde +91 9449595280
+
+$$/CAT/AH/SG/Sheep and Goat Farms
+$$/AH/SG/001/KBS Farms, Tamil Nadu
+##KBS Farms (Goat), No. 2/79, Po: Vengadathanur, Via. Kirambur, Ta: Thuraiyur, Dist: Trichirapalli 621002, Tamil Nadu, India ##Contact person: B. Sriram Phone: +91 4327 236429 Email: arumasri@gmail.com ## Language - Tamil and English
