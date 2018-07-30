@@ -159,22 +159,20 @@ class Listing extends Component {
                                         } else if (entry.title && entry.imagelist) {
                                           var imagelist = entry.imagelist.split(',').map(e => e.trim());
                                           var divcn = 'image-list-sm row',
-                                            imgcn = 'img-list-img-sm col-sm-2';
+                                            imgcn = 'img-list-img-sm col-6 col-sm-4 col-lg-2';
                                           var captions = entry.captions
                                             ? entry.captions.split(',').map(e => e.trim())
                                             : undefined;
                                           captions =
                                             captions && captions.length === imagelist.length ? captions : undefined;
                                           if (captions) {
-                                            divcn = 'grid-container';
-                                            imgcn = '';
                                             return (
                                               <div className="container">
                                                 <h2>{entry.title}</h2>
                                                 <hr />
-                                                <div className={'equalHMWrap eqWrap'}>
+                                                <div className={'row'}>
                                                   {imagelist.map((img, k) => (
-                                                    <div key={k} className="equalHM eq smbd text-white">
+                                                    <div key={k} className="col-6 col-sm-4 col-lg-3 imgcol text-white">
                                                       <img
                                                         src={imgurl_base + pr_data.prefix + '-' + img + '.jpg'}
                                                         alt={pr_data.prefix + ' ' + (captions ? captions[k] : img)}
@@ -186,9 +184,9 @@ class Listing extends Component {
                                                           background: 'rgba(0,0,0,1)',
                                                           width: '100%',
                                                         }}
-                                                        className="mzpz text-center"
+                                                        className="mzpz text-center bw"
                                                       >
-                                                        <strong className="mzpz">{captions ? captions[k] : img}</strong>
+                                                        <strong> {captions ? captions[k] : img}</strong>
                                                       </h5>
                                                     </div>
                                                   ))}
