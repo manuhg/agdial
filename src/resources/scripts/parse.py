@@ -12,14 +12,21 @@ special_data = {'Website': r'((https?:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/
                 'Phone': phone_regex, 'customer care': phone_regex, 'Fax': phone_regex,
                 'Email': r"(([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)\s*,?)+"}
 excl_page_specials = ['Phone', 'customer care', 'Email',  'Fax']
+tokens_patt = '^([^:]+):\s*\[(.*)\]\s*$'
 
 
-def parse_premium_patts(patts, pval):
-    for patt in patts:
-        if re.search(patt[0], pval, flags=re.IGNORECASE):
-            return reduce(lambda s, p: re.sub(p[0], p[1], s), patt[1], pval)
-            # return re.sub(patt[1][0], patt[1][1], pval)
-    return pval
+def pl(line):
+    try:
+        return re.findall(tokens_patt, line)[0]
+    except Exception as e:
+        print('Exception for linestr: ', line)
+
+
+def parse_pvals(pval):
+    plines = filter(None, pval.split('\n'))
+    dct = dict(list(filter(None, map(pl, plines))))
+    # print(dct)
+    return dct
 
 
 def get_idprefix(pvals_tpl, pval):
@@ -32,6 +39,15 @@ def get_idprefix(pvals_tpl, pval):
         return tpl
     return pvals_tpl
 
+   # premium_vals = {
+    #     r'\[image\s*:': [[r'\s*([0-9]+),?\s*', '<img class="pr_img" src="'+imgurl_base + img_pr + r'-\1.jpg" alt="'+img_pr+r'-\1"  />'],
+    #                      [r'\[image\s*:|\]', '']],
+    #     r'\[image-list\s*:': [[r'\s*([0-9]+),?\s*', '<img class="pr_lst_img" src="'+imgurl_base + img_pr + r'-\1.jpg" alt="'+img_pr+r'-\1"  />'],
+    #                           [r'\[image-list\s*:', '<div class="pr_lst">'],
+    #                           [r'\]', '</div>']],
+    #     id_prefix: [[id_prefix, '']]
+    # }
+
 
 def parse_premium_entry(pr_entry):
     if len(pr_entry) <= 1:
@@ -40,22 +56,14 @@ def parse_premium_entry(pr_entry):
         filter(None, map(lambda x: x.strip(), pr_entry.split('##'))))
 
     id_and_prefix = dict(reduce(get_idprefix, entry_vals, None))
-    img_pr = id_and_prefix['prefix']
-    premium_vals = {
-        r'\[image\s*:': [[r'\s*([0-9]+),?\s*', '<img class="pr_img" src="'+imgurl_base + img_pr + r'-\1.jpg" alt="'+img_pr+r'-\1"  />'],
-                         [r'\[image\s*:|\]', '']],
-        r'\[image-list\s*:': [[r'\s*([0-9]+),?\s*', '<img class="pr_lst_img" src="'+imgurl_base + img_pr + r'-\1.jpg" alt="'+img_pr+r'-\1"  />'],
-                              [r'\[image-list\s*:', '<div class="pr_lst">'],
-                              [r'\]', '</div>']],
-        id_prefix: [[id_prefix, '']]
-    }
 
     if not id_and_prefix['id'] or not id_and_prefix['prefix']:
         return print("Invalid id or prefix: ", id_and_prefix)
     pr_entry = id_and_prefix
     pr_entry['image'] = imgurl_base+id_and_prefix['id']+'-w.jpg'
-    pr_entry['content'] = list(filter(None, map(lambda entry_val: parse_premium_patts(
-        premium_vals.items(), entry_val), entry_vals)))
+    content = list(
+        filter(None, map(lambda entry_val: parse_pvals(entry_val), entry_vals)))
+    pr_entry['content'] = content
     pr_entry = {id_and_prefix['id']: dict(pr_entry.items())}
     return pr_entry
 
@@ -167,7 +175,9 @@ def parse(filename):
 
 
 # def main():
+    process_premium_data()
     # entries=parse('../content/all_listings.txt')
     # print(list(map(lambda x: print(x, '\n\n'), entries.items())))
+
 
 # main()

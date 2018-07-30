@@ -4,9 +4,34 @@
 .bimg:hover .chb {
   color: green;
 }
-.bimg {
+.grid-container {
+  display: grid;
+  grid-auto-rows: 1fr;
+  grid-template-columns: auto auto auto auto;
 }
 
+.equalHMWrap {
+  justify-content: space-between;
+}
+.eqWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.equalHM {
+  width: 24%;
+}
+
+.eq {
+  padding: 7px;
+}
+
+.bimg {
+}
+.smbd {
+  /* border: 3px solid white; */
+  /* margin: 3px; */
+}
 .chb {
   color: black;
   font-size: 4vw;
@@ -25,19 +50,22 @@
   text-align: left;
   word-wrap: break-word !important;
 }
-.pr_img {
-  width: 50%;
+.image-list {
+}
+.img-list-img {
   padding: 5px;
+  flex-direction: column;
 }
-.pr_lst {
-  width: 100%;
+.img-list-sm {
   padding: 5px;
+  display: flex;
 }
-.pr_lst_img {
-  margin: 5px;
-  width: 30%;
+.img-list-img-sm {
+  word-wrap: 'break-word !important';
+  font-size: '70%';
+  padding: 5px;
+  flex-direction: column;
 }
-
 .bph {
   font-weight: bold;
 }

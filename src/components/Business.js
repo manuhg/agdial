@@ -1,10 +1,15 @@
-import React, { Component } from 'react';
 import 'resources/css/business.css';
+
+import React, { Component } from 'react';
+
 class Listing extends Component {
   render() {
     const { data, pr_data } = this.props;
+
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var wimg = data.image;
+    var imgurl_base = 'https://img.agdial.in/images/';
+
     if (wimg) {
       wimg = wimg.split('.');
       wimg.pop();
@@ -15,7 +20,8 @@ class Listing extends Component {
     const w = 90;
     // const imW = { width: w + 'vw' };
     const imW = { width: '100%' };
-    // const imH = width > height ? { height: w / 3 + 'vw' } : { height: w / 3 + 'vw' };
+    // const imH = width > height ? { height: w / 3 + 'vw' } : { height: w / 3 +
+    // 'vw' };
     const imH = { height: w / 3 + 'vw' };
 
     return (
@@ -24,7 +30,13 @@ class Listing extends Component {
           {/* <div className="col-md-2 zp" /> */}
           <div className="col-12 mzpz">
             <div className="container-fluid mzpz">
-              <div className="row mzpz" style={{ ...imW, display: 'flex' }}>
+              <div
+                className="row mzpz"
+                style={{
+                  ...imW,
+                  display: 'flex',
+                }}
+              >
                 <div
                   className="bimg col-12 mzpz"
                   // style={{
@@ -40,15 +52,7 @@ class Listing extends Component {
                   //   backgroundSize: 'cover',
                   // }}
                 >
-                  <img
-                    src={wimg}
-                    style={{
-                      position: 'relative',
-                      ...imW,
-                      ...imH,
-                    }}
-                    alt={data.name}
-                  />
+                  <img src={wimg} style={{ position: 'relative', ...imW, ...imH }} alt={data.name} />
                   <div
                     style={{
                       position: 'absolute',
@@ -60,13 +64,9 @@ class Listing extends Component {
                   >
                     <font className="chb">{data.name}</font>
                   </div>
-
                   <div style={{ borderTop: '5px solid green' }} className="container-fluid">
                     <div className="row mzpz">
-                      <div
-                        className="col-12 col-sm-12 col-md-3 col-lg-3"
-                        style={{ padding: '0px' }}
-                      >
+                      <div className="col-12 col-sm-12 col-md-3 col-lg-3" style={{ padding: '0px' }}>
                         <div className="card mzpz">
                           <div className="card-header bpch">
                             <font className="display-5">Contact</font>
@@ -79,7 +79,7 @@ class Listing extends Component {
                                     ? data.Website.map((w, k) => (
                                         <span key={k}>
                                           {k > 0 ? ',' : ''}
-                                          <a href={'http://' + w} target="_blank" rel="noopener">
+                                          <a href={'http://' + w} rel="noopener noreferrer" target="_blank">
                                             {w}
                                           </a>
                                         </span>
@@ -98,9 +98,7 @@ class Listing extends Component {
                               )}
                               {data['customer care'] ? (
                                 <li className="lp list-group-item">
-                                  <i className="fa fa-phone fa-lg" />&nbsp;{
-                                    data['customer care'][0]
-                                  }&nbsp;
+                                  <i className="fa fa-phone fa-lg" />&nbsp;{data['customer care'][0]}&nbsp;
                                 </li>
                               ) : (
                                 ''
@@ -125,26 +123,102 @@ class Listing extends Component {
                         </div>
                       </div>
                       <div
-                        style={{ borderLeft: '5px solid green' }}
+                        style={{
+                          borderLeft: '5px solid green',
+                        }}
                         className="col-12 col-sm-12 col-md-9 col-lg-9 lpb text-left"
                       >
                         <div className="card">
                           <div className="card-header text-center bpch">
-                            <font className="display-5">Details</font>
+                            <font className="display-5">Profile</font>
                           </div>
                           <div className="card-body">
-                            {data.content.map((e, j) => (
+                            {/* {data.content.map((e, j) => (
                               <div className="card bpc" key={j}>
                                 {e}
                               </div>
-                            ))}
+                            ))} */}
                             {pr_data && pr_data.content
-                              ? pr_data.content.map((p, i) => (
-                                  <div
-                                    className="card bpc"
-                                    key={i}
-                                    dangerouslySetInnerHTML={{ __html: p }}
-                                  />
+                              ? pr_data.content.map((entry, i) => (
+                                  <div className="card bpc" key={i}>
+                                    <div className="container mzpz">
+                                      {(() => {
+                                        if (entry.image) {
+                                          return (
+                                            <div className="row">
+                                              <div className="col-md-4">
+                                                <img
+                                                  src={imgurl_base + pr_data.prefix + '-' + entry.image + '.jpg'}
+                                                  alt={pr_data.prefix + ' ' + entry.image}
+                                                  style={{ width: '100%' }}
+                                                />
+                                              </div>
+                                              <div className="col-md-8">{entry.content ? entry.content : ''}</div>
+                                            </div>
+                                          );
+                                        } else if (entry.title && entry.imagelist) {
+                                          var imagelist = entry.imagelist.split(',').map(e => e.trim());
+                                          var divcn = 'image-list-sm row',
+                                            imgcn = 'img-list-img-sm col-sm-2';
+                                          var captions = entry.captions
+                                            ? entry.captions.split(',').map(e => e.trim())
+                                            : undefined;
+                                          captions =
+                                            captions && captions.length === imagelist.length ? captions : undefined;
+                                          if (captions) {
+                                            divcn = 'grid-container';
+                                            imgcn = '';
+                                            return (
+                                              <div className="container">
+                                                <h2>{entry.title}</h2>
+                                                <hr />
+                                                <div className={'equalHMWrap eqWrap'}>
+                                                  {imagelist.map((img, k) => (
+                                                    <div key={k} className="equalHM eq smbd text-white">
+                                                      <img
+                                                        src={imgurl_base + pr_data.prefix + '-' + img + '.jpg'}
+                                                        alt={pr_data.prefix + ' ' + (captions ? captions[k] : img)}
+                                                        style={{ width: '100%' }}
+                                                      />
+
+                                                      <h5
+                                                        style={{
+                                                          background: 'rgba(0,0,0,1)',
+                                                          width: '100%',
+                                                        }}
+                                                        className="mzpz text-center"
+                                                      >
+                                                        <strong className="mzpz">{captions ? captions[k] : img}</strong>
+                                                      </h5>
+                                                    </div>
+                                                  ))}
+                                                </div>
+                                              </div>
+                                            );
+                                          }
+
+                                          return (
+                                            <div className="container">
+                                              <h2>{entry.title}</h2>
+                                              <hr />
+                                              <div className={divcn}>
+                                                {imagelist.map((img, k) => (
+                                                  <img
+                                                    key={k}
+                                                    src={imgurl_base + pr_data.prefix + '-' + img + '.jpg'}
+                                                    alt={pr_data.prefix + ' ' + (captions ? captions[k] : img)}
+                                                    className={imgcn}
+                                                  />
+                                                ))}
+                                              </div>
+                                            </div>
+                                          );
+                                        } else if (entry.content) {
+                                          return <p> {entry.content}</p>;
+                                        }
+                                      })()}
+                                    </div>
+                                  </div>
                                 ))
                               : ''}
                           </div>

@@ -33,6 +33,7 @@ body {
 .card {
   border-radius: 0 !important;
 }
+
 .card-horizontal {
   display: flex;
   flex: 1 1 auto;
