@@ -94,24 +94,24 @@ class AppBody extends Component {
 
             <Row>
               <Col>
-                <div
-                  style={{
-                    zIndex: '10',
-                    position: 'fixed',
-                    height: '50px',
-                    width: '50px',
-                    bottom: '45px',
-                    right: '24px',
-                    padding: '7px 5px 5px 5px',
-                    backgroundColor: '#f44336',
-                    borderRadius: '50%',
-                    boxShadow: '4px 4px 4px 3px rgba(0, 0, 0, .2)',
-                  }}
-                >
-                  <a style={{ textDecoration: 'none', color: 'white' }} href="#header">
+                <a style={{ textDecoration: 'none', color: 'white' }} href="#header">
+                  <div
+                    style={{
+                      zIndex: '10',
+                      position: 'fixed',
+                      height: '50px',
+                      width: '50px',
+                      bottom: '45px',
+                      right: '24px',
+                      padding: '7px 5px 5px 5px',
+                      backgroundColor: '#f44336',
+                      borderRadius: '50%',
+                      boxShadow: '4px 4px 4px 3px rgba(0, 0, 0, .2)',
+                    }}
+                  >
                     <i className="fa fa-arrow-up fa-2x rounded-0" />
-                  </a>
-                </div>
+                  </div>
+                </a>
               </Col>
             </Row>
           </Container>

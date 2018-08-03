@@ -1,14 +1,8 @@
-import {
-  Collapse,
-  Navbar,
-  NavbarBrand,
-  NavbarNav,
-  NavbarToggler,
-  NavItem,
-  NavLink,
-} from 'mdbreact';
+import { Collapse, Navbar, NavbarBrand, NavbarNav, NavbarToggler, NavItem, NavLink } from 'mdbreact';
 import React, { Component } from 'react';
 import logo from 'resources/img/agdial.png';
+import routes from 'components/Routes';
+
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -35,12 +29,7 @@ class Nav extends Component {
     //   ['https://shramajeeviimages.com', 'Images'],
     //   ['https://www.youtube.com/user/ShramajeeviAgriFilms', 'Videos'],
     // ];
-    const NLinks = [
-      ['/', 'Home'],
-      ['/about', 'About Us'],
-      // ['/pricing', 'Pricing'],
-      // ['/contact', 'Contact Us'],
-    ];
+
     return (
       <Navbar color="white" light expand="md" scrolling>
         <NavbarBrand href="/">
@@ -49,7 +38,7 @@ class Nav extends Component {
         {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
         <Collapse isOpen={this.state.collapse} navbar>
           <NavbarNav left>
-            {NLinks.map((e, i) => {
+            {routes.map((e, i) => {
               return actives[i] ? (
                 <NavItem active key={i}>
                   <NavLink to={e[0]}>

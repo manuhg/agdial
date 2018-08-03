@@ -94,39 +94,35 @@ const AboutData = {
   about: (
     <span>
       <p>
-        Shramajeevi Agri Films was established in 2004 as an exclusive visual media production house
-        for agriculture. It had produced number of agricultural documentary films in Kannada,
-        English and Hindi. These were sold in the form of DVDs in India, Sri Lanka and Bangladesh.
-        Shramajeevi produced number of AVs for government departments, research organisations and
-        corporate companies. Now Shramajeevi documentaries are available for watching on its YouTube
-        channels.
+        Shramajeevi Agri Films was established in 2004 as an exclusive visual media production house for agriculture. It
+        had produced number of agricultural documentary films in Kannada, English and Hindi. These were sold in the form
+        of DVDs in India, Sri Lanka and Bangladesh. Shramajeevi produced number of AVs for government departments,
+        research organisations and corporate companies. Now Shramajeevi documentaries are available for watching on its
+        YouTube channels.
       </p>
       <p>
-        Shramajeevi launched many websites for different issues related to farming. Shramajeevi is
-        becoming 24x7 satellite TV channel in Kannada exclusive for agriculture very soon, under the
-        banner of Shramajeevi Television Pvt. Ltd. Bengaluru.
+        Shramajeevi launched many websites for different issues related to farming. Shramajeevi is becoming 24x7
+        satellite TV channel in Kannada exclusive for agriculture very soon, under the banner of Shramajeevi Television
+        Pvt. Ltd. Bengaluru.
       </p>
       <p>
-        Farmers from across the country and globe keep calling Shramajeevi for various contacts of
-        innovative farmers, institutes etc. So,&nbsp;
-        <a href="https://shramajeevicontacts.com">shramajeevicontacts.com</a>, a service website
-        with good number of contacts was launched in the year 2015. The feedback was very good and
-        it helped thousands of farmers. Then it was decided to bring out the business version of the
-        same now as <a href="https://agdial.in">agdial.in</a> in more systematic and extensive way.
-        Call and SMS facility and many more features will be added at later stage.
+        Farmers from across the country and globe keep calling Shramajeevi for various contacts of innovative farmers,
+        institutes etc. So,&nbsp;
+        <a href="https://shramajeevicontacts.com">shramajeevicontacts.com</a>, a service website with good number of
+        contacts was launched in the year 2015. The feedback was very good and it helped thousands of farmers. Then it
+        was decided to bring out the business version of the same now as <a href="https://agdial.in">agdial.in</a> in
+        more systematic and extensive way. Call and SMS facility and many more features will be added at later stage.
       </p>
       <p>
-        We know it is a huge, extensive and expensive task as the sector is highly unorganised and
-        scattered domain. We will exercise our sincere efforts in the days to come to bring all
-        stakeholders of farming on this website. We plan to get in to E commerce exclusive for
-        agriculture in the brand name AgTrade <a href="https://agtrade.in">agtrade.in</a> in 2nd
-        phase.
+        We know it is a huge, extensive and expensive task as the sector is highly unorganised and scattered domain. We
+        will exercise our sincere efforts in the days to come to bring all stakeholders of farming on this website. We
+        plan to get in to E commerce exclusive for agriculture in the brand name AgTrade{' '}
+        <a href="https://agtrade.in">agtrade.in</a> in 2nd phase.
       </p>
       <p>
-        To begin with AgDial is focussing on Karnataka state and it will cover the whole country in
-        later stage. AgDial will be absolutely free for users. We hope this communication platform
-        will enhance connectivity between various stakeholders of farming bringing a positive change
-        in the farming sector of India.
+        To begin with AgDial is focussing on Karnataka state and it will cover the whole country in later stage. AgDial
+        will be absolutely free for users. We hope this communication platform will enhance connectivity between various
+        stakeholders of farming bringing a positive change in the farming sector of India.
       </p>
     </span>
   ),
@@ -134,9 +130,8 @@ const AboutData = {
     <span>
       <p>
         <address>
-          You can reach us at: Shramajeevi, # 009, Shrinilayam 3, Near Bandematha, Kommaghatta Main
-          Road, Kengeri Satellite Town, Bengaluru 560060, Karnataka, India. &nbsp;Mob: +91
-          9980534320. Email:&nbsp;
+          You can reach us at: Shramajeevi, # 009, Shrinilayam 3, Near Bandematha, Kommaghatta Main Road, Kengeri
+          Satellite Town, Bengaluru 560060, Karnataka, India. &nbsp;Mob: +91 9980534320. Email:&nbsp;
           <a style={{ textDecoration: 'underline' }} href="mailto:team@shramajeevi.com">
             team@shramajeevi.com
           </a>&nbsp; Website:&nbsp;
@@ -162,14 +157,10 @@ class About extends Component {
                   <strong>About Us</strong>
                 </h1>
                 <Row>
-                  <Col
-                    md="10"
-                    style={{ justifySelf: 'center' }}
-                    className="text-justify offset-md-1"
-                  >
+                  <Col md="10" style={{ justifySelf: 'center' }} className="text-justify offset-md-1">
                     <hr className="hr-dark" />
                     {AboutData.about}
-                    {AboutData.contactus}
+                    {/* {AboutData.contactus}*/}
                   </Col>
                 </Row>
               </Container>
@@ -192,16 +183,9 @@ class About extends Component {
                 </Row>
                 {AboutData.team.map((p, i) => (
                   <Row key={i} style={pds}>
-                    <Col
-                      md="10"
-                      style={{ justifySelf: 'center' }}
-                      className="text-justify offset-md-1"
-                    >
+                    <Col md="10" style={{ justifySelf: 'center' }} className="text-justify offset-md-1">
                       <Container fluid className="card">
-                        <Row
-                          style={{ display: 'flex', alignItems: 'center' }}
-                          className="card-horizontal row"
-                        >
+                        <Row style={{ display: 'flex', alignItems: 'center' }} className="card-horizontal row">
                           <Col className="text-center" style={{ padding: '15px' }} lg="4">
                             <ImageCircle
                               colour1={p[0]}

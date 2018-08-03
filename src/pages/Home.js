@@ -225,13 +225,7 @@ class App extends Component {
               Content = () => (
                 <AppBody path={path} fullWidth={true} active={0}>
                   <Row>
-                    <Business
-                      width={width}
-                      height={height}
-                      path={path}
-                      data={d}
-                      pr_data={this.dataColl[pr_path]}
-                    />
+                    <Business width={width} height={height} path={path} data={d} pr_data={this.dataColl[pr_path]} />
                   </Row>
                 </AppBody>
               );
