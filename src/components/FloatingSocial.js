@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, MainButton, ChildButton } from 'react-mfb';
-import 'react-mfb/mfb.css';
+// import 'react-mfb/mfb.css';
 class floatingSocial extends Component {
   render() {
     var effect = 'zoomin',
@@ -16,11 +16,7 @@ class floatingSocial extends Component {
           label="View on Github"
           href="https://github.com/manuhg"
         />
-        <ChildButton
-          icon="ion-social-octocat"
-          label="Follow me on Github"
-          href="https://github.com/manuhg"
-        />
+        <ChildButton icon="ion-social-octocat" label="Follow me on Github" href="https://github.com/manuhg" />
         <ChildButton
           icon="ion-social-twitter"
           label="Share on Twitter"

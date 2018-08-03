@@ -1,4 +1,3 @@
-import { Col, Container, Row } from 'mdbreact';
 import React, { Component } from 'react';
 import 'resources/css/tiles.css';
 
@@ -15,13 +14,13 @@ class Tile extends Component {
     if (typeof data !== 'object') return <span>Please wait..</span>;
 
     return (
-      <Col style={{ padding: '5px' }} md="6" lg="6" xl="4">
+      <div className="colmd-6 col-xl-4" style={{ padding: '5px' }}>
         <a href={hrefbase + data.name} style={{ textDecoration: 'none', color: 'black' }}>
-          <Container>
-            <Row style={{ padding: '5px' }}>
-              <Col id={data.id} style={{ display: 'flex', flexDirection: 'col' }} className="card tiles">
-                <Row style={{ display: 'flex' }} className="zp">
-                  <Col
+          <div className="container">
+            <div className="row" style={{ padding: '5px' }}>
+              <div id={data.id} style={{ display: 'flex', flexDirection: 'col' }} className="col card tiles">
+                <div style={{ display: 'flex' }} className="row zp">
+                  <div
                     style={{
                       ...cardImgStyle,
                       background: 'url(' + data.image + ')',
@@ -30,23 +29,23 @@ class Tile extends Component {
                     className="zp img-square-wrapper col-5"
                   />
 
-                  <Col style={{ flex: '1' }} className="zp col-7">
+                  <div style={{ flex: '1' }} className="zp col-7">
                     <font className="ch">{data.name}</font>
-                    <Container className="lp text-left">
+                    <div className="container lp text-left">
                       {data.content.map((e, j) => (
                         <span style={bw} key={j}>
                           <i className="fa fa-circle" />&nbsp;{e}
                           <br />
                         </span>
                       ))}
-                    </Container>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
-          </Container>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </a>
-      </Col>
+      </div>
     );
   }
 }
