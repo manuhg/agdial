@@ -19,11 +19,10 @@ class Nav extends Component {
 
   render() {
     this.mounted = true;
-    var actives = [true, false, false, false];
-    if (typeof this.props.active === 'number' && this.props.active < actives.length) {
-      actives[0] = false;
-      actives[this.props.active] = true;
-    }
+    var actives = Array(routes.length);
+    if (typeof this.props.active === 'number' && this.props.active < actives.length) actives[this.props.active] = true;
+    else actives[0] = true;
+
     // const externalLinks = [
     //   ['https://shramajeewiki.com', 'Articles'],
     //   ['https://shramajeeviimages.com', 'Images'],

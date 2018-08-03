@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import ErrorBoundary from 'utils/ErrorBoundary';
 import Footer from 'components/Footer';
 import Nav from 'components/Nav';
-import { Card, Col, Container, Row } from 'mdbreact';
 import bcgImg from 'resources/img/body_bcg.JPEG';
 class AppBody extends Component {
   render() {
+    console.log(this.props);
     const Content = this.props.children;
     const path = this.props.path;
     var pwd, Pagination;
@@ -36,17 +36,17 @@ class AppBody extends Component {
       );
     }
     const CCard = props => (
-      <Card
-        className="fp"
+      <div
+        className="card fp"
         style={{
           minHeight: '86vh',
           // background: 'rgba(255,255,255,0.85)',
         }}
       >
-        <Container className="fc" fluid>
+        <div className="container-fluid fc">
           <ErrorBoundary>{Content}</ErrorBoundary>
-        </Container>
-      </Card>
+        </div>
+      </div>
     );
     document.body.style.backgroundImage =
       'linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url(' + bcgImg + ')';
@@ -59,41 +59,41 @@ class AppBody extends Component {
           <p>&nbsp;</p>
         </span>
         <header>
-          <Container className="text-center" style={{ minHeight: '89vh' }} fluid>
+          <div className="container-fluid text-center" style={{ minHeight: '89vh' }}>
             {this.props.fullWidth ? (
-              <Row className="mzpz">
-                <Col />
-                <Col className="mzpz" md="11">
+              <div className="row mzpz">
+                <div className="col" />
+                <div className="col-md-11 mzpz">
                   {Pagination ? <Pagination /> : ''}
                   <CCard />
-                </Col>
-                <Col />
-              </Row>
+                </div>
+                <div className="col" />
+              </div>
             ) : (
-              <Row>
-                <Col />
-                <Col md="10">
+              <div className="row">
+                <div className="col" />
+                <div className="col-md-10">
                   {Pagination ? <Pagination /> : ''}
                   <CCard />
-                </Col>
-                <Col />
-              </Row>
+                </div>
+                <div className="col" />
+              </div>
             )}
 
-            {/* <Row>
-              <Col>
+            {/* <div className="row">
+              <div className="col">
                 <Card style={adStyle}>&nbsp;</Card>
-              </Col>
-              <Col md="10">
+              </div>
+              <div className="col" md="10">
                 <CCard />
-              </Col>
-              <Col>
+              </div>
+              <div className="col">
                 <Card style={adStyle}>&nbsp;</Card>
-              </Col>
-            </Row> */}
+              </div>
+            </div> */}
 
-            <Row>
-              <Col>
+            <div className="row">
+              <div className="col">
                 <a style={{ textDecoration: 'none', color: 'white' }} href="#header">
                   <div
                     style={{
@@ -112,9 +112,9 @@ class AppBody extends Component {
                     <i className="fa fa-arrow-up fa-2x rounded-0" />
                   </div>
                 </a>
-              </Col>
-            </Row>
-          </Container>
+              </div>
+            </div>
+          </div>
         </header>
         <footer>
           <Footer />

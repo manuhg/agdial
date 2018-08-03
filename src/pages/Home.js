@@ -42,19 +42,24 @@ class App extends Component {
   async fetchDoc(docref, path, cb, noSD) {
     if (this.memoize(path)) return; //this.setData('fcIndex3.1415', '0');
     this.setData(path, 'Fetching..', true);
-    var data = await docref.get();
-    console.log('Fetching data at ' + path);
-    if (!data) return;
-    var dt = {};
-    if (data.exists) /*document*/ dt = data.data();
-    else if (!data.empty)
-      data.forEach(d => {
-        /*querysnapshot*/
-        if (d.exists) dt[d.id] = d.data();
-      });
 
-    if (cb) cb(dt);
-    if (!noSD) this.setData(path, dt);
+    try {
+      var data = await docref.get();
+      console.log('Fetching data at ' + path);
+      if (!data) return;
+      var dt = {};
+      if (data.exists) /*document*/ dt = data.data();
+      else if (!data.empty)
+        data.forEach(d => {
+          /*querysnapshot*/
+          if (d.exists) dt[d.id] = d.data();
+        });
+
+      if (cb) cb(dt);
+      if (!noSD) this.setData(path, dt);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   valueAtPath(obj, path, isArr) {

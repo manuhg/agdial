@@ -132,11 +132,6 @@ class Listing extends Component {
                             <font className="display-5">Profile</font>
                           </div>
                           <div className="card-body">
-                            {/* {data.content.map((e, j) => (
-                              <div className="card bpc" key={j}>
-                                {e}
-                              </div>
-                            ))} */}
                             {pr_data && pr_data.content
                               ? pr_data.content.map((entry, i) => (
                                   <div className="card bpc" key={i}>
@@ -217,7 +212,11 @@ class Listing extends Component {
                                     </div>
                                   </div>
                                 ))
-                              : ''}
+                              : data.content.map((e, j) => (
+                                  <div className="card bpc" key={j}>
+                                    {e}
+                                  </div>
+                                ))}
                           </div>
                         </div>
                       </div>

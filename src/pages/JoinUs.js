@@ -53,26 +53,22 @@ class JoinUs extends Component {
                   <h4>Online Branding</h4>
                   <ul>
                     <li>
-                      {' '}
                       Promotional videos on our 2 YouTube channels with 140k+ views per day and 160k+ subscribers.
                     </li>
                     <li>
-                      {' '}
                       All 700+ videos on 2 YouTube channels will carry overlay and link in video description directing
                       traffic to AgDial.
                     </li>
                     <li>
-                      {' '}
-                      Promotion and links on our existing websites. People visit{' '}
-                      <a href="http://shramajeewiki.com">shramajeewiki.com</a> for knowledgeable articles on farming,{' '}
+                      Promotion and links on our existing websites. People visit
+                      <a href="http://shramajeewiki.com">shramajeewiki.com</a> for knowledgeable articles on farming,
                       <a href="http://shramajeeviimages.com">shramajeeviimages.com</a> for agricultural and rural
-                      images, <a href="http://video.shramajeevi.com">video.shramajeevi.com</a> for videos and{' '}
+                      images, <a href="http://video.shramajeevi.com">video.shramajeevi.com</a> for videos and
                       <a href="http://shramajeevi.com">shramajeevi.com</a> to know more about Shramajeevi. Traffic will
                       be driven from all those service domains to AgDial.
                     </li>
                     <li> Social media posts on Facebook, WhatsApp, Twitter etc.</li>
                     <li>
-                      {' '}
                       Shramajeevi is a familiar source of information on agriculture on Google and AgDial falls under
                       the same umbrella. So, Google search itself will generate sizable direct traffic to AgDial.
                     </li>
@@ -81,28 +77,23 @@ class JoinUs extends Component {
                   <h4>Offline Branding</h4>
                   <ul>
                     <li>
-                      {' '}
                       Participation in all important Krushi Melas of the state to brand AgDial along with selling
                       Shramajeevi agricultural documentary DVDs.
                     </li>
                     <li>
-                      {' '}
                       Regular ads on agriculture supplementary pages of daily newspapers and agriculture magazines.
                     </li>
                     <li>
-                      {' '}
                       Writing knowledgeable articles on agriculture in supplementary pages of state level newspapers
                       with AgDial branding.
                     </li>
                     <li>
-                      {' '}
                       Free telecast of Shramajeevi agricultural documentaries on regional TV channels like Digvijay,
                       Saral Jeevan, Sri Sankara, Aayush etc. and local cable networks with AgDial branding in barter.
                     </li>
                     <li>
-                      {' '}
                       Production of live agriculture programs by Shramajeevi on a TV channel of the state for free to
-                      brand AgDial in barter.{' '}
+                      brand AgDial in barter.
                     </li>
                   </ul>
                 </div>
@@ -111,14 +102,13 @@ class JoinUs extends Component {
                   <p>
                     In 2nd phase we plan to launch an independent E Commerce platform exclusive for agriculture -
                     AgTrade - http://agtrade.in linked with AgDial. Then the businesses listed on AgDial can sell their
-                    products or services online directly to their customers.{' '}
+                    products or services online directly to their customers.
                   </p>
                 </div>
                 <div>
                   <hr />
                   <h3>AgDial Enrolment Tariff</h3>
                   <div>
-                    {' '}
                     <h4>Premium</h4>
                     <p>
                       One paragraph space on listing page and one dedicated page with attractive design with full
@@ -144,7 +134,7 @@ class JoinUs extends Component {
                     <hr />
                     <h3>Note</h3>
                     <ol>
-                      <li> Attractive discount for pre-launch enrolment. </li>{' '}
+                      <li> Attractive discount for pre-launch enrolment. </li>
                       <li> Bonus page-ads and attractive discounts on bulk enrolments by group of companies.</li>
                     </ol>
                   </div>

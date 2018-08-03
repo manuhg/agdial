@@ -4,16 +4,7 @@
 .listing:hover {
   border: 1px solid green;
 }
-/* .square-100 {
-  position: relative;
-  width: 100%;
-  padding-bottom: 100%; 
-  margin: 1.66%;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  overflow: hidden;
-} */
+
 .squareImg {
   float: left;
   position: relative;
