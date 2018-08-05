@@ -14,19 +14,19 @@ rcat_nom="'$CAT':'',"
 
 
 echo "nomenclature = {\n$cat_nom " > nomvar
-cat temp.txt | sed -E 's/([A-Z\-]+)\-(.*)/"\2" : "\1",/g;' >>nomvar
+cat temp.txt | sed -E 's/([A-Z\-]+)\-(.*)\s*$/"\2" : "\1",/g;' >>nomvar
 echo "}" >> nomvar #cat be used for py also
 echo "export const ">>nomenclature.js
 cat nomvar >>nomenclature.js
 echo ";\n" >> nomenclature.js
 
 echo "export const rnom = {\n$rcat_nom ">>nomenclature.js
-cat temp.txt | sed -E 's/([A-Z\-]+)\-(.*)/"\1" : "\2",/g;'  >>nomenclature.js
+cat temp.txt | sed -E 's/([A-Z\-]+)\-(.*)\s*$/"\1" : "\2",/g;'  >>nomenclature.js
 
 echo "};\nexport default rnom;" >>nomenclature.js
 mv nomenclature.js ../
 
-cat temp.txt | sed -E 's/([A-Z\-]+)\-(.*)/\1 : \2/g;' >nomenclature.txt
+cat temp.txt | sed -E 's/([A-Z\-]+)\-(.*)\s*$/\1 : \2/g;' >nomenclature.txt
 soffice --headless --convert-to docx nomenclature.txt
 rm temp.txt nomvar nomenclature.txt
 

@@ -75,6 +75,7 @@ class App extends Component {
     cpath.splice(0, 1);
 
     var catnom = this.valueAtPath(nomObj, cpath, true);
+    console.log(cpath);
     if (!catnom) {
       business = cpath.pop();
       catnom = this.valueAtPath(nomObj, cpath, true);
@@ -95,6 +96,7 @@ class App extends Component {
     var ep = pathVals;
     if (!ep || !ep.cpath || !ep.catnom || !ep.business) ep = this.evalPath(path, nomObj);
     var { cpath, catnom, business } = ep;
+    console.log(nomObj);
 
     if (catnom) type += 1;
     if (cpath && business && business.length > 3) type += 1;
@@ -170,6 +172,7 @@ class App extends Component {
     if (typeof this.dataColl[path] === 'object') {
       // const data = Object.entries(this.dataColl[path]);
       const data = Object.values(this.dataColl[path]);
+      console.log(tType);
       switch (tType) {
         case types['list']:
           try {
