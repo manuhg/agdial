@@ -36,6 +36,7 @@ $$/AH/OZ/010/Department of Animal Husbandry & Veterinary Services, Government of
 $$/AH/OZ/011/Karnataka State Department of Fisheries
 ##Directorate of Fisheries, 3rd Floor, Podium Block, V.V. Centre, Dr. Ambedkar Road, Bengaluru 560001, Karnataka, India. ##Director: Phone: +91 80 22864681, Fax: +91 80 2286 4619, Email: dof-blr-ka@nic.in ##Fish Seed Production & Rearing Centre, Hessaraghatta, Bengaluru 560088 Phone: +91 9886932801 ##Website: www.karnataka.gov.in/fisheries/english 
 
+
 $$/CAT/AH/GS/Gou Shala for Indian Cow Breeds
 $$/AH/GS/001/Indian Cow Breed Movement
 ##Indian Cow Breed Movement, Administrative Office: ‘Shree Ramashrama’, No. 2A, J.P. Road, Girinagar 1st Phase, Bengaluru 560085, Karnataka, India. ##Phone: +91 80 26721510, Telefax: +91 80 26724979 Email: kpfiles@gmail.com ##Veterinary Expert in Charge: DR. Y V Krishnamoorty +91 9449595206. Email: gou@hareraama.in ##Website: http://hareraama.in
@@ -55,9 +56,29 @@ $$/AH/GS/005/Amrutadhaara Goushaala
 $$/AH/GS/006/Gou Swarga
 ##Gou Swarga, Shri Ramadeva Bhankuli Matha, Kumata Road, Po: Bedkani, Ta: Siddapura, Dist: Uttara Kannada, Karnataka, India. ##Phone: +91 9901331688 Email: gouswargabhankuli@gmail.com ##R S Hegde +91 9449595280
 
-$$/CAT/AH/SG/Sheep and Goat Farms
-$$/AH/SG/001/KBS Farms, Tamil Nadu
+
+
+$$/CAT/AH/SG/Sheep, Goat and Pig Farms
+$$/AH/SG/001/KBS Farms, Tamil Nadu - Goat
 ##KBS Farms (Goat), No. 2/79, Po: Vengadathanur, Via. Kirambur, Ta: Thuraiyur, Dist: Trichirapalli 621002, Tamil Nadu, India ##Contact person: B. Sriram Phone: +91 4327 236429 Email: arumasri@gmail.com ## Language - Tamil and English
+
+$$/AH/SG/002/Metro Farm – Stall-fed Pig, Goat and Sheep
+##Metro Farm, Chikkadevarahalli, Maralawadi hobli, Office: Anekal Main Road, Harohalli, Ta: Kanakapura, Dist: Ramanagara, Karnataka, India ##Phone: +91 9740807218, +91 9448997418, Email: melwynsati@gmail.com ##Specialty: Breeding and Raring of stallfed Pig, Goat and Sheep. Exotic and Indian breed piglets and lambs are available for sale for raring ##Contact person: Melvin Lewis 
+
+
+$$/CAT/AH/PL/Poultry and Rural Birds
+$$/AH/PL/001/Mysuru Naati Chicken
+##August Backyard Chicken Pvt. Ltd., No. 363, Sri Hari Complex, Basement, Sita Vilas Road, Opposite ICICI Bank, Chamaraja Mohalla, Mysuru 570024, Karnataka, India ##Phone: +91 9900055458, +91 9900055459, +91 9980007171, Email: sagar.urs.abc@gmail.com ##Work: Supply of Country chicken Eggs, Day-old Chicks, Feed, Live Birds, Farm visit for Consultancy  ##Website: http://mysurunaatikkoli.com 
+
+
+
+$$/CAT/AH/CB/Cow and Buffalo Dairy 
+$$/AH/CB/001/Neernalli Dairy
+##Neernalli Dairy, Veda Seetarama Hegde, At: Neernalli, Po: Itaguli, Ta: Sirsi, Dist: Uttara Kannada 581336, Karnataka, India ##Phone: +91 8384 272652, 272732, +919449993303, +91 944999304 ##Specialty: Scientific milk dairy of 100 HF and Jersey cows, Fodder grass, Bio-gas plant, Arecanut garden, Black pepper, Cocoa, Coconut etc. ##Contact Person: Seetarama Hegde
+
+
+
+
 
 $$/CAT/AM/Agriculture Machineries
 ##Brush Cutters & Rotary Tillers ##Handheld Power Tools & Sprayers ##Garden Machineries ##Handheld Tools & Implements ##Tractor Drawn Implements ##Harvesting & Post-harvest Machines
@@ -94,6 +115,14 @@ $$/AM/010/Mathana Home Industries
 
 $$/AM/011/Varsha Associates
 ##Varsha Associates, Mruthyunjaya Compound, V.P. Extension, Chitradurga 577501, Karnataka, India ##Phone: +91 8194 651721, +91 9448396261, Fax: +91 8194 226648, Email: info@varshaagro.com ## ##Bengaluru Office: New Tech Distributors, No. 35, 1st Main Road, Opposite Mahalakshmi Temple, Lower Palace Orchards, Sadashivanagar, Bengaluru 560003, Karnataka, India ##Phone: +91 80 41236389, +91 94483 96283, Email: info@varshaagro.com ##Products: Equipment for land preparation, Planting, Inter-cultivation, Plant protection, Harvesting, Threshing and many more ##Website: http://www.varshaagro.com  
+
+$$/AM/012/VST Tillers Tractors Ltd. 
+##VST Tillers Tractors Ltd. Plot No. 1, Dyavasandra Industrial Layout, Whitefield road, Po: Mahadevapura, Vighneshwar Nagara, Krishnarajapura, Bengaluru 560048, Karnataka, India ##Phone: +91 80 67141111, +91 9900264389, +91 9949439299 Email: tollfree@vsttillers.com ##Tollfree Number:18004190136 ##Products: Power Tiller, Tractor, Rice Transplanter, Power Reaper, Rotary Tiller etc. ##Website: http://www.vsttillers.com 
+
+$$/AM/013/Knightfield Engines Pvt. Ltd.
+##Knightfield Engines Pvt. Ltd. No. 30/1, Surveyor Street, DVG Road, Basavanagudi, Bengaluru 560004, Karnataka, India ##Phone: +91 80 26610444, Email: info@knightfield.in ##Products: Diesel Engines, Pump sets and Generators ##Website: http://knight-field.com  
+
+
  
 
 $$/CAT/AS/Other Agri Services
@@ -119,6 +148,19 @@ $$/CS/003/Akshaya Agro Services
 
 $$/CS/004/Global Garden
 ##Global Garden, Office: No. 4, Near Water Tank, SBI Colony, Opposite New Bus Stand, Pune-Bengaluru Road, Dharwad 580008, Karnataka, India ## ##Nursery: Global Garden, Kalaghatgi Road, Behind Police Training College, Near Pragati Vidyalaya, Dharwad, Karnataka, India ##Phone: +91 836 2746045, +91 9483362758 Email: globalgarden@rediffmail.com ##Business Type: Horticulture Consultancy, Horticulture Plant Nursery, Landscape Designing, Establishment and Maintenance ##Contact Person: DR. Manjunath Hegde
+$$/CS/005/Yojana Agro Services
+##Yojana Agro Services, No. K-133, 19th A Main Road, 1st Block, Rajajinagar, Bengaluru 560010, Karnataka, India. ##Phone: +91 80 23131830, +91 9844163033, Email: yojanaagro@gmail.com, yojanahorti@yahoo.co.in ##Business Type: Agriculture consultancy, Project reports, Poly greenhouse construction, Landscape gardening, Planting materials etc. ##Contact Person: Nagaraj Bhat M. Sc. (Agri) Horticulture   
+
+$$/CS/006/Geo Rainwater Board
+## Geo Rainwater Board, Jaladhama, opposite Ayyappaswamy Temple, Medehalli Road, Vidyanagara, Chitradurga 577502, Karnataka, India ##Phone: +91 8194 225458, +91 9448125498, +91 8310111689, Email: devraj05@gmail.com ##Work: Consultancy on Rainwater harvesting, Borewell water recharge, Water survey, Roof water harvesting etc. ##Contact Person: Mr. N. J. Devaraja Reddy, Hydro Geologist
+
+$$/CS/007/Rajendra N Hegde 
+##Rajendra Hegde, B-107, Mid Town Rhythm, Borewell Road, Ramagondanahalli, Bengaluru 560066, Karnataka, India ##Phone: +91 9448629528, Email: rajendranhegde@gmail.com ##Work: Consultancy on Organic farming, Terrace gardening, Community farming, Safe grey water etc. ##Website: http://www.bricsbio.com  
+
+$$/CS/008/Shreevidya Horticulture Services
+##Shreevidya Horticulture Services, No. 56, Shantiniketan Nagar, Dharwad 580008, Karnataka, India ##Phone: +91 9448525852, Email: shreevidyahort@gmail.com ##Work: Landscape garden designing, Establishment and Maintenance, Horticulture consultancy, Plant material supply etc. ##Contact Person: Vidyananda Bhat, M. Sc. (Agri) Horticulture
+
+
 
  
 
@@ -180,7 +222,7 @@ $$/CAT/IS/Irrigation Systems
 ##Drip Irrigation Systems & Fittings ##Sprinklers, Foggers, Misters ##PVC Pipes and Fittings ##Monoblock & Submersible Pump ##Auto Switchers & Control Valves ##Solar Pumps & Lighting
 
 $$/IS/001/Himadri Irrigation [premium]
-##No.81, Karihobanahalli, 4th Cross, Thigalarapalya Main Road, Near Maruti Industrial Estate, Peenya 2nd stage, Bengaluru 560058, India. ##Phone: +91 80 28364641, +91 9448139522, +91 8050499401 ##Email: himadri_nira@yahoo.com ##Business type: Manufacturers of drip irrigation system ##Products: Drip irrigation lateral pipes, Inline and flat lateral pipes, micro tubes, drippers and filters ##Contact Person: Niranjan Hegde, CMD ##Website: www.himadriirrigation.com 
+##No.81, Karihobanahalli, 4th Cross, Thigalarapalya Main Road, Near Maruti Industrial Estate, Peenya 2nd stage, Bengaluru 560058, Karnataka, India. ##Phone: +91 80 28364641, +91 9448139522, +91 8050499401 ##Email: himadri_nira@yahoo.com ##Business type: Manufacturers of drip irrigation system ##Products: Drip irrigation lateral pipes, Inline and flat lateral pipes, micro tubes, drippers and filters ##Contact Person: Niranjan Hegde, CMD ##Website: www.himadriirrigation.com 
 
 $$/IS/002/Krishi Polymers Pvt. Ltd.
 ## Krishi Polymers Pvt. Ltd., V-11, 2nd Stage, Peenya Industrial Estate, Bengaluru 560058, Karnataka, India ##Phone: +91 80 28362152, 28360498, 28362054, Email:  krishigroup@gmail.com, saravu@krishigroup.in ##Products: PVC pipes, Fittings, Compact ball valves, Drip irrigation system, Sprinklers etc. ##Website: www.krishipolymers.in 
@@ -191,6 +233,20 @@ $$/CAT/OS/Organic Inputs & Services
 
 $$/OS/001/EPN and Microbiology Laboratory 
 ##Benzer Crop Science, Near Patel Sawmill, Salamat Nagar, Hubballi Road, Sirsi 581401, Karnataka, India ##Phone: +91 9481321000, +91 7899155759, +91 9448009805, Email: benzercropscience@gmail.com  ##Work: Production of Entomopathogenic Nematodes (EPN), Trichoderma and other Microorganisms ##Website: www.benzercropscience.com
+
+$$/OS/005/Biological Research Innovation Centre and Solutions LLP
+##BRICS, No. 93, Aashraya, 1st Floor, 15th Main, 17th Cross, Rose Garden Road, Opposite to HDFC Bank ATM, Near Aishwarya Bakery, 5th Phase, J P Nagar, Bengaluru 560078, Karnataka, India ##Phone: +91 9448629528, + 91 9980346202, Email: info@bricsbio.com, enquiry@bricsbio.com ##Work: Production of Organic or Non-chemical products for Agriculture, Household and Healthcare ##Website: http://www.bricsbio.com  
+ 
+$$/OS/006/Hightech Agriculum Pvt. Ltd. 
+##Hightech Agriculum Pvt. Ltd., No. 47, 2nd cross, P & T colony, R. T. Nagar, Bengaluru 560032, Karnataka, India, ##Phone: +91 80 23634371, +91 9886561030, Email: info@hightechagri.com,  hightechagri123@gmail.com, ##Work: Products for the management of plant Nutrition, Insect Pests, Diseases, Plant Tonic, Adjuvant, Soil Conditioner etc. ## Contact Person: DR. Nagaraja Hegde ##Website: www.hightechagri.com 
+
+$$/OS/007/Vital Plant Products 
+##Vital Plant Products, Gowrishankar Estate, At: Harihalli, Kenchammana Hoskote, Ta: Alur 573129, Dist: Hassan, Karnataka, India ##Phone: +91 8170 217403, 217416, +91 9448033916, +91 9740340248, Email: vitalplant@yahoo.com  ##Products: Organic Manures and Organic Nutrient Liquids, Prajwala, Vignana, Nisarga (Earthworm compost) etc. ##Contact Person: DR. V. P. Hegde 
+
+$$/OS/008/The Organic State
+##The Organic State, Organic Network Store, No. 185/1, Opposite Metro Station, Sampige Road, Rajeev Gandhi Circle, Malleshwaram, Bengaluru 560020, Karnataka, India ##Phone: +91 80 23411777, +91 80 23569777, +91 9900911777, Email: info@thegreenpath.in,  hrjorgfarmer@yahoo.com, ##Contact person: H. R. Jayaram. ##Website: www.thegreenpath.in  
+
+
 $$/CAT/OZ/Organisations
 ##Universities of Agri, Horti & AH ##Krushi Vignana Kendras ##Central Research Organisations ##NGOs Working on Agriculture & RD ##State Depts. Of Agri, Horti, Seri, AH ##Training Institutes-State & Central
 

@@ -20,4 +20,6 @@
     'OZ-NGO',
     'OZ-MED',
     'OZ-PROS',
+    'AH-CB',
+    'AH-PL',
 ]
