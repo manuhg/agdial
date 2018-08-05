@@ -409,7 +409,7 @@ $$/CAT/PN/Plant Nurseries
 $$/PN/001/Sasya Horticulture Nursery [premium]
 ##Office: Giridath, Behind Nityananda Matha, Marathikoppa Road, Sirsi, Uttara Kannada 581402, Karnataka, India. ##Nursery: Islur, Hubballi Road, Sirsi ##Phone: +91 8384 237424, +91 9449999791, +91 9448408620 ##Email: gardennagaraj@gmail.com ##Business type: Horticultural nursery and Landscape works ##Specialty: All types of ornamental plants, Plantation crop plants like Arecanut, coconut, Fruits like mango, sapota, spices and medicinal plants ##Contact person: DR. Nagaraja D Bhat ##Website: www.sasyanursery.com
 
-$$/PN/002/Akshaya Agro Services
+$$/PN/002/Akshaya Agro Services [premium]
 ##Akshaya Agro Services, Karadagere Kaval, Post: Chikkasarangi, Ta & Dist: Tumakur 572118, Karnataka, India ##Phone: +91 9980290951, 9108010034, Email: akshayaagro69@gmail.com, rphegdeagri@gmail.com ##Business type: Horticulture Nursery, Horticulture Consultancy, Floriculture under Poly house ##Specialty: Tissue culture banana plants, Pomegranate, Mango and other fruit plants. ##Contact Person: DR. Ramachandra Hegde, M.Sc. Agri (Horticulture) ##Website: www.akshayaagro.in 
 
 $$/PN/003/Global Garden

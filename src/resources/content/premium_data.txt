@@ -32,3 +32,17 @@ imagelist: [3, 4, 5, 6, 7, 8]
 imagelist: [9, 10, 11, 12, 13, 14,  16, 17, 18, 19, 20, 21]
 captions: [Brush Cutter, Chain saw, Rotary Tiller, Earth Auger, Mist Blower, Power Sprayer, Tea Harvester, Coffee Harvester, Hedge Trimmer, Lawn Mover, High Pressure Washer, Fogger]
 
+﻿$$
+##id: PN-002
+##prefix: RPH
+##content: [Akshaya Agro Services was established in the year 2008 by a renowned horticulture consultant DR. Ramachandra Hegde, M. Sc. (Horticulture). It started as Agri Clinic and Agri Business Centre at Karadagere Kaval, 15 kilometres away from Tumakur of Karnataka. Multiple activities are spread over 20 acres of farm here. ]
+##content: [DR. Ramachandra Hegde has the rich experience of 23 years in the field of high-tech horticulture like floriculture, vegetables, seed production etc. under poly house and also the open field cultivation of pomegranate, banana, mango, drumstick and many more crops] 
+
+##title: [Visit Akshaya Agro Services For]
+imagelist: [02, 03, 04, 05, 06] 
+content: [ Plant Nursery of Fruits and Plantation crops: Akshaya Agro is a full-fledged nursery mainly for all major fruit plants. Either the graft plants are produced here itself or sourced from authentic nurseries from across the country. So, all major and minor fruit plants and some rare species are available here. This is only nursery in Tumakuru which supplies whole range of plants to farmers. `` Horticulture Consultancy and Bankable Project Report Making: DR. Ramachandra Hegde was the part of Horti Clinic of the state department. Since then he is engaged in Agriculture Consultancy, especially for horticulture crops and projects. He is very much experienced in making bankable project reports for all kinds of agriculture projects which is compatible to government subsidy schemes as well. ``  Green House and Shade Net House Construction: Akshaya Agro is engaged in construction of Poly Greenhouse and Shade net house. It has a well-equipped workshop on the farm and an experienced team for the construction of poly greenhouse and shade net house. Akshaya Agro Services is empanelled fabricator under horticulture department of Karnataka. Akshaya had already constructed poly house and shade net house in more than 30 acres in nut & bolt system. `` Training and Resource Person: DR. Hegde trains and guides the farmers who visit the farm on various aspects of horticulture. DR. Ramachandra Hegde participates as a resource person as SMS (subject matter specialist) in horticulture government departments and private organisations. ``  Floriculture Under Poly House: Akshaya Agro farm has 4 acres of greenhouse cultivating Carnation, Gerbera, Gypsophila and Vegetables. It is a successful cut-flower production unit for last 5 years. So, farmers buying plants can get on-hand experience and practical guidance from Akshaya Agro Services. Cut-flowers are sold throughout the year either in Bengaluru market or sent outside depending market demand and the season.]    
+ 
+##title: [Plants Available at Akshaya Nursery]
+imagelist: [07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34]
+captions: [Mango, Sapota, Guava, Jackfruit, Jamun, Banana, Lime, Mosambi, Orange, Pomelo, Papaya, Anjoor, Heralekai, Seetaphal, Ramphal, Lakshmanphal, Water-Apple, Butter-Fruit, Litchi, Apple Ber, Tamarind, Starfruit, Coconut, Arecanut, Black-Pepper, Allspice, Cardamom, Cashew-nut]
+

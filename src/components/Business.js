@@ -106,6 +106,12 @@ class Business extends Component {
                               ) : (
                                 ''
                               )}
+
+                              {data.content.map((e, j) => (
+                                <li key={j} className="lp list-group-item text-left">
+                                  {e}
+                                </li>
+                              ))}
                             </ul>
                           </div>
                         </div>
