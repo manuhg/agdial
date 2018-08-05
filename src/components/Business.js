@@ -155,15 +155,15 @@ class Business extends Component {
                                         }
                                         if (entry.image && entry.content) {
                                           return (
-                                            <div className="row">
-                                              <div className="col-md-4">
+                                            <div className="row fp">
+                                              <div className="col-lg-4">
                                                 <img
                                                   src={imgurl_base + pr_data.prefix + '-' + entry.image + '.jpg'}
                                                   alt={pr_data.prefix + ' ' + entry.image}
                                                   style={{ width: '100%' }}
                                                 />
                                               </div>
-                                              <div className="col-md-8">{entry.content}</div>
+                                              <div className="col-lg-8">{entry.content}</div>
                                             </div>
                                           );
                                         } else if (entry.title && entry.imagelist && entry.content) {
@@ -180,15 +180,16 @@ class Business extends Component {
                                                   ''
                                                 )}
                                                 {imagelist.map((img, k) => (
-                                                  <div key={k} className="row fp">
-                                                    <div className="col-6 col-sm-4 col-lg-3 imgcol text-white">
+                                                  <div key={k} className="row">
+                                                    {k > 0 ? <div className="col-12">&nbsp;</div> : ''}
+                                                    <div className="col-lg-4 col-xl-3">
                                                       <img
                                                         src={imgurl_base + pr_data.prefix + '-' + img + '.jpg'}
                                                         alt={pr_data.prefix + ' ' + img}
                                                         style={{ width: '100%' }}
                                                       />
                                                     </div>
-                                                    <div className="col-6 col-sm-8 col-lg-9"> {content[k]}</div>
+                                                    <div className="col-lg-8 col-xl-9">{content[k]}</div>
                                                   </div>
                                                 ))}
                                               </div>
@@ -199,7 +200,7 @@ class Business extends Component {
                                         } else if (entry.imagelist) {
                                           imagelist = entry.imagelist.split(',').map(e => e.trim());
                                           var divcn = 'row',
-                                            imgcn = 'img-list-img-sm col-6 col-sm-4 col-lg-2';
+                                            imgcn = 'img-list-img-sm col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2';
                                           var captions = entry.captions
                                             ? entry.captions.split(',').map(e => e.trim())
                                             : undefined;
