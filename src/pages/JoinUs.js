@@ -44,9 +44,33 @@ class JoinUs extends Component {
               <article>
                 <h2>AgDial by Shramajeevi</h2>
                 <p>
-                  Enrolment charge varies on category (company/individual, business segment etc.), space allotted (full
-                  page, a paragraph size, 3 lines), extra features given (links for websites, video links, direct mail
-                  and call option etc.). AgDial will have provisions for ads as well on its pages.
+                  Shramajeevi is basically a visual media production house dedicated for agriculture. We have 2 YouTube
+                  channels – Shramajeevi Agri Films and AgVid with 700+ videos – 1.5 lakh views per day and 1.5 lakh
+                  subscribers. Our corporate website is <a href="https://shramajeevi.com">shramajeevi.com</a>. Our other
+                  agriculture related websites are <a href="https://shramajeeviimages.com">shramajeeviimages.com</a> ,{' '}
+                  <a href="https://shramajeewiki.com">shramajeewiki.com</a>, &nbsp;<a href="https://video.shramajeevi.com">
+                    video.shramajeevi.com
+                  </a>. We are preparing to launch a satellite TV channel ‘Shramajeevi’ exclusive for agriculture in
+                  Kannada very soon under Shramajeevi Television Pvt. Ltd. We had launched
+                  <a href="https://shramajeevicontacts.com">shramajeevicontacts.com</a>, an agri directory website on
+                  trial basis, some 2 years ago which became popular in very short time. We are happy to announce the
+                  launch of commercial version of the same as <a href="https://agdial.in">agdial.in</a>, something like
+                  Just Dial, exclusive for agriculture. In second phase we will come out with an E Commerce site{' '}
+                  agtrade.in exclusive for agriculture. There are many internet platforms like Just Dial, Ask Laila etc.
+                  catering almost all aspects of our life including something on agriculture as well. But none of them
+                  are focusing agriculture domain. So, we decided to do that as Shramajeevi is very popular on the
+                  internet for last one decade. Our agriculture documentaries in Kannada, English and Hindi are popular
+                  enough across India, Sri Lanka and Bangladesh. Here we take this opportunity to introduce another
+                  service web domain.
+                  <h3>What is AgDial</h3> It is an agriculture directory website or digital directory. It will enlist
+                  all segments of agriculture viz. Agri Companies for Machinery & power tools, Manual implements, Seeds,
+                  Fertilizers, Pesticides, Organic inputs etc., Agri Consultants, Services like Poly house, Dryers,
+                  Fence etc., Plant Nurseries, TC Labs, Animal Husbandry dealers for Rural birds, Cows, Buffalos, Goat,
+                  Sheep, Pig etc., Irrigation equipment and related technologies, UASs, Research organizations,
+                  Government departments, NGOs, Innovative farmers and many more. Enrolment charge varies on category
+                  (company/individual, business segment etc.), space allotted (full page, a paragraph size, 3 lines),
+                  extra features given (links for websites, video links, direct mail and call option etc.). AgDial will
+                  have provisions for ads as well on its pages.
                 </p>
                 <div>
                   <h3>Branding Strategies for AgDial</h3>
@@ -61,10 +85,10 @@ class JoinUs extends Component {
                     </li>
                     <li>
                       Promotion and links on our existing websites. People visit
-                      <a href="http://shramajeewiki.com">shramajeewiki.com</a> for knowledgeable articles on farming,
-                      <a href="http://shramajeeviimages.com">shramajeeviimages.com</a> for agricultural and rural
-                      images, <a href="http://video.shramajeevi.com">video.shramajeevi.com</a> for videos and
-                      <a href="http://shramajeevi.com">shramajeevi.com</a> to know more about Shramajeevi. Traffic will
+                      <a href="https://shramajeewiki.com">shramajeewiki.com</a> for knowledgeable articles on farming,
+                      <a href="https://shramajeeviimages.com">shramajeeviimages.com</a> for agricultural and rural
+                      images, <a href="https://video.shramajeevi.com">video.shramajeevi.com</a> for videos and
+                      <a href="https://shramajeevi.com">shramajeevi.com</a> to know more about Shramajeevi. Traffic will
                       be driven from all those service domains to AgDial.
                     </li>
                     <li> Social media posts on Facebook, WhatsApp, Twitter etc.</li>
@@ -101,7 +125,7 @@ class JoinUs extends Component {
                   <h3>AgTrade</h3>
                   <p>
                     In 2nd phase we plan to launch an independent E Commerce platform exclusive for agriculture -
-                    AgTrade - http://agtrade.in linked with AgDial. Then the businesses listed on AgDial can sell their
+                    AgTrade - agtrade.in linked with AgDial. Then the businesses listed on AgDial can sell their
                     products or services online directly to their customers.
                   </p>
                 </div>

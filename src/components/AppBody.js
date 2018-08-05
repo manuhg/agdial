@@ -5,7 +5,6 @@ import Nav from 'components/Nav';
 import bcgImg from 'resources/img/body_bcg.JPEG';
 class AppBody extends Component {
   render() {
-    console.log(this.props);
     const Content = this.props.children;
     const path = this.props.path;
     var pwd, Pagination;

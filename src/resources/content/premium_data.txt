@@ -1,4 +1,20 @@
 ﻿$$
+##id: IS-001
+##prefix: HI
+##imagelist: [01, 02, 03, 04]
+captions: [DR. Niranjan, Himadri Factory, Machine, Machine]  
+##content: [Himadri Irrigation System is not just another drip irrigation manufacturer. It is the brainchild of a practical farmer and agriculture graduate DR. Niranjan Hegde. So, the quality of the products, accuracy of water delivery, convenience to the farmer etc. are taken care of very well. DR. Hegde himself oversees designing and manufacturing processes at Himadri factory.]
+##content: [Himadri Drip Irrigation lateral pipes are manufactured according to IS: 12786:1989 standards, from virgin LLDPE and LDPE material for prolonged life. Himadri offers whole range of products for drip irrigation system viz. both online dripper and inline dripper type laterals, micro tubes, drippers or emitters, screen and disc filters, venturi, fertilizer tank, poly fittings etc.]
+##title: [Call for Dealers] 
+image:[05]
+##title: [Products Offered by Himadri Irrigation]
+imagelist: [06, 07, 08, 09, 10, 11, 12, 13]
+captions: [Lateral Pipe, Micro tube, Dripper, Screen Filter, Sand Filter, Fertilizer Tank, Poly Fittings, Venturi]
+##title: [Turnkey Projects by Himadri]
+imagelist: [15,16]
+content: [Apart from manufacturing drip irrigation products, Himadri takes up Turnkey Projects of installing irrigation facility on farms not lesser than 25 acres and special projects like Resorts, Poly houses etc. Irrigation engineers from Himadri will prepare cost estimates, project reports and install irrigation facilities in a scientific design and efficient way. ``Installing Drip irrigation system is not just laying pipes. To ensure uniform water output to each plant we have to consider many points such as slope, length of lateral to be put, spacing of plants, water requirement of the plant, size of main and sub-main pipes, divisions of the farm etc. Himadri engineers are well experienced to plan all these to ensure uniform watering and hence a good crop.]
+
+﻿$$
 ##id: AM-001
 ##prefix: RIPL
 ##content: [Ratnagiri Impex, the flagship company of Annapurna group aims to develop the rural economy of India through mechanisation. Since its inception in the year 2000 by the visionary leader Mr. S A Vasudevmurthy, RIPL is engaged in importing the latest machinery, outdoor power tools and equipment from the best companies across the world. It established its very own brands called AgriMart and Agrimate. RIPL is an ISO 9001:2008 certified company.]

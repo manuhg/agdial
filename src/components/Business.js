@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class Listing extends Component {
   render() {
     const { data, pr_data } = this.props;
-
+    console.log(pr_data);
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var wimg = data.image;
     var imgurl_base = 'https://img.agdial.in/images/';
@@ -137,7 +137,20 @@ class Listing extends Component {
                                   <div className="card bpc" key={i}>
                                     <div className="container mzpz">
                                       {(() => {
-                                        if (entry.image) {
+                                        if (entry.image && !entry.content) {
+                                          return (
+                                            <div className="row">
+                                              <div className="col">
+                                                <img
+                                                  src={imgurl_base + pr_data.prefix + '-' + entry.image + '.jpg'}
+                                                  alt={pr_data.prefix + ' ' + entry.image}
+                                                  style={{ width: '100%' }}
+                                                />
+                                              </div>
+                                            </div>
+                                          );
+                                        }
+                                        if (entry.image && entry.content) {
                                           return (
                                             <div className="row">
                                               <div className="col-md-4">
@@ -147,12 +160,42 @@ class Listing extends Component {
                                                   style={{ width: '100%' }}
                                                 />
                                               </div>
-                                              <div className="col-md-8">{entry.content ? entry.content : ''}</div>
+                                              <div className="col-md-8">{entry.content}</div>
                                             </div>
                                           );
-                                        } else if (entry.title && entry.imagelist) {
+                                        } else if (entry.title && entry.imagelist && entry.content) {
+                                          var content = entry.content.split('``').filter(Boolean);
                                           var imagelist = entry.imagelist.split(',').map(e => e.trim());
-                                          var divcn = 'image-list-sm row',
+                                          try {
+                                            return (
+                                              <div className="container">
+                                                {entry.title ? (
+                                                  <div>
+                                                    <h2>{entry.title}</h2> <hr />
+                                                  </div>
+                                                ) : (
+                                                  ''
+                                                )}
+                                                {imagelist.map((img, k) => (
+                                                  <div key={k} className="row fp">
+                                                    <div className="col-6 col-sm-4 col-lg-3 imgcol text-white">
+                                                      <img
+                                                        src={imgurl_base + pr_data.prefix + '-' + img + '.jpg'}
+                                                        alt={pr_data.prefix + ' ' + img}
+                                                        style={{ width: '100%' }}
+                                                      />
+                                                    </div>
+                                                    <div className="col-6 col-sm-8 col-lg-9"> {content[k]}</div>
+                                                  </div>
+                                                ))}
+                                              </div>
+                                            );
+                                          } catch (err) {
+                                            console.log(err);
+                                          }
+                                        } else if (entry.imagelist) {
+                                          var imagelist = entry.imagelist.split(',').map(e => e.trim());
+                                          var divcn = 'row',
                                             imgcn = 'img-list-img-sm col-6 col-sm-4 col-lg-2';
                                           var captions = entry.captions
                                             ? entry.captions.split(',').map(e => e.trim())
@@ -162,8 +205,14 @@ class Listing extends Component {
                                           if (captions) {
                                             return (
                                               <div className="container">
-                                                <h2>{entry.title}</h2>
-                                                <hr />
+                                                {entry.title ? (
+                                                  <div>
+                                                    <h2>{entry.title}</h2> <hr />
+                                                  </div>
+                                                ) : (
+                                                  ''
+                                                )}
+
                                                 <div className={'row'}>
                                                   {imagelist.map((img, k) => (
                                                     <div key={k} className="col-6 col-sm-4 col-lg-3 imgcol text-white">
@@ -191,8 +240,13 @@ class Listing extends Component {
 
                                           return (
                                             <div className="container">
-                                              <h2>{entry.title}</h2>
-                                              <hr />
+                                              {entry.title ? (
+                                                <div>
+                                                  <h2>{entry.title}</h2> <hr />
+                                                </div>
+                                              ) : (
+                                                ''
+                                              )}
                                               <div className={divcn}>
                                                 {imagelist.map((img, k) => (
                                                   <img
