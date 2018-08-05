@@ -6,7 +6,7 @@ class Business extends Component {
     const { data, pr_data } = this.props;
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var wimg = data.image;
-    var imgurl_base = 'https://img.agdial.in/images/';
+    var img_base = 'https://img.agdial.in/images/';
 
     if (wimg) {
       wimg = wimg.split('.');
@@ -14,12 +14,12 @@ class Business extends Component {
       wimg = wimg.join('.');
       wimg += '-w.jpg';
     }
-    if (pr_data && pr_data.image) wimg = pr_data.image;
+    if (pr_data && pr_data.image) {
+      wimg = pr_data.image;
+      img_base += pr_data.prefix + '-';
+    }
     const w = 90;
-    // const imW = { width: w + 'vw' };
     const imW = { width: '100%' };
-    // const imH = width > height ? { height: w / 3 + 'vw' } : { height: w / 3 +
-    // 'vw' };
     const imH = { height: w / 3 + 'vw' };
 
     return (
@@ -35,21 +35,7 @@ class Business extends Component {
                   display: 'flex',
                 }}
               >
-                <div
-                  className="bimg col-12 mzpz"
-                  // style={{
-                  //   flexDirection: 'row',
-                  //   display: 'block',
-                  //   position: 'absolute',
-                  //   top: '0px',
-                  //   right: '0px',
-                  //   left: '0px',
-                  //   width: 100 + 'vw',
-                  //   height: 60 + 'vh',
-                  //   background: 'url(' + wimg + ') no-repeat',
-                  //   backgroundSize: 'cover',
-                  // }}
-                >
+                <div className="bimg col-12 mzpz">
                   <img src={wimg} style={{ position: 'relative', ...imW, ...imH }} alt={data.name} />
                   {!pr_data || !pr_data.image ? (
                     <div
@@ -145,7 +131,7 @@ class Business extends Component {
                                             <div className="row">
                                               <div className="col-12">
                                                 <img
-                                                  src={imgurl_base + pr_data.prefix + '-' + entry.image + '.jpg'}
+                                                  src={img_base + entry.image + '.jpg'}
                                                   alt={pr_data.prefix + ' ' + entry.image}
                                                   style={{ width: '100%' }}
                                                 />
@@ -158,7 +144,7 @@ class Business extends Component {
                                             <div className="row fp">
                                               <div className="col-lg-4">
                                                 <img
-                                                  src={imgurl_base + pr_data.prefix + '-' + entry.image + '.jpg'}
+                                                  src={img_base + entry.image + '.jpg'}
                                                   alt={pr_data.prefix + ' ' + entry.image}
                                                   style={{ width: '100%' }}
                                                 />
@@ -181,15 +167,20 @@ class Business extends Component {
                                                 )}
                                                 {imagelist.map((img, k) => (
                                                   <div key={k} className="row">
-                                                    {k > 0 ? <div className="col-12">&nbsp;</div> : ''}
-                                                    <div className="col-lg-4 col-xl-3">
-                                                      <img
-                                                        src={imgurl_base + pr_data.prefix + '-' + img + '.jpg'}
-                                                        alt={pr_data.prefix + ' ' + img}
-                                                        style={{ width: '100%' }}
-                                                      />
+                                                    <div className="container">
+                                                      <div className="row text-justify tiles_tb _5p ">
+                                                        <div
+                                                          className="col-md-4 tbi"
+                                                          style={{
+                                                            background: 'url(' + img_base + img + '.jpg)',
+                                                            backgroundSize: 'cover',
+                                                          }}
+                                                        />
+                                                        <div className="col-md-8">
+                                                          <div className="container lp_tb text-left">{content[k]}</div>
+                                                        </div>
+                                                      </div>
                                                     </div>
-                                                    <div className="col-lg-8 col-xl-9">{content[k]}</div>
                                                   </div>
                                                 ))}
                                               </div>
@@ -221,7 +212,7 @@ class Business extends Component {
                                                   {imagelist.map((img, k) => (
                                                     <div key={k} className="col-6 col-sm-4 col-lg-3 imgcol text-white">
                                                       <img
-                                                        src={imgurl_base + pr_data.prefix + '-' + img + '.jpg'}
+                                                        src={img_base + img + '.jpg'}
                                                         alt={pr_data.prefix + ' ' + (captions ? captions[k] : img)}
                                                         style={{ width: '100%' }}
                                                       />
@@ -255,7 +246,7 @@ class Business extends Component {
                                                 {imagelist.map((img, k) => (
                                                   <img
                                                     key={k}
-                                                    src={imgurl_base + pr_data.prefix + '-' + img + '.jpg'}
+                                                    src={img_base + img + '.jpg'}
                                                     alt={pr_data.prefix + ' ' + (captions ? captions[k] : img)}
                                                     className={imgcn}
                                                   />

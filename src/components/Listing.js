@@ -44,20 +44,59 @@ class Listing extends Component {
                                 </li>
                               ))}
 
-                              {data.Website ? (
-                                <li className="lp list-group-item">
-                                  {data.Website.map((e, i) => (
-                                    <span key={i}>
-                                      {i > 0 ? ', ' : ''}
-                                      <a href={'http://' + e} target="_blank" rel="noopener">
-                                        {e}
-                                      </a>
-                                    </span>
-                                  ))}
-                                </li>
-                              ) : (
-                                <span />
-                              )}
+                              <li className="lp list-group-item">
+                                {data.Phone ? (
+                                  <span>
+                                    <i className="fa fa-phone fa-lg" />&nbsp;{data.Phone[0]}
+                                    {','}&nbsp;
+                                  </span>
+                                ) : (
+                                  ''
+                                )}
+                                {data['customer care'] ? (
+                                  <span>
+                                    <i className="fa fa-phone fa-lg" />&nbsp;{data['customer care'][0]}
+                                    {','}&nbsp;
+                                  </span>
+                                ) : (
+                                  ''
+                                )}
+                                {data.Fax ? (
+                                  <span>
+                                    <i className="fa fa-fax fa-lg" />&nbsp;{data.Fax[0]}
+                                    {','}&nbsp;
+                                  </span>
+                                ) : (
+                                  ''
+                                )}
+                              </li>
+                              <li className="lp list-group-item">
+                                {data.Website ? (
+                                  <span>
+                                    {data.Website.map((e, i) => (
+                                      <span key={i}>
+                                        {i > 0 ? ', ' : ''}
+                                        <a href={'http://' + e} target="_blank" rel="noopener noreferrer">
+                                          {e}
+                                        </a>
+                                        {','}
+                                      </span>
+                                    ))}
+                                  </span>
+                                ) : (
+                                  <span />
+                                )}
+                                {data.Email ? (
+                                  <span>
+                                    <i className="fa fa-envelope fa-lg" />&nbsp;<a href={'mailto:' + data.Email[0]}>
+                                      {data.Email[0]}
+                                    </a>
+                                    {','}
+                                  </span>
+                                ) : (
+                                  ''
+                                )}
+                              </li>
                             </ul>
                             {ehref ? (
                               <a style={{ color: 'white' }} href={ehref + '#cont'}>
