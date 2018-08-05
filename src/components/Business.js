@@ -1,10 +1,9 @@
 import 'resources/css/business.css';
 import React, { Component } from 'react';
 
-class Listing extends Component {
+class Business extends Component {
   render() {
     const { data, pr_data } = this.props;
-    console.log(pr_data);
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var wimg = data.image;
     var imgurl_base = 'https://img.agdial.in/images/';
@@ -52,17 +51,21 @@ class Listing extends Component {
                   // }}
                 >
                   <img src={wimg} style={{ position: 'relative', ...imW, ...imH }} alt={data.name} />
-                  <div
-                    style={{
-                      position: 'absolute',
-                      top: '0px',
-                      zIndex: 10,
-                      ...imW,
-                    }}
-                    className="chbd"
-                  >
-                    <font className="chb">{data.name}</font>
-                  </div>
+                  {!pr_data || !pr_data.image ? (
+                    <div
+                      style={{
+                        position: 'absolute',
+                        top: '0px',
+                        zIndex: 10,
+                        ...imW,
+                      }}
+                      className="chbd"
+                    >
+                      <font className="chb">{data.name}</font>
+                    </div>
+                  ) : (
+                    ''
+                  )}
                   <div style={{ borderTop: '5px solid green' }} className="container-fluid">
                     <div className="row mzpz">
                       <div className="col-12 col-sm-12 col-md-3 col-lg-3" style={{ padding: '0px' }}>
@@ -135,12 +138,12 @@ class Listing extends Component {
                             {pr_data && pr_data.content
                               ? pr_data.content.map((entry, i) => (
                                   <div className="card bpc" key={i}>
-                                    <div className="container mzpz">
+                                    <div className="container-fluid mzpz">
                                       {(() => {
                                         if (entry.image && !entry.content) {
                                           return (
                                             <div className="row">
-                                              <div className="col">
+                                              <div className="col-12">
                                                 <img
                                                   src={imgurl_base + pr_data.prefix + '-' + entry.image + '.jpg'}
                                                   alt={pr_data.prefix + ' ' + entry.image}
@@ -194,7 +197,7 @@ class Listing extends Component {
                                             console.log(err);
                                           }
                                         } else if (entry.imagelist) {
-                                          var imagelist = entry.imagelist.split(',').map(e => e.trim());
+                                          imagelist = entry.imagelist.split(',').map(e => e.trim());
                                           var divcn = 'row',
                                             imgcn = 'img-list-img-sm col-6 col-sm-4 col-lg-2';
                                           var captions = entry.captions
@@ -285,4 +288,4 @@ class Listing extends Component {
     );
   }
 }
-export default Listing;
+export default Business;
