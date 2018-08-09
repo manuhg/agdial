@@ -80,7 +80,11 @@ class Listing extends Component {
                                       {data.Website.map((e, i) => (
                                         <span key={i}>
                                           {i > 0 ? ', ' : ''}
-                                          <a href={'http://' + e} target="_blank" rel="noopener noreferrer">
+                                          <i className="fa fa-globe fa-lg" />&nbsp;<a
+                                            href={'http://' + e}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
                                             {e}
                                           </a>
                                           {','}&nbsp;
