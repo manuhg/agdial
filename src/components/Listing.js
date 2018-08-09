@@ -83,7 +83,7 @@ class Listing extends Component {
                                           <a href={'http://' + e} target="_blank" rel="noopener noreferrer">
                                             {e}
                                           </a>
-                                          {','}
+                                          {','}&nbsp;
                                         </span>
                                       ))}
                                     </span>
@@ -95,7 +95,7 @@ class Listing extends Component {
                                       <i className="fa fa-envelope fa-lg" />&nbsp;<a href={'mailto:' + data.Email[0]}>
                                         {data.Email[0]}
                                       </a>
-                                      {','}
+                                      {','}&nbsp;
                                     </span>
                                   ) : (
                                     ''
