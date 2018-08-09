@@ -11,6 +11,7 @@ class AppBody extends Component {
     if (path) {
       pwd = path.split('/').filter(Boolean);
       if (!pwd.length) pwd = ['categories'];
+      document.title = 'AgDial : ' + pwd[pwd.length - 1];
       Pagination = () => (
         <nav style={{ borderRadius: '0px' }} aria-label="breadcrumb">
           <ol style={{ borderRadius: '0px', backgroundColor: 'white' }} className="breadcrumb">

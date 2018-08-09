@@ -7,16 +7,17 @@ class SubCatTile extends Component {
     const hrefbase = '/categories/';
     var cardImgStyle = {
       maxWidth: '100%',
-      objectFit: 'contain',
-      padding: '0%',
+      objectFit: 'cover',
+      padding: '0px',
+      margin: '0px',
       display: 'block',
     };
     if (typeof data !== 'object') return <span>Please wait..</span>;
 
     return (
       <div
-        style={{ flex: '1 1 auto', marginTop: '5px' }}
-        className="col-6 col-sm-4 col-md-3 col-lg-2 col-xl-2 card sctiles mr-auto"
+        style={{ flex: '1 1 auto', margin: '3px', padding: '0px' }}
+        className="col-5 col-sm-3  col-xl-3 card sctiles mzpz"
       >
         <a href={hrefbase + data.name} className="mzpz">
           <div className="container scdiv mzpz" id={data.id}>

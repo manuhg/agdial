@@ -135,7 +135,7 @@ class App extends Component {
     //this.props.history.go(-1);
   }
   render() {
-    document.title = 'AgDial:' + this.title;
+    document.title = 'AgDial'; //:' + this.title;
     const path = this.props.location.pathname;
 
     var Content = () => (
@@ -180,11 +180,12 @@ class App extends Component {
               Content = () => (
                 <AppBody path={path} active={0}>
                   <Row
-                  // style={{
-                  //   display: 'flex',
-                  //   justifyContent: 'center',
-                  //   flexWrap: 'wrap',
-                  // }}
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'center',
+                      flexWrap: 'wrap',
+                      padding: '0px',
+                    }}
                   >
                     {data.map(
                       (e, i) =>
