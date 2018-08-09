@@ -18,7 +18,7 @@ tokens_patt = '^([^:]+):\s*\[(.*)\]\s*$'
 def pl(line):
     try:
         return re.findall(tokens_patt, line)[0]
-    except Exception as e:
+    except Exception:
         print('Exception for linestr: ', line)
 
 
@@ -89,9 +89,9 @@ def extract_special_data(data_list, type_=None):
             try:
                 if re.search(s[0], data_list[i], flags=re.IGNORECASE):
                     testval = 0
-                    testval += -2 if s[0] in excl_page_specials else 0
+                    #testval += -2 if s[0] in excl_page_specials else 0
                     testval += 2 if type_ == 'premium' else 0
-                    if testval >= 0:
+                    if testval > 0:
                         l = list(
                             filter(None, map(lambda x: x[0].strip() if len(x) else None, re.findall(s[1], data_list[i], flags=re.IGNORECASE))))
                         specials_dict[s[0]] = list(
@@ -114,7 +114,7 @@ def parse_entry(entry):
     id = '-'.join(name_data[0:-1])
     path = '-'.join(name_data[0:-2])
 
-    name_type = re.match('(.*)\[([^\]]+)\]', name)
+    name_type = re.match(r'(.*)\[([^\]]+)\]', name)
     name = name_type.groups()[0] if name_type else name
     type_ = name_type.groups()[1] if name_type else type_
 
