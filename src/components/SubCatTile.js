@@ -10,6 +10,7 @@ class SubCatTile extends Component {
       objectFit: 'cover',
       padding: '0px',
       margin: '0px',
+      alignSelf: 'left',
       display: 'block',
     };
     if (typeof data !== 'object') return <span>Please wait..</span>;
@@ -17,7 +18,7 @@ class SubCatTile extends Component {
     return (
       <div
         style={{ flex: '1 1 auto', margin: '3px', padding: '0px' }}
-        className="col-5 col-sm-3  col-xl-3 card sctiles mzpz"
+        className="col-5 col-sm-3  col-lg-2 card sctiles "
       >
         <a href={hrefbase + data.name} className="mzpz">
           <div className="container scdiv mzpz" id={data.id}>
