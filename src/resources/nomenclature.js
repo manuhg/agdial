@@ -1,9 +1,8 @@
 export const nomenclature = {
   '/': 'CAT',
   'Animal Husbandry': 'AH',
-  Organizations: 'AH-OZ',
   'Gou Shala for Indian Cow Breeds': 'AH-GS',
-  'Sheep, Goat and Pig Farms': 'AH-SG',
+  'Sheep, Goat, Rabbit, Pig and Fish Farms': 'AH-SG',
   'Poultry and Rural Birds': 'AH-PL',
   'Cow and Buffalo Dairy': 'AH-CB',
   'Agriculture Machineries': 'AM',
@@ -28,9 +27,8 @@ export const nomenclature = {
 export const rnom = {
   CAT: '',
   AH: 'Animal Husbandry',
-  'AH-OZ': 'Organizations',
   'AH-GS': 'Gou Shala for Indian Cow Breeds',
-  'AH-SG': 'Sheep, Goat and Pig Farms',
+  'AH-SG': 'Sheep, Goat, Rabbit, Pig and Fish Farms',
   'AH-PL': 'Poultry and Rural Birds',
   'AH-CB': 'Cow and Buffalo Dairy',
   AM: 'Agriculture Machineries',

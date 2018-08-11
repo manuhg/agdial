@@ -89,9 +89,9 @@ def extract_special_data(data_list, type_=None):
             try:
                 if re.search(s[0], data_list[i], flags=re.IGNORECASE):
                     testval = 0
-                    #testval += -2 if s[0] in excl_page_specials else 0
+                    testval += -2 if s[0] in excl_page_specials else 0
                     testval += 2 if type_ == 'premium' else 0
-                    if testval > 0:
+                    if testval >= 0:
                         l = list(
                             filter(None, map(lambda x: x[0].strip() if len(x) else None, re.findall(s[1], data_list[i], flags=re.IGNORECASE))))
                         specials_dict[s[0]] = list(
