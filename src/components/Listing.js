@@ -77,17 +77,13 @@ class Listing extends Component {
                                 <li className="lp list-group-item">
                                   {data.Website ? (
                                     <span>
+                                      <i className="fa fa-globe fa-lg" />
                                       {data.Website.map((e, i) => (
                                         <span key={i}>
                                           {i > 0 ? ', ' : ''}
-                                          <i className="fa fa-globe fa-lg" />&nbsp;<a
-                                            href={'http://' + e}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                          >
+                                          &nbsp;<a href={'http://' + e} target="_blank" rel="noopener noreferrer">
                                             {e}
                                           </a>
-                                          &nbsp;
                                         </span>
                                       ))}
                                     </span>
@@ -96,6 +92,7 @@ class Listing extends Component {
                                   )}
                                   {data.Email ? (
                                     <span>
+                                      &nbsp;
                                       <i className="fa fa-envelope fa-lg" />&nbsp;<a href={'mailto:' + data.Email[0]}>
                                         {data.Email[0]}
                                       </a>
