@@ -87,7 +87,7 @@ class Listing extends Component {
                                           >
                                             {e}
                                           </a>
-                                          {','}&nbsp;
+                                          &nbsp;
                                         </span>
                                       ))}
                                     </span>
@@ -99,7 +99,7 @@ class Listing extends Component {
                                       <i className="fa fa-envelope fa-lg" />&nbsp;<a href={'mailto:' + data.Email[0]}>
                                         {data.Email[0]}
                                       </a>
-                                      {','}&nbsp;
+                                      &nbsp;
                                     </span>
                                   ) : (
                                     ''
