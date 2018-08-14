@@ -9,7 +9,10 @@
   grid-auto-rows: 1fr;
   grid-template-columns: auto auto auto auto;
 }
-
+.vids {
+  height: 10vw;
+  width: 20vw;
+}
 .equalHMWrap {
   justify-content: space-between;
 }
@@ -102,6 +105,10 @@
   }
 }
 @media only screen and (max-width: 991px) {
+  .vids {
+    height: 13vw;
+    width: 26vw;
+  }
   .business {
     font-size: 1.3vw;
     padding-right: 7px;
@@ -120,6 +127,22 @@
   }
   .bw {
     font-size: 1.5vw;
+  }
+  .vids {
+    height: 18vw;
+    width: 36vw;
+  }
+}
+@media only screen and (max-width: 550px) {
+  .vids {
+    height: 20vw;
+    width: 40vw;
+  }
+}
+@media only screen and (max-width: 505px) {
+  .vids {
+    height: 30vw;
+    width: 60vw;
   }
 }
 @media only screen and (max-width: 400px) {
@@ -142,7 +165,7 @@
   word-wrap: break-word !important;
 }
 .tbi {
-  min-height: 180px;
+  min-height: 160px;
 }
 
 .lp_tb {

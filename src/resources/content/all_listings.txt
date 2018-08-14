@@ -116,7 +116,7 @@ $$/AM/001/Ratnagiri Impex Pvt. Ltd. [premium]
 ##Annapurna House, 1-1G, 7th Cross, New Guddadahalli, Mysore Road, Bengaluru, Karnataka 560026 India. ##Phone: +91 80 26985100, 101, 102 ##Fax: +91 80 26751658 ##All India customer care number 1800 425 7475 ##Email: customercare@ratnagiriimpex.com  ##Business type: Importers and Distributors of agricultural and other machineries and handheld power tools ##Major Items: Brush cutter, Chain saw, Sprayers, Rotary tillers, High pressure washers, Lawnmowers etc. ##Outlet Brand: AgriMart, AgriMart Care ##Major Brands: Oleo-Mac, Agrimate, Unigreen, Bartolini, Comet, Gulliver ## Website: www.ratnagiriimpex.com 
 
 $$/AM/002/Mathana Home Industries [premium] 
-##Mathana Home Industries, Bandagadde, Po: Keladi, Ta: Sagara 577401, Dist: Shivamogga, Karnataka, India ##Phone: +91 8183 260063, 228971, +91 9663408163 +91 9448238663, +91 9741636163 Email: umesh@mathanaind.com, jnanendra_m@yahoo.com ##Products: Dry Arecanut de-husking machine, Arecanut cutter, Arecanut polisher, Pepper separator, Curd churning machine etc. ##Website: http://mathanaind.com 
+##Mathana Home Industries, Bandagadde, Po: Keladi, Ta: Sagara 577401, Dist: Shivamogga, Karnataka, India ##Phone: +91 8183 260063, 228971, +91 9663408163 +91 9448238663, +91 9741636163 ##Email: umesh@mathanaind.com jnanendra_m@yahoo.com ##Products: Agri Machineries, Agri Transporters, Agri Implements, Farm Utilities, Garden Equipment, Curd Churners, Kitchen Appliances and Water Heaters ##Agri Machines: Dry Areca De-Husking Machine, Areca Bunch Separator, Areca Cutting Machine, Areca Gorabalu Polisher, Pepper Decorticator-Big & Small ##Website: http://mathanaind.com 
 
 $$/AM/022/Andreas Stihl Pvt. Ltd.
 ##ANDREAS STIHL Pvt. Ltd., Gut No. 53/01, Pune-Nashik Highway, Kuruli, Ta: Khed 410501, Dist: Pune, Maharashtra, India ##Phone: +91 21 35616700, Fax: +91 21 35616701, Email: info@stihlindia.com ##Products: Brush cutter, Chain saw, Mist blower, Pole pruner, High pressure washer, Hedge trimmer, Concrete cutter etc. ##Website: https://www.stihl.in 
@@ -152,8 +152,10 @@ $$/AM/032/VST Tillers Tractors Ltd.
 $$/AM/033/Knightfield Engines Pvt. Ltd.
 ##Knightfield Engines Pvt. Ltd. No. 30/1, Surveyor Street, DVG Road, Basavanagudi, Bengaluru 560004, Karnataka, India ##Phone: +91 80 26610444, Email: info@knightfield.in ##Products: Diesel Engines, Pump sets and Generators ##Website: http://knight-field.com  
 
+$$/AM/034/Suntec Agri Equipments (India) Pvt. Ltd.
+##Suntec Agri Equipments (India) Pvt. Ltd., No. 50/A, Main Road, New Timber Yard Layout,
+Mysore Road, Bengaluru 500026, Karnataka, India ##Phone: +91 80 26757400, +91 9449061552, +91 9449061553, Email: info@suntecargi.com ##Products: Green King Agriculture Sprayers and Accessories, Hand Tools, Sun Max Brush cutter, Chain Saw, Rotary Tiller, Earth Auger, High Pressure Washer, Tea Harvester, Power Weeder, Manual and Electric Milking Machine etc. ##Website: http://suntecagri.com 
 
- 
 
 $$/CAT/AS/Other Agri Services
 ##Poly House & Shade House ##ASTRA Dryer & Poly Tunnel Dryer ##Electric Fence & Regular Fencing ##Birds & Wild Animal Chasing Device ##Aluminium Ladders & Climbers ##Mulch Sheets & Tarpaulins

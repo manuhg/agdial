@@ -63,6 +63,8 @@ image: [34]
 ##title: [Water Heaters]
 imagelist: [35, 36, 37, 38, 39, 40]
 captions: [SS-Water-Heating-Vessel-50L, SS-Water-Heating-Vessel-50L-INS, SS-Water-Heating-Vessel-75L, SS-Water-Heating-Vessel-75L-INS, SS-Water-Heating-Vessel-150L-INS, SS-Water-Heating-Vessel-300L]
+##title:[Videos]
+videolist:[PBe67Sr2o1g, KVkIBKivVNE, onB51aqtd00, 3nzHQDK25Zs, Dgd66QQVCB8, VqmqoR1jB-U]
 ﻿$$
 ##id: AM-001
 ##prefix: RIPL

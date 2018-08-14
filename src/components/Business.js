@@ -1,7 +1,24 @@
 import 'resources/css/business.css';
 import React, { Component } from 'react';
+import { Button } from 'mdbreact';
 
 class Business extends Component {
+  constructor() {
+    super();
+    this.state = { videos: null };
+  }
+  componentDidMount() {
+    const { pr_data } = this.props;
+
+    if (pr_data && pr_data.content)
+      pr_data.content.map(entry => {
+        if (entry.videolist) {
+          var videolist = entry.videolist.split(',').map(e => e.trim());
+          if (videolist.length > 1 && this.state.videos !== true) this.setState({ videos: true });
+        }
+        return 1;
+      });
+  }
   render() {
     const { data, pr_data } = this.props;
     if (typeof data !== 'object') return <span>Please wait..</span>;
@@ -112,6 +129,13 @@ class Business extends Component {
                                   {e}
                                 </li>
                               ))}
+                              {this.state.videos ? (
+                                <a href="#videos">
+                                  <Button>Watch Videos</Button>
+                                </a>
+                              ) : (
+                                ''
+                              )}
                             </ul>
                           </div>
                         </div>
@@ -190,13 +214,13 @@ class Business extends Component {
                                                     <div className="container">
                                                       <div className="row text-justify tiles_tb _5p ">
                                                         <div
-                                                          className="col-md-4 col-lg-3 tbi"
+                                                          className="col-md-4 col-lg-3 col-xl-2 tbi"
                                                           style={{
                                                             background: 'url(' + img_base + img + '.jpg)',
                                                             backgroundSize: 'cover',
                                                           }}
                                                         />
-                                                        <div className="col-md-8 col-lg-9">
+                                                        <div className="col-md-8 col-lg-9 col-xl-10">
                                                           <div className="container lp_tb text-left">{content[k]}</div>
                                                         </div>
                                                       </div>
@@ -276,6 +300,55 @@ class Business extends Component {
                                           );
                                         } else if (entry.content) {
                                           return <p> {entry.content}</p>;
+                                        } else if (entry.videolist) {
+                                          var videolist = entry.videolist.split(',').map(e => e.trim());
+
+                                          try {
+                                            return (
+                                              <div id="videos" className="container-fluid mzpz">
+                                                {entry.title ? (
+                                                  <div className="mzpz">
+                                                    <div>
+                                                      <h2>{entry.title}</h2> <hr />
+                                                    </div>
+                                                  </div>
+                                                ) : (
+                                                  ''
+                                                )}
+                                                <div
+                                                  className=" mzpz"
+                                                  style={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    flexWrap: 'wrap',
+                                                  }}
+                                                >
+                                                  {videolist.map((vid, k) => (
+                                                    <div
+                                                      key={k}
+                                                      style={{
+                                                        marginBottom: '3px',
+                                                        marginRight: '3px',
+                                                        padding: '0px',
+                                                      }}
+                                                    >
+                                                      <iframe
+                                                        className="vids"
+                                                        src={'https://www.youtube.com/embed/' + vid}
+                                                        frameBorder="0"
+                                                        title="video"
+                                                        allow="autoplay; encrypted-media"
+                                                        allowFullScreen
+                                                      />
+                                                    </div>
+                                                  ))}
+                                                </div>
+                                              </div>
+                                            );
+                                          } catch (err) {
+                                            console.log(err);
+                                          }
                                         }
                                       })()}
                                     </div>

@@ -30,7 +30,8 @@ class Nav extends Component {
     // ];
 
     return (
-      <Navbar color="white" light expand="md" scrolling>
+      <Navbar color="white" light expand="md">
+        {/*scrolling*/}
         <NavbarBrand href="/">
           <img src={logo} alt="Agdial Logo" height="80" />
         </NavbarBrand>

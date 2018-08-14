@@ -65,17 +65,20 @@ class JoinUs extends Component {
                   Kannada, English and Hindi are popular enough across India, Sri Lanka and Bangladesh. Here we take
                   this opportunity to introduce another service web domain.
                 </p>
-                <p>
-                  <h3>What is AgDial</h3> It is an agriculture directory website or digital directory. It will enlist
-                  all segments of agriculture viz. Agri Companies for Machinery & power tools, Manual implements, Seeds,
-                  Fertilizers, Pesticides, Organic inputs etc., Agri Consultants, Services like Poly house, Dryers,
-                  Fence etc., Plant Nurseries, TC Labs, Animal Husbandry dealers for Rural birds, Cows, Buffalos, Goat,
-                  Sheep, Pig etc., Irrigation equipment and related technologies, UASs, Research organizations,
-                  Government departments, NGOs, Innovative farmers and many more. Enrolment charge varies on category
-                  (company/individual, business segment etc.), space allotted (full page, a paragraph size, 3 lines),
-                  extra features given (links for websites, video links, direct mail and call option etc.). AgDial will
-                  have provisions for ads as well on its pages.
-                </p>
+                <span>
+                  <h3>What is AgDial</h3>
+                  <p>
+                    It is an agriculture directory website or digital directory. It will enlist all segments of
+                    agriculture viz. Agri Companies for Machinery & power tools, Manual implements, Seeds, Fertilizers,
+                    Pesticides, Organic inputs etc., Agri Consultants, Services like Poly house, Dryers, Fence etc.,
+                    Plant Nurseries, TC Labs, Animal Husbandry dealers for Rural birds, Cows, Buffalos, Goat, Sheep, Pig
+                    etc., Irrigation equipment and related technologies, UASs, Research organizations, Government
+                    departments, NGOs, Innovative farmers and many more. Enrolment charge varies on category
+                    (company/individual, business segment etc.), space allotted (full page, a paragraph size, 3 lines),
+                    extra features given (links for websites, video links, direct mail and call option etc.). AgDial
+                    will have provisions for ads as well on its pages.
+                  </p>
+                </span>
                 <div>
                   <h3>Branding Strategies for AgDial</h3>
                   <h4>Online Branding</h4>

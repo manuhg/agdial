@@ -10,7 +10,7 @@
 
 .ch {
   font-weight: bold;
-  font-size: 0.9vw;
+  font-size: 0.86vw;
   color: black;
   /* font-size: 0.9vw; */
   padding: 6px 15px 0px 5px;
@@ -49,7 +49,7 @@
 }
 @media only screen and (max-width: 1199px) {
   .ch {
-    font-size: 1.4vw;
+    font-size: 1.3vw;
   }
   .tiles {
     font-size: 1.4vw;
