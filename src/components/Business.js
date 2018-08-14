@@ -136,6 +136,13 @@ class Business extends Component {
                                           return (
                                             <div className="row">
                                               <div className="col-12">
+                                                {entry.title ? (
+                                                  <div>
+                                                    <h2>{entry.title}</h2> <hr />
+                                                  </div>
+                                                ) : (
+                                                  ''
+                                                )}
                                                 <img
                                                   src={img_base + entry.image + '.jpg'}
                                                   alt={pr_data.prefix + ' ' + entry.image}
@@ -148,6 +155,15 @@ class Business extends Component {
                                         if (entry.image && entry.content) {
                                           return (
                                             <div className="row fp">
+                                              <div className="col-12">
+                                                {entry.title ? (
+                                                  <div>
+                                                    <h2>{entry.title}</h2> <hr />
+                                                  </div>
+                                                ) : (
+                                                  ''
+                                                )}
+                                              </div>
                                               <div className="col-lg-4">
                                                 <img
                                                   src={img_base + entry.image + '.jpg'}

@@ -115,6 +115,9 @@ $$/CAT/AM/Agriculture Machineries
 $$/AM/001/Ratnagiri Impex Pvt. Ltd. [premium] 
 ##Annapurna House, 1-1G, 7th Cross, New Guddadahalli, Mysore Road, Bengaluru, Karnataka 560026 India. ##Phone: +91 80 26985100, 101, 102 ##Fax: +91 80 26751658 ##All India customer care number 1800 425 7475 ##Email: customercare@ratnagiriimpex.com  ##Business type: Importers and Distributors of agricultural and other machineries and handheld power tools ##Major Items: Brush cutter, Chain saw, Sprayers, Rotary tillers, High pressure washers, Lawnmowers etc. ##Outlet Brand: AgriMart, AgriMart Care ##Major Brands: Oleo-Mac, Agrimate, Unigreen, Bartolini, Comet, Gulliver ## Website: www.ratnagiriimpex.com 
 
+$$/AM/002/Mathana Home Industries [premium] 
+##Mathana Home Industries, Bandagadde, Po: Keladi, Ta: Sagara 577401, Dist: Shivamogga, Karnataka, India ##Phone: +91 8183 260063, 228971, +91 9663408163 +91 9448238663, +91 9741636163 Email: umesh@mathanaind.com, jnanendra_m@yahoo.com ##Products: Dry Arecanut de-husking machine, Arecanut cutter, Arecanut polisher, Pepper separator, Curd churning machine etc. ##Website: http://mathanaind.com 
+
 $$/AM/022/Andreas Stihl Pvt. Ltd.
 ##ANDREAS STIHL Pvt. Ltd., Gut No. 53/01, Pune-Nashik Highway, Kuruli, Ta: Khed 410501, Dist: Pune, Maharashtra, India ##Phone: +91 21 35616700, Fax: +91 21 35616701, Email: info@stihlindia.com ##Products: Brush cutter, Chain saw, Mist blower, Pole pruner, High pressure washer, Hedge trimmer, Concrete cutter etc. ##Website: https://www.stihl.in 
 
@@ -139,8 +142,6 @@ $$/AM/028/Kodibail Agro Mac
 $$/AM/029/Hegde Dynamics Pvt. Ltd.
 ##Hegde Dynamics, Hegde Farm, 2nd Kilometre, Hosanagara Road, Sagar 577401, Dist: Shivamogga, Karnataka, India ##Phone: +91 8183 221234, +91 9632226404, Email: hegdedynamics@gmail.com ##Products: MotoCart on-farm transporter, Micro-sprinkler, Earth auger etc. ##Contact person: Mr. Lakshminarayana Hegde ##Website: http://hegdedynamics.com 
 
-$$/AM/030/Mathana Home Industries
-##Mathana Home Industries, Bandagadde, Po: Keladi, Ta: Sagara 577401, Dist: Shivamogga, Karnataka, India ##Phone: +91 8183 260063, 228971, +91 9663408163 +91 9448238663, +91 9741636163 Email: umesh@mathanaind.com, jnanendra_m@yahoo.com ##Products: Dry Arecanut de-husking machine, Arecanut cutter, Arecanut polisher, Pepper separator, Curd churning machine etc. ##Website: http://mathanaind.com 
 
 $$/AM/031/Varsha Associates
 ##Varsha Associates, Mruthyunjaya Compound, V.P. Extension, Chitradurga 577501, Karnataka, India ##Phone: +91 8194 651721, +91 9448396261, Fax: +91 8194 226648, Email: info@varshaagro.com ## ##Bengaluru Office: New Tech Distributors, No. 35, 1st Main Road, Opposite Mahalakshmi Temple, Lower Palace Orchards, Sadashivanagar, Bengaluru 560003, Karnataka, India ##Phone: +91 80 41236389, +91 94483 96283, Email: info@varshaagro.com ##Products: Equipment for land preparation, Planting, Inter-cultivation, Plant protection, Harvesting, Threshing and many more ##Website: http://www.varshaagro.com  
@@ -196,6 +197,9 @@ $$/CS/027/Rajendra N Hegde
 $$/CS/028/Shreevidya Horticulture Services
 ##Shreevidya Horticulture Services, No. 56, Shantiniketan Nagar, Dharwad 580008, Karnataka, India ##Phone: +91 9448525852, Email: shreevidyahort@gmail.com ##Work: Landscape garden designing, Establishment and Maintenance, Horticulture consultancy, Plant material supply etc. ##Contact Person: Vidyananda Bhat, M. Sc. (Agri) Horticulture
 
+
+$$/CS/029/Yogis World of Agri & Allied Consultancy Services
+##Yogis World of Organics, Flat No. 307, 2nd Floor, Mahaveera Thrishla Apartment, Saptagiri Layout, BHEL 2nd Stage, Rajarajeshwari Nagar, Bengaluru 560098, Karnataka, India ##Phone: +91 9448218544, +91 8123491700, Email: yogisworldoforganics@gmail.com ##Work: Agri & Allied consultancy services, Organic Farming, Organic Certification & Market linkage, Capacity building on INM & IPM ##Contact Person: Yogish A
 
 $$/CAT/FZ/Fertilizers
 ## Water Soluble NPK Fertilizers ## Citrate Soluble NPK Fertilizers ## Macro & Micronutrients ## Soluble Fertilizers & Foliar Sprays ## Soil Amendments & Reclaimers ## Natural Nutrient Materials 
@@ -285,7 +289,8 @@ $$/OS/026/The Organic State
 $$/OS/027/EPN and Microbiology Laboratory 
 ##Benzer Crop Science, Near Patel Sawmill, Salamat Nagar, Hubballi Road, Sirsi 581401, Karnataka, India ##Phone: +91 9481321000, +91 7899155759, +91 9448009805, Email: benzercropscience@gmail.com  ##Work: Production of Entomopathogenic Nematodes (EPN), Trichoderma and other Microorganisms ##Website: www.benzercropscience.com
 
-
+$$/OS/028/Yogis World of Agri & Allied Consultancy Services
+##Yogis World of Organics, Flat No. 307, 2nd Floor, Mahaveera Thrishla Apartment, Saptagiri Layout, BHEL 2nd Stage, Rajarajeshwari Nagar, Bengaluru 560098, Karnataka, India ##Phone: +91 9448218544, +91 8123491700, Email: yogisworldoforganics@gmail.com ##Work: Agri & Allied consultancy services, Organic Farming, Organic Certification & Market linkage, Capacity building on INM & IPM ##Contact Person: Yogish A
 $$/CAT/OZ/Organisations
 ##Universities of Agri, Horti & AH ##Krushi Vignana Kendras ##Central Research Organisations ##NGOs Working on Agriculture & RD ##State Depts. Of Agri, Horti, Seri, AH ##Training Institutes-State & Central
 

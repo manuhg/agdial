@@ -1,0 +1,31 @@
+﻿Plant Nurseries:
+$$/CAT/PN/Plant Nurseries
+##Fruit and Forest Plants ##Plantation Crop Plants ##Flowering and Ornamental Plants ##Bonsai and Indoor Plants ##Vegetable Seedlings Nursery ##Terrace Gardening & Landscaping
+
+$$/PN/001/Sasya Horticulture Nursery [premium]
+##Office: Giridath, Behind Nityananda Matha, Marathikoppa Road, Sirsi, Uttara Kannada 581402, Karnataka, India. ##Nursery: Islur, Hubballi Road, Sirsi ##Phone: +91 8384 237424, +91 9449999791, +91 9448408620 ##Email: gardennagaraj@gmail.com ##Business type: Horticultural nursery and Landscape works ##Specialty: All types of ornamental plants, Plantation crop plants like Arecanut, coconut, Fruits like mango, sapota, spices and medicinal plants ##Contact person: DR. Nagaraja D Bhat ##Website: www.sasyanursery.com
+
+$$/PN/002/Akshaya Agro Services [premium]
+##Akshaya Agro Services, Karadagere Kaval, Post: Chikkasarangi, Ta & Dist: Tumakur 572118, Karnataka, India ##Phone: +91 9980290951, 9108010034, Email: akshayaagro69@gmail.com, rphegdeagri@gmail.com ##Business type: Horticulture Nursery, Horticulture Consultancy, Floriculture under Poly house ##Specialty: Tissue culture banana plants, Pomegranate, Mango and other fruit plants. ##Contact Person: DR. Ramachandra Hegde, M.Sc. Agri (Horticulture) ##Website: www.akshayaagro.in 
+
+$$/PN/021/Global Garden
+##Global Garden, Office: No. 4, Near Water Tank, SBI Colony, Opposite New Bus Stand, Pune-Bengaluru Road, Dharwad 580008, Karnataka, India ## ##Nursery: Global Garden, Kalaghatgi Road, Behind Police Training College, Near Pragati Vidyalaya, Dharwad, Karnataka, India ##Phone: +91 836 2746045, +91 9483362758 Email: globalgarden@rediffmail.com ##Business Type: Horticulture Plant Nursery, Horticulture Consultancy, Landscape Designing, Establishment and Maintenance ##Contact Person: DR. Manjunath Hegde
+
+$$/PN/022/Nadakatti Farms 
+##Narendra cross, Poona-Bengaluru Highway, Dharwad 580005, Karnataka, India. ##Phone: +91 6361696364, +91 9449188429, +91 9448639034 ##Business Type: Horticultural nursery ##Specialty: Mango, Sapota, Guava, Sweet orange, Citrus, Coconut (dwarf green) ##Contact person: Prof. Basavaraj G Nadakatti 
+$$/PN/023/Vinu Flora 
+##Vinu Flora, Plant Nursery and Commercial Floriculture, Post Box No. 36, Koppa 577126, Dist: Chikkamagalur, Karnataka, India ##Phone: +919448940161, +91 9008135211, Email: jkvkumar2010@gmail.com ##Specialties: Floriculture, Potted plants of Anthurium, Bromeliads, Coffee, Black pepper, Tree spices, Arecanut, Silver oak, Lakshmanaphala and many more ##Contact Person: DR. Vijayakumar J. K. ##Website: www.vinuflora.com 
+
+$$/PN/024/Shemantika Nursery 
+##Shemantika Nursery, No. 9, Ganesh Nagara, near Siddharudha matha, Hubballi 580024, Karnataka, India ##Contact Person: Shreekant Deshpande +91 9880717642, Email: shemantika@gmail.com ##Work: Landscape gardening, Plant Nursery with Ornamental, Indoor, fruit plants etc. ##Website: www.shemantikanursery.com 
+
+$$/PN/025/Tulsi Agro Services (Tissue Culture Banana Plants)
+##Tulsi Agro Services, Shalmala, Shirdi Sai Baba Colony, Sadhankeri, Goa Road, Dharwad 580008, Karnataka, India ##Phone: +91 9343408417, +91 9986083650, Email: geetahesarur@gmail.com ##Specialty: Tissue Culture Banana plants, Rose, Coconut, Mango and other fruit plants, Poly house and Shade house construction, Drip irrigation installation ##Contact Person: DR. Vijay Kumar, B. Sc. Agri 
+
+$$/PN/026/Ekalavya Nursery (Vegetable seedlings) 
+##Ekalavya Nursery, At: Pakegowdana Palya, Hessaraghatta hobli, Po: Siluvepura, Dist: Bengaluru rural 560090, Karnataka, India ##Phone: +91 80 28446764, +91 9448306101, +91 7760951260, Email: ekalavya1968@gmail.com  ##Specialty: Vegetable seedlings of Tomato, Capsicum, Brinjal, Bitter gourd, Cabbage, Cauliflower and many more ##Contact Person: Prakash M.
+
+
+
+
+
