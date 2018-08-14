@@ -45,7 +45,7 @@ captions: [Single-Wheel-Barrow, Two-Wheel-Barrow, Three-Wheel-Barrow, Three-Whee
 
 ##title: [Agriculture Implements]
 image: [27]
-#image: [28]
+##image: [28]
 
 ##title: [Farm Utilities]
 image: [29]

@@ -70,6 +70,7 @@
 
 .bpch {
   color: green;
+  margin: 0px !important;
   word-wrap: 'break-word !important';
   font-weight: bold;
 }
@@ -141,7 +142,7 @@
   word-wrap: break-word !important;
 }
 .tbi {
-  min-height: 200px;
+  min-height: 180px;
 }
 
 .lp_tb {

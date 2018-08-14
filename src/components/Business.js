@@ -52,7 +52,7 @@ class Business extends Component {
                   ) : (
                     ''
                   )}
-                  <div style={{ borderTop: '5px solid green' }} className="container-fluid">
+                  <div style={{ borderTop: '5px solid green' }} className="container-fluid mzpz">
                     <div className="row mzpz">
                       <div className="col-12 col-sm-12 col-md-3 col-lg-3" style={{ padding: '0px' }}>
                         <div className="card mzpz">
@@ -117,9 +117,7 @@ class Business extends Component {
                         </div>
                       </div>
                       <div
-                        style={{
-                          borderLeft: '5px solid green',
-                        }}
+                        style={{ borderLeft: '5px solid green' }}
                         className="col-12 col-sm-12 col-md-9 col-lg-9 lpb text-left"
                       >
                         <div className="card">
@@ -192,13 +190,13 @@ class Business extends Component {
                                                     <div className="container">
                                                       <div className="row text-justify tiles_tb _5p ">
                                                         <div
-                                                          className="col-md-4 tbi"
+                                                          className="col-md-4 col-lg-3 tbi"
                                                           style={{
                                                             background: 'url(' + img_base + img + '.jpg)',
                                                             backgroundSize: 'cover',
                                                           }}
                                                         />
-                                                        <div className="col-md-8">
+                                                        <div className="col-md-8 col-lg-9">
                                                           <div className="container lp_tb text-left">{content[k]}</div>
                                                         </div>
                                                       </div>
