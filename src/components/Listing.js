@@ -91,12 +91,9 @@ class Listing extends Component {
                                     <span />
                                   )}
                                   {data.Email ? (
-                                    <span>
-                                      &nbsp;
-                                      <i className="fa fa-envelope fa-lg" />&nbsp;<a href={'mailto:' + data.Email[0]}>
-                                        {data.Email[0]}
-                                      </a>
-                                      &nbsp;
+                                    <span style={{ padding: '1px' }}>
+                                      &nbsp;<i className="fa fa-envelope fa-lg" />&nbsp;
+                                      {data.Email.map((e, k) => <a href={'mailto:' + e}>{e}</a>)}
                                     </span>
                                   ) : (
                                     ''

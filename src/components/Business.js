@@ -116,10 +116,14 @@ class Business extends Component {
                                 ''
                               )}
                               {data.Email ? (
-                                <li className="lp list-group-item">
+                                <span>
                                   <i className="fa fa-envelope fa-lg" />&nbsp;
-                                  <a href={'mailto:' + data.Email[0]}>{data.Email[0]}</a>&nbsp;
-                                </li>
+                                  {data.Email.map((e, k) => (
+                                    <li key={k} className="lp list-group-item">
+                                      <a href={'mailto:' + e}>{e}</a>&nbsp;
+                                    </li>
+                                  ))}
+                                </span>
                               ) : (
                                 ''
                               )}
@@ -131,7 +135,7 @@ class Business extends Component {
                               ))}
                               {this.state.videos ? (
                                 <a href="#videos">
-                                  <Button>Watch Videos</Button>
+                                  <Button color="red">Watch Videos</Button>
                                 </a>
                               ) : (
                                 ''
@@ -212,15 +216,22 @@ class Business extends Component {
                                                 {imagelist.map((img, k) => (
                                                   <div key={k} className="row">
                                                     <div className="container">
-                                                      <div className="row text-justify tiles_tb _5p ">
-                                                        <div
+                                                      <div className="row text-justify tiles_tb _5p fp ">
+                                                        {/* <div
                                                           className="col-md-4 col-lg-3 col-xl-2 tbi"
                                                           style={{
                                                             background: 'url(' + img_base + img + '.jpg)',
                                                             backgroundSize: 'cover',
                                                           }}
-                                                        />
-                                                        <div className="col-md-8 col-lg-9 col-xl-10">
+                                                        /> */}
+                                                        <div key={k} className="col-sm-5 col-md-4 col-lg-3 imgcol ">
+                                                          <img
+                                                            src={img_base + img + '.jpg'}
+                                                            alt={pr_data.prefix + ' ' + img}
+                                                            style={{ width: '100%' }}
+                                                          />
+                                                        </div>
+                                                        <div className="col-sm-7 col-md-8 col-lg-9">
                                                           <div className="container lp_tb text-left">{content[k]}</div>
                                                         </div>
                                                       </div>

@@ -18,13 +18,13 @@ content: [Apart from manufacturing drip irrigation products, Himadri takes up Tu
 ##id: AM-002
 ##prefix: MHI
 ##imagelist: [01, 02, 03, 05] 
-captions: [Mathana Premises, Mr. Umesh B.R.,Factory,Technicians]
+captions: [Mathana Premises, Mr. Umesh BR, Factory, Technicians]
 ##content: [Mathana Home Industries was founded in the year 1992 by Mr. Umesh BR to promote rural innovation in the field of engineering. The main motto was to produce high quality engineering products at reasonable price and to create rural employment.] 
 ##content: [Mathana manufactures custom made agriculture machineries and implements based on practical experiences and needs of farmers. Mathana intends to bring out engineering products to reduce manual efforts in every walk of life. To give the best example Mathana was started with the innovation of curd churning machine saving effort and time of homemakers. Mathana factory is situated in Bandagadde, a lush green village of Western Ghat range.]
 
+##content: [Now Mathana manufactures 6 agriculture machineries, 5 agri transporters, 12 agri implements, 5 farm utilities, 8 garden equipment, 3 curd churners, 14 kitchen appliances and 7 water heaters.]
 ##title: [Mathana Products]
-content: [Now Mathana manufactures 6 agriculture machineries, 5 agri transporters, 12 agri implements, 5 farm utilities, 8 garden equipment, 3 curd churners, 14 kitchen appliances and 7 water heaters.]
-##imagelist: [06, 07, 08, 09, 10, 11, 12, 13]
+imagelist: [06, 07, 08, 09, 10, 11, 12, 13]
 captions: [Agri-Machineries, Agri-Transporters, Agri-Implements, Farm-Utilities, Garden-Equipment, Curd-Churners, Kitchen-Appliances, Water-Heaters]
 
 ##title: [Research & Development at Mathana]
@@ -41,7 +41,7 @@ captions: [Dry-Areca-De-Husking-Machine, Areca-Bunch-Separator, Areca-Cutting-Ma
 
 ##title: [Agriculture Transporters]
 imagelist: [22, 23, 24, 25, 26]
-captions: [Single-Wheel-Barrow, Two-Wheel-Barrow, Three-Wheel-Barrow, Three-Wheel-Barrow-with-Door, Box-Carrier]
+captions: [Single-Wheel-Barrow, Two-Wheel-Barrow, Three-Wheel-Barrow, Wheel-Barrow-with-Door, Box-Carrier]
 
 ##title: [Agriculture Implements]
 image: [27]
@@ -63,8 +63,8 @@ image: [34]
 ##title: [Water Heaters]
 imagelist: [35, 36, 37, 38, 39, 40]
 captions: [SS-Water-Heating-Vessel-50L, SS-Water-Heating-Vessel-50L-INS, SS-Water-Heating-Vessel-75L, SS-Water-Heating-Vessel-75L-INS, SS-Water-Heating-Vessel-150L-INS, SS-Water-Heating-Vessel-300L]
-##title:[Videos]
-videolist:[PBe67Sr2o1g, KVkIBKivVNE, onB51aqtd00, 3nzHQDK25Zs, Dgd66QQVCB8, VqmqoR1jB-U]
+##title: [Videos]
+videolist: [PBe67Sr2o1g, onB51aqtd00, 3nzHQDK25Zs, 1&v=-j_q9tLe3es, wMeLK9b600g, VqmqoR1jB-U, YzXxsyFch6c]
 ﻿$$
 ##id: AM-001
 ##prefix: RIPL
