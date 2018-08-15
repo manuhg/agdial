@@ -1,4 +1,35 @@
 ﻿$$
+##id: AH-PL-001
+##prefix: ABC
+##imagelist: [01, 02, 03, 04] 
+captions: [ABCPL, Mr. Sagar Urs, Country Chicken, Country Chicken Eggs]
+##content: [MYSURU NAATI KKOLI is the brand of August Backyard Chicken Pvt. Ltd. ABC was established in the year 2011 in Malagalu village near Mysuru of Karnataka state. Motto was to encourage rural entrepreneurship and to take rural India to corporate level. Naati Koli or Country Chicken is well-known and preferred for its taste, aroma and nutritional value. In modern India backyard poultry has taken back seat. ABC Pvt. Ltd. has formulated a sound strategy to revive this age-old tradition Naati Kkoli rearing for rural nutritional security and to strengthen rural economy.] 
+##content: [ABCPL is the brain child of its Founder Managing Director Mr. Sagar Urs. He holds MBA in marketing and has a rich work experience in corporate world for a decade. He formulated a profitable business module covering egg collection, hatching, rearing and live bird marketing. Today, more than 500 farmers and 200+ retail outlets are associated with ABCPL. Company follows rearing Naati Kkoli for 100 to 120 days under semi-intensive system to achieve bird’s average body weight of 1 to 1.25 kilogram. ABCPL makes its birds to feed insects, green grass, Azolla, Lucerne, sprouts and waste vegetables. Under standard condition and care mortality of birds is just 3% in ABCPL associated Naati Kkoli farms.]    
+
+##title: [Products and Services of ABCPL]
+imagelist: [05, 06, 07, 08, 09, 10]
+captions: [Training, Egg Collection, Day-old Chick, Advisory Service, Feed Supply, Live Bird Sale]
+
+
+##content: [Training and Capacity Building: ABCPL provides a systematic training to its fellow farmers to build capacity for its innovative project ‘Naati Kkoli’. Trainings include Systematic rearing process, Technical immunization procedures, Importance of hygiene, Feed management, Following profitability driven module etc.]
+imagelist: [11] 
+
+##content: [Naati Kkoli Eggs for Sale and Hatching: ABCPL provides pure country chicken eggs collected from one of its kind “Rural Egg Collection Network”. The eggs are picked from door-to-door from selected network of villages that carries the essence of natural breeds. ABCPL has the state-of-the art Hatchery with 60,000 hatching capacity at Mysuru. Day-old chicks are sold across Karnataka.]
+imagelist: [12]
+
+##content: [Day-old Chicks: Quality assured and authenticated pure Naati Kkoli chicks are sold from ABCPL Hatchery. These chicks at zero day are vaccinated with Chick ND and Amikacin to secure from possible diseases. Day old chicks are in higher demand and so ABPCL operates in first come first serve on prior booking systems.]
+imagelist: [13] 
+
+##content: [Onsite Advisory Services: ABCPL has a dedicated and passionate team of field officers who poses with a collective knowledge and experiences from various ABC raring farmers. They visit the farms fortnightly to guide the farmers to achieve consistent profitability with high quality product. Dedicated customer service mobile phone numbers are operative 24/7 and follow up calls are also made twice in a week on immunization and feeding. All these services are free of cost.]
+imagelist: [14] 
+
+##content: [Feeds: ABPCL has developed its own scientific nutritional formula and raring concept. Those specific feeds are made available for farmers to achieve the desired weight gain with lower cost. ABCPL feeds help to develop and retain natural aroma and flavour of pure country chicken. ABCPL encourages and guides the farmers to cultivate greens like Azolla, Lucerne etc., to save cost on feed and to improve the health of Naati Kkoli and taste of its meat.]
+imagelist: [15]
+
+##content: [Live Bird: With the expert advice of ABCPL Pure Naati Kkoli or country chickens are reared under semi-intensive system and sold across Karnataka. These birds are the best in aroma, low cholesterol and healthy meat for consumption. ABCPL is committed to provide healthy, tasty organic Naati Kkoli meat through its innovative project.]
+imagelist: [16] 
+
+﻿$$
 ##id: IS-001
 ##prefix: HI
 ##imagelist: [01, 02, 03, 04]
@@ -64,7 +95,7 @@ image: [34]
 imagelist: [35, 36, 37, 38, 39, 40]
 captions: [SS-Water-Heating-Vessel-50L, SS-Water-Heating-Vessel-50L-INS, SS-Water-Heating-Vessel-75L, SS-Water-Heating-Vessel-75L-INS, SS-Water-Heating-Vessel-150L-INS, SS-Water-Heating-Vessel-300L]
 ##title: [Videos]
-videolist: [PBe67Sr2o1g, onB51aqtd00, 3nzHQDK25Zs, 1&v=-j_q9tLe3es, wMeLK9b600g, VqmqoR1jB-U, YzXxsyFch6c]
+videolist: [coIKdmZb6Tw&list=PLE1P7Fwrqlm-l4HO-w26R3-EUuDI0AVAB]
 ﻿$$
 ##id: AM-001
 ##prefix: RIPL
@@ -80,8 +111,11 @@ content: ['AGRIMATE' is the very own private label of RIPL for range of pest con
 imagelist: [3, 4, 5, 6, 7, 8]
 
 ##title: [Major Products Offered by RIPL]
-imagelist: [9, 10, 11, 12, 13, 14,  16, 17, 18, 19, 20, 21]
+imagelist: [9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21]
 captions: [Brush Cutter, Chain saw, Rotary Tiller, Earth Auger, Mist Blower, Power Sprayer, Tea Harvester, Coffee Harvester, Hedge Trimmer, Lawn Mover, High Pressure Washer, Fogger]
+
+##title: [Videos]
+videolist: [_VJYb-iT3lM&list=PLE1P7Fwrqlm8Ujb5GtA6ypzu_OOx41n24]
 
 ﻿$$
 ##id: PN-002

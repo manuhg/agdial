@@ -200,7 +200,7 @@ class Business extends Component {
                                               <div className="col-lg-8">{entry.content}</div>
                                             </div>
                                           );
-                                        } else if (entry.title && entry.imagelist && entry.content) {
+                                        } else if (entry.imagelist && entry.content) {
                                           var content = entry.content.split('``').filter(Boolean);
                                           var imagelist = entry.imagelist.split(',').map(e => e.trim());
                                           try {
