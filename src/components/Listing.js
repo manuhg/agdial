@@ -93,7 +93,11 @@ class Listing extends Component {
                                   {data.Email ? (
                                     <span style={{ padding: '1px' }}>
                                       &nbsp;<i className="fa fa-envelope fa-lg" />&nbsp;
-                                      {data.Email.map((e, k) => <a href={'mailto:' + e}>{e}</a>)}
+                                      {data.Email.map((e, k) => (
+                                        <a key={k} href={'mailto:' + e}>
+                                          {e}
+                                        </a>
+                                      ))}
                                     </span>
                                   ) : (
                                     ''

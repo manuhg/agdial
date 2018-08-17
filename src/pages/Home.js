@@ -17,7 +17,7 @@ const types = {
   0: 'list',
   1: 'page',
 };
-const root = '/';
+//const root = '/';
 
 class App extends Component {
   constructor(props) {
@@ -25,6 +25,7 @@ class App extends Component {
     this.title = 'Home';
     this.state = { changed: false };
     this.ut = {};
+    this.mounted = false;
     this.dataColl = {};
     this.type = 0; // tiles
     this.docAtPath(this.props.location.pathname);
@@ -44,6 +45,7 @@ class App extends Component {
     this.setData(path, 'Fetching..', true);
 
     try {
+      this.ep = this.evalPath(this.props.location.pathname, nomenclature);
       var data = await docref.get();
       console.log('Fetching data from ' + path);
       if (!data) return;
@@ -69,20 +71,26 @@ class App extends Component {
   }
 
   evalPath(path, nomObj) {
-    //  make '/categories/abc/xyz' => '/abc/xyz'
+    var ev_path = path + 'ep';
+    if (this.memoize(ev_path)) return this.dataColl[ev_path];
     var business = null;
     var cpath = path.split('/').filter(Boolean);
+    //  make '/categories/abc/xyz' => '/abc/xyz'
     cpath.splice(0, 1);
+    if (cpath.length === 0) cpath = ['/'];
+    //var catnom = this.valueAtPath(nomObj, cpath, true);
 
-    var catnom = this.valueAtPath(nomObj, cpath, true);
+    var catnom = nomObj[cpath[cpath.length - 1]];
     if (!catnom) {
       business = cpath.pop();
-      catnom = this.valueAtPath(nomObj, cpath, true);
+      catnom = nomObj[cpath[cpath.length - 1]];
     }
 
     if (catnom) {
-      if (catnom === nomObj) return { cpath, catnom: catnom[root], business };
-      return { cpath, catnom, business };
+      //if (catnom === nomObj) return { cpath, catnom: catnom[root], business };
+      var rv = { cpath, catnom, business };
+      this.setData(ev_path, rv, true);
+      return rv;
     }
   }
   urlTargetType(path, pathVals) {
@@ -125,9 +133,13 @@ class App extends Component {
         break;
     }
   }
+  componentDidMount() {
+    this.mounted = true;
+  }
 
   componentWillUnmount() {
     document.title = 'AgDial';
+    this.mounted = false;
   }
   previous() {
     //this.props.history.go(-1);
@@ -135,9 +147,9 @@ class App extends Component {
   render() {
     document.title = 'AgDial'; //:' + this.title;
     const path = this.props.location.pathname;
-
+    const ep = this.ep;
     var Content = () => (
-      <AppBody path={path} active={0}>
+      <AppBody ep={ep} active={0}>
         <div
           style={{
             height: '60vh',
@@ -175,7 +187,7 @@ class App extends Component {
           try {
             if (data.length > 0)
               Content = () => (
-                <AppBody path={path} active={0}>
+                <AppBody ep={ep} active={0}>
                   <Row
                     style={{
                       display: 'flex',
@@ -208,7 +220,7 @@ class App extends Component {
               );
             else
               Content = () => (
-                <AppBody path={path} active={0}>
+                <AppBody ep={ep} active={0}>
                   <div>
                     <br />
                     <h3>This section is under construction</h3>
@@ -229,9 +241,9 @@ class App extends Component {
             if (pr_coll_name && d.id) this.fetchDoc(db.collection(pr_coll_name).doc(d.id), pr_path);
             if (d.type && d.type === 'premium')
               Content = () => (
-                <AppBody path={path} fullWidth={true} active={0}>
+                <AppBody ep={ep} fullWidth={true} active={0}>
                   <Row>
-                    <Business width={width} height={height} path={path} data={d} pr_data={this.dataColl[pr_path]} />
+                    <Business width={width} height={height} data={d} pr_data={this.dataColl[pr_path]} />
                   </Row>
                 </AppBody>
               );

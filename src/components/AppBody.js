@@ -3,14 +3,19 @@ import ErrorBoundary from 'utils/ErrorBoundary';
 import Footer from 'components/Footer';
 import Nav from 'components/Nav';
 import bcgImg from 'resources/img/body_bcg.JPEG';
+import { rnom } from 'resources/nomenclature';
 class AppBody extends Component {
   render() {
     const Content = this.props.children;
-    const path = this.props.path;
+    const ep = this.props.ep;
+    const catnom = ep && ep.catnom ? ep.catnom : undefined;
     var pwd, Pagination;
-    if (path) {
-      pwd = path.split('/').filter(Boolean);
-      if (!pwd.length) pwd = ['categories'];
+    if (catnom) {
+      pwd = catnom.split('-').filter(Boolean);
+      pwd = pwd.map((e, i, a) => a.slice(0, i).join('-') + (i > 0 ? '-' : '') + e).filter(Boolean);
+      pwd = pwd.map(catnom => rnom[catnom]);
+      pwd = ['categories', ...pwd];
+      if (ep.business) pwd.push(ep.business);
       document.title = 'AgDial : ' + pwd[pwd.length - 1];
       Pagination = () => (
         <nav style={{ borderRadius: '0px' }} aria-label="breadcrumb">
