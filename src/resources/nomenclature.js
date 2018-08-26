@@ -20,7 +20,7 @@ export const nomenclature = {
   'Media Organisations': 'OZ-MED',
   'Agriculture Product Processing Industry': 'OZ-PROS',
   Pesticides: 'PD',
-  'Plant Nurseries': 'PN',
+  'Plant Nurseries & TC Labs': 'PN',
   Seeds: 'SD',
 };
 
@@ -46,7 +46,7 @@ export const rnom = {
   'OZ-MED': 'Media Organisations',
   'OZ-PROS': 'Agriculture Product Processing Industry',
   PD: 'Pesticides',
-  PN: 'Plant Nurseries',
+  PN: 'Plant Nurseries & TC Labs',
   SD: 'Seeds',
 };
 export default rnom;
