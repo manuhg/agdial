@@ -9,7 +9,7 @@ import Tiles from 'components/Tiles';
 import SubCatTile from 'components/SubCatTile';
 import { db } from 'utils/db';
 import { nomenclature, rnom } from 'resources/nomenclature';
-import RestDoc from 'utils/Rest';
+//import RestDoc from 'utils/Rest';
 const coll_name = 'listings'; // categories collection name
 const pr_coll_name = 'premium_data'; // categories collection name
 const types = {
@@ -30,7 +30,8 @@ class App extends Component {
     this.dataColl = {};
     this.type = 0; // tiles
     this.docAtPath(this.props.location.pathname);
-    RestDoc.getdoc();
+    //RestDoc.getdoc();
+    //RestDoc.query();
   }
 
   setData(index, value, nosS) {

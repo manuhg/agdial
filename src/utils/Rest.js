@@ -1,8 +1,6 @@
 import axios from 'axios';
+var baseURL = 'https://firestore.googleapis.com/v1beta1/projects/agdial-001/databases/(default)/documents';
 class RestDoc {
-  constructor() {
-    var baseURL = 'https://firestore.googleapis.com/v1beta1/projects/agdial-001/databases/(default)/documents';
-  }
   rv(obj) {
     if (obj && obj.arrayValue) return obj.arrayValue.values.map(a => this.rv(a));
     return Object.values(obj)[0];
@@ -12,7 +10,7 @@ class RestDoc {
     docpath = docpath || 'listings/AH-CB-012';
     axios({
       method: 'get',
-      url: this.baseURL + '/' + docpath + '?fields=fields',
+      url: baseURL + '/' + docpath + '?fields=fields',
     }).then(val => console.log('GET url: ', val && val.data && val.data.fields ? val.data.fields : val));
   }
   static query(field_path, op, field_val, collection) {
@@ -40,7 +38,7 @@ class RestDoc {
     };
     axios({
       method: 'post',
-      url: this.baseURL + ':runQuery?fields=document',
+      url: baseURL + ':runQuery?fields=document',
       data: query_obj,
     }).then(val => console.log('POST query: ', val && val.data ? val.data : val));
   }
