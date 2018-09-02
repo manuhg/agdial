@@ -1,19 +1,40 @@
 import axios from 'axios';
-var baseURL = 'https://firestore.googleapis.com/v1beta1/projects/agdial-001/databases/(default)/documents';
+
 class RestDoc {
+  constructor() {
+    this.baseURL = 'https://firestore.googleapis.com/v1beta1/projects/agdial-001/databases/(default)/documents';
+    this.toJsObj = this.toJsObj.bind(this);
+    this.rv = this.rv.bind(this);
+  }
   rv(obj) {
+    if (obj === undefined || obj == null) return;
     if (obj && obj.arrayValue) return obj.arrayValue.values.map(a => this.rv(a));
     return Object.values(obj)[0];
   }
+  toJsObj(obj) {
+    var r = {};
+    if (obj) {
+      Object.entries(obj).map(e => (r[e[0]] = this.rv(e[1])));
+      return r;
+    }
+  }
 
-  static getdoc(docpath) {
+  getdoc(docpath) {
     docpath = docpath || 'listings/AH-CB-012';
     axios({
       method: 'get',
-      url: baseURL + '/' + docpath + '?fields=fields',
-    }).then(val => console.log('GET url: ', val && val.data && val.data.fields ? val.data.fields : val));
+      url: this.baseURL + '/' + docpath + '?fields=fields',
+    }).then(val => {
+      var dt_arr = [];
+      if (val && val.data && val.data.fields) {
+        dt_arr = val.data.fields;
+
+        dt_arr = this.toJsObj(dt_arr);
+      }
+      console.log('GET url: ', dt_arr);
+    });
   }
-  static query(field_path, op, field_val, collection) {
+  query(field_path, op, field_val, collection) {
     field_path = field_path || 'path';
     op = op || 'EQUAL';
     field_val = field_val || 'CAT';
@@ -38,9 +59,16 @@ class RestDoc {
     };
     axios({
       method: 'post',
-      url: baseURL + ':runQuery?fields=document',
+      url: this.baseURL + ':runQuery?fields=document',
       data: query_obj,
-    }).then(val => console.log('POST query: ', val && val.data ? val.data : val));
+    }).then(val => {
+      var dt_arr = [];
+      if (val && val.data) {
+        dt_arr = val.data.map(e => (e && e.document ? e.document.fields : e));
+        dt_arr = Object.values(dt_arr).map(this.toJsObj);
+      }
+      console.log('POST query: ', dt_arr);
+    });
   }
 }
 export default RestDoc;
