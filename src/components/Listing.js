@@ -81,7 +81,11 @@ class Listing extends Component {
                                       {data.Website.map((e, i) => (
                                         <span key={i}>
                                           {i > 0 ? ', ' : ''}
-                                          &nbsp;<a href={'http://' + e} target="_blank" rel="noopener noreferrer">
+                                          &nbsp;<a
+                                            href={(e.search(/^http/) >= 0 ? '' : 'http://') + e}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
                                             {e}
                                           </a>
                                         </span>

@@ -7,7 +7,7 @@ from functools import reduce
 imgurl_base = 'https://img.agdial.in/images/'
 id_prefix = r'(id|prefix)\s*:\s*(.*)'
 phone_regex = r'(([0-9\+ \-]+,?)+)'
-special_data = {'Website': r'((https?:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/\-a-zA-Z0-9#\.\?\&\=]+\/?)?)',
+special_data = {'Website': r'((https?\:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/\-a-zA-Z0-9#\.\?\&\=]+\/?)?)',
                 'Whatsapp': r'((+?[0-9 ]+{10,})+)', 'Youtube': r'((https:\/\/www\.youtu.+)+)',
                 'Phone': phone_regex, 'customer care': phone_regex, 'Fax': phone_regex,
                 'Email': r"(([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)\s*,?)+"}
