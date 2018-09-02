@@ -9,6 +9,7 @@ import Tiles from 'components/Tiles';
 import SubCatTile from 'components/SubCatTile';
 import { db } from 'utils/db';
 import { nomenclature, rnom } from 'resources/nomenclature';
+import RestDoc from 'utils/Rest';
 const coll_name = 'listings'; // categories collection name
 const pr_coll_name = 'premium_data'; // categories collection name
 const types = {
@@ -29,6 +30,7 @@ class App extends Component {
     this.dataColl = {};
     this.type = 0; // tiles
     this.docAtPath(this.props.location.pathname);
+    RestDoc.getdoc();
   }
 
   setData(index, value, nosS) {
@@ -146,7 +148,9 @@ class App extends Component {
   }
   render() {
     document.title = 'AgDial'; //:' + this.title;
+
     const path = this.props.location.pathname;
+    //console.log(this.dataColl[path]);
     const ep = this.ep;
     var Content = () => (
       <AppBody ep={ep} active={0}>

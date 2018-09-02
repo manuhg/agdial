@@ -50,14 +50,7 @@ const AboutData = {
       'https://www.linkedin.com/in/vshegde/',
       'Graduated from University of Agricultural Sciences, Dharwad in 1992. He was a practical farmer on his own farm, agricultural journalist, social worker till 2001. Then ETV-Annadata reporter till 2005, Producer of Annadata at RFC, Hyderabad till 2007, Nonfiction Producer at Kasturi TV Bengaluru till 2009. Right now, DR. Hegde is the Producer and Director of Shramajeevi Agri Films and CMD of Shramajeevi Television Pvt. Ltd. Bengaluru.',
     ],
-    [
-      '#fd8469',
-      SGubbi,
-      'Dr. Sheshagiri Gubbi',
-      'Director (Content)',
-      'https://www.linkedin.com/in',
-      'Dr. Sheshagiri Gubbi, Ph. D (Plant Genetics) and Post-Doctoral Fellow (Plant Biotechnology) has varied experience in agricultural R&D in Agricultural Universities, ICAR, CSIR and Corporate laboratories. His interests in Minimising and Systematic reduction of Agrochemicals has lead him to specialise in alternative microbial technologies for Soil health, Plant nutrition and Stress management which he has optimised in Rice, Vegetables, Sugarcane and Grapes. He works closely with farmers from sharing know-how, Supply of quality inputs, Production of pesticides free crops and establishing the Market linkages.',
-    ],
+
     [
       '#960181',
       Chandru,
@@ -83,10 +76,18 @@ const AboutData = {
       'Suresh has 23 years of Agriculture and Food industry experiences in executive and management roles with Cargill, Monsanto, and Avesta Good Earth Foods. Suresh has his Masters in Agriculture from University of Agriculture Sciences Dharwad and Executive Management Programme from Indian Institute of Management (IIM) Bangalore. Suresh is a recipient of University Gold Medal from UAS Dharwad at postgraduate studies.',
     ],
     [
+      '#fd8469',
+      SGubbi,
+      'Dr. Sheshagiri Gubbi',
+      'Honorary Adviser',
+      'https://www.linkedin.com/in',
+      'Dr. Sheshagiri Gubbi, Ph. D (Plant Genetics) and Post-Doctoral Fellow (Plant Biotechnology) has varied experience in agricultural R&D in Agricultural Universities, ICAR, CSIR and Corporate laboratories. His interests in Minimising and Systematic reduction of Agrochemicals has lead him to specialise in alternative microbial technologies for Soil health, Plant nutrition and Stress management which he has optimised in Rice, Vegetables, Sugarcane and Grapes. He works closely with farmers from sharing know-how, Supply of quality inputs, Production of pesticides free crops and establishing the Market linkages.',
+    ],
+    [
       '#8432ff',
       Prashant,
       'Mr. Prashant Hegde',
-      'Director (Sales)',
+      'Honorary Adviser',
       'https://www.linkedin.com/in',
       'Prashant is an agriculture graduate with post-graduation in management. He brings in 20 years of experience in agri input sales and financial services industry. He has vast experience in agricultural investment and project management. Earlier he worked for HDFC Bank, RBL Bank, Janalakshmi Small Finance Bank.',
     ],
