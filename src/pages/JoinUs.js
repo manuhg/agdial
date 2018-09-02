@@ -18,14 +18,14 @@ class JoinUs extends Component {
           <div style={{ padding: '10px' }} className="container">
             <div className="row">
               <div className="col-12">
-                <h2>&nbsp;</h2>
+                <h2> </h2>
               </div>
             </div>
             <div className="row">
               <div className="col-md-4">
                 <h5>GSTIN: 29ADBPH1403Q1ZJ</h5>
               </div>
-              <div className="col-md-4">&nbsp;</div>
+              <div className="col-md-4"> </div>
               <div className="col-md-4">
                 <h5>DATE:{new Date().toLocaleDateString('en-IN')} </h5>
               </div>
@@ -47,11 +47,11 @@ class JoinUs extends Component {
                   Shramajeevi is basically a visual media production house dedicated to agriculture. We have 2 YouTube
                   channels – Shramajeevi Agri Films and AgVid with 700+ videos – 1.4 lakh views per day and 1.6 lakh
                   subscribers. Our corporate website is <a href="https://shramajeevi.com">shramajeevi.com</a>. Our other
-                  agriculture related websites are <a href="https://shramajeeviimages.com">shramajeeviimages.com</a>,
-                  <a href="https://shramajeewiki.com">shramajeewiki.com</a>,
+                  agriculture related websites are <a href="https://shramajeeviimages.com">shramajeeviimages.com</a>,{' '}
+                  <a href="https://shramajeewiki.com">shramajeewiki.com</a>,{' '}
                   <a href="https://video.shramajeevi.com">video.shramajeevi.com</a>. We are preparing to launch a
                   satellite TV channel ‘Shramajeevi’ exclusive for agriculture in Kannada very soon under Shramajeevi
-                  Television Pvt. Ltd. We had launched&nsbp;
+                  Television Pvt. Ltd. We had launched{' '}
                   <a href="https://shramajeevicontacts.com">shramajeevicontacts.com</a>, an agri directory website on
                   trial basis, some 2 years ago which became popular in very short time. We are happy to announce the
                   launch of commercial version of the same as <a href="https://agdial.in">agdial.in</a>, something like
@@ -91,12 +91,11 @@ class JoinUs extends Component {
                       traffic to AgDial.
                     </li>
                     <li>
-                      Promotion and links on our existing websites. People visit&nbsp;
-                      <a href="https://shramajeewiki.com">shramajeewiki.com</a> for knowledgeable articles on farming,
-                      &nbsp;<a href="https://shramajeeviimages.com">shramajeeviimages.com</a> for agricultural and rural
-                      images, <a href="https://video.shramajeevi.com">video.shramajeevi.com</a> for videos and &nbsp;<a href="https://shramajeevi.com">
-                        shramajeevi.com
-                      </a>
+                      Promotion and links on our existing websites. People visit{' '}
+                      <a href="https://shramajeewiki.com">shramajeewiki.com</a> for knowledgeable articles on farming,{' '}
+                      <a href="https://shramajeeviimages.com">shramajeeviimages.com</a> for agricultural and rural
+                      images, <a href="https://video.shramajeevi.com">video.shramajeevi.com</a> for videos and{' '}
+                      <a href="https://shramajeevi.com">shramajeevi.com</a>
                       to know more about Shramajeevi. Traffic will be driven from all those service domains to AgDial.
                     </li>
                     <li> Social media posts on Facebook, WhatsApp, Twitter etc.</li>
