@@ -345,10 +345,11 @@ class Business extends Component {
                                                       }}
                                                     >
                                                       <iframe
-                                                        className="vids"
-                                                        src={'https://www.youtube.com/embed/' + vid}
+                                                        width="560"
+                                                        height="315"
+                                                        src={'https://www.youtube.com/embed/videoseries?list=' + vid}
                                                         frameBorder="0"
-                                                        title="video"
+                                                        title="video playlist"
                                                         allow="autoplay; encrypted-media"
                                                         allowFullScreen
                                                       />

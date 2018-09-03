@@ -95,7 +95,7 @@ image: [34]
 imagelist: [35, 36, 37, 38, 39, 40]
 captions: [SS-Water-Heating-Vessel-50L, SS-Water-Heating-Vessel-50L-INS, SS-Water-Heating-Vessel-75L, SS-Water-Heating-Vessel-75L-INS, SS-Water-Heating-Vessel-150L-INS, SS-Water-Heating-Vessel-300L]
 ##title: [Videos]
-videolist: [coIKdmZb6Tw&list=PLE1P7Fwrqlm-l4HO-w26R3-EUuDI0AVAB]
+videolist: [PLE1P7Fwrqlm-l4HO-w26R3-EUuDI0AVAB]
 ﻿$$
 ##id: AM-001
 ##prefix: RIPL
@@ -115,7 +115,7 @@ imagelist: [9, 10, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21]
 captions: [Brush Cutter, Chain saw, Rotary Tiller, Earth Auger, Mist Blower, Power Sprayer, Tea Harvester, Coffee Harvester, Hedge Trimmer, Lawn Mover, High Pressure Washer, Fogger]
 
 ##title: [Videos]
-videolist: [_VJYb-iT3lM&list=PLE1P7Fwrqlm8Ujb5GtA6ypzu_OOx41n24]
+videolist: [PLE1P7Fwrqlm8Ujb5GtA6ypzu_OOx41n24]
 
 ﻿$$
 ##id: PN-002

@@ -18,21 +18,25 @@ const types = {
   0: 'list',
   1: 'page',
 };
+const REST_types = { doc: 0, query: 1 };
+
 //const root = '/';
+const USE_REST = true;
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.title = 'Home';
     this.state = { changed: false };
-    this.ut = {};
+    this.urlType = {};
     this.mounted = false;
     this.dataColl = {};
     this.type = 0; // tiles
-    this.docAtPath(this.props.location.pathname);
-    var rd = new RestDoc();
-    rd.getdoc();
-    rd.query();
+    this.REST = new RestDoc();
+    this.setData = this.setData.bind(this);
+
+    if (USE_REST) this.docAtPath_REST(this.props.location.pathname);
+    else this.docAtPath(this.props.location.pathname);
   }
 
   setData(index, value, nosS) {
@@ -42,6 +46,27 @@ class App extends Component {
   memoize(path, obj) {
     obj = obj || this.dataColl;
     if (obj && obj[path]) return true; //this.dataColl[path];
+  }
+  async fetchdoc_REST(param, type, path) {
+    if (this.memoize(path)) return;
+    this.setData(path, 'Fetching..', true);
+
+    try {
+      this.ep = this.evalPath(this.props.location.pathname, nomenclature);
+      var data;
+      if (type === REST_types.query) {
+        data = await this.REST.runQuery(param);
+        data = this.REST.processQuery(data);
+      } else {
+        data = await this.REST.getDoc(param);
+        data = this.REST.processDoc(data);
+      }
+      console.log('Fetching data from ' + path);
+      if (!data) return;
+      this.setData(path, data);
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   async fetchDoc(docref, path, cb, noSD) {
@@ -100,7 +125,7 @@ class App extends Component {
   urlTargetType(path, pathVals) {
     //what kind of page is the path pointint to
     //const nomObj = this.dataColl[root];
-    if (this.memoize(path, this.ut)) return this.ut[path];
+    if (this.memoize(path, this.urlType)) return this.urlType[path];
     const nomObj = nomenclature;
     if (!nomObj) return;
     var type = 0;
@@ -110,7 +135,7 @@ class App extends Component {
 
     if (catnom) type += 1;
     if (cpath && business && business.length > 3) type += 1;
-    this.ut[path] = type - 1;
+    this.urlType[path] = type - 1;
     return type - 1;
   }
   docAtPath(path) {
@@ -131,6 +156,87 @@ class App extends Component {
             .where('path', '==', catnom),
           path
         );
+        break;
+      default:
+        this.setData(path, 'Not found!');
+        break;
+    }
+  }
+  docAtPath_REST(path) {
+    const nomObj = nomenclature;
+    if (!nomObj || this.memoize(path)) return;
+    //IDs of DOCS as img file names
+    var { cpath, catnom, business } = this.evalPath(path, nomObj);
+    var type = this.urlTargetType(path, { cpath, catnom, business });
+    switch (type) {
+      case types['list']:
+        this.fetchdoc_REST(
+          {
+            structuredQuery: {
+              where: {
+                fieldFilter: {
+                  field: {
+                    fieldPath: 'path',
+                  },
+                  op: 'EQUAL',
+                  value: { stringValue: catnom },
+                },
+              },
+              from: [
+                {
+                  collectionId: coll_name,
+                },
+              ],
+            },
+          },
+          REST_types.query,
+          path
+        );
+        break;
+      case types['page']:
+        this.fetchdoc_REST(
+          {
+            structuredQuery: {
+              where: {
+                compositeFilter: {
+                  op: 'AND',
+                  filters: [
+                    {
+                      fieldFilter: {
+                        field: {
+                          fieldPath: 'path',
+                        },
+                        op: 'EQUAL',
+                        value: {
+                          stringValue: catnom,
+                        },
+                      },
+                    },
+                    {
+                      fieldFilter: {
+                        field: {
+                          fieldPath: 'name',
+                        },
+                        op: 'EQUAL',
+                        value: {
+                          stringValue: business,
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+              from: [
+                {
+                  collectionId: coll_name,
+                },
+              ],
+            },
+          },
+          REST_types.query,
+          path
+        );
+
         break;
       default:
         this.setData(path, 'Not found!');
@@ -183,7 +289,11 @@ class App extends Component {
       width = w.innerWidth || documentElement.clientWidth || body.clientWidth,
       height = w.innerHeight || documentElement.clientHeight || body.clientHeight;
     const tType = this.urlTargetType(path);
-    if (!this.memoize(path)) this.docAtPath(path);
+
+    if (!this.memoize(path)) {
+      if (USE_REST) this.docAtPath_REST(path);
+      else this.docAtPath(path);
+    }
 
     if (typeof this.dataColl[path] === 'object') {
       // const data = Object.entries(this.dataColl[path]);
@@ -244,7 +354,17 @@ class App extends Component {
           try {
             const d = data[0];
             const pr_path = path + ' : Premium section';
-            if (pr_coll_name && d.id) this.fetchDoc(db.collection(pr_coll_name).doc(d.id), pr_path);
+
+            if (pr_coll_name && d.id) {
+              if (USE_REST) {
+                this.fetchdoc_REST(pr_coll_name + '/' + d.id, REST_types.doc, pr_path);
+                var dt = this.dataColl[pr_path];
+                if (dt.content) {
+                  dt.content = dt.content.map(c => this.REST.toJsObj(c.fields));
+                }
+              } else this.fetchDoc(db.collection(pr_coll_name).doc(d.id), pr_path);
+            }
+
             if (d.type && d.type === 'premium')
               Content = () => (
                 <AppBody ep={ep} fullWidth={true} active={0}>

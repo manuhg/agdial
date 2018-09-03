@@ -8,7 +8,9 @@ class RestDoc {
   }
   rv(obj) {
     if (obj === undefined || obj == null) return;
-    if (obj && obj.arrayValue) return obj.arrayValue.values.map(a => this.rv(a));
+    if (obj && obj.arrayValue && obj.arrayValue.values) {
+      return obj.arrayValue.values.map(a => this.rv(a));
+    }
     return Object.values(obj)[0];
   }
   toJsObj(obj) {
@@ -18,8 +20,41 @@ class RestDoc {
       return r;
     }
   }
+  processDoc(docObj) {
+    if (docObj && docObj.data && docObj.data.fields) return this.toJsObj(docObj.data.fields);
+  }
+  processQuery(docObj) {
+    if (docObj && docObj.data) {
+      var dt_arr = [];
+      dt_arr = docObj.data.map(e => (e && e.document ? e.document.fields : e));
+      dt_arr = Object.values(dt_arr).map(this.toJsObj);
+      return dt_arr;
+    }
+  }
+  getDoc(docPath) {
+    console.log('REST getdoc');
+    //console.log('REST doc:', docPath);
+    if (docPath)
+      return axios({
+        method: 'get',
+        url: this.baseURL + '/' + docPath + '?fields=fields',
+      });
+  }
+  runQuery(queryObj) {
+    console.log('REST runQuery');
+    //console.log('REST query:', queryObj);
+    if (queryObj)
+      return axios({
+        method: 'post',
+        url: this.baseURL + ':runQuery?fields=document',
+        data: queryObj,
+      });
+  }
+}
+export default RestDoc;
+/*
 
-  getdoc(docpath) {
+ getdoc(docpath) {
     docpath = docpath || 'listings/AH-CB-012';
     axios({
       method: 'get',
@@ -70,9 +105,7 @@ class RestDoc {
       console.log('POST query: ', dt_arr);
     });
   }
-}
-export default RestDoc;
-/*
+  
 {
  "structuredQuery": {
   "where": {

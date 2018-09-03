@@ -128,7 +128,7 @@ $$/AM/024/ASPEE
 ##ASPEE, Aspee House, B.J. Patel Road, Malad West, Mumbai 400064, Maharashtra, India ##Phone: +91 22 67745700, +91 22 28822331, 28822332, 28822333, 28822335, +91 22 28822336 Email: aspee@aspee.net ## ##For Karnataka – SVR Agencies, No. 2, 3rd Cross, Kalasipalayam, New Extension, Bengaluru 560002 ##Phone: +91 80 41247693, +91 9448517571, +91 9448605799, Email: svragri@gmail.com ##Website: www.aspee.com   
 
 $$/AM/025/Husqvarna (India) Products Pvt. Ltd.
-##Husqvarna, 1st Floor, Swees House, No. 5, Sir P S Sivasamy Salai, Mylapore, Chennai 600004, Tamil Nadu, India ##Phone: +91 44 49489272, +91 44 49489222, Email: support.in@husqvarnagroup.com ##Products: Brush cutter, Chain saw, Blower, Garden Tractor, Lawn mower etc. ##Website: https://www.husqvarna.com/in 
+##Husqvarna, 1st Floor, Swees House, No. 5, Sir P S Sivasamy Salai, Mylapore, Chennai 600004, Tamil Nadu, India ##Phone: +91 44 49489272, +91 44 49489222, Email: support.in@husqvarnagroup.com ##Products: Brush cutter, Chain saw, Blower, Garden Tractor, Lawn mower etc. ##Website: https://www.husqvarna.com 
 
 $$/AM/026/Makita Power Tools India Pvt. Ltd.
 ##Makita, Unit 2, Sy. No. 93/3 & 93/4, Koralur Village, Kasaba Hobli, Hosakote Taluk, Bengaluru 560067, Karnataka, India ##Phone: +91 80 28549008, 22058200 (6 lines), +91 9008603676, Email: sales@makita.in ##Products: Brush cutters, Mist blowers, Chain saw, Power washer etc. ##Website: www.makita.in 
