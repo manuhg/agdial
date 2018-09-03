@@ -12,7 +12,7 @@ class Business extends Component {
     if (pr_data && pr_data.content)
       pr_data.content.map(entry => {
         if (entry.videolist) {
-          var videolist = entry.videolist.split(',').map(e => e.trim());
+          var videolist = entry.videolist.trim();
           if (videolist.length > 1 && this.state.videos !== true) this.setState({ videos: true });
         }
         return 1;

@@ -2,6 +2,9 @@ a {
   text-decoration: none;
   color: blue;
 }
+.breadcrumb-item {
+  font-size: 1em;
+}
 body {
   word-wrap: break-word !important;
   background-size: cover;
@@ -43,6 +46,12 @@ body {
 }
 
 @media only screen and (max-width: 600px) {
+  .breadcrumb-item {
+    font-size: 1.5em;
+  }
+  .breadcrumb-item::before {
+    font-size: 0.6em;
+  }
   .pt {
     font-size: 60%;
   }
