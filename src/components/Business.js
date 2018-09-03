@@ -345,8 +345,7 @@ class Business extends Component {
                                                       }}
                                                     >
                                                       <iframe
-                                                        width="560"
-                                                        height="315"
+                                                        style={{ width: '100%' }}
                                                         src={'https://www.youtube.com/embed/videoseries?list=' + vid}
                                                         frameBorder="0"
                                                         title="video playlist"

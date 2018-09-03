@@ -33,7 +33,7 @@ class RestDoc {
   }
   getDoc(docPath) {
     console.log('REST getdoc');
-    //console.log('REST doc:', docPath);
+    console.log('REST doc:', docPath);
     if (docPath)
       return axios({
         method: 'get',
@@ -42,7 +42,7 @@ class RestDoc {
   }
   runQuery(queryObj) {
     console.log('REST runQuery');
-    //console.log('REST query:', queryObj);
+    console.log('REST query:', queryObj);
     if (queryObj)
       return axios({
         method: 'post',
