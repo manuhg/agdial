@@ -69,7 +69,7 @@ class App extends Component {
       if (!data) return;
       this.setData(path, data);
     } catch (error) {
-      this.previous();
+      //this.previous();
       console.log(error);
     }
   }
