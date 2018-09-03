@@ -545,7 +545,7 @@ $$/CAT/PD/Pesticides
 $$/CAT/PN/Plant Nurseries & TC Labs
 ##Fruit and Forest Plants ##Plantation Crop Plants ##Flowering and Ornamental Plants ##Bonsai and Indoor Plants ##Vegetable Seedlings Nursery ##Terrace Gardening & Landscaping
 
-$$/PN/001/Sasya Horticulture Nursery [premium]
+$$/PN/001/Sasya Horticulture Nursery 
 ##Office: Giridath, Behind Nityananda Matha, Marathikoppa Road, Sirsi, Uttara Kannada 581402, Karnataka, India. ##Nursery: Islur, Hubballi Road, Sirsi ##Phone: +91 8384 237424, +91 9449999791, +91 9448408620 ##Email: gardennagaraj@gmail.com ##Business type: Horticultural nursery and Landscape works ##Specialty: All types of ornamental plants, Plantation crop plants like Arecanut, coconut, Fruits like mango, sapota, spices and medicinal plants ##Contact person: DR. Nagaraja D Bhat ##Website: www.sasyanursery.com
 
 $$/PN/002/Akshaya Agro Services [premium]

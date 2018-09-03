@@ -65,6 +65,7 @@ class App extends Component {
       if (!data) return;
       this.setData(path, data);
     } catch (error) {
+      this.previous();
       console.log(error);
     }
   }
@@ -252,7 +253,7 @@ class App extends Component {
     this.mounted = false;
   }
   previous() {
-    //this.props.history.go(-1);
+    this.props.history.go(-1);
   }
   render() {
     document.title = 'AgDial'; //:' + this.title;
