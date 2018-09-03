@@ -19,7 +19,7 @@ const types = {
 };
 const REST_types = { doc: 0, query: 1 };
 var db;
-const USE_REST = true;
+const USE_REST = false;
 
 class App extends Component {
   constructor(props) {
@@ -64,6 +64,7 @@ class App extends Component {
       } else {
         data = await this.REST.getDoc(param);
         data = this.REST.processDoc(data);
+        console.log(data);
       }
       console.log('Fetching data from ' + path);
       if (!data) return;

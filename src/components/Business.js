@@ -21,6 +21,7 @@ class Business extends Component {
   }
   render() {
     const { data, pr_data } = this.props;
+    console.log(pr_data);
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var wimg = data.image;
     var img_base = 'https://img.agdial.in/images/';
