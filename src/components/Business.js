@@ -86,8 +86,12 @@ class Business extends Component {
                                   <i className="fa fa-globe fa-lg" />&nbsp;{data.Website
                                     ? data.Website.map((w, k) => (
                                         <span key={k}>
-                                          {k > 0 ? ',' : ''}
-                                          <a href={'http://' + w} rel="noopener noreferrer" target="_blank">
+                                          {k > 0 ? ', ' : ''}
+                                          &nbsp;<a
+                                            href={(w.search(/^http/) >= 0 ? '' : 'http://') + w}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                          >
                                             {w}
                                           </a>
                                         </span>
