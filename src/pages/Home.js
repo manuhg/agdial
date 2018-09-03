@@ -9,6 +9,7 @@ import Tiles from 'components/Tiles';
 import SubCatTile from 'components/SubCatTile';
 import { nomenclature, rnom } from 'resources/nomenclature';
 import RestDoc from 'utils/Rest';
+var db;
 const coll_name = 'listings'; // categories collection name
 const pr_coll_name = 'premium_data'; // categories collection name
 const types = {
@@ -18,8 +19,7 @@ const types = {
   1: 'page',
 };
 const REST_types = { doc: 0, query: 1 };
-var db;
-const USE_REST = false;
+const USE_REST = true;
 
 class App extends Component {
   constructor(props) {
@@ -32,11 +32,11 @@ class App extends Component {
     this.type = 0; // tiles
     this.REST = new RestDoc();
     this.setData = this.setData.bind(this);
+    console.log(USE_REST ? '' : 'not', 'using', 'REST API');
 
     if (USE_REST) this.docAtPath_REST(this.props.location.pathname);
     else {
       import('utils/db').then(val => {
-        console.log(val.db);
         db = val.db;
         this.docAtPath(this.props.location.pathname);
       });
@@ -64,7 +64,8 @@ class App extends Component {
       } else {
         data = await this.REST.getDoc(param);
         data = this.REST.processDoc(data);
-        console.log(data);
+        if (path.search(/Premium/i) >= 0 && data.content)
+          data.content = data.content.map(c => this.REST.toJsObj(c.fields));
       }
       console.log('Fetching data from ' + path);
       if (!data) return;
@@ -365,13 +366,8 @@ class App extends Component {
             const pr_path = path + ' : Premium section';
 
             if (pr_coll_name && d.id) {
-              if (USE_REST) {
-                this.fetchdoc_REST(pr_coll_name + '/' + d.id, REST_types.doc, pr_path);
-                var dt = this.dataColl[pr_path];
-                if (dt.content) {
-                  dt.content = dt.content.map(c => this.REST.toJsObj(c.fields));
-                }
-              } else this.fetchDoc(db.collection(pr_coll_name).doc(d.id), pr_path);
+              if (USE_REST) this.fetchdoc_REST(pr_coll_name + '/' + d.id, REST_types.doc, pr_path);
+              else this.fetchDoc(db.collection(pr_coll_name).doc(d.id), pr_path);
             }
 
             if (d.type && d.type === 'premium')

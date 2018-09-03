@@ -3,13 +3,12 @@ import React, { Component } from 'react';
 import { Button } from 'mdbreact';
 
 class Business extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { videos: null };
   }
   componentDidMount() {
     const { pr_data } = this.props;
-
     if (pr_data && pr_data.content)
       pr_data.content.map(entry => {
         if (entry.videolist) {
@@ -21,10 +20,13 @@ class Business extends Component {
   }
   render() {
     const { data, pr_data } = this.props;
-    console.log(pr_data);
     if (typeof data !== 'object') return <span>Please wait..</span>;
     var wimg = data.image;
     var img_base = 'https://img.agdial.in/images/';
+    var filtered_cont;
+    if (pr_data && pr_data.content) {
+      filtered_cont = pr_data.content.filter(Boolean);
+    }
 
     if (wimg) {
       wimg = wimg.split('.');
@@ -154,7 +156,10 @@ class Business extends Component {
                             <font className="display-5">Profile</font>
                           </div>
                           <div className="card-body">
-                            {pr_data && pr_data.content
+                            {pr_data &&
+                            pr_data.content &&
+                            filtered_cont &&
+                            pr_data.content.length === filtered_cont.length
                               ? pr_data.content.map((entry, i) => (
                                   <div className="card bpc" key={i}>
                                     <div className="container-fluid mzpz">
@@ -337,16 +342,9 @@ class Business extends Component {
                                                   }}
                                                 >
                                                   {videolist.map((vid, k) => (
-                                                    <div
-                                                      key={k}
-                                                      style={{
-                                                        marginBottom: '3px',
-                                                        marginRight: '3px',
-                                                        padding: '0px',
-                                                      }}
-                                                    >
+                                                    <div className="mzpz" key={k}>
                                                       <iframe
-                                                        style={{ width: '100%' }}
+                                                        style={{ width: '60vw', height: '33.75vw' }}
                                                         src={'https://www.youtube.com/embed/videoseries?list=' + vid}
                                                         frameBorder="0"
                                                         title="video playlist"
