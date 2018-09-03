@@ -32,7 +32,7 @@ class App extends Component {
     this.type = 0; // tiles
     this.REST = new RestDoc();
     this.setData = this.setData.bind(this);
-    console.log(USE_REST ? '' : 'not', 'using', 'REST API');
+    console.log((USE_REST ? '' : 'not') + 'using', 'REST API');
 
     if (USE_REST) this.docAtPath_REST(this.props.location.pathname);
     else {
