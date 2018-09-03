@@ -7,7 +7,6 @@ import Business from 'components/Business';
 import Listing from 'components/Listing';
 import Tiles from 'components/Tiles';
 import SubCatTile from 'components/SubCatTile';
-import { db } from 'utils/db';
 import { nomenclature, rnom } from 'resources/nomenclature';
 import RestDoc from 'utils/Rest';
 const coll_name = 'listings'; // categories collection name
@@ -19,8 +18,7 @@ const types = {
   1: 'page',
 };
 const REST_types = { doc: 0, query: 1 };
-
-//const root = '/';
+var db;
 const USE_REST = true;
 
 class App extends Component {
@@ -36,7 +34,13 @@ class App extends Component {
     this.setData = this.setData.bind(this);
 
     if (USE_REST) this.docAtPath_REST(this.props.location.pathname);
-    else this.docAtPath(this.props.location.pathname);
+    else {
+      import('utils/db').then(val => {
+        console.log(val.db);
+        db = val.db;
+        this.docAtPath(this.props.location.pathname);
+      });
+    }
   }
 
   setData(index, value, nosS) {
@@ -73,6 +77,7 @@ class App extends Component {
   async fetchDoc(docref, path, cb, noSD) {
     if (this.memoize(path)) return; //this.setData('fcIndex3.1415', '0');
     this.setData(path, 'Fetching..', true);
+    if (!db) return;
 
     try {
       this.ep = this.evalPath(this.props.location.pathname, nomenclature);
@@ -141,6 +146,8 @@ class App extends Component {
   }
   docAtPath(path) {
     const nomObj = nomenclature;
+    if (!db) return;
+
     if (!nomObj || this.memoize(path)) return;
     //IDs of DOCS as img file names
     var { cpath, catnom, business } = this.evalPath(path, nomObj);
