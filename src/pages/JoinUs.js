@@ -146,7 +146,7 @@ class JoinUs extends Component {
                       address, telephone numbers, email address, website link, video links and other additional
                       features.
                     </p>
-                    <u>Tariff for one year</u> - &#8377; 50,000 + GST@18%
+                    {/* <u>Tariff for one year</u> - &#8377; 50,000 + GST@18% */}
                   </div>
                   <div>
                     <hr /> <h4>Professional</h4>
@@ -154,12 +154,12 @@ class JoinUs extends Component {
                       One paragraph space with attractive design and a representative photo with full address, telephone
                       numbers, email address and video link.
                     </p>
-                    <u>Tariff for one year</u> - &#8377; 25,000 + GST@18%
+                    {/* <u>Tariff for one year</u> - &#8377; 25,000 + GST@18% */}
                   </div>
                   <div>
                     <hr /> <h4>Basic</h4>
                     <p>Half paragraph text description containing full address, telephone numbers and email address.</p>
-                    <u>Tariff for one year</u> - &#8377; 10,000 + GST@18%
+                    {/* <u>Tariff for one year</u> - &#8377; 10,000 + GST@18% */}
                   </div>
                   <div>
                     <hr />

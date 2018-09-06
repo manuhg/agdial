@@ -105,9 +105,9 @@ class Pricing extends Component {
                     </ul>
                   </div>
                 </div>
-                <div className="card-footer">
+                {/* <div className="card-footer">
                   {e[2]}&nbsp;&#8377;{e[3]}
-                </div>
+                </div> */}
               </Col>
             );
           })}
