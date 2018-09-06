@@ -138,7 +138,7 @@ class JoinUs extends Component {
                 </div>
                 <div>
                   <hr />
-                  <h3>AgDial Enrolment Tariff</h3>
+                  <h3>AgDial Enrolment</h3>
                   <div>
                     <h4>Premium</h4>
                     <p>
