@@ -3,11 +3,21 @@ import About from 'pages/About';
 import Pricing from 'pages/Pricing';
 import Join from 'pages/JoinUs';
 import Contact from 'pages/Contact';
-export const routes = [
+// import Search from 'pages/Search';
+
+// export const routes = [
+//   ['/', 'Home', Home],
+//   ['/about', 'About Us', About],
+//   ['/pricing', 'Pricing', Pricing],
+//   ['/joinus', 'Join Us', Join],
+//   ['/contact', 'Contact Us', Contact],
+//   ['/search', 'Search', Search],
+// ];
+export const nav_routes = [
   ['/', 'Home', Home],
   ['/about', 'About Us', About],
   ['/pricing', 'Pricing', Pricing],
   ['/joinus', 'Join Us', Join],
   ['/contact', 'Contact Us', Contact],
 ];
-export default routes;
+export default nav_routes;

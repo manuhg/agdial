@@ -1,8 +1,8 @@
 import { Collapse, Navbar, NavbarBrand, NavbarNav, NavbarToggler, NavItem, NavLink } from 'mdbreact';
 import React, { Component } from 'react';
 import logo from 'resources/img/agdial.png';
-import routes from 'components/Routes';
-
+import { nav_routes } from 'components/Routes';
+//import Search from 'components/Search';
 class Nav extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class Nav extends Component {
 
   render() {
     this.mounted = true;
-    var actives = Array(routes.length);
+    var actives = Array(nav_routes.length);
     if (typeof this.props.active === 'number' && this.props.active < actives.length) actives[this.props.active] = true;
     else actives[0] = true;
 
@@ -38,7 +38,7 @@ class Nav extends Component {
         {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
         <Collapse isOpen={this.state.collapse} navbar>
           <NavbarNav left>
-            {routes.map((e, i) => {
+            {nav_routes.map((e, i) => {
               return actives[i] ? (
                 <NavItem active key={i}>
                   <NavLink to={e[0]}>
@@ -54,6 +54,7 @@ class Nav extends Component {
               );
             })}
           </NavbarNav>
+          {/* <Search /> */}
           {/* <NavbarNav right>
             {externalLinks.map((l, i) => (
               <NavItem key={i}>

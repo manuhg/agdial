@@ -35,12 +35,12 @@ class App extends Component {
     console.log((USE_REST ? '' : 'not') + 'using', 'REST API');
 
     if (USE_REST) this.docAtPath_REST(this.props.location.pathname);
-    else {
-      import('utils/db').then(val => {
-        db = val.db;
-        this.docAtPath(this.props.location.pathname);
-      });
-    }
+    // else {
+    //   import('utils/db').then(val => {
+    //     db = val.db;
+    //     this.docAtPath(this.props.location.pathname);
+    //   });
+    // }
   }
 
   setData(index, value, nosS) {

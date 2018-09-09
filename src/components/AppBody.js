@@ -4,6 +4,8 @@ import Footer from 'components/Footer';
 import Nav from 'components/Nav';
 import bcgImg from 'resources/img/body_bcg.JPEG';
 import { rnom } from 'resources/nomenclature';
+import SearchBar from 'components/SearchBar';
+
 class AppBody extends Component {
   render() {
     const Content = this.props.children;
@@ -45,7 +47,6 @@ class AppBody extends Component {
         className="card fp"
         style={{
           minHeight: '86vh',
-          // background: 'rgba(255,255,255,0.85)',
         }}
       >
         <div className="container-fluid fc">
@@ -58,13 +59,24 @@ class AppBody extends Component {
     return (
       <div style={{ background: 'rgba(255,255,255,0.7)' }}>
         <header id="header">
-          <Nav active={this.props.active} />
+          <Nav nsb={this.props.nsb} active={this.props.active} />
         </header>
         <span>
           <p>&nbsp;</p>
         </span>
         <header>
           <div className="container-fluid text-center" style={{ minHeight: '89vh' }}>
+            {this.props.nsb ? (
+              <span>&nbsp;</span>
+            ) : (
+              <div className="row">
+                <div className="col-1" />
+                <div className="col-12 col-md-10">
+                  <SearchBar />
+                </div>
+                <div className="col-1" />
+              </div>
+            )}
             {this.props.fullWidth ? (
               <div className="row mzpz">
                 <div className="col" />

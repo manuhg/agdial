@@ -4,6 +4,7 @@ import About from 'pages/About';
 import Pricing from 'pages/Pricing';
 import Join from 'pages/JoinUs';
 import Contact from 'pages/Contact';
+import Search from 'pages/Search';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ErrorBoundary from 'utils/ErrorBoundary';
@@ -25,6 +26,8 @@ class App extends Component {
             <Route path="/pricing" component={Pricing} />
             <Route path="/joinus" component={Join} />
             <Route path="/contact" component={Contact} />
+            <Route path="/search" component={Search} />
+
             {/* <Route component={Home} _404={true} /> */}
 
             {/* <Route exact path={routes[0][0]} component={routes[0][2]} />
