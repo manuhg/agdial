@@ -80,6 +80,7 @@ class Search extends Component {
   process_results(data) {
     var items_obj = { premium_listings: {}, listings: {}, categories: {}, subcategories: {} };
     var types_order = ['categories', 'subcategories', 'premium_listings', 'listings'];
+    var types_priority = { premium_listings: 200, listings: 10000, categories: 1, subcategories: 50 };
     var data_dict = {},
       order = {},
       disp_lst = {};
@@ -106,9 +107,28 @@ class Search extends Component {
         data_dict[d.id] = d;
         return d.id; //dummy stmt to suppress warning
       });
+      var ndict = {};
+      ndict = Object.values(data_dict).reduce((dct, e) => {
+        dct[e.name + e.type] = e;
+        return dct;
+      }, {});
+      ndict = Object.values(ndict).reduce((dct, e) => {
+        dct[e.id] = e;
+        return dct;
+      }, {});
+      data_dict = ndict;
+      items_obj.listings = Object.values(items_obj.listings).reduce((obj, item) => {
+        if (!items_obj.premium_listings[item]) obj[item] = item;
+        return obj;
+      }, {});
+
       types_order.map(itype =>
-        Object.values(items_obj[itype]).map(e => (disp_lst[order[e]] = [data_dict[e], item_types[itype]]))
+        Object.values(items_obj[itype]).map(
+          e =>
+            data_dict[e] ? (disp_lst[order[e] + types_priority[itype]] = [data_dict[e], item_types[itype]]) : undefined
+        )
       );
+      console.log(disp_lst);
       disp_lst = Object.values(disp_lst);
       this.setState({ disp_lst: disp_lst });
     });
