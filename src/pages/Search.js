@@ -81,9 +81,15 @@ class Search extends Component {
     var items_obj = { premium_listings: {}, listings: {}, categories: {}, subcategories: {} };
     var types_order = ['categories', 'subcategories', 'premium_listings', 'listings'];
     var data_dict = {},
-      disp_lst = [];
+      order = {},
+      disp_lst = {};
     data = data || this.state.data;
     if (!data) return;
+
+    order = data.reduce((order, d, i) => {
+      if (!order[d.id]) order[d.id] = i;
+      return order;
+    }, {});
 
     items_obj = data.reduce(this.counter, items_obj);
     data_dict = data.reduce((a, e) => {
@@ -98,8 +104,12 @@ class Search extends Component {
       docs.map(d => {
         items_obj.premium_listings[d.id] = d.id;
         data_dict[d.id] = d;
+        return d.id; //dummy stmt to suppress warning
       });
-      types_order.map(itype => Object.values(items_obj[itype]).map(e => disp_lst.push([data_dict[e], itype])));
+      types_order.map(itype =>
+        Object.values(items_obj[itype]).map(e => (disp_lst[order[e]] = [data_dict[e], item_types[itype]]))
+      );
+      disp_lst = Object.values(disp_lst);
       this.setState({ disp_lst: disp_lst });
     });
   }
@@ -121,8 +131,18 @@ class Search extends Component {
         case item_types['subcategories']:
           return <SubCatTile key={index} data={data} />;
         case item_types['listings']:
-          return <Listing key={index} width={width} data={data} parent={rnom[data.path]} />;
+        case item_types['premium_listings']:
+          return (
+            <a
+              style={{ textDecoration: 'none', color: 'black', cursor: 'pointer' }}
+              key={index}
+              href={'/categories/' + rnom[data.path] + '#' + data.id}
+            >
+              <Listing width={width} data={data} parent={rnom[data.path]} />
+            </a>
+          );
         default:
+          console.log('wrong type ', type);
           break;
       }
     } catch (err) {
@@ -132,17 +152,29 @@ class Search extends Component {
 
   render() {
     const { disp_lst } = this.state;
-    console.log(disp_lst);
-    if (!disp_lst || !disp_lst.length) {
-      //this.process_results();
+    if (!this.search_text)
       return (
         <AppBody>
           <div style={{ height: '300px' }}>&nbsp;</div>
           <h3>Please type in the search box to see the results</h3>
         </AppBody>
       );
-    }
-
+    if (!disp_lst || !disp_lst.length)
+      return (
+        <AppBody>
+          <div style={{ height: '100px' }}>
+            <br />
+            <h3>Loading</h3>
+          </div>
+          <div className="lds-ring" style={{ alignSelf: 'center' }}>
+            <div />
+            <div />
+            <div />
+            <div />
+          </div>
+          <h3>Please wait.</h3>
+        </AppBody>
+      );
     return <AppBody>{disp_lst.map((item, i) => this.display_item(item, i))}</AppBody>;
   }
 }
