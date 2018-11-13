@@ -3,13 +3,22 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.redirect = this.redirect.bind(this);
+    this.search_text = '';
+    try {
+      var st = window.location.search.slice(1, -1).split('=')[1] || '';
+      this.search_text = decodeURI(st);
+    } catch (error) {
+      console.log(error);
+    }
   }
   redirect() {
     var text = document.getElementById('sinp').value;
     console.log(text);
     window.location = '/search?query=' + text + '&';
   }
-
+  componentDidMount() {
+    if (this.search_text) document.getElementById('sinp').value = this.search_text;
+  }
   render() {
     return (
       <div className="fp" style={{ backgroundColor: 'green', height: '55px', marginBottom: '10px' }}>
