@@ -10,7 +10,7 @@ class Contact extends Component {
     document.title = 'AgDial:' + this.title;
 
     return (
-      <AppBody active={4}>
+      <AppBody active={3}>
         <Container fluid>
           <Row>
             <Col md="12" style={{ display: 'flex', alignItems: 'center' }} className="text-center">

@@ -2,7 +2,7 @@
 import Home from 'pages/Home';
 import About from 'pages/About';
 import Pricing from 'pages/Pricing';
-import Join from 'pages/JoinUs';
+// import Join from 'pages/JoinUs';
 import Contact from 'pages/Contact';
 import Search from 'pages/Search';
 import React, { Component } from 'react';
@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/categories" component={Home} />
             <Route path="/about" component={About} />
             <Route path="/pricing" component={Pricing} />
-            <Route path="/joinus" component={Join} />
+            {/* <Route path="/joinus" component={Join} /> */}
             <Route path="/contact" component={Contact} />
             <Route path="/search" component={Search} />
 
