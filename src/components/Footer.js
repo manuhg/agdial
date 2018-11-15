@@ -5,10 +5,10 @@ class AppFooter extends Component {
   render() {
     const buttons = [
       ['https://shramajeevi.com', 'Shramajeevi'],
-      ['https://www.youtube.com/user/ShramajeeviAgriFilms', 'Watch Agri Videos'],
-      ['https://video.shramajeevi.com', 'Buy Agri Videos'],
-      ['https://shramajeeviimages.com', 'Download Images'],
-      ['https://shramajeewiki.com', 'Read Agri Articles'],
+      ['https://www.youtube.com/user/ShramajeeviAgriFilms', 'Agri Videos'],
+      // ['https://video.shramajeevi.com', 'Buy Agri Videos'],
+      ['https://shramajeeviimages.com', 'Agri Images'],
+      ['https://shramajeewiki.com', 'Agri Articles'],
     ];
     return (
       <Footer color="green darken-2" className="footer">
