@@ -37,7 +37,7 @@ class Nav extends Component {
         </NavbarBrand>
         {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
         <Collapse isOpen={this.state.collapse} navbar>
-          <NavbarNav left>
+          <NavbarNav right>
             {nav_routes.map((e, i) => {
               return actives[i] ? (
                 <NavItem active key={i}>

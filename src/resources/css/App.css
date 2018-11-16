@@ -5,6 +5,14 @@ a {
 .breadcrumb-item {
   font-size: 1em;
 }
+.dark_green_btn {
+  background-color: #097200 !important;
+}
+.dark_green_btn_outline {
+  color: #097200 !important;
+  background-color: white !important;
+  border: 2px solid #097200 !important;
+}
 body {
   word-wrap: break-word !important;
   background-size: cover;

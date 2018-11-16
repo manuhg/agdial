@@ -6,6 +6,7 @@ import Tiles from 'components/Tiles';
 import SubCatTile from 'components/SubCatTile';
 import { rnom } from 'resources/nomenclature';
 import RestDoc from 'utils/Rest';
+import algolia from 'resources/img/algolia.svg';
 
 const algSearchKey = '87419dd78ee5b05c8567bb03f9c910bc';
 const algAppId = '76YGED1NMJ';
@@ -195,7 +196,12 @@ class Search extends Component {
           <h3>Please wait.</h3>
         </AppBody>
       );
-    return <AppBody>{disp_lst.map((item, i) => this.display_item(item, i))}</AppBody>;
+    return (
+      <AppBody>
+        {disp_lst.map((item, i) => this.display_item(item, i))}
+        <img src={algolia} alt="Search by Algolia" />
+      </AppBody>
+    );
   }
 }
 export default Search;

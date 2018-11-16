@@ -43,6 +43,13 @@ class Listing extends Component {
                                   <div style={bw}>{e}&nbsp;</div>
                                 </li>
                               ))}
+                              {data.country && data.country.search(/india/i) === -1 ? (
+                                <li className="lp list-group-item">
+                                  country: <strong>{data.country}</strong>
+                                </li>
+                              ) : (
+                                ''
+                              )}
                               {data.Phone || data.Fax ? (
                                 <li className="lp list-group-item">
                                   {data.Phone ? (

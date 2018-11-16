@@ -3,23 +3,48 @@ import re
 import sys
 from order import order
 from functools import reduce
+from country_list import countries_for_language
+
+priority_countries = ['India', 'China', 'Ukraine', 'Turkey']
+countries = dict(countries_for_language('en'))
+countries['US'] += ' of America'
+del countries['UN']  # not needed
+countries = list(
+    map(lambda c: c.lower(), priority_countries+list(countries.values())))
+# country_codes = list(countries.keys())
+# countries = dict(list(zip(country_names, country_codes)))
 
 imgurl_base = 'https://img.agdial.in/images/'
 id_prefix = r'(id|prefix)\s*:\s*(.*)'
 phone_regex = r'(([0-9\+ \-]+,?)+)'
 special_data = {'Website': r'((https?\:\/\/)?([0-9a-z\.-]+)\.([a-z\.]{2,6})(\/[\/\-a-zA-Z0-9#\.\?\&\=]+\/?)?)',
-                'Whatsapp': r'((+?[0-9 ]+{10,})+)', 'Youtube': r'((https:\/\/www\.youtu.+)+)',
+                'Whatsapp': phone_regex, 'Youtube': r'((https:\/\/www\.youtu.+)+)',
                 'Phone': phone_regex, 'customer care': phone_regex, 'Fax': phone_regex,
                 'Email': r"(([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)\s*,?)+"}
 excl_page_specials = ['Phone', 'customer care', 'Email',  'Fax']
-tokens_patt = '^([^:]+):\s*\[(.*)\]\s*$'
+tokens_patt = r'^([^:]+):\s*\[(.*)\]\s*$'
+# whatsapp r'((+?[0-9 ]+{10,})+)'
+
+
+def country_case(country):
+    return ' '.join(list(map(lambda c: c.lower()[0].upper()+c.lower()[1:], country.lower().split(' '))))
+
+
+def find_country(data):
+    # data = data.replace(',', '')
+    # data = data.replace('.', ' ')
+    data = data.lower()
+    for country in countries:
+        if re.search(country, data):
+            return country_case(country)
 
 
 def pl(line):
     try:
         return re.findall(tokens_patt, line)[0]
     except Exception:
-        print('Exception for linestr: ', line)
+        pass
+        # print('Exception for premium entry, linestr : ', line)
 
 
 def parse_pvals(pval):
@@ -99,6 +124,7 @@ def extract_special_data(data_list, type_=None):
                         to_remove.append(i)
             except Exception as e:
                 print(e, 'at line ', sys.exc_info()[2].tb_lineno)
+                print(data_list[i], s[1], specials_dict)
     for i in sorted(to_remove, reverse=True):
         del data_list[i]
     return specials_dict
@@ -111,6 +137,7 @@ def parse_entry(entry):
     name = name_data[-1]
     type_ = ''
     catcode = None
+    country = None
     id = '-'.join(name_data[0:-1])
     path = '-'.join(name_data[0:-2])
 
@@ -135,9 +162,23 @@ def parse_entry(entry):
                   "type": type_, "image": imgurl, "content": data_list}
     if catcode:
         entry_dict.update({"catcode": catcode})
+    else:
+        try:
+            #re.match(r'([A-Za-z &\. \-]+)',str).groups()[0].strip()
+            # country = re.match(
+                # r'([A-Za-z &\. \-]+)', data_list[0].split(',')[-1]).groups()[0].strip()
+            country = find_country(' '.join(data_list))
+        except Exception as ee:
+            print('while looking for a country: ', ee,
+                  'at line ', sys.exc_info()[2].tb_lineno)
+            print(data_list[0],
+                  '\n=============================================')
+
     specials = extract_special_data(data_list, type_)
     if specials:
         entry_dict.update(specials)
+    if country:
+        entry_dict.update({"country": country})
 
     entry_dict = dict(
         map(lambda x: (x[0], x[1].strip()) if type(x[1]) is str else x, entry_dict.items()))
@@ -175,9 +216,9 @@ def parse(filename):
 
 
 # def main():
-#     process_premium_data()
-#     entries=parse('../content/all_listings.txt')
-#     print(list(map(lambda x: print(x, '\n\n'), entries.items())))
+    # process_premium_data()
+    # entries = parse('../content/all_listings.txt')
+    # print(list(map(lambda x: print(x, '\n\n'), entries.items())))
 
 
 # main()

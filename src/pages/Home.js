@@ -25,14 +25,17 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.title = 'Home';
-    this.state = { changed: false };
+    this.state = { changed: false, loc_type: 0 };
     this.urlType = {};
     this.mounted = false;
     this.dataColl = {};
     this.type = 0; // tiles
     this.REST = new RestDoc();
     this.setData = this.setData.bind(this);
+    this.changeLocationType = this.changeLocationType.bind(this);
     console.log((USE_REST ? '' : 'not') + 'using', 'REST API');
+    this.locations = ['India', 'Overseas'];
+    this.data_segregated = { India: [], Overseas: [] };
 
     if (USE_REST) this.docAtPath_REST(this.props.location.pathname);
     // else {
@@ -42,9 +45,21 @@ class App extends Component {
     //   });
     // }
   }
-
+  changeLocationType(loc_type) {
+    if ((loc_type === 0 || loc_type === 1) && loc_type !== this.state.loc_type) this.setState({ loc_type: loc_type });
+  }
   setData(index, value, nosS) {
     this.dataColl[index] = value;
+
+    if (typeof value === 'object' && value[0] && !value[0].catcode) {
+      this.data_segregated = { India: [], Overseas: [] };
+      console.log('seg');
+      value.map(d => {
+        if (d.country && d.country.search(/india/i) >= 0) this.data_segregated['India'].push(d);
+        else this.data_segregated['Overseas'].push(d);
+        return 1;
+      });
+    }
     if (!nosS) this.setState({ changed: !this.state.changed });
   }
   memoize(path, obj) {
@@ -269,6 +284,7 @@ class App extends Component {
 
     const path = this.props.location.pathname;
     //console.log(this.dataColl[path]);
+    const loc_type = this.state.loc_type;
     const ep = this.ep;
     var Content = () => (
       <AppBody ep={ep} active={0}>
@@ -304,10 +320,14 @@ class App extends Component {
       if (USE_REST) this.docAtPath_REST(path);
       else this.docAtPath(path);
     }
-
     if (typeof this.dataColl[path] === 'object') {
-      // const data = Object.entries(this.dataColl[path]);
-      const data = Object.values(this.dataColl[path]);
+      var data = Object.values(this.dataColl[path]);
+
+      if (typeof this.data_segregated === 'object' && data[0] && !data[0].catcode) {
+        data = this.data_segregated[this.locations[loc_type]];
+      }
+
+      console.log(this.data_segregated, loc_type);
       switch (tType) {
         case types['list']:
           try {
@@ -322,6 +342,34 @@ class App extends Component {
                       padding: '0px',
                     }}
                   >
+                    {data[0] && !data[0].catcode && this.data_segregated['Overseas'].length > 0 ? (
+                      <div className="col-12">
+                        <div style={{ padding: '5px' }} className="btn-group" role="group" aria-label="location">
+                          <button
+                            id="english"
+                            onClick={e => this.changeLocationType(0)}
+                            type="button"
+                            className={
+                              'btn btn-primary ' + (loc_type !== 0 ? 'dark_green_btn_outline' : 'dark_green_btn')
+                            }
+                          >
+                            <strong style={{ fontSize: '1.1em' }}>India</strong>
+                          </button>
+                          <button
+                            id="kannada"
+                            onClick={e => this.changeLocationType(1)}
+                            type="button"
+                            className={
+                              'btn btn-primary ' + (loc_type !== 1 ? 'dark_green_btn_outline' : 'dark_green_btn')
+                            }
+                          >
+                            <strong style={{ fontSize: '1.1em' }}>Overseas </strong>
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <span />
+                    )}
                     {data.map(
                       (e, i) =>
                         e && e.catcode ? (
