@@ -20,7 +20,7 @@ const types = {
 };
 const REST_types = { doc: 0, query: 1 };
 const USE_REST = true;
-
+const loc_overseas = 1;
 class App extends Component {
   constructor(props) {
     super(props);
@@ -32,6 +32,7 @@ class App extends Component {
     this.type = 0; // tiles
     this.REST = new RestDoc();
     this.setData = this.setData.bind(this);
+    this.scrollToElem = this.scrollToElem.bind(this);
     this.changeLocationType = this.changeLocationType.bind(this);
     console.log((USE_REST ? '' : 'not') + 'using', 'REST API');
     this.locations = ['India', 'Overseas'];
@@ -53,7 +54,6 @@ class App extends Component {
 
     if (typeof value === 'object' && value[0] && !value[0].catcode) {
       this.data_segregated = { India: [], Overseas: [] };
-      console.log('seg');
       value.map(d => {
         if (d.country && d.country.search(/india/i) >= 0) this.data_segregated['India'].push(d);
         else this.data_segregated['Overseas'].push(d);
@@ -271,10 +271,26 @@ class App extends Component {
   componentDidMount() {
     this.mounted = true;
   }
-
   componentWillUnmount() {
     document.title = 'AgDial';
     this.mounted = false;
+  }
+  scrollToElem() {
+    var pvals = this.props.location.hash.split('?');
+    var hash = pvals[0];
+    var isOverseas = pvals[1] === 'overseas=True&';
+    if (isOverseas && this.state.loc_type !== loc_overseas) {
+      this.changeLocationType(loc_overseas);
+    } else if (hash && hash.length > 3) {
+      hash = hash.replace('#', '').trim();
+      var elem = document.getElementById(hash);
+      if (elem) elem.scrollIntoView();
+      this.props.location.hash = '';
+    }
+  }
+  componentDidUpdate() {
+    // setTimeout(this.scrollToElem, 100);
+    this.scrollToElem();
   }
   previous() {
     this.props.history.go(-1);
@@ -284,6 +300,7 @@ class App extends Component {
 
     const path = this.props.location.pathname;
     //console.log(this.dataColl[path]);
+
     const loc_type = this.state.loc_type;
     const ep = this.ep;
     var Content = () => (
@@ -326,8 +343,6 @@ class App extends Component {
       if (typeof this.data_segregated === 'object' && data[0] && !data[0].catcode) {
         data = this.data_segregated[this.locations[loc_type]];
       }
-
-      console.log(this.data_segregated, loc_type);
       switch (tType) {
         case types['list']:
           try {
@@ -436,6 +451,7 @@ class App extends Component {
           break;
       }
     }
+
     return <Content />;
   }
 }

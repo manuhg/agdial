@@ -33,7 +33,7 @@ class Nav extends Component {
       <Navbar color="white" light expand="md">
         {/*scrolling*/}
         <NavbarBrand href="/">
-          <img src={logo} alt="Agdial Logo" height="80" />
+          <img src={logo} alt="Agdial Logo" style={{ height: '70px' }} />
         </NavbarBrand>
         {!this.state.isWideEnough && <NavbarToggler onClick={this.onClick} />}
         <Collapse isOpen={this.state.collapse} navbar>

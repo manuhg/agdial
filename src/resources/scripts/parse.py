@@ -5,7 +5,7 @@ from order import order
 from functools import reduce
 from country_list import countries_for_language
 
-priority_countries = ['India', 'China', 'Ukraine', 'Turkey']
+priority_countries = ['Nepal', 'India', 'China', 'Ukraine', 'Turkey']
 countries = dict(countries_for_language('en'))
 countries['US'] += ' of America'
 del countries['UN']  # not needed
