@@ -48,6 +48,28 @@ class AppFooter extends Component {
                         </p>
                       </div>
                     </div>
+                    <div className="col-md-12">
+                      <hr className="hr-dark" />
+                      <h4>
+                        <strong>CONTACT US</strong>
+                      </h4>
+                      <div className="text-center" style={{ fontSize: '.85em' }}>
+                        <div className="container">
+                          <div className="row">
+                            <div className="col-md-8 offset-md-2">
+                              Shramajeevi, #009, Shrinilayam 3, Near Bandematha, Kommaghatta Main Road, Kengeri
+                              Satellite Town, Bengaluru 560060, Karnataka, India. <br />
+                              Mob: +91 9980534320. &nbsp; Email:&nbsp;
+                              <a href="mailto:team@shramajeevi.com">team@shramajeevi.com</a>
+                              <br />Website:&nbsp;
+                              <a href="https://shramajeevi.com" target="_blank" rel="noopener noreferrer">
+                                shramajeevi.com
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
