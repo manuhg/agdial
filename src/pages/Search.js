@@ -36,11 +36,11 @@ class Search extends Component {
     const path = collection + '/' + id;
     if (this.dataColl[path]) return this.dataColl[path];
     this.dataColl[path] = 'Fetching ' + path;
-    console.log(this.dataColl[path]);
+    // console.log(this.dataColl[path]);
     var data = await this.REST.getDoc(path);
     data = this.REST.processDoc(data);
     this.dataColl[path] = data;
-    console.log('Done fetching', path);
+    // console.log('Done fetching', path);
     return data;
   }
   constructor(props) {
@@ -129,7 +129,6 @@ class Search extends Component {
             data_dict[e] ? (disp_lst[order[e] + types_priority[itype]] = [data_dict[e], item_types[itype]]) : undefined
         )
       );
-      console.log(disp_lst);
       disp_lst = Object.values(disp_lst);
       this.setState({ disp_lst: disp_lst });
     });
@@ -168,7 +167,7 @@ class Search extends Component {
             </a>
           );
         default:
-          console.log('wrong type ', type);
+          // console.log('wrong type ', type);
           break;
       }
     } catch (err) {

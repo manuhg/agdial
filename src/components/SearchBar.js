@@ -13,7 +13,6 @@ class Search extends Component {
   }
   redirect() {
     var text = document.getElementById('sinp').value;
-    console.log(text);
     window.location = '/search?query=' + text + '&';
   }
   componentDidMount() {

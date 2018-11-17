@@ -18,6 +18,7 @@ const types = {
   0: 'list',
   1: 'page',
 };
+const DEBUG_LOG = false;
 const REST_types = { doc: 0, query: 1 };
 const USE_REST = true;
 const loc_overseas = 1;
@@ -34,7 +35,7 @@ class App extends Component {
     this.setData = this.setData.bind(this);
     this.scrollToElem = this.scrollToElem.bind(this);
     this.changeLocationType = this.changeLocationType.bind(this);
-    console.log((USE_REST ? '' : 'not') + 'using', 'REST API');
+    if (DEBUG_LOG) console.log((USE_REST ? '' : 'not') + 'using', 'REST API');
     this.locations = ['India', 'Overseas'];
     this.data_segregated = { India: [], Overseas: [] };
 
@@ -82,12 +83,12 @@ class App extends Component {
         if (path.search(/Premium/i) >= 0 && data.content)
           data.content = data.content.map(c => this.REST.toJsObj(c.fields));
       }
-      console.log('Fetching data from ' + path);
+      if (DEBUG_LOG) console.log('Fetching data from ' + path);
       if (!data) return;
       this.setData(path, data);
     } catch (error) {
       //this.previous();
-      console.log(error);
+      if (DEBUG_LOG) console.log(error);
     }
   }
 
@@ -99,7 +100,7 @@ class App extends Component {
     try {
       this.ep = this.evalPath(this.props.location.pathname, nomenclature);
       var data = await docref.get();
-      console.log('Fetching data from ' + path);
+      if (DEBUG_LOG) console.log('Fetching data from ' + path);
       if (!data) return;
       var dt = {};
       if (data.exists) /*document*/ dt = data.data();
@@ -112,7 +113,7 @@ class App extends Component {
       if (cb) cb(dt);
       if (!noSD) this.setData(path, dt);
     } catch (error) {
-      console.log(error);
+      if (DEBUG_LOG) console.log(error);
     }
   }
 
@@ -299,8 +300,6 @@ class App extends Component {
     document.title = 'AgDial'; //:' + this.title;
 
     const path = this.props.location.pathname;
-    //console.log(this.dataColl[path]);
-
     const loc_type = this.state.loc_type;
     const ep = this.ep;
     var Content = () => (
@@ -419,7 +418,7 @@ class App extends Component {
                 </AppBody>
               );
           } catch (err) {
-            console.log(err);
+            if (DEBUG_LOG) console.log(err);
             this.previous();
           }
           break;
@@ -443,7 +442,7 @@ class App extends Component {
               );
             else this.previous();
           } catch (err) {
-            console.log(err);
+            if (DEBUG_LOG) console.log(err);
             this.previous();
           }
           break;
