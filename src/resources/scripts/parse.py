@@ -35,7 +35,7 @@ def find_country(data):
     # data = data.replace('.', ' ')
     data = data.lower()
     for country in countries:
-        if re.search(country, data):
+        if re.search(r'\b'+country+r'\b', data):
             return country_case(country)
 
 
@@ -215,10 +215,11 @@ def parse(filename):
         return handle_entries(parse_file(filename))
 
 
-# def main():
-    # process_premium_data()
-    # entries = parse('../content/all_listings.txt')
-    # print(list(map(lambda x: print(x, '\n\n'), entries.items())))
+def main():
+    process_premium_data()
+    entries = parse('../content/all_listings.txt')
+    list(map(lambda x: print(x, '\n\n'), entries.items()))
 
 
-# main()
+if __name__ == "__main__":
+    main()

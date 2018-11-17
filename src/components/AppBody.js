@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ErrorBoundary from 'utils/ErrorBoundary';
 import Footer from 'components/Footer';
 import Nav from 'components/Nav';
-import bcgImg from 'resources/img/body_bcg.JPEG';
+import bcgImg from 'resources/img/background.jpg';
 import { rnom } from 'resources/nomenclature';
 import SearchBar from 'components/SearchBar';
 

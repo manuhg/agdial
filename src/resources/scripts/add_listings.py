@@ -109,6 +109,8 @@ def add_to_firestore(listings, cname='listings', db=None):
 
 
 def push_all_listings(file='../content/all_listings.txt', db=None):
+    print(os.popen('./premiums.sh').read())
+    print(os.popen('./preprocess.sh').read())
     listings = parse(file)
     pr_data = process_premium_data()
     db = init_db()
