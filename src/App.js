@@ -3,7 +3,7 @@ import Home from 'pages/Home';
 import About from 'pages/About';
 import Pricing from 'pages/Pricing';
 // import Join from 'pages/JoinUs';
-import Contact from 'pages/Contact';
+// import Contact from 'pages/Contact';
 import Search from 'pages/Search';
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
