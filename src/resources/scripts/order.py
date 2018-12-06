@@ -13,6 +13,7 @@
     'GU',
     'IF',
     'CS',
+    'AP',
     'AH-OZ',
     'AH-GS',
     'AH-SG',

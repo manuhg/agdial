@@ -109,12 +109,17 @@ def add_to_firestore(listings, cname='listings', db=None):
 
 
 def push_all_listings(file='../content/all_listings.txt', db=None):
-    print(os.popen('./premiums.sh').read())
-    print(os.popen('./preprocess.sh').read())
+    print('Processing Premiums:\n===============================================\n',
+          os.popen('./premiums.sh').read())
+    print('Preprocessing documents:\n===============================================\n',
+          os.popen('./preprocess.sh').read())
+    print('Parsing documents:\n===============================================\n',)
     listings = parse(file)
+    print('Preprocessing Premiums data:\n===============================================\n',)
     pr_data = process_premium_data()
     db = init_db()
     index = init_algolia()
+    print('Pushing data to cloud:\n===============================================\n',)
     work = [
         (lambda: add_to_firestore(listings, 'listings', db),
          'Adding listings to firestore'),
