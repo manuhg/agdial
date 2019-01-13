@@ -189,6 +189,8 @@ class Business extends Component {
                                           );
                                         }
                                         if (entry.image && entry.content) {
+                                          var content = entry.content.split('``').filter(Boolean);
+
                                           return (
                                             <div className="row fp">
                                               <div className="col-12">
@@ -207,11 +209,13 @@ class Business extends Component {
                                                   style={{ width: '100%' }}
                                                 />
                                               </div>
-                                              <div className="col-lg-8">{entry.content}</div>
+                                              <div className="col-lg-8">
+                                                {content.map((e, i) => <p key={i}>{e}</p>)}
+                                              </div>
                                             </div>
                                           );
                                         } else if (entry.imagelist && entry.content) {
-                                          var content = entry.content.split('``').filter(Boolean);
+                                          content = entry.content.split('``').filter(Boolean);
                                           var imagelist = entry.imagelist.split(',').map(e => e.trim());
                                           try {
                                             return (
@@ -255,8 +259,6 @@ class Business extends Component {
                                           }
                                         } else if (entry.imagelist) {
                                           imagelist = entry.imagelist.split(',').map(e => e.trim());
-                                          var divcn = 'row',
-                                            imgcn = 'img-list-img-sm col-6 col-sm-4 col-md-4 col-lg-3 col-xl-2';
                                           var captions = entry.captions
                                             ? entry.captions.split(',').map(e => e.trim())
                                             : undefined;
@@ -307,14 +309,17 @@ class Business extends Component {
                                               ) : (
                                                 ''
                                               )}
-                                              <div className={divcn}>
+
+                                              <div className={'row'}>
                                                 {imagelist.map((img, k) => (
-                                                  <img
-                                                    key={k}
-                                                    src={img_base + img + '.jpg'}
-                                                    alt={pr_data.prefix + ' ' + (captions ? captions[k] : img)}
-                                                    className={imgcn}
-                                                  />
+                                                  <div key={k} className="col-6 col-sm-4 col-lg-3 imgcol text-white">
+                                                    <img
+                                                      src={img_base + img + '.jpg'}
+                                                      alt={pr_data.prefix + ' ' + (captions ? captions[k] : img)}
+                                                      style={{ width: '100%' }}
+                                                    />
+                                                    &nbsp;
+                                                  </div>
                                                 ))}
                                               </div>
                                             </div>

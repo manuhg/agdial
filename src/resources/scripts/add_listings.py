@@ -1,6 +1,5 @@
 #!/usr/bin/python
-# pip install --upgrade firebase-admin
-# pip install --upgrade algoliasearch
+# pip install --upgrade firebase-admin algoliasearch country_list
 
 import os
 import time
@@ -10,7 +9,7 @@ from firebase_admin import firestore
 from firebase_admin import storage
 from algoliasearch import algoliasearch
 from parse import parse, process_premium_data
-
+import itertools
 firebase_key = os.environ['HOME']+"/keys/agdial-001-firebase-adminsdk.json"
 
 
@@ -94,6 +93,15 @@ def add_to_algolia(listings, index=None, clear_index=True):
         {"searchableAttributes": ["name", 'id', "path", "content"]})
 
 
+def split_dict(d):
+    n = len(d) // 2          # length of smaller half
+    # alternatively, i = d.iteritems() works in Python 2
+    i = iter(d.items())
+    d1 = dict(itertools.islice(i, n))   # grab first n items
+    d2 = dict(i)                        # grab the rest
+    return d1, d2
+
+
 def add_to_firestore(listings, cname='listings', db=None):
     db = init_db() if not db else db
     if listings and (type(listings) is dict):
@@ -105,7 +113,12 @@ def add_to_firestore(listings, cname='listings', db=None):
         try:
             batch.commit()
         except Exception as e:
-            print(e)
+            print('ERROR ADDING TO FIREBASE', e)
+
+
+def add_to_firestore_splits(listings, cname='listings', db=None):
+    [add_to_firestore(split_listings, cname, db)
+     for split_listings in split_dict(listings)]
 
 
 def push_all_listings(file='../content/all_listings.txt', db=None):
@@ -121,7 +134,7 @@ def push_all_listings(file='../content/all_listings.txt', db=None):
     index = init_algolia()
     print('Pushing data to cloud:\n===============================================\n',)
     work = [
-        (lambda: add_to_firestore(listings, 'listings', db),
+        (lambda: add_to_firestore_splits(listings, 'listings', db),
          'Adding listings to firestore'),
         (lambda: add_to_firestore(pr_data, 'premium_data', db),
          'Adding premium data to firestore'),
