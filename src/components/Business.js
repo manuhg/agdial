@@ -325,7 +325,8 @@ class Business extends Component {
                                             </div>
                                           );
                                         } else if (entry.content) {
-                                          return <p> {entry.content}</p>;
+                                          content = entry.content.split('``').filter(Boolean);
+                                          return <div>{content.map((ce, ci) => <p key={ci}>{ce}</p>)}</div>;
                                         } else if (entry.videolist) {
                                           var videolist = entry.videolist.split(',').map(e => e.trim());
 
