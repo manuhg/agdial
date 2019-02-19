@@ -47,7 +47,7 @@ class Search extends Component {
     super(props);
     this.dataColl = {};
     this.REST = new RestDoc();
-    this.state = { data: '', disp_lst: [] };
+    this.state = { data: '', disp_lst: -1 };
     this.search_text = '';
     this.counter = this.counter.bind(this);
     this.display_item = this.display_item.bind(this);
@@ -177,6 +177,13 @@ class Search extends Component {
 
   render() {
     const { disp_lst } = this.state;
+    if (disp_lst !== -1 && disp_lst.length === 0)
+      return (
+        <AppBody>
+          <div style={{ height: '300px' }}>&nbsp;</div>
+          <h3>Not result found.</h3>
+        </AppBody>
+      );
     if (!this.search_text)
       return (
         <AppBody>
@@ -184,6 +191,7 @@ class Search extends Component {
           <h3>Please type in the search box to see the results</h3>
         </AppBody>
       );
+
     if (!disp_lst || !disp_lst.length)
       return (
         <AppBody>
@@ -200,6 +208,7 @@ class Search extends Component {
           <h3>Please wait.</h3>
         </AppBody>
       );
+
     return (
       <AppBody>
         {disp_lst.map((item, i) => this.display_item(item, i))}
