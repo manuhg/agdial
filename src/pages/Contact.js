@@ -25,8 +25,8 @@ class Contact extends Component {
                       <div className="row">
                         <div className="col-sm-10 col-md-8 col-lg-6 col-xl-5">
                           <address>
-                            Address: <br />Shramajeevi, # 009, Shrinilayam 3, Near Bandematha, Kommaghatta Main Road,
-                            Kengeri Satellite Town, Bengaluru 560060. Karnataka. India
+                            Address: <br />Shramajeevi Television Pvt. Ltd., No. 1108, 1st Floor, 1st Main, 4th Cross,
+                            Next to LIC, Kengeri Satellite Town, Bengaluru, 560060, Karnataka, India.
                           </address>
                         </div>
                       </div>
