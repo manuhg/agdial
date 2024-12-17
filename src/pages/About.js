@@ -3,7 +3,7 @@ import AppBody from 'components/AppBody';
 import { Col, Container, Row } from 'mdbreact';
 import VSH from 'resources/img/Profile/VSH.png';
 import SGubbi from 'resources/img/Profile/SGubbi.png';
-import Prashant from 'resources/img/Profile/Prashant.png';
+// import Prashant from 'resources/img/Profile/Prashant.png';
 import Suresh from 'resources/img/Profile/Suresh.png';
 import Manu from 'resources/img/Profile/Manu.png';
 import Chandru from 'resources/img/Profile/Chandru.png';
