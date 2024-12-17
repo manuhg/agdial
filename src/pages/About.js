@@ -83,14 +83,14 @@ const AboutData = {
       'https://www.linkedin.com/in',
       'Dr. Sheshagiri Gubbi, Ph. D (Plant Genetics) and Post-Doctoral Fellow (Plant Biotechnology) has varied experience in agricultural R&D in Agricultural Universities, ICAR, CSIR and Corporate laboratories. His interests in Minimising and Systematic reduction of Agrochemicals has lead him to specialise in alternative microbial technologies for Soil health, Plant nutrition and Stress management which he has optimised in Rice, Vegetables, Sugarcane and Grapes. He works closely with farmers from sharing know-how, Supply of quality inputs, Production of pesticides free crops and establishing the Market linkages.',
     ],
-    [
-      '#8432ff',
-      Prashant,
-      'Mr. Prashant Hegde',
-      'Honorary Adviser',
-      'https://www.linkedin.com/in',
-      'Prashant is an agriculture graduate with post-graduation in management. He brings in 20 years of experience in agri input sales and financial services industry. He has vast experience in agricultural investment and project management. Earlier he worked for HDFC Bank, RBL Bank, Janalakshmi Small Finance Bank.',
-    ],
+    // [
+    //   '#8432ff',
+    //   Prashant,
+    //   'Mr. Prashant Hegde',
+    //   'Honorary Adviser',
+    //   'https://www.linkedin.com/in',
+    //   'Prashant is an agriculture graduate with post-graduation in management. He brings in 20 years of experience in agri input sales and financial services industry. He has vast experience in agricultural investment and project management. Earlier he worked for HDFC Bank, RBL Bank, Janalakshmi Small Finance Bank.',
+    // ],
   ],
   about: (
     <span>
